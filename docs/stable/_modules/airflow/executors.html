@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -671,7 +673,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div class="viewcode-block" id="Executors.CeleryExecutor"><a class="viewcode-back" href="../../_api/airflow/executors/index.html#airflow.executors.Executors.CeleryExecutor">[docs]</a>    <span class="n">CeleryExecutor</span> <span class="o">=</span> <span class="s2">&quot;CeleryExecutor&quot;</span></div>
 <div class="viewcode-block" id="Executors.DaskExecutor"><a class="viewcode-back" href="../../_api/airflow/executors/index.html#airflow.executors.Executors.DaskExecutor">[docs]</a>    <span class="n">DaskExecutor</span> <span class="o">=</span> <span class="s2">&quot;DaskExecutor&quot;</span></div>
 <div class="viewcode-block" id="Executors.MesosExecutor"><a class="viewcode-back" href="../../_api/airflow/executors/index.html#airflow.executors.Executors.MesosExecutor">[docs]</a>    <span class="n">MesosExecutor</span> <span class="o">=</span> <span class="s2">&quot;MesosExecutor&quot;</span></div>
-<div class="viewcode-block" id="Executors.KubernetesExecutor"><a class="viewcode-back" href="../../_api/airflow/executors/index.html#airflow.executors.Executors.KubernetesExecutor">[docs]</a>    <span class="n">KubernetesExecutor</span> <span class="o">=</span> <span class="s2">&quot;KubernetesExecutor&quot;</span></div></div>
+<div class="viewcode-block" id="Executors.KubernetesExecutor"><a class="viewcode-back" href="../../_api/airflow/executors/index.html#airflow.executors.Executors.KubernetesExecutor">[docs]</a>    <span class="n">KubernetesExecutor</span> <span class="o">=</span> <span class="s2">&quot;KubernetesExecutor&quot;</span></div>
+<div class="viewcode-block" id="Executors.DebugExecutor"><a class="viewcode-back" href="../../_api/airflow/executors/index.html#airflow.executors.Executors.DebugExecutor">[docs]</a>    <span class="n">DebugExecutor</span> <span class="o">=</span> <span class="s2">&quot;DebugExecutor&quot;</span></div></div>
 
 
 <div class="viewcode-block" id="_get_executor"><a class="viewcode-back" href="../../_api/airflow/executors/index.html#airflow.executors._get_executor">[docs]</a><span class="k">def</span> <span class="nf">_get_executor</span><span class="p">(</span><span class="n">executor_name</span><span class="p">):</span>
@@ -696,6 +699,9 @@ https://www.sphinx-doc.org/en/master/templating.html
     <span class="k">elif</span> <span class="n">executor_name</span> <span class="o">==</span> <span class="n">Executors</span><span class="o">.</span><span class="n">KubernetesExecutor</span><span class="p">:</span>
         <span class="kn">from</span> <span class="nn">airflow.contrib.executors.kubernetes_executor</span> <span class="k">import</span> <span class="n">KubernetesExecutor</span>
         <span class="k">return</span> <span class="n">KubernetesExecutor</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">executor_name</span> <span class="o">==</span> <span class="n">Executors</span><span class="o">.</span><span class="n">DebugExecutor</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">airflow.executors.debug_executor</span> <span class="k">import</span> <span class="n">DebugExecutor</span>
+        <span class="k">return</span> <span class="n">DebugExecutor</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># Loading plugins</span>
         <span class="n">_integrate_plugins</span><span class="p">()</span>

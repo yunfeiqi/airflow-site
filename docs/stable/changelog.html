@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -344,7 +344,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l1"><a class="reference internal" href="lineage.html">Lineage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dag-serialization.html">DAG Serialization</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-7">Airflow 1.10.7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-8-2020-01-07">Airflow 1.10.8, 2020-01-07</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#new-features">New Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improvements">Improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
@@ -352,50 +352,58 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l3"><a class="reference internal" href="#doc-only-changes">Doc only changes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-6-2019-10-28">Airflow 1.10.6, 2019-10-28</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-7-2019-12-24">Airflow 1.10.7, 2019-12-24</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">New Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">Bug Fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Doc-only changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Doc only changes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-5-2019-08-30">Airflow 1.10.5, 2019-08-30</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-6-2019-10-28">Airflow 1.10.6, 2019-10-28</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id6">New Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">Improvements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Misc/Internal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Misc/Internal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-5-2019-09-04">Airflow 1.10.5, 2019-09-04</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Doc-only changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-4-2019-08-06">Airflow 1.10.4, 2019-08-06</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id11">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">New Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improvement">Improvement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Misc/Internal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Doc-only changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-3-2019-04-09">Airflow 1.10.3, 2019-04-09</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#new-feature">New Feature</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">Improvement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id17">Misc/Internal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id18">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Improvement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Doc-only changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-2-2019-01-19">Airflow 1.10.2, 2019-01-19</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id19">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id20">Improvements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id21">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id22">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Doc-only changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-1-2018-11-13">Airflow 1.10.1, 2018-11-13</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id23">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id24">Improvements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id25">Doc-only changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id26">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-0-2018-08-03">Airflow 1.10.0, 2018-08-03</a></li>
@@ -415,6 +423,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -498,7 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -563,7 +572,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l1"><a class="reference internal" href="lineage.html">Lineage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dag-serialization.html">DAG Serialization</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-7">Airflow 1.10.7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-8-2020-01-07">Airflow 1.10.8, 2020-01-07</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#new-features">New Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improvements">Improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
@@ -571,50 +580,58 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l3"><a class="reference internal" href="#doc-only-changes">Doc only changes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-6-2019-10-28">Airflow 1.10.6, 2019-10-28</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-7-2019-12-24">Airflow 1.10.7, 2019-12-24</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">New Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">Bug Fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Doc-only changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Doc only changes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-5-2019-08-30">Airflow 1.10.5, 2019-08-30</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-6-2019-10-28">Airflow 1.10.6, 2019-10-28</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id6">New Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">Improvements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Misc/Internal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Bug Fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Misc/Internal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-5-2019-09-04">Airflow 1.10.5, 2019-09-04</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Doc-only changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-4-2019-08-06">Airflow 1.10.4, 2019-08-06</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id11">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">New Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improvement">Improvement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Misc/Internal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Doc-only changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-3-2019-04-09">Airflow 1.10.3, 2019-04-09</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#new-feature">New Feature</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">Improvement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id17">Misc/Internal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id18">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Improvement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Misc/Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Doc-only changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-2-2019-01-19">Airflow 1.10.2, 2019-01-19</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id19">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id20">Improvements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id21">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id22">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Doc-only changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-1-2018-11-13">Airflow 1.10.1, 2018-11-13</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id23">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id24">Improvements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id25">Doc-only changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id26">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">Doc-only changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">Bug fixes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#airflow-1-10-0-2018-08-03">Airflow 1.10.0, 2018-08-03</a></li>
@@ -634,6 +651,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -739,10 +757,189 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div></div></blockquote>
 <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="airflow-1-10-7">
-<h2>Airflow 1.10.7<a class="headerlink" href="#airflow-1-10-7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="airflow-1-10-8-2020-01-07">
+<h2>Airflow 1.10.8, 2020-01-07<a class="headerlink" href="#airflow-1-10-8-2020-01-07" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="new-features">
 <h3>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[AIRFLOW-4026] Add filter by DAG tags (#6489)</p></li>
+<li><p>[AIRFLOW-6613] Center dag on graph view load (#7238)</p></li>
+<li><p>[AIRFLOW-5843] Add conf option to Add DAG Run view (#7281)</p></li>
+<li><p>[AIRFLOW-4495] Allow externally triggered dags to run for future exec dates (#7038)</p></li>
+</ul>
+</div>
+<div class="section" id="improvements">
+<h3>Improvements<a class="headerlink" href="#improvements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[AIRFLOW-6438] Filter DAGs returned by blocked (#7019)</p></li>
+<li><p>[AIRFLOW-6666] Resolve js-yaml advisory (#7283)</p></li>
+<li><p>[AIRFLOW-6632] Bump dagre-d3 to resolve lodash CVE advisory (#7280)</p></li>
+<li><p>[AIRFLOW-6667] Resolve serialize-javascript advisory (#7282)</p></li>
+<li><p>[AIRFLOW-6451] self._print_stat() in dag_processing.py should be skippable (#7134)</p></li>
+<li><p>[AIRFLOW-6495] Load DAG only once when running a task using StandardTaskRunner (#7090)</p></li>
+<li><p>[AIRFLOW-6319] Add support for AWS Athena workgroups (#6871)</p></li>
+<li><p>[AIRFLOW-6677] Remove deprecation warning from SQLAlchmey (#7289)</p></li>
+<li><p>[AIRFLOW-6428] Fix import path for airflow.utils.dates.days_ago in Example DAGs (#7007)</p></li>
+<li><p>[AIRFLOW-6595] Use TaskNotFound exception instead of AirflowException (#7210)</p></li>
+<li><p>[AIRFLOW-6620] Mock celery in worker cli test (#7243)</p></li>
+<li><p>[AIRFLOW-6608] Change logging level for Bash &amp; PyOperator Env exports</p></li>
+<li><p>[AIRFLOW-2279] Clear tasks across DAGs if marked by ExternalTaskMarker (#6633)</p></li>
+<li><p>[AIRFLOW-6359] Make Spark status_poll_interval explicit (#6978)</p></li>
+<li><p>[AIRFLOW-6359] spark_submit_hook.py status polling interval config (#6909)</p></li>
+<li><p>[AIRFLOW-6316] Use exampleinclude directives in tutorial.rst (#6868)</p></li>
+<li><p>[AIRFLOW-6519] Make TI logs constants in Webserver configurable (#7113)</p></li>
+<li><p>[AIRFLOW-6327] http_hook: Accept json= parameter for payload (#6886)</p></li>
+<li><p>[AIRFLOW-6261] flower_basic_auth eligible to _cmd (#6825)</p></li>
+<li><p>[AIRFLOW-6238] Filter dags returned by dag_stats</p></li>
+<li><p>[AIRFLOW-5616] Switch PrestoHook from pyhive to prestosql-client to s</p></li>
+<li><p>[AIRFLOW-6611] Add proxy_fix configs to default_airflow.cfg (#7236)</p></li>
+<li><p>[AIRFLOW-6557] Add test for newly added fields in BaseOperator (#7162)</p></li>
+<li><p>[AIRFLOW-6584] Pin cassandra driver (#7194)</p></li>
+<li><p>[AIRFLOW-6537] Fix backticks in rst files (#7140)</p></li>
+<li><p>[AIRFLOW-4428] Error if exec_date before default_args.start_date in trigger_dag (#6948)</p></li>
+<li><p>[AIRFLOW-6330] Show cli help when param blank or typo (#6883)</p></li>
+<li><p>[AIRFLOW-4113] Unpin boto3 (#6884)</p></li>
+<li><p>[AIRFLOW-6181] Add DebugExecutor (#6740)</p></li>
+<li><p>[AIRFLOW-6504] Allow specifying configmap for Airflow Local Setting (#7097)</p></li>
+<li><p>[AIRFLOW-6436] Cleanup for Airflow configs doc generator code (#7036)</p></li>
+<li><p>[AIRFLOW-6436] Add x_frame_enabled config in config.yml (#7024)</p></li>
+<li><p>[AIRFLOW-6436] Create &amp; Automate docs on Airflow Configs (#7015)</p></li>
+<li><p>[AIRFLOW-6527] Make send_task_to_executor timeout configurable (#7143)</p></li>
+<li><p>[AIRFLOW-6272] Switch from npm to yarnpkg for managing front-end dependencies (#6844)</p></li>
+<li><p>[AIRFLOW-6350] Security - spark submit operator logging+exceptions should mask passwords</p></li>
+<li><p>[AIRFLOW-6358] Log details of failed task (#6908)</p></li>
+<li><p>[AIRFLOW-5149] Skip SLA checks config (#6923)</p></li>
+<li><p>[AIRFLOW-6057] Update template_fields of the PythonSensor (#6656)</p></li>
+<li><p>[AIRFLOW-4445] Mushroom cloud errors too verbose (#6952)</p></li>
+<li><p>[AIRFLOW-6394] Simplify github PR template (#6955)</p></li>
+<li><p>[AIRFLOW-5385] spark hook does not work on spark 2.3/2.4 (#6976)</p></li>
+</ul>
+</div>
+<div class="section" id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[AIRFLOW-6345] Ensure arguments to ProxyFix are integers (#6901)</p></li>
+<li><p>[AIRFLOW-6576] Fix scheduler crash caused by deleted task with sla misses (#7187)</p></li>
+<li><p>[AIRFLOW-6686] Fix syntax error constructing list of process ids (#7298)</p></li>
+<li><p>[AIRFLOW-6683] REST API respects store_serialized_dag setting (#7296)</p></li>
+<li><p>[AIRFLOW-6553] Add upstream_failed in instance state filter to WebUI (#7159)</p></li>
+<li><p>[AIRFLOW-6357] Highlight nodes in Graph UI if task id contains dots (#6904)</p></li>
+<li><p>[AIRFLOW-3349] Use None instead of False as value for encoding in StreamLogWriter (#7329)</p></li>
+<li><p>[AIRFLOW-6627] Email with incorrect DAG not delivered (#7250)</p></li>
+<li><p>[AIRFLOW-6637] Fix airflow test command in 1.10.x</p></li>
+<li><p>[AIRFLOW-6636] Avoid exceptions when printing task instance</p></li>
+<li><p>[AIRFLOW-6522] Clear task log file before starting to fix duplication in S3TaskHandler (#7120)</p></li>
+<li><p>[AIRFLOW-5501] Make default <cite>in_cluster</cite> value in KubernetesPodOperator respect config (#6124)</p></li>
+<li><p>[AIRFLOW-6514] Use RUNNING_DEPS to check run from UI (#6367)</p></li>
+<li><p>[AIRFLOW-6381] Remove styling based on DAG id from DAGs page (#6985)</p></li>
+<li><p>[AIRFLOW-6434] Add return statement back to DockerOperator.execute (#7013)</p></li>
+<li><p>[AIRFLOW-2516] Fix mysql deadlocks (#6988)</p></li>
+<li><p>[AIRFLOW-6528] Disable flake8 W503 line break before binary operator (#7124)</p></li>
+<li><p>[AIRFLOW-6517] Make merge_dicts function recursive (#7111)</p></li>
+<li><p>[AIRFLOW-5621] Failure callback is not triggered when marked Failed on UI (#7025)</p></li>
+<li><p>[AIRFLOW-6353] Security - ui - add click jacking defence (#6995)</p></li>
+<li><p>[AIRFLOW-6348] Security - cli.py is currently printing logs with password (#6915)</p></li>
+<li><p>[AIRFLOW-6323] Remove non-ascii letters from default config (#6878)</p></li>
+<li><p>[AIRFLOW-6506] Fix do_xcom_push defaulting to True in KubernetesPodOperator (#7122)</p></li>
+<li><p>[AIRFLOW-6516] BugFix: airflow.cfg does not exist in Volume Mounts (#7109)</p></li>
+<li><p>[AIRFLOW-6427] Fix broken example_qubole_operator dag (#7005)</p></li>
+<li><p>[AIRFLOW-6385] BugFix: SlackAPIPostOperator fails when blocks not set (#7022)</p></li>
+<li><p>[AIRFLOW-6347] BugFix: Can’t get task logs when serialization is enabled (#7092)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix downgrade of db migration 0e2a74e0fc9f (#6859)</p></li>
+<li><p>[AIRFLOW-6366] Fix migrations for MS SQL Server (#6920)</p></li>
+<li><p>[AIRFLOW-5406] Allow spark without kubernetes (#6921)</p></li>
+<li><p>[AIRFLOW-6229] SparkSubmitOperator polls forever if status json can’t… (#6918)</p></li>
+<li><p>[AIRFLOW-6352] Security - ui - add login timeout (#6912)</p></li>
+<li><p>[AIRFLOW-6397] Ensure sub_process attribute exists before trying to kill it (#6958)</p></li>
+<li><p>[AIRFLOW-6400] Fix pytest not working on Windows (#6964)</p></li>
+<li><p>[AIRFLOW-6418] Remove SystemTest.skip decorator (#6991)</p></li>
+<li><p>[AIRFLOW-6425] Serialization: Add missing DAG parameters to Json Schema (#7002)</p></li>
+</ul>
+</div>
+<div class="section" id="misc-internal">
+<h3>Misc/Internal<a class="headerlink" href="#misc-internal" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[AIRFLOW-6467] Use self.dag i/o creating a new one (#7067)</p></li>
+<li><p>[AIRFLOW-6490] Improve time delta comparison in local task job tests (#7083)</p></li>
+<li><p>[AIRFLOW-5814] Implementing Presto hook tests (#6491)</p></li>
+<li><p>[AIRFLOW-5704] Improve Kind Kubernetes scripts for local testing (#6516)</p></li>
+<li><p>[AIRFLOW-XXXX] Move airflow-config-yaml pre-commit before pylint (#7108)</p></li>
+<li><p>[AIRFLOW-XXXX] Improve clarity of confirm message (#7110)</p></li>
+<li><p>[AIRFLOW-6662] install dumb init (#7300)</p></li>
+<li><p>[AIRFLOW-6705] One less chatty message at breeze initialisation (#7326)</p></li>
+<li><p>[AIRFLOW-6705] Less chatty integration/backend checks (#7325)</p></li>
+<li><p>[AIRFLOW-6662] Switch to –init docker flag for signal propagation (#7278)</p></li>
+<li><p>[AIRFLOW-6661] Fail after 50 failing tests (#7277)</p></li>
+<li><p>[AIRFLOW-6607] Get rid of old local scripts for Breeze (#7225)</p></li>
+<li><p>[AIRFLOW-6589] BAT tests run in pre-commit on bash script changes (#7203)</p></li>
+<li><p>[AIRFLOW-6592] Doc build is moved to test phase (#7208)</p></li>
+<li><p>[AIRFLOW-6641] Better diagnostics for kubernetes flaky tests (#7261)</p></li>
+<li><p>[AIRFLOW-6642] Make local task job test less flaky (#7262)</p></li>
+<li><p>[AIRFLOW-6643] Fix flakiness of kerberos tests</p></li>
+<li><p>[AIRFLOW-6638] Remove flakiness test from test_serialized_db remove</p></li>
+<li><p>[AIRFLOW-6701] Rat is downloaded from stable backup/mirrors (#7323)</p></li>
+<li><p>[AIRFLOW-6702] Dumping kind logs to file.io. (#7319)</p></li>
+<li><p>[AIRFLOW-6491] Improve handling of Breeze parameters (#7084)</p></li>
+<li><p>[AIRFLOW-6470] Avoid pipe to file when do curl (#7063)</p></li>
+<li><p>[AIRFLOW-6471] Add pytest-instafail plugin (#7064)</p></li>
+<li><p>[AIRFLOW-6462] Limit exported variables in Dockerfile/Breeze (#7057)</p></li>
+<li><p>[AIRFLOW-6465] Add bash autocomplete for airflow in Breeze (#7060)</p></li>
+<li><p>[AIRFLOW-6464] Add cloud providers CLI tools in Breeze (#7059)</p></li>
+<li><p>[AIRFLOW-6461] Remove silent flags in Dockerfile (#7052)</p></li>
+<li><p>[AIRFLOW-6459] Increase verbosity of pytest (#7049)</p></li>
+<li><p>[AIRFLOW-6370] Skip Cassandra tests if cluster is not up (#6926)</p></li>
+<li><p>[AIRFLOW-6511] Remove BATS docker containers (#7103)</p></li>
+<li><p>[AIRFLOW-6475] Remove duplication of volume mount specs in Breeze.. (#7065)</p></li>
+<li><p>[AIRFLOW-6489] Add BATS support for Bash unit testing (#7081)</p></li>
+<li><p>[AIRFLOW-6387] print details of success/skipped task (#6956)</p></li>
+<li><p>[AIRFLOW-6568] Add Emacs related files to .gitignore (#7175)</p></li>
+<li><p>[AIRFLOW-6575] Entropy source for CI tests is changed to unblocking (#7185)</p></li>
+<li><p>[AIRFLOW-6496] Separate integrations in tests (#7091)</p></li>
+<li><p>[AIRFLOW-6634] Set PYTHONPATH in interactive Breeze</p></li>
+<li><p>[AIRFLOW-6564] Additional diagnostics information on CI check failure (#7172)</p></li>
+<li><p>[AIRFLOW-6383] Add no trailing-whitespace pre-commit hook (#6941)</p></li>
+</ul>
+</div>
+<div class="section" id="doc-only-changes">
+<h3>Doc only changes<a class="headerlink" href="#doc-only-changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[AIRFLOW-XXXX] Consistency fixes in new documentation (#7207)</p></li>
+<li><p>[AIRFLOW-XXXX] Improve grammar and structure in FAQ doc (#7291)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix email configuration link in CONTRIBUTING.rst (#7311)</p></li>
+<li><p>[AIRFLOW-XXXX] Update docs with new BranchPythonOperator behaviour (#4682)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix Typo in scripts/ci/ci_run_airflow_testing.sh (#7235)</p></li>
+<li><p>[AIRFLOW-XXXX] Screenshot showing disk space configuration for OSX (#7226)</p></li>
+<li><p>[AIRFLOW-XXXX] Add mentoring information to contributing docs (#7202)</p></li>
+<li><p>[AIRFLOW-XXXX] Add rebase info to contributing (#7201)</p></li>
+<li><p>[AIRFLOW-XXXX] Increase verbosity of static checks in CI (#7200)</p></li>
+<li><p>[AIRFLOW-XXXX] Adds branching strategy to documentation (#7193)</p></li>
+<li><p>[AIRFLOW-XXXX] Move email configuration from the concept page (#7189)</p></li>
+<li><p>[AIRFLOW-XXXX] Update task lifecycle diagram (#7161)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix reference in concepts doc (#7135)</p></li>
+<li><p>[AIRFLOW-XXXX] Clear debug docs (#7104)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix typos and broken links in development docs (#7086)</p></li>
+<li><p>[AIRFLOW-XXXX] Clarify wait_for_downstream and execution_date (#6999)</p></li>
+<li><p>[AIRFLOW-XXXX] Add <cite>airflow dags show</cite> command guide (#7014)</p></li>
+<li><p>[AIRFLOW-XXXX] Update operation chaining documentation (#7018)</p></li>
+<li><p>[AIRFLOW-XXXX] Add <cite>.autoenv_leave.zsh</cite> to .gitignore (#6986)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix development packages installation instructions (#6942)</p></li>
+<li><p>[AIRFLOW-XXXX] Update committers list (#7212)</p></li>
+<li><p>[AIRFLOW-XXXX] Move UPDATING changes into correct versions (#7166)</p></li>
+<li><p>[AIRFLOW-XXXX] Add Documentation for check_slas flag (#6974)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix gcp keyfile_dict typo (#6962)</p></li>
+<li><p>[AIRFLOW-XXXX] Add tips for writing a note in UPDATIND.md (#6960)</p></li>
+<li><p>[AIRFLOW-XXXX] Add note warning that bash&gt;4.0 is required for docs build script (#6947)</p></li>
+<li><p>[AIRFLOW-XXXX] Add autoenv to gitignore (#6946)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix GCSTaskHandler Comment Typo (#6928)</p></li>
+<li><p>[AIRFLOW-XXXX] Fix broken DAG Serialization Link (#6891)</p></li>
+<li><p>[AIRFLOW-XXXX] Add versions_added field to configs</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="airflow-1-10-7-2019-12-24">
+<h2>Airflow 1.10.7, 2019-12-24<a class="headerlink" href="#airflow-1-10-7-2019-12-24" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>New Features<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5088] [AIP-24] Persisting serialized DAG in DB for webserver scalability (#5992)</p></li>
 <li><p>[AIRFLOW-6083] Adding ability to pass custom configuration to AWS Lambda client. (#6678)</p></li>
@@ -763,8 +960,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-4758] Add GcsToGDriveOperator operator (#5822)</p></li>
 </ul>
 </div>
-<div class="section" id="improvements">
-<h3>Improvements<a class="headerlink" href="#improvements" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Improvements<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-3656] Show doc link for the current installed version (#6690)</p></li>
 <li><p>[AIRFLOW-5665] Add path_exists method to SFTPHook (#6344)</p></li>
@@ -823,10 +1020,11 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-5897] Allow setting -1 as pool slots value in webserver (#6550)</p></li>
 <li><p>[AIRFLOW-5888] Use psycopg2-binary for postgres operations (#6533)</p></li>
 <li><p>[AIRFLOW-5870] Allow -1 for pool size and optimise pool query (#6520)</p></li>
+<li><p>[AIRFLOW-6297] Add Airflow website link to UI docs (#6849)</p></li>
 </ul>
 </div>
-<div class="section" id="bug-fixes">
-<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Bug Fixes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-XXX] Bump Jira version to fix issue with async</p></li>
 <li><p>[AIRFLOW-XXX] Add encoding to fix Cyrillic output when reading back task logs (#6631)</p></li>
@@ -882,8 +1080,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-6308] Unpin Kombu for Python 3</p></li>
 </ul>
 </div>
-<div class="section" id="misc-internal">
-<h3>Misc/Internal<a class="headerlink" href="#misc-internal" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Misc/Internal<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-6009] Switch off travis_wait for regular tests (#6600)</p></li>
 <li><p>[AIRFLOW-6226] Always reset warnings in tests</p></li>
@@ -904,8 +1102,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-6309] Fix stable build on Travis</p></li>
 </ul>
 </div>
-<div class="section" id="doc-only-changes">
-<h3>Doc only changes<a class="headerlink" href="#doc-only-changes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Doc only changes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-6211] Doc how to use conda for local virtualenv (#6766)</p></li>
 <li><p>[AIRFLOW-5855] Fix broken reference in custom operator doc (#6508)</p></li>
@@ -943,8 +1141,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </div>
 <div class="section" id="airflow-1-10-6-2019-10-28">
 <h2>Airflow 1.10.6, 2019-10-28<a class="headerlink" href="#airflow-1-10-6-2019-10-28" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>New Features<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>New Features<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-4908] Implement BigQuery Hooks/Operators for update_dataset, patch_dataset and get_dataset (#5546)</p></li>
 <li><p>[AIRFLOW-4741] Optionally report task errors to Sentry (#5407)</p></li>
@@ -954,8 +1152,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3871] Operators template fields can now render fields inside objects (#4743)</p></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h3>Improvements<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Improvements<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5127] Gzip support for CassandraToGoogleCloudStorageOperator (#5738)</p></li>
 <li><p>[AIRFLOW-5125] Add gzip support for AdlsToGoogleCloudStorageOperator (#5737)</p></li>
@@ -994,8 +1192,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-4835] Refactor operator render_template (#5461)</p></li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h3>Bug Fixes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>Bug Fixes<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5459] Use a dynamic tmp location in Dataflow operator (#6078)</p></li>
 <li><p>[Airflow 4923] Fix Databricks hook leaks API secret in logs (#5635)</p></li>
@@ -1037,8 +1235,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-5447] Scheduler stalls because second watcher thread in default args (#6129)</p></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h3>Doc-only changes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>Doc-only changes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5574] Fix Google Analytics script loading (#6218)</p></li>
 <li><p>[AIRFLOW-5588] Add Celery’s architecture diagram (#6247)</p></li>
@@ -1064,8 +1262,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-XXX] Make Breeze The default integration test environment (#6001)</p></li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>Misc/Internal<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>Misc/Internal<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5687] Upgrade pip to 19.0.2 in CI build pipeline (#6358) (#6361)</p></li>
 <li><p>[AIRFLOW-5533] Fixed failing CRON build (#6167)</p></li>
@@ -1082,18 +1280,18 @@ https://www.sphinx-doc.org/en/master/templating.html
 </ul>
 </div>
 </div>
-<div class="section" id="airflow-1-10-5-2019-08-30">
-<h2>Airflow 1.10.5, 2019-08-30<a class="headerlink" href="#airflow-1-10-5-2019-08-30" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>New Features<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="airflow-1-10-5-2019-09-04">
+<h2>Airflow 1.10.5, 2019-09-04<a class="headerlink" href="#airflow-1-10-5-2019-09-04" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>New Features<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-1498] Add feature for users to add Google Analytics to Airflow UI (#5850)</p></li>
 <li><p>[AIRFLOW-4074] Add option to add labels to Dataproc jobs (#5606)</p></li>
 <li><p>[AIRFLOW-4846] Allow specification of an existing secret containing git credentials for init containers (#5475)</p></li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h3>Improvements<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>Improvements<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5335] Update GCSHook methods so they need min IAM perms (#5939)</p></li>
 <li><p>[AIRFLOW-2692] Allow AWS Batch Operator to use templates in job_name parameter (#3557)</p></li>
@@ -1114,8 +1312,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-4316] Support setting kubernetes_environment_variables config section from env var (#5668)</p></li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h3>Bug fixes<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>Bug fixes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5168] Fix Dataproc operators that failed in 1.10.4 (#5928)</p></li>
 <li><p>[AIRFLOW-5136] Fix Bug with Incorrect template_fields in DataProc{*} Operators (#5751)</p></li>
@@ -1142,8 +1340,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-5240] Latest version of Kombu is breaking airflow for py2</p></li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h3>Misc/Internal<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>Misc/Internal<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5111] Remove apt-get upgrade from the Dockerfile (#5722)</p></li>
 <li><p>[AIRFLOW-5209] Fix Documentation build (#5814)</p></li>
@@ -1174,8 +1372,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-4027] Make experimental api tests more stateless (#4854)</p></li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h3>Doc-only changes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>Doc-only changes<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-XXX] Fixed Azkaban link (#5865)</p></li>
 <li><p>[AIRFLOW-XXX] Remove duplicate lines from CONTRIBUTING.md (#5830)</p></li>
@@ -1185,8 +1383,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </div>
 <div class="section" id="airflow-1-10-4-2019-08-06">
 <h2>Airflow 1.10.4, 2019-08-06<a class="headerlink" href="#airflow-1-10-4-2019-08-06" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>New Features<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>New Features<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-4811] Implement GCP Data Loss Prevention Hook and Operators (#5539)</p></li>
 <li><p>[AIRFLOW-5035] Replace multiprocessing.Manager with a golang-“channel” style (#5615)</p></li>
@@ -1347,8 +1545,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-4528] Cancel DataProc task on timeout (#5293)</p></li>
 </ul>
 </div>
-<div class="section" id="id12">
-<h3>Bug fixes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>Bug fixes<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-5089] Change version requirement on google-cloudp-spanner to work around version incompatibility (#5703)</p></li>
 <li><p>[AIRFLOW-4289] fix spark_binary argument being ignored in SparkSubmitHook (#5564)</p></li>
@@ -1443,8 +1641,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3241] Remove Invalid template ext in GCS Sensors (#4076)</p></li>
 </ul>
 </div>
-<div class="section" id="id13">
-<h3>Misc/Internal<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>Misc/Internal<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-4338] Change k8s pod_request_factory to use yaml safe_load (#5120)</p></li>
 <li><p>[AIRFLOW-4869] Reorganize sql to gcs operators. (#5504)</p></li>
@@ -1482,8 +1680,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3944] Remove code smells (#4762)</p></li>
 </ul>
 </div>
-<div class="section" id="id14">
-<h3>Doc-only changes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3>Doc-only changes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-XXX] Add missing doc for annotations param of KubernetesPodOperator (#5666)</p></li>
 <li><p>[AIRFLOW-XXX] Fix typos in CONTRIBUTING.md (#5626)</p></li>
@@ -1554,8 +1752,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3556] Add cross join set dependency function (#4356)</p></li>
 </ul>
 </div>
-<div class="section" id="id15">
-<h3>Improvement<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h3>Improvement<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-4120] Modify SchedulerJob.manage_slas to respect zero timedelta SLAs (#4939)</p></li>
 <li><p>[AIRFLOW-3823] Exclude branch’s downstream tasks from the tasks to skip (#4666)</p></li>
@@ -1668,8 +1866,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3631] Update flake8 and fix lint. (#4436)</p></li>
 </ul>
 </div>
-<div class="section" id="id16">
-<h3>Bug fixes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h3>Bug fixes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-2994] Fix command status check in Qubole Check operator (#3790)</p></li>
 <li><p>[AIRFLOW-2563] Fix PigCliHook Python 3 string/bytes use</p></li>
@@ -1784,8 +1982,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-XXX] Fix flaky test - test_execution_unlimited_parallelism (#4988)</p></li>
 </ul>
 </div>
-<div class="section" id="id17">
-<h3>Misc/Internal<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h3>Misc/Internal<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-4016] Clear runs for BackfillJobTest (#4839)</p></li>
 <li><p>[AIRFLOW-4177] Check types in tests</p></li>
@@ -1806,8 +2004,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-XXX] Remove old/non-test files that nose ignores (#4930)</p></li>
 </ul>
 </div>
-<div class="section" id="id18">
-<h3>Doc-only changes<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>Doc-only changes<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-3996] Add view source link to included fragments</p></li>
 <li><p>[AIRFLOW-3811] automatic generation of API Reference in docs (#4788)</p></li>
@@ -1853,8 +2051,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </div>
 <div class="section" id="airflow-1-10-2-2019-01-19">
 <h2>Airflow 1.10.2, 2019-01-19<a class="headerlink" href="#airflow-1-10-2-2019-01-19" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id19">
-<h3>New features<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h3>New features<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-2658] Add GCP specific k8s pod operator (#3532)</p></li>
 <li><p>[AIRFLOW-2440] Google Cloud SQL import/export operator (#4251)</p></li>
@@ -1890,8 +2088,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3336] Add new TriggerRule for 0 upstream failures (#4182)</p></li>
 </ul>
 </div>
-<div class="section" id="id20">
-<h3>Improvements<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id25">
+<h3>Improvements<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-3680] Consistency update in tests for All GCP-related operators (#4493)</p></li>
 <li><p>[AIRFLOW-3675] Use googlapiclient for google apis (#4484)</p></li>
@@ -1997,8 +2195,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3125] Monitor Task Instances creation rates (#3966)</p></li>
 </ul>
 </div>
-<div class="section" id="id21">
-<h3>Bug fixes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id26">
+<h3>Bug fixes<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-3191] Fix not being able to specify execution_date when creating dagrun (#4037)</p></li>
 <li><p>[AIRFLOW-3657] Fix zendesk integration (#4466)</p></li>
@@ -2080,8 +2278,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-1298] Clear UPSTREAM_FAILED using the clean cli (#3886)</p></li>
 </ul>
 </div>
-<div class="section" id="id22">
-<h3>Doc-only changes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h3>Doc-only changes<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-XXX] GCP operators documentation clarifications (#4273)</p></li>
 <li><p>[AIRFLOW-XXX] Docs: Fix paths to GCS transfer operator (#4479)</p></li>
@@ -2126,8 +2324,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </div>
 <div class="section" id="airflow-1-10-1-2018-11-13">
 <h2>Airflow 1.10.1, 2018-11-13<a class="headerlink" href="#airflow-1-10-1-2018-11-13" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id23">
-<h3>New features<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id28">
+<h3>New features<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-2524] Airflow integration with AWS Sagemaker</p></li>
 <li><p>[AIRFLOW-2657] Add ability to delete DAG from web ui</p></li>
@@ -2142,8 +2340,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3276] Google Cloud SQL database create / patch / delete operators</p></li>
 </ul>
 </div>
-<div class="section" id="id24">
-<h3>Improvements<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id29">
+<h3>Improvements<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-393] Add progress callbacks for FTP downloads</p></li>
 <li><p>[AIRFLOW-520] Show Airflow version on web page</p></li>
@@ -2188,8 +2386,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-3265] Add support for “unix_socket” in connection extra for Mysql Hook</p></li>
 </ul>
 </div>
-<div class="section" id="id25">
-<h3>Doc-only changes<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h3>Doc-only changes<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-1441] Tutorial Inconsistencies Between Example Pipeline Definition and Recap</p></li>
 <li><p>[AIRFLOW-2682] Add how-to guide(s) for how to use basic operators like BashOperator and PythonOperator</p></li>
@@ -2204,8 +2402,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><p>[AIRFLOW-2779] Add project version to license</p></li>
 </ul>
 </div>
-<div class="section" id="id26">
-<h3>Bug fixes<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id31">
+<h3>Bug fixes<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>[AIRFLOW-839] docker_operator.py attempts to log status key without first checking existence</p></li>
 <li><p>[AIRFLOW-1104] Concurrency check in scheduler should count queued tasks as well as running</p></li>
@@ -4259,7 +4457,7 @@ https://www.sphinx-doc.org/en/master/templating.html
         <div class="wy-menu-vertical">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
-<li><a class="reference internal" href="#airflow-1-10-7">Airflow 1.10.7</a><ul>
+<li><a class="reference internal" href="#airflow-1-10-8-2020-01-07">Airflow 1.10.8, 2020-01-07</a><ul>
 <li><a class="reference internal" href="#new-features">New Features</a></li>
 <li><a class="reference internal" href="#improvements">Improvements</a></li>
 <li><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
@@ -4267,50 +4465,58 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li><a class="reference internal" href="#doc-only-changes">Doc only changes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#airflow-1-10-6-2019-10-28">Airflow 1.10.6, 2019-10-28</a><ul>
+<li><a class="reference internal" href="#airflow-1-10-7-2019-12-24">Airflow 1.10.7, 2019-12-24</a><ul>
 <li><a class="reference internal" href="#id1">New Features</a></li>
 <li><a class="reference internal" href="#id2">Improvements</a></li>
 <li><a class="reference internal" href="#id3">Bug Fixes</a></li>
-<li><a class="reference internal" href="#id4">Doc-only changes</a></li>
-<li><a class="reference internal" href="#id5">Misc/Internal</a></li>
+<li><a class="reference internal" href="#id4">Misc/Internal</a></li>
+<li><a class="reference internal" href="#id5">Doc only changes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#airflow-1-10-5-2019-08-30">Airflow 1.10.5, 2019-08-30</a><ul>
+<li><a class="reference internal" href="#airflow-1-10-6-2019-10-28">Airflow 1.10.6, 2019-10-28</a><ul>
 <li><a class="reference internal" href="#id6">New Features</a></li>
 <li><a class="reference internal" href="#id7">Improvements</a></li>
-<li><a class="reference internal" href="#id8">Bug fixes</a></li>
-<li><a class="reference internal" href="#id9">Misc/Internal</a></li>
-<li><a class="reference internal" href="#id10">Doc-only changes</a></li>
+<li><a class="reference internal" href="#id8">Bug Fixes</a></li>
+<li><a class="reference internal" href="#id9">Doc-only changes</a></li>
+<li><a class="reference internal" href="#id10">Misc/Internal</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#airflow-1-10-5-2019-09-04">Airflow 1.10.5, 2019-09-04</a><ul>
+<li><a class="reference internal" href="#id11">New Features</a></li>
+<li><a class="reference internal" href="#id12">Improvements</a></li>
+<li><a class="reference internal" href="#id13">Bug fixes</a></li>
+<li><a class="reference internal" href="#id14">Misc/Internal</a></li>
+<li><a class="reference internal" href="#id15">Doc-only changes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#airflow-1-10-4-2019-08-06">Airflow 1.10.4, 2019-08-06</a><ul>
-<li><a class="reference internal" href="#id11">New Features</a></li>
+<li><a class="reference internal" href="#id16">New Features</a></li>
 <li><a class="reference internal" href="#improvement">Improvement</a></li>
-<li><a class="reference internal" href="#id12">Bug fixes</a></li>
-<li><a class="reference internal" href="#id13">Misc/Internal</a></li>
-<li><a class="reference internal" href="#id14">Doc-only changes</a></li>
+<li><a class="reference internal" href="#id17">Bug fixes</a></li>
+<li><a class="reference internal" href="#id18">Misc/Internal</a></li>
+<li><a class="reference internal" href="#id19">Doc-only changes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#airflow-1-10-3-2019-04-09">Airflow 1.10.3, 2019-04-09</a><ul>
 <li><a class="reference internal" href="#new-feature">New Feature</a></li>
-<li><a class="reference internal" href="#id15">Improvement</a></li>
-<li><a class="reference internal" href="#id16">Bug fixes</a></li>
-<li><a class="reference internal" href="#id17">Misc/Internal</a></li>
-<li><a class="reference internal" href="#id18">Doc-only changes</a></li>
+<li><a class="reference internal" href="#id20">Improvement</a></li>
+<li><a class="reference internal" href="#id21">Bug fixes</a></li>
+<li><a class="reference internal" href="#id22">Misc/Internal</a></li>
+<li><a class="reference internal" href="#id23">Doc-only changes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#airflow-1-10-2-2019-01-19">Airflow 1.10.2, 2019-01-19</a><ul>
-<li><a class="reference internal" href="#id19">New features</a></li>
-<li><a class="reference internal" href="#id20">Improvements</a></li>
-<li><a class="reference internal" href="#id21">Bug fixes</a></li>
-<li><a class="reference internal" href="#id22">Doc-only changes</a></li>
+<li><a class="reference internal" href="#id24">New features</a></li>
+<li><a class="reference internal" href="#id25">Improvements</a></li>
+<li><a class="reference internal" href="#id26">Bug fixes</a></li>
+<li><a class="reference internal" href="#id27">Doc-only changes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#airflow-1-10-1-2018-11-13">Airflow 1.10.1, 2018-11-13</a><ul>
-<li><a class="reference internal" href="#id23">New features</a></li>
-<li><a class="reference internal" href="#id24">Improvements</a></li>
-<li><a class="reference internal" href="#id25">Doc-only changes</a></li>
-<li><a class="reference internal" href="#id26">Bug fixes</a></li>
+<li><a class="reference internal" href="#id28">New features</a></li>
+<li><a class="reference internal" href="#id29">Improvements</a></li>
+<li><a class="reference internal" href="#id30">Doc-only changes</a></li>
+<li><a class="reference internal" href="#id31">Bug fixes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#airflow-1-10-0-2018-08-03">Airflow 1.10.0, 2018-08-03</a></li>

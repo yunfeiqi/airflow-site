@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -365,6 +365,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ssl">SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rendering-airflow-ui-in-a-web-frame-from-another-site">Rendering Airflow UI in a Web Frame from another site</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#impersonation">Impersonation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#default-impersonation">Default Impersonation</a></li>
 </ul>
@@ -383,6 +384,11 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l4"><a class="reference internal" href="#dag-level-role">DAG Level Role</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#securing-connections">Securing Connections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generating-fernet-key">Generating fernet key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotating-encryption-keys">Rotating encryption keys</a></li>
 </ul>
 </li>
 </ul>
@@ -404,6 +410,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -487,7 +494,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -573,6 +580,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ssl">SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rendering-airflow-ui-in-a-web-frame-from-another-site">Rendering Airflow UI in a Web Frame from another site</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#impersonation">Impersonation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#default-impersonation">Default Impersonation</a></li>
 </ul>
@@ -591,6 +599,11 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l4"><a class="reference internal" href="#dag-level-role">DAG Level Role</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#securing-connections">Securing Connections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generating-fernet-key">Generating fernet key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotating-encryption-keys">Rotating encryption keys</a></li>
 </ul>
 </li>
 </ul>
@@ -612,6 +625,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -1039,6 +1053,15 @@ certs and keys.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="rendering-airflow-ui-in-a-web-frame-from-another-site">
+<h2>Rendering Airflow UI in a Web Frame from another site<a class="headerlink" href="#rendering-airflow-ui-in-a-web-frame-from-another-site" title="Permalink to this headline">¶</a></h2>
+<p>Using Airflow in a web frame is enabled by default. To disable this (and prevent click jacking attacks)
+set the below:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[webserver]</span>
+<span class="na">x_frame_enabled</span> <span class="o">=</span> <span class="s">False</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="impersonation">
 <h2>Impersonation<a class="headerlink" href="#impersonation" title="Permalink to this headline">¶</a></h2>
 <p>Airflow has the ability to impersonate a unix user while running task
@@ -1069,7 +1092,7 @@ not set.</p>
 <p>Basic authentication for Celery Flower is supported.</p>
 <p>You can specify the details either as an optional argument in the Flower process launching
 command, or as a configuration item in your <code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code>. For both cases, please provide
-<cite>user:password</cite> pairs separated by a comma.</p>
+<code class="docutils literal notranslate"><span class="pre">user:password</span></code> pairs separated by a comma.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>airflow flower --basic_auth<span class="o">=</span>user1:password1,user2:password2
 </pre></div>
 </div>
@@ -1215,6 +1238,47 @@ allows the role to access all the dags. The default <code class="docutils litera
 </div>
 </div>
 </div>
+<div class="section" id="securing-connections">
+<span id="security-fernet"></span><h2>Securing Connections<a class="headerlink" href="#securing-connections" title="Permalink to this headline">¶</a></h2>
+<p>Airflow uses <a class="reference external" href="https://github.com/fernet/spec/">Fernet</a> to encrypt passwords in the connection
+configuration. It guarantees that a password encrypted using it cannot be manipulated or read without the key.
+Fernet is an implementation of symmetric (also known as “secret key”) authenticated cryptography.</p>
+<p>The first time Airflow is started, the <code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code> file is generated with the default configuration and the unique Fernet
+key. The key is saved to option <code class="docutils literal notranslate"><span class="pre">fernet_key</span></code> of section <code class="docutils literal notranslate"><span class="pre">[core]</span></code>.</p>
+<p>You can also configure a fernet key using environment variables. This will overwrite the value from the
+<code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code> file</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note the double underscores</span>
+<span class="nb">export</span> <span class="nv">AIRFLOW__CORE__FERNET_KEY</span><span class="o">=</span>your_fernet_key
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="generating-fernet-key">
+<h3>Generating fernet key<a class="headerlink" href="#generating-fernet-key" title="Permalink to this headline">¶</a></h3>
+<p>If you need to generate a new fernet key you can use the following code snippet.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cryptography.fernet</span> <span class="kn">import</span> <span class="n">Fernet</span>
+<span class="n">fernet_key</span><span class="o">=</span> <span class="n">Fernet</span><span class="o">.</span><span class="n">generate_key</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fernet_key</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span> <span class="c1"># your fernet_key, keep it in secured place!</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="rotating-encryption-keys">
+<h3>Rotating encryption keys<a class="headerlink" href="#rotating-encryption-keys" title="Permalink to this headline">¶</a></h3>
+<p>Once connection credentials and variables have been encrypted using a fernet
+key, changing the key will cause decryption of existing credentials to fail. To
+rotate the fernet key without invalidating existing encrypted values, prepend
+the new key to the <code class="docutils literal notranslate"><span class="pre">fernet_key</span></code> setting, run
+<code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">rotate_fernet_key</span></code>, and then drop the original key from
+<code class="docutils literal notranslate"><span class="pre">fernet_keys</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">fernet_key</span></code> to <code class="docutils literal notranslate"><span class="pre">new_fernet_key,old_fernet_key</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">rotate_fernet_key</span></code> to re-encrypt existing credentials with the new fernet key</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">fernet_key</span></code> to <code class="docutils literal notranslate"><span class="pre">new_fernet_key</span></code></p></li>
+</ol>
+</div>
+</div>
 </div>
 
 
@@ -1323,6 +1387,7 @@ allows the role to access all the dags. The default <code class="docutils litera
 </ul>
 </li>
 <li><a class="reference internal" href="#ssl">SSL</a></li>
+<li><a class="reference internal" href="#rendering-airflow-ui-in-a-web-frame-from-another-site">Rendering Airflow UI in a Web Frame from another site</a></li>
 <li><a class="reference internal" href="#impersonation">Impersonation</a><ul>
 <li><a class="reference internal" href="#default-impersonation">Default Impersonation</a></li>
 </ul>
@@ -1341,6 +1406,11 @@ allows the role to access all the dags. The default <code class="docutils litera
 <li><a class="reference internal" href="#dag-level-role">DAG Level Role</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#securing-connections">Securing Connections</a><ul>
+<li><a class="reference internal" href="#generating-fernet-key">Generating fernet key</a></li>
+<li><a class="reference internal" href="#rotating-encryption-keys">Rotating encryption keys</a></li>
 </ul>
 </li>
 </ul>

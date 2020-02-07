@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -639,20 +641,20 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="kn">from</span> <span class="nn">airflow.utils.db</span> <span class="k">import</span> <span class="n">provide_session</span>
 
 
-<div class="viewcode-block" id="KubeResourceVersion"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeResourceVersion">[docs]</a><span class="k">class</span> <span class="nc">KubeResourceVersion</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
-<div class="viewcode-block" id="KubeResourceVersion.__tablename__"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeResourceVersion.__tablename__">[docs]</a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;kube_resource_version&quot;</span></div>
-<div class="viewcode-block" id="KubeResourceVersion.one_row_id"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeResourceVersion.one_row_id">[docs]</a>    <span class="n">one_row_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Boolean</span><span class="p">,</span> <span class="n">server_default</span><span class="o">=</span><span class="n">sqltrue</span><span class="p">(),</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
-<div class="viewcode-block" id="KubeResourceVersion.resource_version"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeResourceVersion.resource_version">[docs]</a>    <span class="n">resource_version</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span></div>
+<div class="viewcode-block" id="KubeResourceVersion"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion">[docs]</a><span class="k">class</span> <span class="nc">KubeResourceVersion</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+<div class="viewcode-block" id="KubeResourceVersion.__tablename__"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.__tablename__">[docs]</a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;kube_resource_version&quot;</span></div>
+<div class="viewcode-block" id="KubeResourceVersion.one_row_id"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.one_row_id">[docs]</a>    <span class="n">one_row_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Boolean</span><span class="p">,</span> <span class="n">server_default</span><span class="o">=</span><span class="n">sqltrue</span><span class="p">(),</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+<div class="viewcode-block" id="KubeResourceVersion.resource_version"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.resource_version">[docs]</a>    <span class="n">resource_version</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span></div>
 
     <span class="nd">@staticmethod</span>
     <span class="nd">@provide_session</span>
-<div class="viewcode-block" id="KubeResourceVersion.get_current_resource_version"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeResourceVersion.get_current_resource_version">[docs]</a>    <span class="k">def</span> <span class="nf">get_current_resource_version</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="KubeResourceVersion.get_current_resource_version"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.get_current_resource_version">[docs]</a>    <span class="k">def</span> <span class="nf">get_current_resource_version</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="p">(</span><span class="n">resource_version</span><span class="p">,)</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">KubeResourceVersion</span><span class="o">.</span><span class="n">resource_version</span><span class="p">)</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">resource_version</span></div>
 
     <span class="nd">@staticmethod</span>
     <span class="nd">@provide_session</span>
-<div class="viewcode-block" id="KubeResourceVersion.checkpoint_resource_version"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeResourceVersion.checkpoint_resource_version">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint_resource_version</span><span class="p">(</span><span class="n">resource_version</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="KubeResourceVersion.checkpoint_resource_version"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.checkpoint_resource_version">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint_resource_version</span><span class="p">(</span><span class="n">resource_version</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">resource_version</span><span class="p">:</span>
             <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">KubeResourceVersion</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
                 <span class="n">KubeResourceVersion</span><span class="o">.</span><span class="n">resource_version</span><span class="p">:</span> <span class="n">resource_version</span>
@@ -661,7 +663,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 
     <span class="nd">@staticmethod</span>
     <span class="nd">@provide_session</span>
-<div class="viewcode-block" id="KubeResourceVersion.reset_resource_version"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeResourceVersion.reset_resource_version">[docs]</a>    <span class="k">def</span> <span class="nf">reset_resource_version</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="KubeResourceVersion.reset_resource_version"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.reset_resource_version">[docs]</a>    <span class="k">def</span> <span class="nf">reset_resource_version</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">KubeResourceVersion</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
             <span class="n">KubeResourceVersion</span><span class="o">.</span><span class="n">resource_version</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span>
         <span class="p">})</span>
@@ -669,14 +671,14 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="k">return</span> <span class="s1">&#39;0&#39;</span></div></div>
 
 
-<div class="viewcode-block" id="KubeWorkerIdentifier"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeWorkerIdentifier">[docs]</a><span class="k">class</span> <span class="nc">KubeWorkerIdentifier</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
-<div class="viewcode-block" id="KubeWorkerIdentifier.__tablename__"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeWorkerIdentifier.__tablename__">[docs]</a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;kube_worker_uuid&quot;</span></div>
-<div class="viewcode-block" id="KubeWorkerIdentifier.one_row_id"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeWorkerIdentifier.one_row_id">[docs]</a>    <span class="n">one_row_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Boolean</span><span class="p">,</span> <span class="n">server_default</span><span class="o">=</span><span class="n">sqltrue</span><span class="p">(),</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
-<div class="viewcode-block" id="KubeWorkerIdentifier.worker_uuid"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeWorkerIdentifier.worker_uuid">[docs]</a>    <span class="n">worker_uuid</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span></div>
+<div class="viewcode-block" id="KubeWorkerIdentifier"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier">[docs]</a><span class="k">class</span> <span class="nc">KubeWorkerIdentifier</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+<div class="viewcode-block" id="KubeWorkerIdentifier.__tablename__"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.__tablename__">[docs]</a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;kube_worker_uuid&quot;</span></div>
+<div class="viewcode-block" id="KubeWorkerIdentifier.one_row_id"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.one_row_id">[docs]</a>    <span class="n">one_row_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Boolean</span><span class="p">,</span> <span class="n">server_default</span><span class="o">=</span><span class="n">sqltrue</span><span class="p">(),</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+<div class="viewcode-block" id="KubeWorkerIdentifier.worker_uuid"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.worker_uuid">[docs]</a>    <span class="n">worker_uuid</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span></div>
 
     <span class="nd">@staticmethod</span>
     <span class="nd">@provide_session</span>
-<div class="viewcode-block" id="KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid">[docs]</a>    <span class="k">def</span> <span class="nf">get_or_create_current_kube_worker_uuid</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid">[docs]</a>    <span class="k">def</span> <span class="nf">get_or_create_current_kube_worker_uuid</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="p">(</span><span class="n">worker_uuid</span><span class="p">,)</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">KubeWorkerIdentifier</span><span class="o">.</span><span class="n">worker_uuid</span><span class="p">)</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">worker_uuid</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
             <span class="n">worker_uuid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
@@ -685,7 +687,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 
     <span class="nd">@staticmethod</span>
     <span class="nd">@provide_session</span>
-<div class="viewcode-block" id="KubeWorkerIdentifier.checkpoint_kube_worker_uuid"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.KubeWorkerIdentifier.checkpoint_kube_worker_uuid">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint_kube_worker_uuid</span><span class="p">(</span><span class="n">worker_uuid</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="KubeWorkerIdentifier.checkpoint_kube_worker_uuid"><a class="viewcode-back" href="../../../_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.checkpoint_kube_worker_uuid">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint_kube_worker_uuid</span><span class="p">(</span><span class="n">worker_uuid</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">worker_uuid</span><span class="p">:</span>
             <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">KubeWorkerIdentifier</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
                 <span class="n">KubeWorkerIdentifier</span><span class="o">.</span><span class="n">worker_uuid</span><span class="p">:</span> <span class="n">worker_uuid</span>

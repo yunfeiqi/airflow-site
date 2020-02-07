@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -648,6 +650,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="kn">from</span> <span class="nn">backports.configparser</span> <span class="k">import</span> <span class="n">ConfigParser</span><span class="p">,</span> <span class="n">_UNSET</span><span class="p">,</span> <span class="n">NoOptionError</span><span class="p">,</span> <span class="n">NoSectionError</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
 <span class="kn">from</span> <span class="nn">zope.deprecation</span> <span class="k">import</span> <span class="n">deprecated</span>
 
 <span class="kn">from</span> <span class="nn">airflow.exceptions</span> <span class="k">import</span> <span class="n">AirflowConfigException</span>
@@ -726,6 +729,19 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="n">TEST_CONFIG</span><span class="p">,</span> <span class="n">TEST_CONFIG_FILE_PATH</span> <span class="o">=</span> <span class="n">_read_default_config_file</span><span class="p">(</span><span class="s1">&#39;default_test.cfg&#39;</span><span class="p">)</span>
 
 
+<span class="k">def</span> <span class="nf">default_config_yaml</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read Airflow configs from YAML file</span>
+
+<span class="sd">    :return: Python dictionary containing configs &amp; their info</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">templates_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;config_templates&#39;</span><span class="p">)</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">templates_dir</span><span class="p">,</span> <span class="s2">&quot;config.yml&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_file</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+
+
 <span class="k">class</span> <span class="nc">AirflowConfigParser</span><span class="p">(</span><span class="n">ConfigParser</span><span class="p">):</span>
 
     <span class="c1"># These configuration elements can be fetched as the stdout of commands</span>
@@ -735,6 +751,7 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="s1">&#39;sql_alchemy_conn&#39;</span><span class="p">),</span>
         <span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="s1">&#39;fernet_key&#39;</span><span class="p">),</span>
         <span class="p">(</span><span class="s1">&#39;celery&#39;</span><span class="p">,</span> <span class="s1">&#39;broker_url&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;celery&#39;</span><span class="p">,</span> <span class="s1">&#39;flower_basic_auth&#39;</span><span class="p">),</span>
         <span class="p">(</span><span class="s1">&#39;celery&#39;</span><span class="p">,</span> <span class="s1">&#39;result_backend&#39;</span><span class="p">),</span>
         <span class="c1"># Todo: remove this in Airflow 1.11</span>
         <span class="p">(</span><span class="s1">&#39;celery&#39;</span><span class="p">,</span> <span class="s1">&#39;celery_result_backend&#39;</span><span class="p">),</span>
@@ -794,7 +811,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 
     <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="s2">&quot;executor&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">&#39;SequentialExecutor&#39;</span> <span class="ow">and</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="s2">&quot;executor&quot;</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;DebugExecutor&#39;</span><span class="p">,</span> <span class="s1">&#39;SequentialExecutor&#39;</span><span class="p">)</span> <span class="ow">and</span>
                 <span class="s2">&quot;sqlite&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="s1">&#39;sql_alchemy_conn&#39;</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="n">AirflowConfigException</span><span class="p">(</span>
                 <span class="s2">&quot;error: cannot use sqlite with the </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>

@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -352,6 +352,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -435,7 +436,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -508,6 +509,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -619,7 +621,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook">
-<em class="property">class </em><code class="sig-prename descclassname">airflow.contrib.hooks.spark_submit_hook.</code><code class="sig-name descname">SparkSubmitHook</code><span class="sig-paren">(</span><em class="sig-param">conf=None</em>, <em class="sig-param">conn_id='spark_default'</em>, <em class="sig-param">files=None</em>, <em class="sig-param">py_files=None</em>, <em class="sig-param">archives=None</em>, <em class="sig-param">driver_class_path=None</em>, <em class="sig-param">jars=None</em>, <em class="sig-param">java_class=None</em>, <em class="sig-param">packages=None</em>, <em class="sig-param">exclude_packages=None</em>, <em class="sig-param">repositories=None</em>, <em class="sig-param">total_executor_cores=None</em>, <em class="sig-param">executor_cores=None</em>, <em class="sig-param">executor_memory=None</em>, <em class="sig-param">driver_memory=None</em>, <em class="sig-param">keytab=None</em>, <em class="sig-param">principal=None</em>, <em class="sig-param">proxy_user=None</em>, <em class="sig-param">name='default-name'</em>, <em class="sig-param">num_executors=None</em>, <em class="sig-param">application_args=None</em>, <em class="sig-param">env_vars=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">spark_binary=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/airflow/contrib/hooks/spark_submit_hook.html#SparkSubmitHook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">airflow.contrib.hooks.spark_submit_hook.</code><code class="sig-name descname">SparkSubmitHook</code><span class="sig-paren">(</span><em class="sig-param">conf=None</em>, <em class="sig-param">conn_id='spark_default'</em>, <em class="sig-param">files=None</em>, <em class="sig-param">py_files=None</em>, <em class="sig-param">archives=None</em>, <em class="sig-param">driver_class_path=None</em>, <em class="sig-param">jars=None</em>, <em class="sig-param">java_class=None</em>, <em class="sig-param">packages=None</em>, <em class="sig-param">exclude_packages=None</em>, <em class="sig-param">repositories=None</em>, <em class="sig-param">total_executor_cores=None</em>, <em class="sig-param">executor_cores=None</em>, <em class="sig-param">executor_memory=None</em>, <em class="sig-param">driver_memory=None</em>, <em class="sig-param">keytab=None</em>, <em class="sig-param">principal=None</em>, <em class="sig-param">proxy_user=None</em>, <em class="sig-param">name='default-name'</em>, <em class="sig-param">num_executors=None</em>, <em class="sig-param">status_poll_interval=1</em>, <em class="sig-param">application_args=None</em>, <em class="sig-param">env_vars=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">spark_binary=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/airflow/contrib/hooks/spark_submit_hook.html#SparkSubmitHook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../hooks/base_hook/index.html#airflow.hooks.base_hook.BaseHook" title="airflow.hooks.base_hook.BaseHook"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.hooks.base_hook.BaseHook</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.utils.log.logging_mixin.LoggingMixin</span></code></p>
 <p>This hook is a wrapper around the spark-submit binary to kick off a spark-submit job.
 It requires that the “spark-submit” binary is in the PATH or the spark_home to be
@@ -654,6 +656,8 @@ executor (Default: 2)</p></li>
 <li><p><strong>proxy_user</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – User to impersonate when submitting the application</p></li>
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Name of the job (default airflow-spark)</p></li>
 <li><p><strong>num_executors</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Number of executors to launch</p></li>
+<li><p><strong>status_poll_interval</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Seconds to wait between polls of driver status in cluster
+mode (Default: 1)</p></li>
 <li><p><strong>application_args</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – Arguments for the application being submitted</p></li>
 <li><p><strong>env_vars</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – Environment variables for spark-submit. It
 supports yarn and k8s mode too.</p></li>
@@ -688,6 +692,11 @@ subsequent spark-submit status requests after the initial spark-submit request
 <dl class="method">
 <dt id="airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._get_spark_binary_path">
 <code class="sig-name descname">_get_spark_binary_path</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/airflow/contrib/hooks/spark_submit_hook.html#SparkSubmitHook._get_spark_binary_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._get_spark_binary_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._mask_cmd">
+<code class="sig-name descname">_mask_cmd</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">connection_cmd</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/airflow/contrib/hooks/spark_submit_hook.html#SparkSubmitHook._mask_cmd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._mask_cmd" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -890,6 +899,9 @@ master failure recovery</p>
 </ul>
 <ul>
 <li><a class="reference internal" href="#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._get_spark_binary_path">_get_spark_binary_path</a></li>
+</ul>
+<ul>
+<li><a class="reference internal" href="#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._mask_cmd">_mask_cmd</a></li>
 </ul>
 <ul>
 <li><a class="reference internal" href="#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._build_spark_submit_command">_build_spark_submit_command</a></li>

@@ -41,6 +41,13 @@ Module Contents
 
 
    
+   .. method:: get_isolation_level(self)
+
+      Returns an isolation level
+
+
+
+   
    .. staticmethod:: _strip_sql(sql)
 
 
@@ -82,7 +89,7 @@ Module Contents
 
 
    
-   .. method:: insert_rows(self, table, rows, target_fields=None)
+   .. method:: insert_rows(self, table, rows, target_fields=None, commit_every=0)
 
       A generic way to insert a set of tuples into a table.
 
@@ -92,6 +99,9 @@ Module Contents
       :type rows: iterable of tuples
       :param target_fields: The names of the columns to fill in the table
       :type target_fields: iterable of strings
+      :param commit_every: The maximum number of rows to insert in one
+          transaction. Set to 0 to insert all rows in one transaction.
+      :type commit_every: int
 
 
 

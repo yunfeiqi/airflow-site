@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -357,6 +357,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -440,7 +441,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -518,6 +519,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -764,31 +766,35 @@ used with MySQL server 5.6.4 through 5.7.</p></td>
 <td><p>PostgreSQL operators and hook, support as an
 Airflow backend</p></td>
 </tr>
-<tr class="row-odd"><td><p>qds</p></td>
+<tr class="row-odd"><td><p>presto</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'apache-airflow[presto]'</span></code></p></td>
+<td><p>All Presto related operators &amp; hooks</p></td>
+</tr>
+<tr class="row-even"><td><p>qds</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'apache-airflow[qds]'</span></code></p></td>
 <td><p>Enable QDS (Qubole Data Service) support</p></td>
 </tr>
-<tr class="row-even"><td><p>rabbitmq</p></td>
+<tr class="row-odd"><td><p>rabbitmq</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'apache-airflow[rabbitmq]'</span></code></p></td>
 <td><p>RabbitMQ support as a Celery backend</p></td>
 </tr>
-<tr class="row-odd"><td><p>redis</p></td>
+<tr class="row-even"><td><p>redis</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'apache-airflow[redis]'</span></code></p></td>
 <td><p>Redis hooks and sensors</p></td>
 </tr>
-<tr class="row-even"><td><p>samba</p></td>
+<tr class="row-odd"><td><p>samba</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">apache-airflow[samba]'</span></code></p></td>
 <td><p><a class="reference internal" href="_api/airflow/operators/hive_to_samba_operator/index.html#airflow.operators.hive_to_samba_operator.Hive2SambaOperator" title="airflow.operators.hive_to_samba_operator.Hive2SambaOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.operators.hive_to_samba_operator.Hive2SambaOperator</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>slack</p></td>
+<tr class="row-even"><td><p>slack</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'apache-airflow[slack']</span></code></p></td>
 <td><p><a class="reference internal" href="_api/airflow/operators/slack_operator/index.html#airflow.operators.slack_operator.SlackAPIOperator" title="airflow.operators.slack_operator.SlackAPIOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.operators.slack_operator.SlackAPIOperator</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p>ssh</p></td>
+<tr class="row-odd"><td><p>ssh</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'apache-airflow[ssh]'</span></code></p></td>
 <td><p>SSH hooks and Operator</p></td>
 </tr>
-<tr class="row-odd"><td><p>vertica</p></td>
+<tr class="row-even"><td><p>vertica</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'apache-airflow[vertica]'</span></code></p></td>
 <td><p>Vertica hook support as an Airflow backend</p></td>
 </tr>

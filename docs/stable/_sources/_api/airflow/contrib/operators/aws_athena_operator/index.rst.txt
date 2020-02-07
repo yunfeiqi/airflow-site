@@ -7,7 +7,7 @@
 Module Contents
 ---------------
 
-.. py:class:: AWSAthenaOperator(query, database, output_location, aws_conn_id='aws_default', client_request_token=None, query_execution_context=None, result_configuration=None, sleep_time=30, max_tries=None, *args, **kwargs)
+.. py:class:: AWSAthenaOperator(query, database, output_location, aws_conn_id='aws_default', client_request_token=None, query_execution_context=None, result_configuration=None, sleep_time=30, max_tries=None, workgroup='default', *args, **kwargs)
 
    Bases: :class:`airflow.models.BaseOperator`
 

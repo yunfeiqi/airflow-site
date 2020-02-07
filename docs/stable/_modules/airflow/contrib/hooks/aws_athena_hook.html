@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -667,7 +669,8 @@ https://www.sphinx-doc.org/en/master/templating.html
             <span class="bp">self</span><span class="o">.</span><span class="n">conn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_client_type</span><span class="p">(</span><span class="s1">&#39;athena&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">conn</span></div>
 
-<div class="viewcode-block" id="AWSAthenaHook.run_query"><a class="viewcode-back" href="../../../../_api/airflow/contrib/hooks/aws_athena_hook/index.html#airflow.contrib.hooks.aws_athena_hook.AWSAthenaHook.run_query">[docs]</a>    <span class="k">def</span> <span class="nf">run_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">query_context</span><span class="p">,</span> <span class="n">result_configuration</span><span class="p">,</span> <span class="n">client_request_token</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="AWSAthenaHook.run_query"><a class="viewcode-back" href="../../../../_api/airflow/contrib/hooks/aws_athena_hook/index.html#airflow.contrib.hooks.aws_athena_hook.AWSAthenaHook.run_query">[docs]</a>    <span class="k">def</span> <span class="nf">run_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">query_context</span><span class="p">,</span> <span class="n">result_configuration</span><span class="p">,</span> <span class="n">client_request_token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                  <span class="n">workgroup</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Run Presto query on athena with provided config and return submitted query_execution_id</span>
 
@@ -679,12 +682,15 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">        :type result_configuration: dict</span>
 <span class="sd">        :param client_request_token: Unique token created by user to avoid multiple executions of same query</span>
 <span class="sd">        :type client_request_token: str</span>
+<span class="sd">        :param workgroup: Athena workgroup name, when not specified, will be &#39;default&#39;</span>
+<span class="sd">        :type workgroup: str</span>
 <span class="sd">        :return: str</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_conn</span><span class="p">()</span><span class="o">.</span><span class="n">start_query_execution</span><span class="p">(</span><span class="n">QueryString</span><span class="o">=</span><span class="n">query</span><span class="p">,</span>
                                                          <span class="n">ClientRequestToken</span><span class="o">=</span><span class="n">client_request_token</span><span class="p">,</span>
                                                          <span class="n">QueryExecutionContext</span><span class="o">=</span><span class="n">query_context</span><span class="p">,</span>
-                                                         <span class="n">ResultConfiguration</span><span class="o">=</span><span class="n">result_configuration</span><span class="p">)</span>
+                                                         <span class="n">ResultConfiguration</span><span class="o">=</span><span class="n">result_configuration</span><span class="p">,</span>
+                                                         <span class="n">Workgroup</span><span class="o">=</span><span class="n">workgroup</span><span class="p">)</span>
         <span class="n">query_execution_id</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;QueryExecutionId&#39;</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">query_execution_id</span></div>
 

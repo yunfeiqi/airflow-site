@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -333,12 +333,14 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l2"><a class="reference internal" href="#instantiate-a-dag">Instantiate a DAG</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tasks">Tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#templating-with-jinja">Templating with Jinja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-dag-and-tasks-documentation">Adding DAG and Tasks documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Adding DAG and Tasks documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-dependencies">Setting up Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#recap">Recap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#running-the-script">Running the Script</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#command-line-metadata-validation">Command Line Metadata Validation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#backfill">Backfill</a></li>
 </ul>
 </li>
@@ -371,6 +373,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -454,7 +457,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -508,12 +511,14 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l2"><a class="reference internal" href="#instantiate-a-dag">Instantiate a DAG</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tasks">Tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#templating-with-jinja">Templating with Jinja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-dag-and-tasks-documentation">Adding DAG and Tasks documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Adding DAG and Tasks documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-dependencies">Setting up Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#recap">Recap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#running-the-script">Running the Script</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#command-line-metadata-validation">Command Line Metadata Validation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#backfill">Backfill</a></li>
 </ul>
 </li>
@@ -546,6 +551,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -657,19 +663,20 @@ objects, and their usage while writing your first pipeline.</p>
 <h2>Example Pipeline definition<a class="headerlink" href="#example-pipeline-definition" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example of a basic pipeline definition. Do not worry if this looks
 complicated, a line by line explanation follows below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Code that goes along with the Airflow tutorial located at:</span>
-<span class="sd">https://github.com/apache/airflow/blob/master/airflow/example_dags/tutorial.py</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="c1"># The DAG object; we&#39;ll need this to instantiate a DAG</span>
 <span class="kn">from</span> <span class="nn">airflow</span> <span class="kn">import</span> <span class="n">DAG</span>
+<span class="c1"># Operators; we need this to operate!</span>
 <span class="kn">from</span> <span class="nn">airflow.operators.bash_operator</span> <span class="kn">import</span> <span class="n">BashOperator</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
-
-
+<span class="kn">from</span> <span class="nn">airflow.utils.dates</span> <span class="kn">import</span> <span class="n">days_ago</span>
+<span class="c1"># These args will get passed on to each operator</span>
+<span class="c1"># You can override them on a per-task basis during operator initialization</span>
 <span class="n">default_args</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;Airflow&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;airflow&#39;</span><span class="p">,</span>
     <span class="s1">&#39;depends_on_past&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
-    <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">days_ago</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
     <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;airflow@example.com&#39;</span><span class="p">],</span>
     <span class="s1">&#39;email_on_failure&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
     <span class="s1">&#39;email_on_retry&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
@@ -679,39 +686,65 @@ complicated, a line by line explanation follows below.</p>
     <span class="c1"># &#39;pool&#39;: &#39;backfill&#39;,</span>
     <span class="c1"># &#39;priority_weight&#39;: 10,</span>
     <span class="c1"># &#39;end_date&#39;: datetime(2016, 1, 1),</span>
+    <span class="c1"># &#39;wait_for_downstream&#39;: False,</span>
+    <span class="c1"># &#39;dag&#39;: dag,</span>
+    <span class="c1"># &#39;sla&#39;: timedelta(hours=2),</span>
+    <span class="c1"># &#39;execution_timeout&#39;: timedelta(seconds=300),</span>
+    <span class="c1"># &#39;on_failure_callback&#39;: some_function,</span>
+    <span class="c1"># &#39;on_success_callback&#39;: some_other_function,</span>
+    <span class="c1"># &#39;on_retry_callback&#39;: another_function,</span>
+    <span class="c1"># &#39;sla_miss_callback&#39;: yet_another_function,</span>
+    <span class="c1"># &#39;trigger_rule&#39;: &#39;all_success&#39;</span>
 <span class="p">}</span>
-
-<span class="n">dag</span> <span class="o">=</span> <span class="n">DAG</span><span class="p">(</span><span class="s1">&#39;tutorial&#39;</span><span class="p">,</span> <span class="n">default_args</span><span class="o">=</span><span class="n">default_args</span><span class="p">,</span> <span class="n">schedule_interval</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">dag</span> <span class="o">=</span> <span class="n">DAG</span><span class="p">(</span>
+    <span class="s1">&#39;tutorial&#39;</span><span class="p">,</span>
+    <span class="n">default_args</span><span class="o">=</span><span class="n">default_args</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;A simple tutorial DAG&#39;</span><span class="p">,</span>
+    <span class="n">schedule_interval</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="p">)</span>
 
 <span class="c1"># t1, t2 and t3 are examples of tasks created by instantiating operators</span>
 <span class="n">t1</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;print_date&#39;</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">t2</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span>
+    <span class="n">depends_on_past</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="s1">&#39;sleep 5&#39;</span><span class="p">,</span>
     <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">dag</span><span class="o">.</span><span class="n">doc_md</span> <span class="o">=</span> <span class="vm">__doc__</span>
 
+<span class="n">t1</span><span class="o">.</span><span class="n">doc_md</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">#### Task Documentation</span>
+<span class="s2">You can document your task using the attributes `doc_md` (markdown),</span>
+<span class="s2">`doc` (plain text), `doc_rst`, `doc_json`, `doc_yaml` which gets</span>
+<span class="s2">rendered in the UI&#39;s Task Instance Details page.</span>
+<span class="s2">![img](http://montcs.bloomu.edu/~bobmon/Semesters/2012-01/491/import</span><span class="si">%20s</span><span class="s2">oul.png)</span>
+<span class="s2">&quot;&quot;&quot;</span>
 <span class="n">templated_command</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    {</span><span class="si">% f</span><span class="s2">or i in range(5) %}</span>
-<span class="s2">        echo &quot;{{ ds }}&quot;</span>
-<span class="s2">        echo &quot;{{ macros.ds_add(ds, 7)}}&quot;</span>
-<span class="s2">        echo &quot;{{ params.my_param }}&quot;</span>
-<span class="s2">    {</span><span class="si">% e</span><span class="s2">ndfor %}</span>
+<span class="s2">{</span><span class="si">% f</span><span class="s2">or i in range(5) %}</span>
+<span class="s2">    echo &quot;{{ ds }}&quot;</span>
+<span class="s2">    echo &quot;{{ macros.ds_add(ds, 7)}}&quot;</span>
+<span class="s2">    echo &quot;{{ params.my_param }}&quot;</span>
+<span class="s2">{</span><span class="si">% e</span><span class="s2">ndfor %}</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">t3</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;templated&#39;</span><span class="p">,</span>
+    <span class="n">depends_on_past</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="n">templated_command</span><span class="p">,</span>
     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;my_param&#39;</span><span class="p">:</span> <span class="s1">&#39;Parameter I passed in&#39;</span><span class="p">},</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
 
-<span class="n">t2</span><span class="o">.</span><span class="n">set_upstream</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
-<span class="n">t3</span><span class="o">.</span><span class="n">set_upstream</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">]</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="it-s-a-dag-definition-file">
@@ -734,12 +767,16 @@ periodically to reflect the changes if any.</p>
 <h2>Importing Modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">¶</a></h2>
 <p>An Airflow pipeline is just a Python script that happens to define an
 Airflow DAG object. Let’s start by importing the libraries we will need.</p>
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The DAG object; we&#39;ll need this to instantiate a DAG</span>
 <span class="kn">from</span> <span class="nn">airflow</span> <span class="kn">import</span> <span class="n">DAG</span>
-
 <span class="c1"># Operators; we need this to operate!</span>
 <span class="kn">from</span> <span class="nn">airflow.operators.bash_operator</span> <span class="kn">import</span> <span class="n">BashOperator</span>
+<span class="kn">from</span> <span class="nn">airflow.utils.dates</span> <span class="kn">import</span> <span class="n">days_ago</span>
+
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="default-arguments">
@@ -748,12 +785,14 @@ Airflow DAG object. Let’s start by importing the libraries we will need.</p>
 explicitly pass a set of arguments to each task’s constructor
 (which would become redundant), or (better!) we can define a dictionary
 of default parameters that we can use when creating tasks.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
-
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># These args will get passed on to each operator</span>
+<span class="c1"># You can override them on a per-task basis during operator initialization</span>
 <span class="n">default_args</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;Airflow&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;airflow&#39;</span><span class="p">,</span>
     <span class="s1">&#39;depends_on_past&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
-    <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">days_ago</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
     <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;airflow@example.com&#39;</span><span class="p">],</span>
     <span class="s1">&#39;email_on_failure&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
     <span class="s1">&#39;email_on_retry&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
@@ -763,8 +802,18 @@ of default parameters that we can use when creating tasks.</p>
     <span class="c1"># &#39;pool&#39;: &#39;backfill&#39;,</span>
     <span class="c1"># &#39;priority_weight&#39;: 10,</span>
     <span class="c1"># &#39;end_date&#39;: datetime(2016, 1, 1),</span>
+    <span class="c1"># &#39;wait_for_downstream&#39;: False,</span>
+    <span class="c1"># &#39;dag&#39;: dag,</span>
+    <span class="c1"># &#39;sla&#39;: timedelta(hours=2),</span>
+    <span class="c1"># &#39;execution_timeout&#39;: timedelta(seconds=300),</span>
+    <span class="c1"># &#39;on_failure_callback&#39;: some_function,</span>
+    <span class="c1"># &#39;on_success_callback&#39;: some_other_function,</span>
+    <span class="c1"># &#39;on_retry_callback&#39;: another_function,</span>
+    <span class="c1"># &#39;sla_miss_callback&#39;: yet_another_function,</span>
+    <span class="c1"># &#39;trigger_rule&#39;: &#39;all_success&#39;</span>
 <span class="p">}</span>
 </pre></div>
+</div>
 </div>
 <p>For more information about the BaseOperator’s parameters and what they do,
 refer to the <a class="reference internal" href="_api/airflow/models/index.html#airflow.models.BaseOperator" title="airflow.models.BaseOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.models.BaseOperator</span></code></a> documentation.</p>
@@ -778,9 +827,16 @@ different settings between a production and development environment.</p>
 that defines the <code class="docutils literal notranslate"><span class="pre">dag_id</span></code>, which serves as a unique identifier for your DAG.
 We also pass the default argument dictionary that we just defined and
 define a <code class="docutils literal notranslate"><span class="pre">schedule_interval</span></code> of 1 day for the DAG.</p>
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dag</span> <span class="o">=</span> <span class="n">DAG</span><span class="p">(</span>
-    <span class="s1">&#39;tutorial&#39;</span><span class="p">,</span> <span class="n">default_args</span><span class="o">=</span><span class="n">default_args</span><span class="p">,</span> <span class="n">schedule_interval</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="s1">&#39;tutorial&#39;</span><span class="p">,</span>
+    <span class="n">default_args</span><span class="o">=</span><span class="n">default_args</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;A simple tutorial DAG&#39;</span><span class="p">,</span>
+    <span class="n">schedule_interval</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="tasks">
@@ -788,17 +844,23 @@ define a <code class="docutils literal notranslate"><span class="pre">schedule_i
 <p>Tasks are generated when instantiating operator objects. An object
 instantiated from an operator is called a constructor. The first argument
 <code class="docutils literal notranslate"><span class="pre">task_id</span></code> acts as a unique identifier for the task.</p>
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;print_date&#39;</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">t2</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span>
+    <span class="n">depends_on_past</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="s1">&#39;sleep 5&#39;</span><span class="p">,</span>
     <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>Notice how we pass a mix of operator specific arguments (<code class="docutils literal notranslate"><span class="pre">bash_command</span></code>) and
 an argument common to all operators (<code class="docutils literal notranslate"><span class="pre">retries</span></code>) inherited
@@ -827,20 +889,25 @@ templating in Airflow, but the goal of this section is to let you know
 this feature exists, get you familiar with double curly brackets, and
 point to the most common template variable: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">ds</span> <span class="pre">}}</span></code> (today’s “date
 stamp”).</p>
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">templated_command</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    {</span><span class="si">% f</span><span class="s2">or i in range(5) %}</span>
-<span class="s2">        echo &quot;{{ ds }}&quot;</span>
-<span class="s2">        echo &quot;{{ macros.ds_add(ds, 7) }}&quot;</span>
-<span class="s2">        echo &quot;{{ params.my_param }}&quot;</span>
-<span class="s2">    {</span><span class="si">% e</span><span class="s2">ndfor %}</span>
+<span class="s2">{</span><span class="si">% f</span><span class="s2">or i in range(5) %}</span>
+<span class="s2">    echo &quot;{{ ds }}&quot;</span>
+<span class="s2">    echo &quot;{{ macros.ds_add(ds, 7)}}&quot;</span>
+<span class="s2">    echo &quot;{{ params.my_param }}&quot;</span>
+<span class="s2">{</span><span class="si">% e</span><span class="s2">ndfor %}</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">t3</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;templated&#39;</span><span class="p">,</span>
+    <span class="n">depends_on_past</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="n">templated_command</span><span class="p">,</span>
     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;my_param&#39;</span><span class="p">:</span> <span class="s1">&#39;Parameter I passed in&#39;</span><span class="p">},</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">templated_command</span></code> contains code logic in <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">%}</span></code> blocks,
 references parameters like <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">ds</span> <span class="pre">}}</span></code>, calls a function as in
@@ -868,6 +935,46 @@ regarding custom filters have a look at the
 <a class="reference external" href="http://jinja.pocoo.org/docs/dev/api/#writing-filters">Jinja Documentation</a></p>
 <p>For more information on the variables and macros that can be referenced
 in templates, make sure to read through the <a class="reference internal" href="macros.html"><span class="doc">Macros reference</span></a></p>
+</div>
+<div class="section" id="adding-dag-and-tasks-documentation">
+<h2>Adding DAG and Tasks documentation<a class="headerlink" href="#adding-dag-and-tasks-documentation" title="Permalink to this headline">¶</a></h2>
+<p>We can add documentation for DAG or each single task. DAG documentation only support
+markdown so far and task documentation support plain text, markdown, reStructuredText,
+json, yaml</p>
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dag</span><span class="o">.</span><span class="n">doc_md</span> <span class="o">=</span> <span class="vm">__doc__</span>
+
+<span class="n">t1</span><span class="o">.</span><span class="n">doc_md</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">#### Task Documentation</span>
+<span class="s2">You can document your task using the attributes `doc_md` (markdown),</span>
+<span class="s2">`doc` (plain text), `doc_rst`, `doc_json`, `doc_yaml` which gets</span>
+<span class="s2">rendered in the UI&#39;s Task Instance Details page.</span>
+<span class="s2">![img](http://montcs.bloomu.edu/~bobmon/Semesters/2012-01/491/import</span><span class="si">%20s</span><span class="s2">oul.png)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Adding DAG and Tasks documentation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>We can add documentation for DAG or each single task. DAG documentation only support
+markdown so far and task documentation support plain text, markdown, reStructuredText,
+json, yaml</p>
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dag</span><span class="o">.</span><span class="n">doc_md</span> <span class="o">=</span> <span class="vm">__doc__</span>
+
+<span class="n">t1</span><span class="o">.</span><span class="n">doc_md</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">#### Task Documentation</span>
+<span class="s2">You can document your task using the attributes `doc_md` (markdown),</span>
+<span class="s2">`doc` (plain text), `doc_rst`, `doc_json`, `doc_yaml` which gets</span>
+<span class="s2">rendered in the UI&#39;s Task Instance Details page.</span>
+<span class="s2">![img](http://montcs.bloomu.edu/~bobmon/Semesters/2012-01/491/import</span><span class="si">%20s</span><span class="s2">oul.png)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="setting-up-dependencies">
 <h2>Setting up Dependencies<a class="headerlink" href="#setting-up-dependencies" title="Permalink to this headline">¶</a></h2>
@@ -908,19 +1015,20 @@ than once.</p>
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <p>Alright, so we have a pretty basic DAG. At this point your code should look
 something like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Code that goes along with the Airflow tutorial located at:</span>
-<span class="sd">https://github.com/apache/airflow/blob/master/airflow/example_dags/tutorial.py</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<div class="example-block-wrapper docutils container">
+<p class="example-header example-header--with-button"><span class="example-title">airflow/example_dags/tutorial.py</span><a class="example-header-button viewcode-button reference internal" href="_modules/airflow/example_dags/tutorial.html"><span>View Source</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="c1"># The DAG object; we&#39;ll need this to instantiate a DAG</span>
 <span class="kn">from</span> <span class="nn">airflow</span> <span class="kn">import</span> <span class="n">DAG</span>
+<span class="c1"># Operators; we need this to operate!</span>
 <span class="kn">from</span> <span class="nn">airflow.operators.bash_operator</span> <span class="kn">import</span> <span class="n">BashOperator</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
-
-
+<span class="kn">from</span> <span class="nn">airflow.utils.dates</span> <span class="kn">import</span> <span class="n">days_ago</span>
+<span class="c1"># These args will get passed on to each operator</span>
+<span class="c1"># You can override them on a per-task basis during operator initialization</span>
 <span class="n">default_args</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;Airflow&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;airflow&#39;</span><span class="p">,</span>
     <span class="s1">&#39;depends_on_past&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
-    <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">days_ago</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
     <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;airflow@example.com&#39;</span><span class="p">],</span>
     <span class="s1">&#39;email_on_failure&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
     <span class="s1">&#39;email_on_retry&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
@@ -930,44 +1038,69 @@ something like this:</p>
     <span class="c1"># &#39;pool&#39;: &#39;backfill&#39;,</span>
     <span class="c1"># &#39;priority_weight&#39;: 10,</span>
     <span class="c1"># &#39;end_date&#39;: datetime(2016, 1, 1),</span>
+    <span class="c1"># &#39;wait_for_downstream&#39;: False,</span>
+    <span class="c1"># &#39;dag&#39;: dag,</span>
+    <span class="c1"># &#39;sla&#39;: timedelta(hours=2),</span>
+    <span class="c1"># &#39;execution_timeout&#39;: timedelta(seconds=300),</span>
+    <span class="c1"># &#39;on_failure_callback&#39;: some_function,</span>
+    <span class="c1"># &#39;on_success_callback&#39;: some_other_function,</span>
+    <span class="c1"># &#39;on_retry_callback&#39;: another_function,</span>
+    <span class="c1"># &#39;sla_miss_callback&#39;: yet_another_function,</span>
+    <span class="c1"># &#39;trigger_rule&#39;: &#39;all_success&#39;</span>
 <span class="p">}</span>
-
 <span class="n">dag</span> <span class="o">=</span> <span class="n">DAG</span><span class="p">(</span>
-    <span class="s1">&#39;tutorial&#39;</span><span class="p">,</span> <span class="n">default_args</span><span class="o">=</span><span class="n">default_args</span><span class="p">,</span> <span class="n">schedule_interval</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="s1">&#39;tutorial&#39;</span><span class="p">,</span>
+    <span class="n">default_args</span><span class="o">=</span><span class="n">default_args</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;A simple tutorial DAG&#39;</span><span class="p">,</span>
+    <span class="n">schedule_interval</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="p">)</span>
 
 <span class="c1"># t1, t2 and t3 are examples of tasks created by instantiating operators</span>
 <span class="n">t1</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;print_date&#39;</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">t2</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;sleep&#39;</span><span class="p">,</span>
+    <span class="n">depends_on_past</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="s1">&#39;sleep 5&#39;</span><span class="p">,</span>
     <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">dag</span><span class="o">.</span><span class="n">doc_md</span> <span class="o">=</span> <span class="vm">__doc__</span>
 
+<span class="n">t1</span><span class="o">.</span><span class="n">doc_md</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">#### Task Documentation</span>
+<span class="s2">You can document your task using the attributes `doc_md` (markdown),</span>
+<span class="s2">`doc` (plain text), `doc_rst`, `doc_json`, `doc_yaml` which gets</span>
+<span class="s2">rendered in the UI&#39;s Task Instance Details page.</span>
+<span class="s2">![img](http://montcs.bloomu.edu/~bobmon/Semesters/2012-01/491/import</span><span class="si">%20s</span><span class="s2">oul.png)</span>
+<span class="s2">&quot;&quot;&quot;</span>
 <span class="n">templated_command</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    {</span><span class="si">% f</span><span class="s2">or i in range(5) %}</span>
-<span class="s2">        echo &quot;{{ ds }}&quot;</span>
-<span class="s2">        echo &quot;{{ macros.ds_add(ds, 7)}}&quot;</span>
-<span class="s2">        echo &quot;{{ params.my_param }}&quot;</span>
-<span class="s2">    {</span><span class="si">% e</span><span class="s2">ndfor %}</span>
+<span class="s2">{</span><span class="si">% f</span><span class="s2">or i in range(5) %}</span>
+<span class="s2">    echo &quot;{{ ds }}&quot;</span>
+<span class="s2">    echo &quot;{{ macros.ds_add(ds, 7)}}&quot;</span>
+<span class="s2">    echo &quot;{{ params.my_param }}&quot;</span>
+<span class="s2">{</span><span class="si">% e</span><span class="s2">ndfor %}</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">t3</span> <span class="o">=</span> <span class="n">BashOperator</span><span class="p">(</span>
     <span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;templated&#39;</span><span class="p">,</span>
+    <span class="n">depends_on_past</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
     <span class="n">bash_command</span><span class="o">=</span><span class="n">templated_command</span><span class="p">,</span>
     <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;my_param&#39;</span><span class="p">:</span> <span class="s1">&#39;Parameter I passed in&#39;</span><span class="p">},</span>
-    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span>
+    <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span>
+<span class="p">)</span>
 
-<span class="n">t2</span><span class="o">.</span><span class="n">set_upstream</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
-<span class="n">t3</span><span class="o">.</span><span class="n">set_upstream</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">t2</span><span class="p">,</span> <span class="n">t3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="testing">
-<span id="id1"></span><h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="running-the-script">
 <h3>Running the Script<a class="headerlink" href="#running-the-script" title="Permalink to this headline">¶</a></h3>
 <p>Time to run some tests. First, let’s make sure the pipeline
@@ -996,11 +1129,13 @@ airflow list_tasks tutorial --tree
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>Testing<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>Let’s test by running the actual task instances on a specific date. The
-date specified in this context is an <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>, which simulates the
-scheduler running your task or dag at a specific date + time:</p>
+<div class="section" id="id3">
+<h3>Testing<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Let’s test by running the actual task instances for a specific date. The
+date specified in this context is called <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>. This is the
+<em>logical</em> date, which simulates the scheduler running your task or dag at
+a specific date and time, even though it <em>physically</em> will run now (
+or as soon as its dependencies are met).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># command layout: command subcommand dag_id task_id date</span>
 
 <span class="c1"># testing print_date</span>
@@ -1031,8 +1166,15 @@ the database to record status. If you do have a webserver up, you’ll be able
 to track the progress. <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">webserver</span></code> will start a web server if you
 are interested in tracking the progress visually as your backfill progresses.</p>
 <p>Note that if you use <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code>, individual task instances
-will depend on the success of the preceding task instance, except for the
-start_date specified itself, for which this dependency is disregarded.</p>
+will depend on the success of their previous task instance (that is, previous
+according to <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>). Task instances with <code class="docutils literal notranslate"><span class="pre">execution_date==start_date</span></code>
+will disregard this dependency because there would be no
+past task instances created for them.</p>
+<p>You may also want to consider <code class="docutils literal notranslate"><span class="pre">wait_for_downstream=True</span></code> when using <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code>.
+While <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code> causes a task instance to depend on the success
+of its previous task_instance, <code class="docutils literal notranslate"><span class="pre">wait_for_downstream=True</span></code> will cause a task instance
+to also wait for all task instances <em>immediately downstream</em> of the previous
+task instance to succeed.</p>
 <p>The date range in this context is a <code class="docutils literal notranslate"><span class="pre">start_date</span></code> and optionally an <code class="docutils literal notranslate"><span class="pre">end_date</span></code>,
 which are used to populate the run schedule with task instances from this dag.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># optional, start a web server in debug mode in the background</span>
@@ -1050,19 +1192,23 @@ airflow backfill tutorial -s <span class="m">2015</span>-06-01 -e <span class="m
 pipeline. Merging your code into a code repository that has a master scheduler
 running against it should get it to get triggered and run every day.</p>
 <p>Here’s a few things you might want to do next:</p>
-<ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>Read the <a class="reference internal" href="concepts.html#concepts"><span class="std std-ref">Concepts page</span></a> for detailed explanation
+of Airflow concepts such as DAGs, Tasks, Operators, etc.</p></li>
 <li><p>Take an in-depth tour of the UI - click all the things!</p></li>
-<li><p>Keep reading the docs! Especially the sections on:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Command line interface</p></li>
-<li><p>Operators</p></li>
-<li><p>Macros</p></li>
+<li><p>Keep reading the docs!</p>
+<ul>
+<li><p>Review the <a class="reference internal" href="howto/index.html"><span class="doc">how-to guides</span></a>, which include a guide to writing your own operator</p></li>
+<li><p>Review the <a class="reference internal" href="cli.html#cli"><span class="std std-ref">Command Line Interface Reference</span></a></p></li>
+<li><p>Review the <a class="reference internal" href="_api/index.html#pythonapi-operators"><span class="std std-ref">List of operators</span></a></p></li>
+<li><p>Review the <a class="reference internal" href="macros.html#macros"><span class="std std-ref">Macros reference</span></a></p></li>
 </ul>
-</div></blockquote>
 </li>
 <li><p>Write your first pipeline!</p></li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -1149,12 +1295,14 @@ running against it should get it to get triggered and run every day.</p>
 <li><a class="reference internal" href="#instantiate-a-dag">Instantiate a DAG</a></li>
 <li><a class="reference internal" href="#tasks">Tasks</a></li>
 <li><a class="reference internal" href="#templating-with-jinja">Templating with Jinja</a></li>
+<li><a class="reference internal" href="#adding-dag-and-tasks-documentation">Adding DAG and Tasks documentation</a></li>
+<li><a class="reference internal" href="#id1">Adding DAG and Tasks documentation</a></li>
 <li><a class="reference internal" href="#setting-up-dependencies">Setting up Dependencies</a></li>
 <li><a class="reference internal" href="#recap">Recap</a></li>
 <li><a class="reference internal" href="#testing">Testing</a><ul>
 <li><a class="reference internal" href="#running-the-script">Running the Script</a></li>
 <li><a class="reference internal" href="#command-line-metadata-validation">Command Line Metadata Validation</a></li>
-<li><a class="reference internal" href="#id2">Testing</a></li>
+<li><a class="reference internal" href="#id3">Testing</a></li>
 <li><a class="reference internal" href="#backfill">Backfill</a></li>
 </ul>
 </li>

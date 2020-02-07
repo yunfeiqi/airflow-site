@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -358,6 +358,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -441,7 +442,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -520,6 +521,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -797,6 +799,10 @@ or for instance when the fix has been applied outside of Airflow.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">backfill</span></code> CLI subcommand has a flag to <code class="docutils literal notranslate"><span class="pre">--mark_success</span></code> and allows selecting
 subsections of the DAG as well as specifying date ranges.</p></li>
 </ul>
+<p>If you want to use ‘external trigger’ to run future-dated execution dates, set <code class="docutils literal notranslate"><span class="pre">allow_trigger_in_future</span> <span class="pre">=</span> <span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">scheduler</span></code> section in <code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code>.
+This only has effect if your DAG has no <code class="docutils literal notranslate"><span class="pre">schedule_interval</span></code>.
+If you keep default <code class="docutils literal notranslate"><span class="pre">allow_trigger_in_future</span> <span class="pre">=</span> <span class="pre">False</span></code> and try ‘external trigger’ to run future-dated execution dates,
+the scheduler won’t execute it now but the scheduler will execute it in the future once the current date rolls over to the execution date.</p>
 </div>
 </div>
 

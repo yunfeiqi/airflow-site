@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -745,7 +747,9 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">        of task X to finish successfully before it runs. This is useful if the</span>
 <span class="sd">        different instances of a task X alter the same asset, and this asset</span>
 <span class="sd">        is used by tasks downstream of task X. Note that depends_on_past</span>
-<span class="sd">        is forced to True wherever wait_for_downstream is used.</span>
+<span class="sd">        is forced to True wherever wait_for_downstream is used. Also note that</span>
+<span class="sd">        only tasks *immediately* downstream of the previous task instance are waited</span>
+<span class="sd">        for; the statuses of any tasks further downstream are ignored.</span>
 <span class="sd">    :type wait_for_downstream: bool</span>
 <span class="sd">    :param queue: which queue to target when running this job. Not</span>
 <span class="sd">        all executors implement queue management, the CeleryExecutor</span>

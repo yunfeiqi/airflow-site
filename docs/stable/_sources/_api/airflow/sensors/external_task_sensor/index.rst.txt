@@ -54,3 +54,34 @@ Module Contents
 
 
 
+.. py:class:: ExternalTaskMarker(external_dag_id, external_task_id, execution_date='{{ execution_date.isoformat() }}', recursion_depth=10, *args, **kwargs)
+
+   Bases: :class:`airflow.operators.dummy_operator.DummyOperator`
+
+   Use this operator to indicate that a task on a different DAG depends on this task.
+   When this task is cleared with "Recursive" selected, Airflow will clear the task on
+   the other DAG and its downstream tasks recursively. Transitive dependencies are followed
+   until the recursion_depth is reached.
+
+   :param external_dag_id: The dag_id that contains the dependent task that needs to be cleared.
+   :type external_dag_id: str
+   :param external_task_id: The task_id of the dependent task that needs to be cleared.
+   :type external_task_id: str
+   :param execution_date: The execution_date of the dependent task that needs to be cleared.
+   :type execution_date: str or datetime.datetime
+   :param recursion_depth: The maximum level of transitive dependencies allowed. Default is 10.
+       This is mostly used for preventing cyclic dependencies. It is fine to increase
+       this number if necessary. However, too many levels of transitive dependencies will make
+       it slower to clear tasks in the web UI.
+
+   .. attribute:: template_fields
+      :annotation: = ['external_dag_id', 'external_task_id', 'execution_date']
+
+      
+
+   .. attribute:: ui_color
+      :annotation: = #19647e
+
+      
+
+

@@ -13,6 +13,7 @@ Submodules
    base_executor/index.rst
    celery_executor/index.rst
    dask_executor/index.rst
+   debug_executor/index.rst
    local_executor/index.rst
    sequential_executor/index.rst
 
@@ -330,6 +331,11 @@ Package Contents
 
    .. attribute:: KubernetesExecutor
       :annotation: = KubernetesExecutor
+
+      
+
+   .. attribute:: DebugExecutor
+      :annotation: = DebugExecutor
 
       
 

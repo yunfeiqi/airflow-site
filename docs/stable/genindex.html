@@ -278,7 +278,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -351,6 +351,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -434,7 +435,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -507,6 +508,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -961,6 +963,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
         <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagModel.__tablename__">(airflow.models.dag.DagModel attribute)</a>
 </li>
+        <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagTag.__tablename__">(airflow.models.dag.DagTag attribute)</a>
+</li>
         <li><a href="_api/airflow/models/index.html#airflow.models.DagModel.__tablename__">(airflow.models.DagModel attribute)</a>
 </li>
         <li><a href="_api/airflow/models/index.html#airflow.models.DagPickle.__tablename__">(airflow.models.DagPickle attribute)</a>
@@ -970,6 +974,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/models/index.html#airflow.models.DagRun.__tablename__">(airflow.models.DagRun attribute)</a>
 </li>
         <li><a href="_api/airflow/models/dagrun/index.html#airflow.models.dagrun.DagRun.__tablename__">(airflow.models.dagrun.DagRun attribute)</a>
+</li>
+        <li><a href="_api/airflow/models/index.html#airflow.models.DagTag.__tablename__">(airflow.models.DagTag attribute)</a>
 </li>
         <li><a href="_api/airflow/models/errors/index.html#airflow.models.errors.ImportError.__tablename__">(airflow.models.errors.ImportError attribute)</a>
 </li>
@@ -983,13 +989,9 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
         <li><a href="_api/airflow/models/index.html#airflow.models.KnownEventType.__tablename__">(airflow.models.KnownEventType attribute)</a>
 </li>
-        <li><a href="_api/airflow/models/index.html#airflow.models.KubeResourceVersion.__tablename__">(airflow.models.KubeResourceVersion attribute)</a>
-</li>
         <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.__tablename__">(airflow.models.kubernetes.KubeResourceVersion attribute)</a>
 </li>
         <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.__tablename__">(airflow.models.kubernetes.KubeWorkerIdentifier attribute)</a>
-</li>
-        <li><a href="_api/airflow/models/index.html#airflow.models.KubeWorkerIdentifier.__tablename__">(airflow.models.KubeWorkerIdentifier attribute)</a>
 </li>
         <li><a href="_api/airflow/models/index.html#airflow.models.Log.__tablename__">(airflow.models.Log attribute)</a>
 </li>
@@ -1512,6 +1514,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
       <li><a href="_api/airflow/contrib/executors/kubernetes_executor/index.html#airflow.contrib.executors.kubernetes_executor.AirflowKubernetesScheduler._make_safe_pod_id">_make_safe_pod_id() (airflow.contrib.executors.kubernetes_executor.AirflowKubernetesScheduler static method)</a>
 </li>
+      <li><a href="_api/airflow/contrib/hooks/spark_submit_hook/index.html#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._mask_cmd">_mask_cmd() (airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook method)</a>
+</li>
       <li><a href="_api/airflow/operators/s3_to_hive_operator/index.html#airflow.operators.s3_to_hive_operator.S3ToHiveTransfer._match_headers">_match_headers() (airflow.operators.s3_to_hive_operator.S3ToHiveTransfer method)</a>
 </li>
       <li><a href="_api/airflow/contrib/operators/azure_container_instances_operator/index.html#airflow.contrib.operators.azure_container_instances_operator.AzureContainerInstancesOperator._monitor_logging">_monitor_logging() (airflow.contrib.operators.azure_container_instances_operator.AzureContainerInstancesOperator method)</a>
@@ -1624,6 +1628,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/models/taskinstance/index.html#airflow.models.taskinstance.TaskInstance._run_raw_task">(airflow.models.taskinstance.TaskInstance method)</a>
 </li>
       </ul></li>
+      <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor._run_task">_run_task() (airflow.executors.debug_executor.DebugExecutor method)</a>
+</li>
       <li><a href="_api/airflow/contrib/operators/dynamodb_to_s3/index.html#airflow.contrib.operators.dynamodb_to_s3.DynamoDBToS3Operator._scan_dynamodb_and_upload_to_s3">_scan_dynamodb_and_upload_to_s3() (airflow.contrib.operators.dynamodb_to_s3.DynamoDBToS3Operator method)</a>
 </li>
       <li><a href="_api/airflow/sensors/index.html#airflow.sensors._sensors">_sensors (in module airflow.sensors)</a>
@@ -1675,6 +1681,8 @@ https://www.sphinx-doc.org/en/master/templating.html
       <li><a href="_api/airflow/hooks/presto_hook/index.html#airflow.hooks.presto_hook.PrestoHook._strip_sql">_strip_sql() (airflow.hooks.presto_hook.PrestoHook static method)</a>
 </li>
       <li><a href="_api/airflow/contrib/executors/kubernetes_executor/index.html#airflow.contrib.executors.kubernetes_executor.AirflowKubernetesScheduler._strip_unsafe_kubernetes_special_chars">_strip_unsafe_kubernetes_special_chars() (airflow.contrib.executors.kubernetes_executor.AirflowKubernetesScheduler static method)</a>
+</li>
+      <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor._terminated">_terminated (airflow.executors.debug_executor.DebugExecutor attribute)</a>
 </li>
       <li><a href="_api/airflow/models/index.html#airflow.models.DAG._test_cycle_helper">_test_cycle_helper() (airflow.models.DAG method)</a>
 
@@ -2280,10 +2288,10 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
       <li><a href="_api/airflow/contrib/operators/sql_to_gcs/index.html#module-airflow.contrib.operators.sql_to_gcs">airflow.contrib.operators.sql_to_gcs (module)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_api/airflow/contrib/operators/sqoop_operator/index.html#module-airflow.contrib.operators.sqoop_operator">airflow.contrib.operators.sqoop_operator (module)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_api/airflow/contrib/operators/ssh_operator/index.html#module-airflow.contrib.operators.ssh_operator">airflow.contrib.operators.ssh_operator (module)</a>
 </li>
       <li><a href="_api/airflow/contrib/operators/vertica_operator/index.html#module-airflow.contrib.operators.vertica_operator">airflow.contrib.operators.vertica_operator (module)</a>
@@ -2373,6 +2381,8 @@ https://www.sphinx-doc.org/en/master/templating.html
       <li><a href="_api/airflow/executors/celery_executor/index.html#module-airflow.executors.celery_executor">airflow.executors.celery_executor (module)</a>
 </li>
       <li><a href="_api/airflow/executors/dask_executor/index.html#module-airflow.executors.dask_executor">airflow.executors.dask_executor (module)</a>
+</li>
+      <li><a href="_api/airflow/executors/debug_executor/index.html#module-airflow.executors.debug_executor">airflow.executors.debug_executor (module)</a>
 </li>
       <li><a href="_api/airflow/executors/local_executor/index.html#module-airflow.executors.local_executor">airflow.executors.local_executor (module)</a>
 </li>
@@ -2594,6 +2604,12 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
       <li><a href="_api/airflow/contrib/hooks/datastore_hook/index.html#airflow.contrib.hooks.datastore_hook.DatastoreHook.allocate_ids">allocate_ids() (airflow.contrib.hooks.datastore_hook.DatastoreHook method)</a>
 </li>
+      <li><a href="_api/airflow/models/index.html#airflow.models.DAG.allow_future_exec_dates">allow_future_exec_dates (airflow.models.DAG attribute)</a>
+
+      <ul>
+        <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DAG.allow_future_exec_dates">(airflow.models.dag.DAG attribute)</a>
+</li>
+      </ul></li>
       <li><a href="_api/airflow/contrib/hooks/gcp_transfer_hook/index.html#airflow.contrib.hooks.gcp_transfer_hook.ALREADY_EXISTING_IN_SINK">ALREADY_EXISTING_IN_SINK (in module airflow.contrib.hooks.gcp_transfer_hook)</a>
 </li>
       <li><a href="_api/airflow/contrib/hooks/gcp_natural_language_hook/index.html#airflow.contrib.hooks.gcp_natural_language_hook.CloudNaturalLanguageHook.analyze_entities">analyze_entities() (airflow.contrib.hooks.gcp_natural_language_hook.CloudNaturalLanguageHook method)</a>
@@ -2905,6 +2921,8 @@ https://www.sphinx-doc.org/en/master/templating.html
       <ul>
         <li><a href="_api/airflow/executors/index.html#airflow.executors.BaseExecutor.change_state">(airflow.executors.BaseExecutor method)</a>
 </li>
+        <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor.change_state">(airflow.executors.debug_executor.DebugExecutor method)</a>
+</li>
       </ul></li>
       <li><a href="_api/airflow/models/index.html#airflow.models.Chart">Chart (class in airflow.models)</a>
 
@@ -2967,17 +2985,9 @@ https://www.sphinx-doc.org/en/master/templating.html
       <li><a href="_api/airflow/operators/check_operator/index.html#airflow.operators.check_operator.CheckOperator">CheckOperator (class in airflow.operators.check_operator)</a>
 </li>
       <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.checkpoint_kube_worker_uuid">checkpoint_kube_worker_uuid() (airflow.models.kubernetes.KubeWorkerIdentifier static method)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/index.html#airflow.models.KubeWorkerIdentifier.checkpoint_kube_worker_uuid">(airflow.models.KubeWorkerIdentifier static method)</a>
 </li>
-      </ul></li>
-      <li><a href="_api/airflow/models/index.html#airflow.models.KubeResourceVersion.checkpoint_resource_version">checkpoint_resource_version() (airflow.models.KubeResourceVersion static method)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.checkpoint_resource_version">(airflow.models.kubernetes.KubeResourceVersion static method)</a>
+      <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.checkpoint_resource_version">checkpoint_resource_version() (airflow.models.kubernetes.KubeResourceVersion static method)</a>
 </li>
-      </ul></li>
       <li><a href="_api/airflow/operators/branch_operator/index.html#airflow.operators.branch_operator.BaseBranchOperator.choose_branch">choose_branch() (airflow.operators.branch_operator.BaseBranchOperator method)</a>
 </li>
       <li><a href="_api/airflow/contrib/hooks/gcp_natural_language_hook/index.html#airflow.contrib.hooks.gcp_natural_language_hook.CloudNaturalLanguageHook.classify_text">classify_text() (airflow.contrib.hooks.gcp_natural_language_hook.CloudNaturalLanguageHook method)</a>
@@ -3587,11 +3597,15 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
         <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagModel.dag_id">(airflow.models.dag.DagModel attribute)</a>
 </li>
+        <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagTag.dag_id">(airflow.models.dag.DagTag attribute)</a>
+</li>
         <li><a href="_api/airflow/models/index.html#airflow.models.DagModel.dag_id">(airflow.models.DagModel attribute)</a>
 </li>
         <li><a href="_api/airflow/models/index.html#airflow.models.DagRun.dag_id">(airflow.models.DagRun attribute)</a>
 </li>
         <li><a href="_api/airflow/models/dagrun/index.html#airflow.models.dagrun.DagRun.dag_id">(airflow.models.dagrun.DagRun attribute)</a>
+</li>
+        <li><a href="_api/airflow/models/index.html#airflow.models.DagTag.dag_id">(airflow.models.DagTag attribute)</a>
 </li>
         <li><a href="_api/airflow/models/index.html#airflow.models.Log.dag_id">(airflow.models.Log attribute)</a>
 </li>
@@ -3666,6 +3680,12 @@ https://www.sphinx-doc.org/en/master/templating.html
       </ul></li>
       <li><a href="_api/airflow/operators/dagrun_operator/index.html#airflow.operators.dagrun_operator.DagRunOrder">DagRunOrder (class in airflow.operators.dagrun_operator)</a>
 </li>
+      <li><a href="_api/airflow/models/index.html#airflow.models.DagTag">DagTag (class in airflow.models)</a>
+
+      <ul>
+        <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagTag">(class in airflow.models.dag)</a>
+</li>
+      </ul></li>
       <li><a href="_api/airflow/executors/index.html#airflow.executors.Executors.DaskExecutor">DaskExecutor (airflow.executors.Executors attribute)</a>
 
       <ul>
@@ -3766,6 +3786,12 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/models/connection/index.html#airflow.models.connection.Connection.debug_info">(airflow.models.connection.Connection method)</a>
 </li>
       </ul></li>
+      <li><a href="_api/airflow/executors/index.html#airflow.executors.Executors.DebugExecutor">DebugExecutor (airflow.executors.Executors attribute)</a>
+
+      <ul>
+        <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor">(class in airflow.executors.debug_executor)</a>
+</li>
+      </ul></li>
       <li><a href="_api/airflow/contrib/hooks/gcp_kms_hook/index.html#airflow.contrib.hooks.gcp_kms_hook.GoogleCloudKMSHook.decrypt">decrypt() (airflow.contrib.hooks.gcp_kms_hook.GoogleCloudKMSHook method)</a>
 
       <ul>
@@ -3826,6 +3852,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
       <li><a href="_api/airflow/operators/hive_to_druid/index.html#airflow.operators.hive_to_druid.DEFAULT_TARGET_PARTITION_SIZE">DEFAULT_TARGET_PARTITION_SIZE (in module airflow.operators.hive_to_druid)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagModel.default_view">default_view (airflow.models.dag.DagModel attribute)</a>
 
       <ul>
@@ -3834,8 +3862,6 @@ https://www.sphinx-doc.org/en/master/templating.html
       </ul></li>
       <li><a href="_api/airflow/contrib/operators/azure_container_instances_operator/index.html#airflow.contrib.operators.azure_container_instances_operator.DEFAULT_VOLUMES">DEFAULT_VOLUMES (in module airflow.contrib.operators.azure_container_instances_operator)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_api/airflow/contrib/hooks/gcp_dlp_hook/index.html#airflow.contrib.hooks.gcp_dlp_hook.CloudDLPHook.deidentify_content">deidentify_content() (airflow.contrib.hooks.gcp_dlp_hook.CloudDLPHook method)</a>
 </li>
       <li><a href="_api/airflow/contrib/hooks/azure_container_instance_hook/index.html#airflow.contrib.hooks.azure_container_instance_hook.AzureContainerInstanceHook.delete">delete() (airflow.contrib.hooks.azure_container_instance_hook.AzureContainerInstanceHook method)</a>
@@ -4168,6 +4194,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/executors/celery_executor/index.html#airflow.executors.celery_executor.CeleryExecutor.end">(airflow.executors.celery_executor.CeleryExecutor method)</a>
 </li>
         <li><a href="_api/airflow/executors/dask_executor/index.html#airflow.executors.dask_executor.DaskExecutor.end">(airflow.executors.dask_executor.DaskExecutor method)</a>
+</li>
+        <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor.end">(airflow.executors.debug_executor.DebugExecutor method)</a>
 </li>
         <li><a href="_api/airflow/executors/local_executor/index.html#airflow.executors.local_executor.LocalExecutor.end">(airflow.executors.local_executor.LocalExecutor method)</a>
 </li>
@@ -4761,6 +4789,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
         <li><a href="_api/airflow/executors/dask_executor/index.html#airflow.executors.dask_executor.DaskExecutor.execute_async">(airflow.executors.dask_executor.DaskExecutor method)</a>
 </li>
+        <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor.execute_async">(airflow.executors.debug_executor.DebugExecutor method)</a>
+</li>
         <li><a href="_api/airflow/executors/local_executor/index.html#airflow.executors.local_executor.LocalExecutor.execute_async">(airflow.executors.local_executor.LocalExecutor method)</a>
 </li>
         <li><a href="_api/airflow/executors/local_executor/index.html#airflow.executors.local_executor.LocalExecutor._LimitedParallelism.execute_async">(airflow.executors.local_executor.LocalExecutor._LimitedParallelism method)</a>
@@ -4866,6 +4896,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/models/dagrun/index.html#airflow.models.dagrun.DagRun.external_trigger">(airflow.models.dagrun.DagRun attribute)</a>
 </li>
       </ul></li>
+      <li><a href="_api/airflow/sensors/external_task_sensor/index.html#airflow.sensors.external_task_sensor.ExternalTaskMarker">ExternalTaskMarker (class in airflow.sensors.external_task_sensor)</a>
+</li>
       <li><a href="_api/airflow/operators/sensors/index.html#airflow.operators.sensors.ExternalTaskSensor">ExternalTaskSensor (class in airflow.operators.sensors)</a>
 
       <ul>
@@ -5410,12 +5442,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/models/index.html#airflow.models.DagModel.get_current">(airflow.models.DagModel class method)</a>
 </li>
       </ul></li>
-      <li><a href="_api/airflow/models/index.html#airflow.models.KubeResourceVersion.get_current_resource_version">get_current_resource_version() (airflow.models.KubeResourceVersion static method)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.get_current_resource_version">(airflow.models.kubernetes.KubeResourceVersion static method)</a>
+      <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.get_current_resource_version">get_current_resource_version() (airflow.models.kubernetes.KubeResourceVersion static method)</a>
 </li>
-      </ul></li>
       <li><a href="_api/airflow/hooks/dbapi_hook/index.html#airflow.hooks.dbapi_hook.DbApiHook.get_cursor">get_cursor() (airflow.hooks.dbapi_hook.DbApiHook method)</a>
 </li>
       <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagModel.get_dag">get_dag() (airflow.models.dag.DagModel method)</a>
@@ -5452,6 +5480,12 @@ https://www.sphinx-doc.org/en/master/templating.html
 
       <ul>
         <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DAG.get_dagruns_between">(airflow.models.dag.DAG method)</a>
+</li>
+      </ul></li>
+      <li><a href="_api/airflow/models/index.html#airflow.models.DAG.get_dagtags">get_dagtags() (airflow.models.DAG method)</a>
+
+      <ul>
+        <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DAG.get_dagtags">(airflow.models.dag.DAG method)</a>
 </li>
       </ul></li>
       <li><a href="_api/airflow/contrib/hooks/gcp_spanner_hook/index.html#airflow.contrib.hooks.gcp_spanner_hook.CloudSpannerHook.get_database">get_database() (airflow.contrib.hooks.gcp_spanner_hook.CloudSpannerHook method)</a>
@@ -5702,6 +5736,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
       <li><a href="_api/airflow/contrib/hooks/gcp_compute_hook/index.html#airflow.contrib.hooks.gcp_compute_hook.GceHook.get_instance_template">get_instance_template() (airflow.contrib.hooks.gcp_compute_hook.GceHook method)</a>
 </li>
+      <li><a href="_api/airflow/hooks/presto_hook/index.html#airflow.hooks.presto_hook.PrestoHook.get_isolation_level">get_isolation_level() (airflow.hooks.presto_hook.PrestoHook method)</a>
+</li>
       <li><a href="_api/airflow/contrib/hooks/jenkins_hook/index.html#airflow.contrib.hooks.jenkins_hook.JenkinsHook.get_jenkins_server">get_jenkins_server() (airflow.contrib.hooks.jenkins_hook.JenkinsHook method)</a>
 </li>
       <li><a href="_api/airflow/contrib/hooks/gcp_dlp_hook/index.html#airflow.contrib.hooks.gcp_dlp_hook.CloudDLPHook.get_job_trigger">get_job_trigger() (airflow.contrib.hooks.gcp_dlp_hook.CloudDLPHook method)</a>
@@ -5815,11 +5851,7 @@ https://www.sphinx-doc.org/en/master/templating.html
       <li><a href="_api/airflow/contrib/hooks/qubole_hook/index.html#airflow.contrib.hooks.qubole_hook.get_options_list">get_options_list() (in module airflow.contrib.hooks.qubole_hook)</a>
 </li>
       <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid">get_or_create_current_kube_worker_uuid() (airflow.models.kubernetes.KubeWorkerIdentifier static method)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/index.html#airflow.models.KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid">(airflow.models.KubeWorkerIdentifier static method)</a>
 </li>
-      </ul></li>
       <li><a href="_api/airflow/contrib/hooks/bigquery_hook/index.html#airflow.contrib.hooks.bigquery_hook.BigQueryHook.get_pandas_df">get_pandas_df() (airflow.contrib.hooks.bigquery_hook.BigQueryHook method)</a>
 
       <ul>
@@ -6686,12 +6718,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
       <li><a href="_api/airflow/contrib/executors/kubernetes_executor/index.html#airflow.contrib.executors.kubernetes_executor.KubeConfig">KubeConfig (class in airflow.contrib.executors.kubernetes_executor)</a>
 </li>
-      <li><a href="_api/airflow/models/index.html#airflow.models.KubeResourceVersion">KubeResourceVersion (class in airflow.models)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion">(class in airflow.models.kubernetes)</a>
+      <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion">KubeResourceVersion (class in airflow.models.kubernetes)</a>
 </li>
-      </ul></li>
       <li><a href="_api/airflow/contrib/executors/kubernetes_executor/index.html#airflow.contrib.executors.kubernetes_executor.KubeConfig.kubernetes_section">kubernetes_section (airflow.contrib.executors.kubernetes_executor.KubeConfig attribute)</a>
 </li>
       <li><a href="_api/airflow/executors/index.html#airflow.executors.Executors.KubernetesExecutor">KubernetesExecutor (airflow.executors.Executors attribute)</a>
@@ -6706,12 +6734,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
       <li><a href="_api/airflow/contrib/operators/kubernetes_pod_operator/index.html#airflow.contrib.operators.kubernetes_pod_operator.KubernetesPodOperator">KubernetesPodOperator (class in airflow.contrib.operators.kubernetes_pod_operator)</a>
 </li>
-      <li><a href="_api/airflow/models/index.html#airflow.models.KubeWorkerIdentifier">KubeWorkerIdentifier (class in airflow.models)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier">(class in airflow.models.kubernetes)</a>
+      <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier">KubeWorkerIdentifier (class in airflow.models.kubernetes)</a>
 </li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -7031,6 +7055,10 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
         <li><a href="_api/airflow/models/index.html#airflow.models.BaseOperatorLink.name">(airflow.models.BaseOperatorLink attribute)</a>
 </li>
+        <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagTag.name">(airflow.models.dag.DagTag attribute)</a>
+</li>
+        <li><a href="_api/airflow/models/index.html#airflow.models.DagTag.name">(airflow.models.DagTag attribute)</a>
+</li>
       </ul></li>
       <li><a href="_api/airflow/contrib/hooks/gcp_transfer_hook/index.html#airflow.contrib.hooks.gcp_transfer_hook.NAME">NAME (in module airflow.contrib.hooks.gcp_transfer_hook)</a>
 </li>
@@ -7160,14 +7188,10 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/operators/pig_operator/index.html#airflow.operators.pig_operator.PigOperator.on_kill">(airflow.operators.pig_operator.PigOperator method)</a>
 </li>
       </ul></li>
-      <li><a href="_api/airflow/models/index.html#airflow.models.KubeResourceVersion.one_row_id">one_row_id (airflow.models.KubeResourceVersion attribute)</a>
+      <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.one_row_id">one_row_id (airflow.models.kubernetes.KubeResourceVersion attribute)</a>
 
       <ul>
-        <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.one_row_id">(airflow.models.kubernetes.KubeResourceVersion attribute)</a>
-</li>
         <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.one_row_id">(airflow.models.kubernetes.KubeWorkerIdentifier attribute)</a>
-</li>
-        <li><a href="_api/airflow/models/index.html#airflow.models.KubeWorkerIdentifier.one_row_id">(airflow.models.KubeWorkerIdentifier attribute)</a>
 </li>
       </ul></li>
       <li><a href="_api/airflow/models/index.html#airflow.models.Pool.open_slots">open_slots() (airflow.models.Pool method)</a>
@@ -7179,6 +7203,8 @@ https://www.sphinx-doc.org/en/master/templating.html
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_api/airflow/contrib/hooks/openfaas_hook/index.html#airflow.contrib.hooks.openfaas_hook.OpenFaasHook">OpenFaasHook (class in airflow.contrib.hooks.openfaas_hook)</a>
+</li>
+      <li><a href="_api/airflow/executors/celery_executor/index.html#airflow.executors.celery_executor.OPERATION_TIMEOUT">OPERATION_TIMEOUT (in module airflow.executors.celery_executor)</a>
 </li>
       <li><a href="_api/airflow/contrib/hooks/gcp_container_hook/index.html#airflow.contrib.hooks.gcp_container_hook.OPERATIONAL_POLL_INTERVAL">OPERATIONAL_POLL_INTERVAL (in module airflow.contrib.hooks.gcp_container_hook)</a>
 </li>
@@ -7747,6 +7773,8 @@ https://www.sphinx-doc.org/en/master/templating.html
       <ul>
         <li><a href="_api/airflow/executors/index.html#airflow.executors.BaseExecutor.queue_task_instance">(airflow.executors.BaseExecutor method)</a>
 </li>
+        <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor.queue_task_instance">(airflow.executors.debug_executor.DebugExecutor method)</a>
+</li>
       </ul></li>
       <li><a href="_api/airflow/models/index.html#airflow.models.TaskInstance.queued_dttm">queued_dttm (airflow.models.TaskInstance attribute)</a>
 
@@ -7890,12 +7918,8 @@ https://www.sphinx-doc.org/en/master/templating.html
       </ul></li>
       <li><a href="_api/airflow/contrib/hooks/gcp_sql_hook/index.html#airflow.contrib.hooks.gcp_sql_hook.CloudSqlDatabaseHook.reserve_free_tcp_port">reserve_free_tcp_port() (airflow.contrib.hooks.gcp_sql_hook.CloudSqlDatabaseHook method)</a>
 </li>
-      <li><a href="_api/airflow/models/index.html#airflow.models.KubeResourceVersion.reset_resource_version">reset_resource_version() (airflow.models.KubeResourceVersion static method)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.reset_resource_version">(airflow.models.kubernetes.KubeResourceVersion static method)</a>
+      <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.reset_resource_version">reset_resource_version() (airflow.models.kubernetes.KubeResourceVersion static method)</a>
 </li>
-      </ul></li>
       <li><a href="_api/airflow/models/index.html#airflow.models.BaseOperator.resolve_template_files">resolve_template_files() (airflow.models.BaseOperator method)</a>
 
       <ul>
@@ -7908,16 +7932,12 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/operators/index.html#airflow.operators.BaseOperator.resolve_template_files">(airflow.operators.BaseOperator method)</a>
 </li>
       </ul></li>
-      <li><a href="_api/airflow/models/index.html#airflow.models.KubeResourceVersion.resource_version">resource_version (airflow.models.KubeResourceVersion attribute)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.resource_version">(airflow.models.kubernetes.KubeResourceVersion attribute)</a>
+      <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeResourceVersion.resource_version">resource_version (airflow.models.kubernetes.KubeResourceVersion attribute)</a>
 </li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_api/airflow/contrib/executors/mesos_executor/index.html#airflow.contrib.executors.mesos_executor.AirflowMesosScheduler.resourceOffers">resourceOffers() (airflow.contrib.executors.mesos_executor.AirflowMesosScheduler method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_api/airflow/contrib/hooks/databricks_hook/index.html#airflow.contrib.hooks.databricks_hook.DatabricksHook.restart_cluster">restart_cluster() (airflow.contrib.hooks.databricks_hook.DatabricksHook method)</a>
 </li>
       <li><a href="_api/airflow/contrib/hooks/databricks_hook/index.html#airflow.contrib.hooks.databricks_hook.RESTART_CLUSTER_ENDPOINT">RESTART_CLUSTER_ENDPOINT (in module airflow.contrib.hooks.databricks_hook)</a>
@@ -8713,6 +8733,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
         <li><a href="_api/airflow/executors/dask_executor/index.html#airflow.executors.dask_executor.DaskExecutor.sync">(airflow.executors.dask_executor.DaskExecutor method)</a>
 </li>
+        <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor.sync">(airflow.executors.debug_executor.DebugExecutor method)</a>
+</li>
         <li><a href="_api/airflow/executors/local_executor/index.html#airflow.executors.local_executor.LocalExecutor.sync">(airflow.executors.local_executor.LocalExecutor method)</a>
 </li>
         <li><a href="_api/airflow/executors/local_executor/index.html#airflow.executors.local_executor.LocalExecutor._LimitedParallelism.sync">(airflow.executors.local_executor.LocalExecutor._LimitedParallelism method)</a>
@@ -8750,6 +8772,12 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/contrib/hooks/cassandra_hook/index.html#airflow.contrib.hooks.cassandra_hook.CassandraHook.table_exists">(airflow.contrib.hooks.cassandra_hook.CassandraHook method)</a>
 </li>
         <li><a href="_api/airflow/hooks/hive_hooks/index.html#airflow.hooks.hive_hooks.HiveMetastoreHook.table_exists">(airflow.hooks.hive_hooks.HiveMetastoreHook method)</a>
+</li>
+      </ul></li>
+      <li><a href="_api/airflow/models/dag/index.html#airflow.models.dag.DagModel.tags">tags (airflow.models.dag.DagModel attribute)</a>
+
+      <ul>
+        <li><a href="_api/airflow/models/index.html#airflow.models.DagModel.tags">(airflow.models.DagModel attribute)</a>
 </li>
       </ul></li>
       <li><a href="_api/airflow/contrib/hooks/sagemaker_hook/index.html#airflow.contrib.hooks.sagemaker_hook.LogState.TAILING">TAILING (airflow.contrib.hooks.sagemaker_hook.LogState attribute)</a>
@@ -9503,6 +9531,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
         <li><a href="_api/airflow/operators/sqlite_operator/index.html#airflow.operators.sqlite_operator.SqliteOperator.template_fields">(airflow.operators.sqlite_operator.SqliteOperator attribute)</a>
 </li>
+        <li><a href="_api/airflow/sensors/external_task_sensor/index.html#airflow.sensors.external_task_sensor.ExternalTaskMarker.template_fields">(airflow.sensors.external_task_sensor.ExternalTaskMarker attribute)</a>
+</li>
         <li><a href="_api/airflow/sensors/external_task_sensor/index.html#airflow.sensors.external_task_sensor.ExternalTaskSensor.template_fields">(airflow.sensors.external_task_sensor.ExternalTaskSensor attribute)</a>
 </li>
         <li><a href="_api/airflow/sensors/hdfs_sensor/index.html#airflow.sensors.hdfs_sensor.HdfsSensor.template_fields">(airflow.sensors.hdfs_sensor.HdfsSensor attribute)</a>
@@ -9534,6 +9564,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/executors/index.html#airflow.executors.BaseExecutor.terminate">(airflow.executors.BaseExecutor method)</a>
 </li>
         <li><a href="_api/airflow/executors/dask_executor/index.html#airflow.executors.dask_executor.DaskExecutor.terminate">(airflow.executors.dask_executor.DaskExecutor method)</a>
+</li>
+        <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor.terminate">(airflow.executors.debug_executor.DebugExecutor method)</a>
 </li>
       </ul></li>
       <li><a href="_api/airflow/contrib/hooks/databricks_hook/index.html#airflow.contrib.hooks.databricks_hook.DatabricksHook.terminate_cluster">terminate_cluster() (airflow.contrib.hooks.databricks_hook.DatabricksHook method)</a>
@@ -9644,6 +9676,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <li><a href="_api/airflow/executors/index.html#airflow.executors.BaseExecutor.trigger_tasks">(airflow.executors.BaseExecutor method)</a>
 </li>
         <li><a href="_api/airflow/executors/celery_executor/index.html#airflow.executors.celery_executor.CeleryExecutor.trigger_tasks">(airflow.executors.celery_executor.CeleryExecutor method)</a>
+</li>
+        <li><a href="_api/airflow/executors/debug_executor/index.html#airflow.executors.debug_executor.DebugExecutor.trigger_tasks">(airflow.executors.debug_executor.DebugExecutor method)</a>
 </li>
       </ul></li>
       <li><a href="_api/airflow/operators/dagrun_operator/index.html#airflow.operators.dagrun_operator.TriggerDagRunOperator">TriggerDagRunOperator (class in airflow.operators.dagrun_operator)</a>
@@ -9919,6 +9953,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
         <li><a href="_api/airflow/sensors/base_sensor_operator/index.html#airflow.sensors.base_sensor_operator.BaseSensorOperator.ui_color">(airflow.sensors.base_sensor_operator.BaseSensorOperator attribute)</a>
 </li>
+        <li><a href="_api/airflow/sensors/external_task_sensor/index.html#airflow.sensors.external_task_sensor.ExternalTaskMarker.ui_color">(airflow.sensors.external_task_sensor.ExternalTaskMarker attribute)</a>
+</li>
         <li><a href="_api/airflow/sensors/external_task_sensor/index.html#airflow.sensors.external_task_sensor.ExternalTaskSensor.ui_color">(airflow.sensors.external_task_sensor.ExternalTaskSensor attribute)</a>
 </li>
         <li><a href="_api/airflow/sensors/hdfs_sensor/index.html#airflow.sensors.hdfs_sensor.HdfsSensor.ui_color">(airflow.sensors.hdfs_sensor.HdfsSensor attribute)</a>
@@ -10156,10 +10192,10 @@ https://www.sphinx-doc.org/en/master/templating.html
 </li>
       <li><a href="_api/airflow/contrib/hooks/wasb_hook/index.html#airflow.contrib.hooks.wasb_hook.WasbHook">WasbHook (class in airflow.contrib.hooks.wasb_hook)</a>
 </li>
-      <li><a href="_api/airflow/contrib/sensors/wasb_sensor/index.html#airflow.contrib.sensors.wasb_sensor.WasbPrefixSensor">WasbPrefixSensor (class in airflow.contrib.sensors.wasb_sensor)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_api/airflow/contrib/sensors/wasb_sensor/index.html#airflow.contrib.sensors.wasb_sensor.WasbPrefixSensor">WasbPrefixSensor (class in airflow.contrib.sensors.wasb_sensor)</a>
+</li>
       <li><a href="_api/airflow/hooks/webhdfs_hook/index.html#airflow.hooks.webhdfs_hook.WebHDFSHook">WebHDFSHook (class in airflow.hooks.webhdfs_hook)</a>
 </li>
       <li><a href="_api/airflow/operators/sensors/index.html#airflow.operators.sensors.WebHdfsSensor">WebHdfsSensor (class in airflow.operators.sensors)</a>
@@ -10179,11 +10215,7 @@ https://www.sphinx-doc.org/en/master/templating.html
       <li><a href="_api/airflow/contrib/operators/winrm_operator/index.html#airflow.contrib.operators.winrm_operator.WinRMOperator">WinRMOperator (class in airflow.contrib.operators.winrm_operator)</a>
 </li>
       <li><a href="_api/airflow/models/kubernetes/index.html#airflow.models.kubernetes.KubeWorkerIdentifier.worker_uuid">worker_uuid (airflow.models.kubernetes.KubeWorkerIdentifier attribute)</a>
-
-      <ul>
-        <li><a href="_api/airflow/models/index.html#airflow.models.KubeWorkerIdentifier.worker_uuid">(airflow.models.KubeWorkerIdentifier attribute)</a>
 </li>
-      </ul></li>
       <li><a href="_api/airflow/contrib/hooks/aws_dynamodb_hook/index.html#airflow.contrib.hooks.aws_dynamodb_hook.AwsDynamoDBHook.write_batch_data">write_batch_data() (airflow.contrib.hooks.aws_dynamodb_hook.AwsDynamoDBHook method)</a>
 </li>
       <li><a href="_api/airflow/models/serialized_dag/index.html#airflow.models.serialized_dag.SerializedDagModel.write_dag">write_dag() (airflow.models.serialized_dag.SerializedDagModel class method)</a>

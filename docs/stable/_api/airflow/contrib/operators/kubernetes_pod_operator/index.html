@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -352,6 +352,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -435,7 +436,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -508,6 +509,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -621,7 +623,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="airflow.contrib.operators.kubernetes_pod_operator.KubernetesPodOperator">
-<em class="property">class </em><code class="sig-prename descclassname">airflow.contrib.operators.kubernetes_pod_operator.</code><code class="sig-name descname">KubernetesPodOperator</code><span class="sig-paren">(</span><em class="sig-param">namespace</em>, <em class="sig-param">image</em>, <em class="sig-param">name</em>, <em class="sig-param">cmds=None</em>, <em class="sig-param">arguments=None</em>, <em class="sig-param">ports=None</em>, <em class="sig-param">volume_mounts=None</em>, <em class="sig-param">volumes=None</em>, <em class="sig-param">env_vars=None</em>, <em class="sig-param">secrets=None</em>, <em class="sig-param">in_cluster=True</em>, <em class="sig-param">cluster_context=None</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">startup_timeout_seconds=120</em>, <em class="sig-param">get_logs=True</em>, <em class="sig-param">image_pull_policy='IfNotPresent'</em>, <em class="sig-param">annotations=None</em>, <em class="sig-param">resources=None</em>, <em class="sig-param">affinity=None</em>, <em class="sig-param">config_file=None</em>, <em class="sig-param">node_selectors=None</em>, <em class="sig-param">image_pull_secrets=None</em>, <em class="sig-param">service_account_name='default'</em>, <em class="sig-param">is_delete_operator_pod=False</em>, <em class="sig-param">hostnetwork=False</em>, <em class="sig-param">tolerations=None</em>, <em class="sig-param">configmaps=None</em>, <em class="sig-param">security_context=None</em>, <em class="sig-param">pod_runtime_info_envs=None</em>, <em class="sig-param">dnspolicy=None</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/airflow/contrib/operators/kubernetes_pod_operator.html#KubernetesPodOperator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.contrib.operators.kubernetes_pod_operator.KubernetesPodOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">airflow.contrib.operators.kubernetes_pod_operator.</code><code class="sig-name descname">KubernetesPodOperator</code><span class="sig-paren">(</span><em class="sig-param">namespace</em>, <em class="sig-param">image</em>, <em class="sig-param">name</em>, <em class="sig-param">cmds=None</em>, <em class="sig-param">arguments=None</em>, <em class="sig-param">ports=None</em>, <em class="sig-param">volume_mounts=None</em>, <em class="sig-param">volumes=None</em>, <em class="sig-param">env_vars=None</em>, <em class="sig-param">secrets=None</em>, <em class="sig-param">in_cluster=None</em>, <em class="sig-param">cluster_context=None</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">startup_timeout_seconds=120</em>, <em class="sig-param">get_logs=True</em>, <em class="sig-param">image_pull_policy='IfNotPresent'</em>, <em class="sig-param">annotations=None</em>, <em class="sig-param">resources=None</em>, <em class="sig-param">affinity=None</em>, <em class="sig-param">config_file=None</em>, <em class="sig-param">node_selectors=None</em>, <em class="sig-param">image_pull_secrets=None</em>, <em class="sig-param">service_account_name='default'</em>, <em class="sig-param">is_delete_operator_pod=False</em>, <em class="sig-param">hostnetwork=False</em>, <em class="sig-param">tolerations=None</em>, <em class="sig-param">configmaps=None</em>, <em class="sig-param">security_context=None</em>, <em class="sig-param">pod_runtime_info_envs=None</em>, <em class="sig-param">dnspolicy=None</em>, <em class="sig-param">do_xcom_push=False</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/airflow/contrib/operators/kubernetes_pod_operator.html#KubernetesPodOperator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.contrib.operators.kubernetes_pod_operator.KubernetesPodOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../../../models/index.html#airflow.models.BaseOperator" title="airflow.models.BaseOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.models.BaseOperator</span></code></a></p>
 <p>Execute a task in a Kubernetes Pod</p>
 <dl class="field-list simple">

@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -352,6 +352,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -435,7 +436,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -508,6 +509,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -620,6 +622,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l1"><a class="reference internal" href="base_executor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">airflow.executors.base_executor</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="celery_executor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">airflow.executors.celery_executor</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="dask_executor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">airflow.executors.dask_executor</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug_executor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">airflow.executors.debug_executor</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="local_executor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">airflow.executors.local_executor</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="sequential_executor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">airflow.executors.sequential_executor</span></code></a></li>
 </ul>
@@ -960,6 +963,11 @@ SequentialExecutor alongside sqlite as you first install it.</p>
 <code class="sig-name descname">KubernetesExecutor</code><em class="property"> = KubernetesExecutor</em><a class="reference internal" href="../../../_modules/airflow/executors.html#Executors.KubernetesExecutor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.executors.Executors.KubernetesExecutor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="airflow.executors.Executors.DebugExecutor">
+<code class="sig-name descname">DebugExecutor</code><em class="property"> = DebugExecutor</em><a class="reference internal" href="../../../_modules/airflow/executors.html#Executors.DebugExecutor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.executors.Executors.DebugExecutor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="function">
@@ -1203,6 +1211,9 @@ SequentialExecutor alongside sqlite as you first install it.</p>
 </ul>
 <ul>
 <li><a class="reference internal" href="#airflow.executors.Executors.KubernetesExecutor">KubernetesExecutor</a></li>
+</ul>
+<ul>
+<li><a class="reference internal" href="#airflow.executors.Executors.DebugExecutor">DebugExecutor</a></li>
 </ul>
 </li>
 </ul>

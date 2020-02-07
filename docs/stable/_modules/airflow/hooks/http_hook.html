@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -697,8 +699,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 
         <span class="k">return</span> <span class="n">session</span></div>
 
-<div class="viewcode-block" id="HttpHook.run"><a class="viewcode-back" href="../../../_api/airflow/hooks/http_hook/index.html#airflow.hooks.http_hook.HttpHook.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra_options</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="HttpHook.run"><a class="viewcode-back" href="../../../_api/airflow/hooks/http_hook/index.html#airflow.hooks.http_hook.HttpHook.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra_options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">request_kwargs</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Performs the request</span>
 
 <span class="sd">        :param endpoint: the endpoint to be called i.e. resource/v1/query?</span>
@@ -711,6 +713,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">            i.e. {&#39;check_response&#39;: False} to avoid checking raising exceptions on non</span>
 <span class="sd">            2XX or 3XX status codes</span>
 <span class="sd">        :type extra_options: dict</span>
+<span class="sd">        :param  \**request_kwargs: Additional kwargs to pass when creating a request.</span>
+<span class="sd">            For example, ``run(json=obj)`` is passed as ``requests.Request(json=obj)``</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">extra_options</span> <span class="o">=</span> <span class="n">extra_options</span> <span class="ow">or</span> <span class="p">{}</span>
 
@@ -728,18 +732,21 @@ https://www.sphinx-doc.org/en/master/templating.html
             <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
                                    <span class="n">url</span><span class="p">,</span>
                                    <span class="n">params</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-                                   <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+                                   <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                                   <span class="o">**</span><span class="n">request_kwargs</span><span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;HEAD&#39;</span><span class="p">:</span>
             <span class="c1"># HEAD doesn&#39;t use params</span>
             <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
                                    <span class="n">url</span><span class="p">,</span>
-                                   <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+                                   <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                                   <span class="o">**</span><span class="n">request_kwargs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Others use data</span>
             <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
                                    <span class="n">url</span><span class="p">,</span>
                                    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-                                   <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+                                   <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                                   <span class="o">**</span><span class="n">request_kwargs</span><span class="p">)</span>
 
         <span class="n">prepped_request</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">prepare_request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Sending &#39;</span><span class="si">%s</span><span class="s2">&#39; to url: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>

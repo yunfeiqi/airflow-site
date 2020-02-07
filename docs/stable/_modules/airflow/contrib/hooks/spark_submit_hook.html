@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -639,7 +641,11 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="kn">from</span> <span class="nn">airflow.hooks.base_hook</span> <span class="k">import</span> <span class="n">BaseHook</span>
 <span class="kn">from</span> <span class="nn">airflow.exceptions</span> <span class="k">import</span> <span class="n">AirflowException</span>
 <span class="kn">from</span> <span class="nn">airflow.utils.log.logging_mixin</span> <span class="k">import</span> <span class="n">LoggingMixin</span>
-<span class="kn">from</span> <span class="nn">airflow.contrib.kubernetes</span> <span class="k">import</span> <span class="n">kube_client</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">airflow.contrib.kubernetes</span> <span class="k">import</span> <span class="n">kube_client</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">pass</span>
 
 
 <div class="viewcode-block" id="SparkSubmitHook"><a class="viewcode-back" href="../../../../_api/airflow/contrib/hooks/spark_submit_hook/index.html#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook">[docs]</a><span class="k">class</span> <span class="nc">SparkSubmitHook</span><span class="p">(</span><span class="n">BaseHook</span><span class="p">,</span> <span class="n">LoggingMixin</span><span class="p">):</span>
@@ -696,6 +702,9 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">    :type name: str</span>
 <span class="sd">    :param num_executors: Number of executors to launch</span>
 <span class="sd">    :type num_executors: int</span>
+<span class="sd">    :param status_poll_interval: Seconds to wait between polls of driver status in cluster</span>
+<span class="sd">        mode (Default: 1)</span>
+<span class="sd">    :type status_poll_interval: int</span>
 <span class="sd">    :param application_args: Arguments for the application being submitted</span>
 <span class="sd">    :type application_args: list</span>
 <span class="sd">    :param env_vars: Environment variables for spark-submit. It</span>
@@ -728,6 +737,7 @@ https://www.sphinx-doc.org/en/master/templating.html
                  <span class="n">proxy_user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">name</span><span class="o">=</span><span class="s1">&#39;default-name&#39;</span><span class="p">,</span>
                  <span class="n">num_executors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">status_poll_interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                  <span class="n">application_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">env_vars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -752,6 +762,7 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="bp">self</span><span class="o">.</span><span class="n">_proxy_user</span> <span class="o">=</span> <span class="n">proxy_user</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_num_executors</span> <span class="o">=</span> <span class="n">num_executors</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_status_poll_interval</span> <span class="o">=</span> <span class="n">status_poll_interval</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_application_args</span> <span class="o">=</span> <span class="n">application_args</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_env_vars</span> <span class="o">=</span> <span class="n">env_vars</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_verbose</span> <span class="o">=</span> <span class="n">verbose</span>
@@ -830,6 +841,15 @@ https://www.sphinx-doc.org/en/master/templating.html
             <span class="n">connection_cmd</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="p">[</span><span class="s1">&#39;spark_binary&#39;</span><span class="p">]]</span>
 
         <span class="k">return</span> <span class="n">connection_cmd</span></div>
+
+<div class="viewcode-block" id="SparkSubmitHook._mask_cmd"><a class="viewcode-back" href="../../../../_api/airflow/contrib/hooks/spark_submit_hook/index.html#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._mask_cmd">[docs]</a>    <span class="k">def</span> <span class="nf">_mask_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection_cmd</span><span class="p">):</span>
+        <span class="c1"># Mask any password related fields in application args with key value pair</span>
+        <span class="c1"># where key contains password (case insensitive), e.g. HivePassword=&#39;abc&#39;</span>
+        <span class="n">connection_cmd_masked</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+            <span class="sa">r</span><span class="s2">&quot;(\S*?(?:secret|password)\S*?\s*=\s*&#39;)[^&#39;]*(?=&#39;)&quot;</span><span class="p">,</span>
+            <span class="sa">r</span><span class="s1">&#39;\1******&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">connection_cmd</span><span class="p">),</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">connection_cmd_masked</span></div>
 
 <div class="viewcode-block" id="SparkSubmitHook._build_spark_submit_command"><a class="viewcode-back" href="../../../../_api/airflow/contrib/hooks/spark_submit_hook/index.html#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._build_spark_submit_command">[docs]</a>    <span class="k">def</span> <span class="nf">_build_spark_submit_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">application</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -916,7 +936,7 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_application_args</span><span class="p">:</span>
             <span class="n">connection_cmd</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_application_args</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Spark-Submit cmd: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">connection_cmd</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Spark-Submit cmd: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mask_cmd</span><span class="p">(</span><span class="n">connection_cmd</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">connection_cmd</span></div>
 
@@ -926,18 +946,41 @@ https://www.sphinx-doc.org/en/master/templating.html
 
 <span class="sd">        :return: full command to be executed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">connection_cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_spark_binary_path</span><span class="p">()</span>
+        <span class="n">curl_max_wait_time</span> <span class="o">=</span> <span class="mi">30</span>
+        <span class="n">spark_host</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="p">[</span><span class="s1">&#39;master&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">spark_host</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;:6066&#39;</span><span class="p">):</span>
+            <span class="n">spark_host</span> <span class="o">=</span> <span class="n">spark_host</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;spark://&quot;</span><span class="p">,</span> <span class="s2">&quot;http://&quot;</span><span class="p">)</span>
+            <span class="n">connection_cmd</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">&quot;/usr/bin/curl&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;--max-time&quot;</span><span class="p">,</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">curl_max_wait_time</span><span class="p">),</span>
+                <span class="s2">&quot;</span><span class="si">{host}</span><span class="s2">/v1/submissions/status/</span><span class="si">{submission_id}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">host</span><span class="o">=</span><span class="n">spark_host</span><span class="p">,</span>
+                    <span class="n">submission_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_driver_id</span><span class="p">)]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">connection_cmd</span><span class="p">)</span>
 
-        <span class="c1"># The url ot the spark master</span>
-        <span class="n">connection_cmd</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;--master&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="p">[</span><span class="s1">&#39;master&#39;</span><span class="p">]]</span>
+            <span class="c1"># The driver id so we can poll for its status</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_driver_id</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">AirflowException</span><span class="p">(</span>
+                    <span class="s2">&quot;Invalid status: attempted to poll driver &quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;status but no driver id is known. Giving up.&quot;</span><span class="p">)</span>
 
-        <span class="c1"># The driver id so we can poll for its status</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_driver_id</span><span class="p">:</span>
-            <span class="n">connection_cmd</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;--status&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_driver_id</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">AirflowException</span><span class="p">(</span>
-                <span class="s2">&quot;Invalid status: attempted to poll driver &quot;</span> <span class="o">+</span>
-                <span class="s2">&quot;status but no driver id is known. Giving up.&quot;</span><span class="p">)</span>
+
+            <span class="n">connection_cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_spark_binary_path</span><span class="p">()</span>
+
+            <span class="c1"># The url to the spark master</span>
+            <span class="n">connection_cmd</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;--master&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="p">[</span><span class="s1">&#39;master&#39;</span><span class="p">]]</span>
+
+            <span class="c1"># The driver id so we can poll for its status</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_driver_id</span><span class="p">:</span>
+                <span class="n">connection_cmd</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;--status&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_driver_id</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">AirflowException</span><span class="p">(</span>
+                    <span class="s2">&quot;Invalid status: attempted to poll driver &quot;</span> <span class="o">+</span>
+                    <span class="s2">&quot;status but no driver id is known. Giving up.&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Poll driver status cmd: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">connection_cmd</span><span class="p">)</span>
 
@@ -973,7 +1016,7 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="k">if</span> <span class="n">returncode</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_is_kubernetes</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spark_exit_code</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">AirflowException</span><span class="p">(</span>
                 <span class="s2">&quot;Cannot execute: </span><span class="si">{}</span><span class="s2">. Error code is: </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="n">spark_submit_cmd</span><span class="p">,</span> <span class="n">returncode</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_mask_cmd</span><span class="p">(</span><span class="n">spark_submit_cmd</span><span class="p">),</span> <span class="n">returncode</span>
                 <span class="p">)</span>
             <span class="p">)</span>
 
@@ -1055,6 +1098,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 
 <span class="sd">        :param itr: An iterator which iterates over the input of the subprocess</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">driver_found</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="c1"># Consume the iterator</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">itr</span><span class="p">:</span>
             <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
@@ -1063,8 +1107,12 @@ https://www.sphinx-doc.org/en/master/templating.html
             <span class="k">if</span> <span class="s2">&quot;driverState&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_driver_status</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; : &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> \
                     <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&quot;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">driver_found</span> <span class="o">=</span> <span class="kc">True</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;spark driver status log: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="p">))</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;spark driver status log: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">driver_found</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_driver_status</span> <span class="o">=</span> <span class="s2">&quot;UNKNOWN&quot;</span></div>
 
 <div class="viewcode-block" id="SparkSubmitHook._start_driver_status_tracking"><a class="viewcode-back" href="../../../../_api/airflow/contrib/hooks/spark_submit_hook/index.html#airflow.contrib.hooks.spark_submit_hook.SparkSubmitHook._start_driver_status_tracking">[docs]</a>    <span class="k">def</span> <span class="nf">_start_driver_status_tracking</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1106,8 +1154,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_driver_status</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;FINISHED&quot;</span><span class="p">,</span> <span class="s2">&quot;UNKNOWN&quot;</span><span class="p">,</span>
                                           <span class="s2">&quot;KILLED&quot;</span><span class="p">,</span> <span class="s2">&quot;FAILED&quot;</span><span class="p">,</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">]:</span>
 
-            <span class="c1"># Sleep for 1 second as we do not want to spam the cluster</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1"># Sleep for n seconds as we do not want to spam the cluster</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_status_poll_interval</span><span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;polling status of spark driver with id </span><span class="si">{}</span><span class="s2">&quot;</span>
                            <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_driver_id</span><span class="p">))</span>
@@ -1147,7 +1195,7 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="k">else</span><span class="p">:</span>
             <span class="n">connection_cmd</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="p">[</span><span class="s1">&#39;spark_binary&#39;</span><span class="p">]]</span>
 
-        <span class="c1"># The url ot the spark master</span>
+        <span class="c1"># The url to the spark master</span>
         <span class="n">connection_cmd</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;--master&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="p">[</span><span class="s1">&#39;master&#39;</span><span class="p">]]</span>
 
         <span class="c1"># The actual kill command</span>

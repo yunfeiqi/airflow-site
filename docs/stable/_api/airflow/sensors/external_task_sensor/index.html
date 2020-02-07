@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -352,6 +352,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -435,7 +436,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -508,6 +509,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -663,6 +665,39 @@ or DAG does not exist (default value: False).</p></li>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="airflow.sensors.external_task_sensor.ExternalTaskMarker">
+<em class="property">class </em><code class="sig-prename descclassname">airflow.sensors.external_task_sensor.</code><code class="sig-name descname">ExternalTaskMarker</code><span class="sig-paren">(</span><em class="sig-param">external_dag_id</em>, <em class="sig-param">external_task_id</em>, <em class="sig-param">execution_date='{{ execution_date.isoformat() }}'</em>, <em class="sig-param">recursion_depth=10</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/airflow/sensors/external_task_sensor.html#ExternalTaskMarker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.sensors.external_task_sensor.ExternalTaskMarker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../operators/dummy_operator/index.html#airflow.operators.dummy_operator.DummyOperator" title="airflow.operators.dummy_operator.DummyOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.operators.dummy_operator.DummyOperator</span></code></a></p>
+<p>Use this operator to indicate that a task on a different DAG depends on this task.
+When this task is cleared with “Recursive” selected, Airflow will clear the task on
+the other DAG and its downstream tasks recursively. Transitive dependencies are followed
+until the recursion_depth is reached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>external_dag_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The dag_id that contains the dependent task that needs to be cleared.</p></li>
+<li><p><strong>external_task_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The task_id of the dependent task that needs to be cleared.</p></li>
+<li><p><strong>execution_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.8)"><em>datetime.datetime</em></a>) – The execution_date of the dependent task that needs to be cleared.</p></li>
+<li><p><strong>recursion_depth</strong> – The maximum level of transitive dependencies allowed. Default is 10.
+This is mostly used for preventing cyclic dependencies. It is fine to increase
+this number if necessary. However, too many levels of transitive dependencies will make
+it slower to clear tasks in the web UI.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="airflow.sensors.external_task_sensor.ExternalTaskMarker.template_fields">
+<code class="sig-name descname">template_fields</code><em class="property"> = ['external_dag_id', 'external_task_id', 'execution_date']</em><a class="reference internal" href="../../../../_modules/airflow/sensors/external_task_sensor.html#ExternalTaskMarker.template_fields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.sensors.external_task_sensor.ExternalTaskMarker.template_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="airflow.sensors.external_task_sensor.ExternalTaskMarker.ui_color">
+<code class="sig-name descname">ui_color</code><em class="property"> = #19647e</em><a class="reference internal" href="../../../../_modules/airflow/sensors/external_task_sensor.html#ExternalTaskMarker.ui_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.sensors.external_task_sensor.ExternalTaskMarker.ui_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 
@@ -751,6 +786,15 @@ or DAG does not exist (default value: False).</p></li>
 </ul>
 <ul>
 <li><a class="reference internal" href="#airflow.sensors.external_task_sensor.ExternalTaskSensor.poke">poke</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a class="reference internal" href="#airflow.sensors.external_task_sensor.ExternalTaskMarker">ExternalTaskMarker</a><ul>
+<li><a class="reference internal" href="#airflow.sensors.external_task_sensor.ExternalTaskMarker.template_fields">template_fields</a></li>
+</ul>
+<ul>
+<li><a class="reference internal" href="#airflow.sensors.external_task_sensor.ExternalTaskMarker.ui_color">ui_color</a></li>
 </ul>
 </li>
 </ul>

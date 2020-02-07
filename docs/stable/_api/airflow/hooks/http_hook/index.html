@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -352,6 +352,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -435,7 +436,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -508,6 +509,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -645,7 +647,7 @@ the Extra field in json format.</p></li>
 
 <dl class="method">
 <dt id="airflow.hooks.http_hook.HttpHook.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">endpoint</em>, <em class="sig-param">data=None</em>, <em class="sig-param">headers=None</em>, <em class="sig-param">extra_options=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/airflow/hooks/http_hook.html#HttpHook.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.hooks.http_hook.HttpHook.run" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">endpoint</em>, <em class="sig-param">data=None</em>, <em class="sig-param">headers=None</em>, <em class="sig-param">extra_options=None</em>, <em class="sig-param">**request_kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/airflow/hooks/http_hook.html#HttpHook.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.hooks.http_hook.HttpHook.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs the request</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -656,6 +658,8 @@ the Extra field in json format.</p></li>
 <li><p><strong>extra_options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – additional options to be used when executing the request
 i.e. {‘check_response’: False} to avoid checking raising exceptions on non
 2XX or 3XX status codes</p></li>
+<li><p><strong>**request_kwargs</strong> – Additional kwargs to pass when creating a request.
+For example, <code class="docutils literal notranslate"><span class="pre">run(json=obj)</span></code> is passed as <code class="docutils literal notranslate"><span class="pre">requests.Request(json=obj)</span></code></p></li>
 </ul>
 </dd>
 </dl>

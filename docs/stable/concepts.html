@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -336,15 +336,28 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l4"><a class="reference internal" href="#context-manager">Context Manager</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#dag-runs">DAG Runs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#execution-date">execution_date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tasks">Tasks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#relations-between-tasks">Relations between Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-instances">Task Instances</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#relations-between-task-instances">Relations between Task Instances</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-lifecycle">Task Lifecycle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#operators">Operators</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#dag-assignment">DAG Assignment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bitshift-composition">Bitshift Composition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#relationship-helper">Relationship Helper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relationship-builders">Relationship Builders</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#tasks">Tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-instances">Task Instances</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-lifecycle">Task Lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Task Instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Task Lifecycle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#workflows">Workflows</a></li>
 </ul>
 </li>
@@ -357,16 +370,13 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#branching">Branching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#subdags">SubDAGs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slas">SLAs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#email-configuration">Email Configuration</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#slas">SLAs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#trigger-rules">Trigger Rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#latest-run-only">Latest Run Only</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zombies-undeads">Zombies &amp; Undeads</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cluster-policy">Cluster Policy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documentation-notes">Documentation &amp; Notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Jinja Templating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jinja-templating">Jinja Templating</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#packaged-dags">Packaged DAGs</a></li>
@@ -396,6 +406,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -479,7 +490,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -536,15 +547,28 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l4"><a class="reference internal" href="#context-manager">Context Manager</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#dag-runs">DAG Runs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#execution-date">execution_date</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tasks">Tasks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#relations-between-tasks">Relations between Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-instances">Task Instances</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#relations-between-task-instances">Relations between Task Instances</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-lifecycle">Task Lifecycle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#operators">Operators</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#dag-assignment">DAG Assignment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bitshift-composition">Bitshift Composition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#relationship-helper">Relationship Helper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relationship-builders">Relationship Builders</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#tasks">Tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-instances">Task Instances</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-lifecycle">Task Lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Task Instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Task Lifecycle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#workflows">Workflows</a></li>
 </ul>
 </li>
@@ -557,16 +581,13 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#branching">Branching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#subdags">SubDAGs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slas">SLAs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#email-configuration">Email Configuration</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#slas">SLAs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#trigger-rules">Trigger Rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#latest-run-only">Latest Run Only</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zombies-undeads">Zombies &amp; Undeads</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cluster-policy">Cluster Policy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documentation-notes">Documentation &amp; Notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Jinja Templating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jinja-templating">Jinja Templating</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#packaged-dags">Packaged DAGs</a></li>
@@ -596,6 +617,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -700,7 +722,7 @@ https://www.sphinx-doc.org/en/master/templating.html
   <blockquote>
 <div></div></blockquote>
 <div class="section" id="concepts">
-<h1>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h1>
 <p>The Airflow platform is a tool for describing, executing, and monitoring
 workflows.</p>
 <div class="section" id="core-ideas">
@@ -710,6 +732,8 @@ workflows.</p>
 <p>In Airflow, a <code class="docutils literal notranslate"><span class="pre">DAG</span></code> – or a Directed Acyclic Graph – is a collection of all
 the tasks you want to run, organized in a way that reflects their relationships
 and dependencies.</p>
+<p>A DAG is defined in a Python script, which represents the DAGs structure (tasks
+and their dependencies) as code.</p>
 <p>For example, a simple DAG could consist of three tasks: A, B, and C. It could
 say that A has to run successfully before B can run, but C can run anytime. It
 could say that task A times out after 5 minutes, and B can be restarted up to 5
@@ -759,7 +783,7 @@ doesn’t try to load it as a standalone DAG.</p>
 any of its operators. This makes it easy to apply a common parameter to many operators without having to type it many times.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">default_args</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;Airflow&#39;</span>
+    <span class="s1">&#39;owner&#39;</span><span class="p">:</span> <span class="s1">&#39;airflow&#39;</span>
 <span class="p">}</span>
 
 <span class="n">dag</span> <span class="o">=</span> <span class="n">DAG</span><span class="p">(</span><span class="s1">&#39;my_dag&#39;</span><span class="p">,</span> <span class="n">default_args</span><span class="o">=</span><span class="n">default_args</span><span class="p">)</span>
@@ -780,14 +804,108 @@ any of its operators. This makes it easy to apply a common parameter to many ope
 </div>
 </div>
 </div>
+<div class="section" id="dag-runs">
+<span id="concepts-dagruns"></span><h3>DAG Runs<a class="headerlink" href="#dag-runs" title="Permalink to this headline">¶</a></h3>
+<p>A DAG run is a physical instance of a DAG, containing task instances that run for a specific <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>.</p>
+<p>A DAG run is usually created by the Airflow scheduler, but can also be created by an external trigger.
+Multiple DAG runs may be running at once for a particular DAG, each of them having a different <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>.
+For example, we might currently have two DAG runs that are in progress for 2016-01-01 and 2016-01-02 respectively.</p>
+<div class="section" id="execution-date">
+<span id="concepts-execution-date"></span><h4>execution_date<a class="headerlink" href="#execution-date" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">execution_date</span></code> is the <em>logical</em> date and time which the DAG Run, and its task instances, are running for.</p>
+<p>This allows task instances to process data for the desired <em>logical</em> date &amp; time.
+While a task_instance or DAG run might have a <em>physical</em> start date of now,
+their <em>logical</em> date might be 3 months ago because we are busy reloading something.</p>
+<p>In the prior example the <code class="docutils literal notranslate"><span class="pre">execution_date</span></code> was 2016-01-01 for the first DAG Run and 2016-01-02 for the second.</p>
+<p>A DAG run and all task instances created within it are instanced with the same <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>, so
+that logically you can think of a DAG run as simulating the DAG running all of its tasks at some
+previous date &amp; time specified by the <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>.</p>
+</div>
+</div>
+<div class="section" id="tasks">
+<span id="concepts-tasks"></span><h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
+<p>A Task defines a unit of work within a DAG; it is represented as a node in the DAG graph, and it is written in Python.</p>
+<p>Each task is an implementation of an Operator, for example a <code class="docutils literal notranslate"><span class="pre">PythonOperator</span></code> to execute some Python code,
+or a <code class="docutils literal notranslate"><span class="pre">BashOperator</span></code> to run a Bash command.</p>
+<p>The task implements an operator by defining specific values for that operator,
+such as a Python callable in the case of <code class="docutils literal notranslate"><span class="pre">PythonOperator</span></code> or a Bash command in the case of <code class="docutils literal notranslate"><span class="pre">BashOperator</span></code>.</p>
+<div class="section" id="relations-between-tasks">
+<h4>Relations between Tasks<a class="headerlink" href="#relations-between-tasks" title="Permalink to this headline">¶</a></h4>
+<p>Consider the following DAG with two tasks.
+Each task is a node in our DAG, and there is a dependency from task_1 to task_2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">DAG</span><span class="p">(</span><span class="s1">&#39;my_dag&#39;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">as</span> <span class="n">dag</span><span class="p">:</span>
+    <span class="n">task_1</span> <span class="o">=</span> <span class="n">DummyOperator</span><span class="p">(</span><span class="s1">&#39;task_1&#39;</span><span class="p">)</span>
+    <span class="n">task_2</span> <span class="o">=</span> <span class="n">DummyOperator</span><span class="p">(</span><span class="s1">&#39;task_2&#39;</span><span class="p">)</span>
+    <span class="n">task_1</span> <span class="o">&gt;&gt;</span> <span class="n">task_2</span> <span class="c1"># Define dependencies</span>
+</pre></div>
+</div>
+<p>We can say that task_1 is <em>upstream</em> of task_2, and conversely task_2 is <em>downstream</em> of task_1.
+When a DAG Run is created, task_1 will start running and task_2 waits for task_1 to complete successfully before it may start.</p>
+</div>
+</div>
+<div class="section" id="task-instances">
+<h3>Task Instances<a class="headerlink" href="#task-instances" title="Permalink to this headline">¶</a></h3>
+<p>A task instance represents a specific run of a task and is characterized as the
+combination of a DAG, a task, and a point in time (<code class="docutils literal notranslate"><span class="pre">execution_date</span></code>). Task instances
+also have an indicative state, which could be “running”, “success”, “failed”, “skipped”, “up
+for retry”, etc.</p>
+<p>Tasks are defined in DAGs, and both are written in Python code to define what you want to do.
+Task Instances belong to DAG Runs, have an associated <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>, and are physicalised, runnable entities.</p>
+<div class="section" id="relations-between-task-instances">
+<h4>Relations between Task Instances<a class="headerlink" href="#relations-between-task-instances" title="Permalink to this headline">¶</a></h4>
+<p>Again consider the following tasks, defined for some DAG:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">DAG</span><span class="p">(</span><span class="s1">&#39;my_dag&#39;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">as</span> <span class="n">dag</span><span class="p">:</span>
+    <span class="n">task_1</span> <span class="o">=</span> <span class="n">DummyOperator</span><span class="p">(</span><span class="s1">&#39;task_1&#39;</span><span class="p">)</span>
+    <span class="n">task_2</span> <span class="o">=</span> <span class="n">DummyOperator</span><span class="p">(</span><span class="s1">&#39;task_2&#39;</span><span class="p">)</span>
+    <span class="n">task_1</span> <span class="o">&gt;&gt;</span> <span class="n">task_2</span> <span class="c1"># Define dependencies</span>
+</pre></div>
+</div>
+<p>When we enable this DAG, the scheduler creates several DAG Runs - one with <code class="docutils literal notranslate"><span class="pre">execution_date</span></code> of 2016-01-01,
+one with <code class="docutils literal notranslate"><span class="pre">execution_date</span></code> of 2016-01-02, and so on up to the current date.</p>
+<p>Each DAG Run will contain a task_1 Task Instance and a task_2 Task instance. Both Task Instances will
+have <code class="docutils literal notranslate"><span class="pre">execution_date</span></code> equal to the DAG Run’s <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>, and each task_2 will be <em>upstream</em> of
+(depends on) its task_1.</p>
+<p>We can also say that task_1 for 2016-01-01 is the <em>previous</em> task instance of the task_1 for 2016-01-02.
+Or that the DAG Run for 2016-01-01 is the <em>previous</em> DAG Run to the DAG Run of 2016-01-02.
+Here, <em>previous</em> refers to the logical past/prior <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>, that runs independently of other runs,
+and <em>upstream</em> refers to a dependency within the same run and having the same <code class="docutils literal notranslate"><span class="pre">execution_date</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Airflow documentation sometimes refers to <em>previous</em> instead of <em>upstream</em> in places, and vice-versa.
+If you find any occurances of this, please help us improve by contributing some corrections!</p>
+</div>
+</div>
+</div>
+<div class="section" id="task-lifecycle">
+<h3>Task Lifecycle<a class="headerlink" href="#task-lifecycle" title="Permalink to this headline">¶</a></h3>
+<p>A task goes through various stages from start to completion. In the Airflow UI
+(graph and tree views), these stages are displayed by a color representing each
+stage:</p>
+<img alt="_images/task_stages.png" src="_images/task_stages.png" />
+<p>The complete lifecycle of the task looks like this:</p>
+<img alt="_images/task_lifecycle_diagram.png" src="_images/task_lifecycle_diagram.png" />
+<p>The happy flow consists of the following stages:</p>
+<ol class="arabic simple">
+<li><p>No status (scheduler created empty task instance)</p></li>
+<li><p>Scheduled (scheduler determined task instance needs to run)</p></li>
+<li><p>Queued (scheduler sent task to executor to run on the queue)</p></li>
+<li><p>Running (worker picked up a task and is now running it)</p></li>
+<li><p>Success (task completed)8</p></li>
+</ol>
+<p>There is also visual difference between scheduled and manually triggered
+DAGs/tasks:</p>
+<img alt="_images/task_manual_vs_scheduled.png" src="_images/task_manual_vs_scheduled.png" />
+<p>The DAGs/tasks with a black border are scheduled runs, whereas the non-bordered
+DAGs/tasks are manually triggered, i.e. by <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">dags</span> <span class="pre">trigger</span></code>.</p>
+</div>
 <div class="section" id="operators">
 <span id="concepts-operators"></span><h3>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h3>
 <p>While DAGs describe <em>how</em> to run a workflow, <code class="docutils literal notranslate"><span class="pre">Operators</span></code> determine what
-actually gets done.</p>
+actually gets done by a task.</p>
 <p>An operator describes a single task in a workflow. Operators are usually (but
 not always) atomic, meaning they can stand on their own and don’t need to share
 resources with any other operators. The DAG will make sure that operators run in
-the correct certain order; other than those dependencies, operators generally
+the correct order; other than those dependencies, operators generally
 run independently. In fact, they may run on two completely different machines.</p>
 <p>This is a subtle but very important point: in general, if two operators need to
 share information, like a filename or small amount of data, you should consider
@@ -806,7 +924,7 @@ described in the section <a class="reference internal" href="#concepts-xcom"><sp
 <a class="reference internal" href="_api/airflow/operators/mssql_operator/index.html#airflow.operators.mssql_operator.MsSqlOperator" title="airflow.operators.mssql_operator.MsSqlOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MsSqlOperator</span></code></a>,
 <a class="reference internal" href="_api/airflow/operators/oracle_operator/index.html#airflow.operators.oracle_operator.OracleOperator" title="airflow.operators.oracle_operator.OracleOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">OracleOperator</span></code></a>,
 <a class="reference internal" href="_api/airflow/operators/jdbc_operator/index.html#airflow.operators.jdbc_operator.JdbcOperator" title="airflow.operators.jdbc_operator.JdbcOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">JdbcOperator</span></code></a>, etc. - executes a SQL command</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Sensor</span></code> - waits for a certain time, file, database row, S3 key, etc…</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sensor</span></code> - an Operator that waits (polls) for a certain time, file, database row, S3 key, etc…</p></li>
 </ul>
 <p>In addition to these basic building blocks, there are many more specific
 operators: <a class="reference internal" href="_api/airflow/operators/docker_operator/index.html#airflow.operators.docker_operator.DockerOperator" title="airflow.operators.docker_operator.DockerOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">DockerOperator</span></code></a>,
@@ -814,7 +932,13 @@ operators: <a class="reference internal" href="_api/airflow/operators/docker_ope
 <a class="reference internal" href="_api/airflow/operators/presto_to_mysql/index.html#airflow.operators.presto_to_mysql.PrestoToMySqlTransfer" title="airflow.operators.presto_to_mysql.PrestoToMySqlTransfer"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrestoToMySqlTransfer</span></code></a>,
 <a class="reference internal" href="_api/airflow/operators/slack_operator/index.html#airflow.operators.slack_operator.SlackAPIOperator" title="airflow.operators.slack_operator.SlackAPIOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlackAPIOperator</span></code></a>… you get the idea!</p>
 <p>Operators are only loaded by Airflow if they are assigned to a DAG.</p>
-<p>See <a class="reference internal" href="howto/operator/index.html"><span class="doc">Using Operators</span></a> for how to use Airflow operators.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="_api/index.html#pythonapi-operators"><span class="std std-ref">List Airflow operators</span></a></p></li>
+<li><p><a class="reference internal" href="howto/operator/index.html"><span class="doc">How-to guides for some Airflow operators</span></a>.</p></li>
+</ul>
+</div>
 <div class="section" id="dag-assignment">
 <h4>DAG Assignment<a class="headerlink" href="#dag-assignment" title="Permalink to this headline">¶</a></h4>
 <p><em>Added in Airflow 1.8</em></p>
@@ -904,8 +1028,10 @@ object is always returned. For example:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="relationship-helper">
-<h4>Relationship Helper<a class="headerlink" href="#relationship-helper" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="relationship-builders">
+<h4>Relationship Builders<a class="headerlink" href="#relationship-builders" title="Permalink to this headline">¶</a></h4>
+<p><em>Moved in Airflow 2.0</em></p>
+<p>In Airflow 2.0 those two methods moved from <code class="docutils literal notranslate"><span class="pre">airflow.utils.helpers</span></code> to <code class="docutils literal notranslate"><span class="pre">airflow.models.baseoperator</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">chain</span></code> and <code class="docutils literal notranslate"><span class="pre">cross_downstream</span></code> function provide easier ways to set relationships
 between operators in specific situation.</p>
 <p>When setting a relationship between two lists,
@@ -925,7 +1051,7 @@ concat them with bitshift composition.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">op1</span> <span class="o">&gt;&gt;</span> <span class="n">op2</span> <span class="o">&gt;&gt;</span> <span class="n">op3</span> <span class="o">&gt;&gt;</span> <span class="n">op4</span> <span class="o">&gt;&gt;</span> <span class="n">op5</span>
 </pre></div>
 </div>
-<p>use <code class="docutils literal notranslate"><span class="pre">chain</span></code> could do that</p>
+<p>This can be accomplished using <code class="docutils literal notranslate"><span class="pre">chain</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chain</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">,</span> <span class="n">op3</span><span class="p">,</span> <span class="n">op4</span><span class="p">,</span> <span class="n">op5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -933,7 +1059,7 @@ concat them with bitshift composition.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chain</span><span class="p">([</span><span class="n">DummyOperator</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s1">&#39;op&#39;</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">chain</span></code> could handle list of operators</p>
+<p><code class="docutils literal notranslate"><span class="pre">chain</span></code> can handle a list of operators</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chain</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="p">[</span><span class="n">op2</span><span class="p">,</span> <span class="n">op3</span><span class="p">],</span> <span class="n">op4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -941,8 +1067,7 @@ concat them with bitshift composition.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">op1</span> <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">op2</span><span class="p">,</span> <span class="n">op3</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">op4</span>
 </pre></div>
 </div>
-<p>Have to same size when <code class="docutils literal notranslate"><span class="pre">chain</span></code> set relationships between two list
-of operators.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">chain</span></code> sets relationships between two lists of operators, they must have the same size.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chain</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="p">[</span><span class="n">op2</span><span class="p">,</span> <span class="n">op3</span><span class="p">],</span> <span class="p">[</span><span class="n">op4</span><span class="p">,</span> <span class="n">op5</span><span class="p">],</span> <span class="n">op6</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -955,21 +1080,21 @@ of operators.</p>
 </div>
 </div>
 </div>
-<div class="section" id="tasks">
-<h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Tasks<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Once an operator is instantiated, it is referred to as a “task”. The
 instantiation defines specific values when calling the abstract operator, and
 the parameterized task becomes a node in a DAG.</p>
 </div>
-<div class="section" id="task-instances">
-<h3>Task Instances<a class="headerlink" href="#task-instances" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Task Instances<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>A task instance represents a specific run of a task and is characterized as the
 combination of a DAG, a task, and a point in time. Task instances also have an
 indicative state, which could be “running”, “success”, “failed”, “skipped”, “up
 for retry”, etc.</p>
 </div>
-<div class="section" id="task-lifecycle">
-<h3>Task Lifecycle<a class="headerlink" href="#task-lifecycle" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Task Lifecycle<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>A task goes through various stages from start to completion. In the Airflow UI
 (graph and tree views), these stages are displayed by a color representing each
 stage:</p>
@@ -996,11 +1121,14 @@ DAGs/tasks are manually triggered, i.e. by <code class="docutils literal notrans
 Some of the concepts may sound very similar, but the vocabulary can
 be conceptualized like this:</p>
 <ul class="simple">
-<li><p>DAG: a description of the order in which work should take place</p></li>
-<li><p>Operator: a class that acts as a template for carrying out some work</p></li>
-<li><p>Task: a parameterized instance of an operator</p></li>
-<li><p>Task Instance: a task that 1) has been assigned to a DAG and 2) has a
-state associated with a specific run of the DAG</p></li>
+<li><p>DAG: The work (tasks), and the order in which
+work should take place (dependencies), written in Python.</p></li>
+<li><p>DAG Run: An instance of a DAG for a particular logical date and time.</p></li>
+<li><p>Operator: A class that acts as a template for carrying out some work.</p></li>
+<li><p>Task: Defines work by implementing an operator, written in Python.</p></li>
+<li><p>Task Instance: An instance of a task - that has been assigned to a DAG and has a
+state associated with a specific DAG run (i.e for a specific execution_date).</p></li>
+<li><p>execution_date: The logical date and time for a DAG Run and its Task Instances.</p></li>
 </ul>
 <p>By combining <code class="docutils literal notranslate"><span class="pre">DAGs</span></code> and <code class="docutils literal notranslate"><span class="pre">Operators</span></code> to create <code class="docutils literal notranslate"><span class="pre">TaskInstances</span></code>, you can
 build complex workflows.</p>
@@ -1022,6 +1150,10 @@ information out of pipelines, centralized in the metadata database.</p>
 <p>Hooks are also very useful on their own to use in Python scripts,
 Airflow airflow.operators.PythonOperator, and in interactive environments
 like iPython or Jupyter Notebook.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="_api/index.html#pythonapi-hooks"><span class="std std-ref">List Airflow hooks</span></a></p>
+</div>
 </div>
 <div class="section" id="pools">
 <h3>Pools<a class="headerlink" href="#pools" title="Permalink to this headline">¶</a></h3>
@@ -1057,6 +1189,7 @@ UI. As slots free up, queued tasks start running based on the
 <p>Note that if tasks are not given a pool, they are assigned to a default
 pool <code class="docutils literal notranslate"><span class="pre">default_pool</span></code>.  <code class="docutils literal notranslate"><span class="pre">default_pool</span></code> is initialized with 128 slots and
 can changed through the UI or CLI (though it cannot be removed).</p>
+<p>To combine Pools with SubDAGs see the <a class="reference internal" href="#subdags">SubDAGs</a> section.</p>
 </div>
 <div class="section" id="connections">
 <span id="concepts-connections"></span><h3>Connections<a class="headerlink" href="#connections" title="Permalink to this headline">¶</a></h3>
@@ -1181,23 +1314,23 @@ based on an arbitrary condition which is typically related to something
 that happened in an upstream task. One way to do this is by using the
 <code class="docutils literal notranslate"><span class="pre">BranchPythonOperator</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">BranchPythonOperator</span></code> is much like the PythonOperator except that it
-expects a python_callable that returns a task_id (or list of task_ids). The
+expects a <code class="docutils literal notranslate"><span class="pre">python_callable</span></code> that returns a task_id (or list of task_ids). The
 task_id returned is followed, and all of the other paths are skipped.
-The task_id returned by the Python function has to be referencing a task
+The task_id returned by the Python function has to reference a task
 directly downstream from the BranchPythonOperator task.</p>
 <p>Note that using tasks with <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code> downstream from
 <code class="docutils literal notranslate"><span class="pre">BranchPythonOperator</span></code> is logically unsound as <code class="docutils literal notranslate"><span class="pre">skipped</span></code> status
 will invariably lead to block tasks that depend on their past successes.
 <code class="docutils literal notranslate"><span class="pre">skipped</span></code> states propagates where all directly upstream tasks are
 <code class="docutils literal notranslate"><span class="pre">skipped</span></code>.</p>
-<p>If you want to skip some tasks, keep in mind that you can’t have an empty
-path, if so make a dummy task.</p>
-<p>like this, the dummy task “branch_false” is skipped</p>
-<img alt="_images/branch_good.png" src="_images/branch_good.png" />
-<p>Not like this, where the join task is skipped</p>
-<img alt="_images/branch_bad.png" src="_images/branch_bad.png" />
+<p>Note that when a path is a downstream task of the returned task (list), it will
+not be skipped:</p>
+<img alt="_images/branch_note.png" src="_images/branch_note.png" />
+<p>Paths of the branching task are <code class="docutils literal notranslate"><span class="pre">branch_a</span></code>, <code class="docutils literal notranslate"><span class="pre">join</span></code> and <code class="docutils literal notranslate"><span class="pre">branch_b</span></code>. Since
+<code class="docutils literal notranslate"><span class="pre">join</span></code> is a downstream task of <code class="docutils literal notranslate"><span class="pre">branch_a</span></code>, it will be excluded from the skipped
+tasks when <code class="docutils literal notranslate"><span class="pre">branch_a</span></code> is returned by the Python callable.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">BranchPythonOperator</span></code> can also be used with XComs allowing branching
-context to dynamically decide what branch to follow based on previous tasks.
+context to dynamically decide what branch to follow based on upstream tasks.
 For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">branch_func</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">ti</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;ti&#39;</span><span class="p">]</span>
@@ -1329,6 +1462,8 @@ problematic as it may over-subscribe your worker, running multiple tasks in
 a single slot</p></li>
 </ul>
 <p>See <code class="docutils literal notranslate"><span class="pre">airflow/example_dags</span></code> for a demonstration.</p>
+<p>Note that airflow pool is not honored by SubDagOperator. Hence resources could be
+consumed by SubdagOperators.</p>
 </div>
 <div class="section" id="slas">
 <h3>SLAs<a class="headerlink" href="#slas" title="Permalink to this headline">¶</a></h3>
@@ -1342,33 +1477,19 @@ where events can be analyzed and documented.</p>
 In addition to sending alerts to the addresses specified in a task’s <code class="docutils literal notranslate"><span class="pre">email</span></code> parameter,
 the <code class="docutils literal notranslate"><span class="pre">sla_miss_callback</span></code> specifies an additional <code class="docutils literal notranslate"><span class="pre">Callable</span></code>
 object to be invoked when the SLA is not met.</p>
-<div class="section" id="email-configuration">
-<h4>Email Configuration<a class="headerlink" href="#email-configuration" title="Permalink to this headline">¶</a></h4>
-<p>You can configure the email that is being sent in your <code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code>
-by setting a <code class="docutils literal notranslate"><span class="pre">subject_template</span></code> and/or a <code class="docutils literal notranslate"><span class="pre">html_content_template</span></code>
-in the <code class="docutils literal notranslate"><span class="pre">email</span></code> section.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">email</span><span class="p">]</span>
-
-<span class="n">email_backend</span> <span class="o">=</span> <span class="n">airflow</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">send_email_smtp</span>
-
-<span class="n">subject_template</span> <span class="o">=</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">my_subject_template_file</span>
-<span class="n">html_content_template</span> <span class="o">=</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">my_html_content_template_file</span>
+<p>If you don’t want to check SLAs, you can disable globally (all the DAGs) by
+setting <code class="docutils literal notranslate"><span class="pre">check_slas=False</span></code> under <code class="docutils literal notranslate"><span class="pre">[core]</span></code> section in <code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code> file:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[core]</span>
+<span class="na">check_slas</span> <span class="o">=</span> <span class="s">False</span>
 </pre></div>
 </div>
-<p>To access the task’s information you use <a class="reference external" href="http://jinja.pocoo.org/docs/dev/">Jinja Templating</a>  in your template files.</p>
-<p>For example a <code class="docutils literal notranslate"><span class="pre">html_content_template</span></code> file could look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Try</span> <span class="p">{{</span><span class="n">try_number</span><span class="p">}}</span> <span class="n">out</span> <span class="n">of</span> <span class="p">{{</span><span class="n">max_tries</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}}</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
-<span class="ne">Exception</span><span class="p">:</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">exception_html</span><span class="p">}}</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
-<span class="n">Log</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ti.log_url}}&quot;</span><span class="o">&gt;</span><span class="n">Link</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
-<span class="n">Host</span><span class="p">:</span> <span class="p">{{</span><span class="n">ti</span><span class="o">.</span><span class="n">hostname</span><span class="p">}}</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
-<span class="n">Log</span> <span class="n">file</span><span class="p">:</span> <span class="p">{{</span><span class="n">ti</span><span class="o">.</span><span class="n">log_filepath</span><span class="p">}}</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
-<span class="n">Mark</span> <span class="n">success</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ti.mark_success_url}}&quot;</span><span class="o">&gt;</span><span class="n">Link</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
-</pre></div>
-</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For information on the email configuration, see <a class="reference internal" href="howto/email-config.html"><span class="doc">Email Configuration</span></a></p>
 </div>
 </div>
 <div class="section" id="trigger-rules">
-<h3>Trigger Rules<a class="headerlink" href="#trigger-rules" title="Permalink to this headline">¶</a></h3>
+<span id="concepts-trigger-rule"></span><h3>Trigger Rules<a class="headerlink" href="#trigger-rules" title="Permalink to this headline">¶</a></h3>
 <p>Though the normal workflow behavior is to trigger tasks when all their
 directly upstream tasks have succeeded, Airflow allows for more complex
 dependency settings.</p>
@@ -1526,7 +1647,7 @@ and is expected to alter its attributes.</p>
 <p>For example, this function could apply a specific queue property when
 using a specific operator, or enforce a task timeout policy, making sure
 that no tasks run for more than 48 hours. Here’s an example of what this
-may look like inside your <code class="docutils literal notranslate"><span class="pre">airflow_settings.py</span></code>:</p>
+may look like inside your <code class="docutils literal notranslate"><span class="pre">airflow_local_settings.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">policy</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;HivePartitionSensor&#39;</span><span class="p">:</span>
         <span class="n">task</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="s2">&quot;sensor_queue&quot;</span>
@@ -1590,8 +1711,8 @@ to the related tasks in Airflow.</p>
 <p>This content will get rendered as markdown respectively in the “Graph View” and
 “Task Details” pages.</p>
 </div>
-<div class="section" id="id1">
-<span id="id2"></span><h3>Jinja Templating<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="jinja-templating">
+<span id="id5"></span><h3>Jinja Templating<a class="headerlink" href="#jinja-templating" title="Permalink to this headline">¶</a></h3>
 <p>Airflow leverages the power of
 <a class="reference external" href="http://jinja.pocoo.org/docs/dev/">Jinja Templating</a> and this can be a
 powerful tool to use in combination with macros (see the <a class="reference internal" href="macros.html"><span class="doc">Macros reference</span></a> section).</p>
@@ -1744,8 +1865,8 @@ For example, you can prepare a <code class="docutils literal notranslate"><span 
 <span class="n">tenant_</span><span class="p">[</span>\<span class="n">d</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Then files like “project_a_dag_1.py”, “TESTING_project_a.py”, “tenant_1.py”,
-“project_a/dag_1.py”, and “tenant_1/dag_1.py” in your <code class="docutils literal notranslate"><span class="pre">DAG_FOLDER</span></code> would be ignored
+<p>Then files like <code class="docutils literal notranslate"><span class="pre">project_a_dag_1.py</span></code>, <code class="docutils literal notranslate"><span class="pre">TESTING_project_a.py</span></code>, <code class="docutils literal notranslate"><span class="pre">tenant_1.py</span></code>,
+<code class="docutils literal notranslate"><span class="pre">project_a/dag_1.py</span></code>, and <code class="docutils literal notranslate"><span class="pre">tenant_1/dag_1.py</span></code> in your <code class="docutils literal notranslate"><span class="pre">DAG_FOLDER</span></code> would be ignored
 (If a directory’s name matches any of the patterns, this directory and all its subfolders
 would not be scanned by Airflow at all. This improves efficiency of DAG finding).</p>
 <p>The scope of a <code class="docutils literal notranslate"><span class="pre">.airflowignore</span></code> file is the directory it is in plus all its subfolders.
@@ -1837,15 +1958,28 @@ would only be applicable for that subfolder.</p>
 <li><a class="reference internal" href="#context-manager">Context Manager</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#dag-runs">DAG Runs</a><ul>
+<li><a class="reference internal" href="#execution-date">execution_date</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tasks">Tasks</a><ul>
+<li><a class="reference internal" href="#relations-between-tasks">Relations between Tasks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#task-instances">Task Instances</a><ul>
+<li><a class="reference internal" href="#relations-between-task-instances">Relations between Task Instances</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#task-lifecycle">Task Lifecycle</a></li>
 <li><a class="reference internal" href="#operators">Operators</a><ul>
 <li><a class="reference internal" href="#dag-assignment">DAG Assignment</a></li>
 <li><a class="reference internal" href="#bitshift-composition">Bitshift Composition</a></li>
-<li><a class="reference internal" href="#relationship-helper">Relationship Helper</a></li>
+<li><a class="reference internal" href="#relationship-builders">Relationship Builders</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#tasks">Tasks</a></li>
-<li><a class="reference internal" href="#task-instances">Task Instances</a></li>
-<li><a class="reference internal" href="#task-lifecycle">Task Lifecycle</a></li>
+<li><a class="reference internal" href="#id2">Tasks</a></li>
+<li><a class="reference internal" href="#id3">Task Instances</a></li>
+<li><a class="reference internal" href="#id4">Task Lifecycle</a></li>
 <li><a class="reference internal" href="#workflows">Workflows</a></li>
 </ul>
 </li>
@@ -1858,16 +1992,13 @@ would only be applicable for that subfolder.</p>
 <li><a class="reference internal" href="#variables">Variables</a></li>
 <li><a class="reference internal" href="#branching">Branching</a></li>
 <li><a class="reference internal" href="#subdags">SubDAGs</a></li>
-<li><a class="reference internal" href="#slas">SLAs</a><ul>
-<li><a class="reference internal" href="#email-configuration">Email Configuration</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#slas">SLAs</a></li>
 <li><a class="reference internal" href="#trigger-rules">Trigger Rules</a></li>
 <li><a class="reference internal" href="#latest-run-only">Latest Run Only</a></li>
 <li><a class="reference internal" href="#zombies-undeads">Zombies &amp; Undeads</a></li>
 <li><a class="reference internal" href="#cluster-policy">Cluster Policy</a></li>
 <li><a class="reference internal" href="#documentation-notes">Documentation &amp; Notes</a></li>
-<li><a class="reference internal" href="#id1">Jinja Templating</a></li>
+<li><a class="reference internal" href="#jinja-templating">Jinja Templating</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#packaged-dags">Packaged DAGs</a></li>

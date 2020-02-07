@@ -12,7 +12,7 @@
 Module Contents
 ---------------
 
-.. py:class:: KubernetesPodOperator(namespace, image, name, cmds=None, arguments=None, ports=None, volume_mounts=None, volumes=None, env_vars=None, secrets=None, in_cluster=True, cluster_context=None, labels=None, startup_timeout_seconds=120, get_logs=True, image_pull_policy='IfNotPresent', annotations=None, resources=None, affinity=None, config_file=None, node_selectors=None, image_pull_secrets=None, service_account_name='default', is_delete_operator_pod=False, hostnetwork=False, tolerations=None, configmaps=None, security_context=None, pod_runtime_info_envs=None, dnspolicy=None, *args, **kwargs)
+.. py:class:: KubernetesPodOperator(namespace, image, name, cmds=None, arguments=None, ports=None, volume_mounts=None, volumes=None, env_vars=None, secrets=None, in_cluster=None, cluster_context=None, labels=None, startup_timeout_seconds=120, get_logs=True, image_pull_policy='IfNotPresent', annotations=None, resources=None, affinity=None, config_file=None, node_selectors=None, image_pull_secrets=None, service_account_name='default', is_delete_operator_pod=False, hostnetwork=False, tolerations=None, configmaps=None, security_context=None, pod_runtime_info_envs=None, dnspolicy=None, do_xcom_push=False, *args, **kwargs)
 
    Bases: :class:`airflow.models.BaseOperator`
 

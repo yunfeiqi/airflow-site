@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -690,6 +692,9 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">    :type name: str</span>
 <span class="sd">    :param num_executors: Number of executors to launch</span>
 <span class="sd">    :type num_executors: int</span>
+<span class="sd">    :param status_poll_interval: Seconds to wait between polls of driver status in cluster</span>
+<span class="sd">        mode (Default: 1)</span>
+<span class="sd">    :type status_poll_interval: int</span>
 <span class="sd">    :param application_args: Arguments for the application being submitted (templated)</span>
 <span class="sd">    :type application_args: list</span>
 <span class="sd">    :param env_vars: Environment variables for spark-submit. It supports yarn and k8s mode too. (templated)</span>
@@ -728,6 +733,7 @@ https://www.sphinx-doc.org/en/master/templating.html
                  <span class="n">proxy_user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">name</span><span class="o">=</span><span class="s1">&#39;airflow-spark&#39;</span><span class="p">,</span>
                  <span class="n">num_executors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">status_poll_interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                  <span class="n">application_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">env_vars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -755,6 +761,7 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="bp">self</span><span class="o">.</span><span class="n">_proxy_user</span> <span class="o">=</span> <span class="n">proxy_user</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_num_executors</span> <span class="o">=</span> <span class="n">num_executors</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_status_poll_interval</span> <span class="o">=</span> <span class="n">status_poll_interval</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_application_args</span> <span class="o">=</span> <span class="n">application_args</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_env_vars</span> <span class="o">=</span> <span class="n">env_vars</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_verbose</span> <span class="o">=</span> <span class="n">verbose</span>
@@ -787,6 +794,7 @@ https://www.sphinx-doc.org/en/master/templating.html
             <span class="n">proxy_user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_proxy_user</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span>
             <span class="n">num_executors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_executors</span><span class="p">,</span>
+            <span class="n">status_poll_interval</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_status_poll_interval</span><span class="p">,</span>
             <span class="n">application_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_application_args</span><span class="p">,</span>
             <span class="n">env_vars</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_env_vars</span><span class="p">,</span>
             <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_verbose</span><span class="p">,</span>

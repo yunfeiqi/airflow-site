@@ -18,7 +18,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <head>
         <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Set Up Bash/Zsh Completion &mdash; Airflow Documentation</title>
+        <title>Using the Command Line Interface &mdash; Airflow Documentation</title>
     <link rel="stylesheet" href="../_static/_gen/css/main.min.css" type="text/css" />
             <link rel="stylesheet" type="text/css" href="../_static/_gen/css//main-custom.min.css" />
             <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -341,8 +341,16 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l2"><a class="reference internal" href="use-test-config.html">Using the Test Mode Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="check-health.html">Checking Airflow Health Status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="define_extra_link.html">Define an operator extra link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email-config.html">Email Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracking-user-activity.html">Tracking User Activity</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Set Up Bash/Zsh Completion</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using the Command Line Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-connection-to-a-remote-airflow-instance">Set Up connection to a remote Airflow instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-bash-zsh-completion">Set Up Bash/Zsh Completion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-connection">Creating a Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-dags-structure-to-images">Exporting DAGs structure to images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-dags-structure">Display DAGs structure</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ui.html">UI / Screenshots</a></li>
@@ -370,6 +378,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -453,7 +462,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -515,8 +524,16 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l2"><a class="reference internal" href="use-test-config.html">Using the Test Mode Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="check-health.html">Checking Airflow Health Status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="define_extra_link.html">Define an operator extra link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email-config.html">Email Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracking-user-activity.html">Tracking User Activity</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Set Up Bash/Zsh Completion</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using the Command Line Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-connection-to-a-remote-airflow-instance">Set Up connection to a remote Airflow instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-bash-zsh-completion">Set Up Bash/Zsh Completion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-connection">Creating a Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-dags-structure-to-images">Exporting DAGs structure to images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-dags-structure">Display DAGs structure</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ui.html">UI / Screenshots</a></li>
@@ -544,6 +561,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -636,7 +654,7 @@ https://www.sphinx-doc.org/en/master/templating.html
             
                 <li class="breadcrumb-item"><a href="index.html">How-to Guides</a></li>
             
-            <li class="breadcrumb-item"><a href="howto/cli-completion.html"> Set Up Bash/Zsh Completion</li>
+            <li class="breadcrumb-item"><a href="howto/cli-completion.html"> Using the Command Line Interface</li>
         
     </ul>
 </div>
@@ -649,8 +667,25 @@ https://www.sphinx-doc.org/en/master/templating.html
                                         
   <blockquote>
 <div></div></blockquote>
+<div class="section" id="using-the-command-line-interface">
+<h1>Using the Command Line Interface<a class="headerlink" href="#using-the-command-line-interface" title="Permalink to this headline">¶</a></h1>
+<p>This document is meant to give an overview of all common tasks while using the CLI.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information on CLI commands, see <a class="reference internal" href="../cli.html"><span class="doc">Command Line Interface Reference</span></a></p>
+</div>
+<div class="section" id="set-up-connection-to-a-remote-airflow-instance">
+<h2>Set Up connection to a remote Airflow instance<a class="headerlink" href="#set-up-connection-to-a-remote-airflow-instance" title="Permalink to this headline">¶</a></h2>
+<p>For some functions the CLI can use the REST API. To configure the CLI to use the API
+when available configure as follows:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[cli]</span>
+<span class="na">api_client</span> <span class="o">=</span> <span class="s">airflow.api.client.json_client</span>
+<span class="na">endpoint_url</span> <span class="o">=</span> <span class="s">http://&lt;WEBSERVER&gt;:&lt;PORT&gt;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="set-up-bash-zsh-completion">
-<h1>Set Up Bash/Zsh Completion<a class="headerlink" href="#set-up-bash-zsh-completion" title="Permalink to this headline">¶</a></h1>
+<h2>Set Up Bash/Zsh Completion<a class="headerlink" href="#set-up-bash-zsh-completion" title="Permalink to this headline">¶</a></h2>
 <p>When using bash (or <code class="docutils literal notranslate"><span class="pre">zsh</span></code>) as your shell, <code class="docutils literal notranslate"><span class="pre">airflow</span></code> can use
 <a class="reference external" href="https://argcomplete.readthedocs.io/">argcomplete</a> for auto-completion.</p>
 <p>For <a class="reference external" href="https://github.com/kislyuk/argcomplete#activating-global-completion">global activation</a> of all argcomplete enabled python applications run:</p>
@@ -671,6 +706,91 @@ https://www.sphinx-doc.org/en/master/templating.html
 bashcompinit
 <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>register-python-argcomplete airflow<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-connection">
+<h2>Creating a Connection<a class="headerlink" href="#creating-a-connection" title="Permalink to this headline">¶</a></h2>
+<p>For information on creating connection using CLI, see <a class="reference internal" href="../cli.html#cli"><span class="std std-ref">Command Line Interface Reference</span></a></p>
+</div>
+<div class="section" id="exporting-dags-structure-to-images">
+<h2>Exporting DAGs structure to images<a class="headerlink" href="#exporting-dags-structure-to-images" title="Permalink to this headline">¶</a></h2>
+<p>The application has the functionality of saving DAG to image file. You can attach them to the documentation
+for the documentation, or send another without having to send the DAG file and install the application at
+the other person. However, you need to have <a class="reference external" href="https://graphviz.gitlab.io/download/">Graphviz</a> installed.</p>
+<p>For example, if you want to export <code class="docutils literal notranslate"><span class="pre">example_complex</span></code> DAG then you can use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>airflow dag show example_complex
+</pre></div>
+</div>
+<p>After passing the <code class="docutils literal notranslate"><span class="pre">dag_id</span></code> parameter itself, the command will print rendered DAG structure (similar to <a class="reference internal" href="../ui.html#ui-graph-view"><span class="std std-ref">Graph View</span></a>)
+to the screen in the DOT format.</p>
+<p>It is possible to save the file in a different format. To do this, add the switch <code class="docutils literal notranslate"><span class="pre">--save</span> <span class="pre">[filename].[format]</span></code>.
+If you want to save files as PNG, you can use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>airflow dags show example_complex --save example_complex.png
+</pre></div>
+</div>
+<p>An example image file may look as follow:</p>
+<img alt="../_images/usage_cli_export.png" src="../_images/usage_cli_export.png" />
+<p>The following file formats are supported:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bmp</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canon</span></code>, <code class="docutils literal notranslate"><span class="pre">dot</span></code>, <code class="docutils literal notranslate"><span class="pre">gv</span></code>, <code class="docutils literal notranslate"><span class="pre">xdot</span></code>, <code class="docutils literal notranslate"><span class="pre">xdot1.2</span></code>, <code class="docutils literal notranslate"><span class="pre">xdot1.4</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cgimage</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmap</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eps</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exr</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fig</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gd</span></code>, <code class="docutils literal notranslate"><span class="pre">gd2</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gif</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gtk</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ico</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imap</span></code>, <code class="docutils literal notranslate"><span class="pre">cmapx</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imap_np</span></code>, <code class="docutils literal notranslate"><span class="pre">cmapx_np</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ismap</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jp2</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jpg</span></code>, <code class="docutils literal notranslate"><span class="pre">jpeg</span></code>, <code class="docutils literal notranslate"><span class="pre">jpe</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">json0</span></code>, <code class="docutils literal notranslate"><span class="pre">dot_json</span></code>, <code class="docutils literal notranslate"><span class="pre">xdot_json</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pct</span></code>, <code class="docutils literal notranslate"><span class="pre">pict</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pdf</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pic</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plain</span></code>, <code class="docutils literal notranslate"><span class="pre">plain-ext</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">png</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pov</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ps</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ps2</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psd</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sgi</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">svg</span></code>, <code class="docutils literal notranslate"><span class="pre">svgz</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tga</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tif</span></code>, <code class="docutils literal notranslate"><span class="pre">tiff</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tk</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vml</span></code>, <code class="docutils literal notranslate"><span class="pre">vmlz</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vrml</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wbmp</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">webp</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xlib</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x11</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<p>By default, the application search for DAGs in the directory specified in <code class="docutils literal notranslate"><span class="pre">dags_folder</span></code> option in
+<code class="docutils literal notranslate"><span class="pre">[core]</span></code> section specified in the file <code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code>. You can change it with the <code class="docutils literal notranslate"><span class="pre">--subdir</span></code> switch.</p>
+</div>
+<div class="section" id="display-dags-structure">
+<h2>Display DAGs structure<a class="headerlink" href="#display-dags-structure" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you will work on DAGs that contain complex dependencies. It is helpful then to preview
+the DAG to see if it is correct.</p>
+<p>If you have macOS, you can use <a class="reference external" href="https://iterm2.com/">iTerm2</a> together with
+the <a class="reference external" href="https://www.iterm2.com/documentation-images.html">imgcat</a> script to display the DAG structure in the
+console. You also need to have <a class="reference external" href="https://graphviz.gitlab.io/download/">Graphviz</a> installed.</p>
+<p>Other terminals do not support the display of high-quality graphics. You can convert the image to a text
+form, but its resolution will prevent you from reading it.</p>
+<p>To do this, you should use the <code class="docutils literal notranslate"><span class="pre">--imgcat</span></code> switch in the <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">dags</span> <span class="pre">show</span></code> command. For example, if you
+want to display <code class="docutils literal notranslate"><span class="pre">example_bash_operator</span></code> DAG  then you can use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>airflow dag show example_bash_operator --imgcat
+</pre></div>
+</div>
+<p>You will see a similar result as in the screenshot below.</p>
+<img alt="../_images/usage_cli_imgcat.png" src="../_images/usage_cli_imgcat.png" />
 </div>
 </div>
 
@@ -749,7 +869,14 @@ bashcompinit
     <nav class="wy-nav-side-toc">
         <div class="wy-menu-vertical">
             <ul>
-<li><a class="reference internal" href="#">Set Up Bash/Zsh Completion</a></li>
+<li><a class="reference internal" href="#">Using the Command Line Interface</a><ul>
+<li><a class="reference internal" href="#set-up-connection-to-a-remote-airflow-instance">Set Up connection to a remote Airflow instance</a></li>
+<li><a class="reference internal" href="#set-up-bash-zsh-completion">Set Up Bash/Zsh Completion</a></li>
+<li><a class="reference internal" href="#creating-a-connection">Creating a Connection</a></li>
+<li><a class="reference internal" href="#exporting-dags-structure-to-images">Exporting DAGs structure to images</a></li>
+<li><a class="reference internal" href="#display-dags-structure">Display DAGs structure</a></li>
+</ul>
+</li>
 </ul>
 
         </div>

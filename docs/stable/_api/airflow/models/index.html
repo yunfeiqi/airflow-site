@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -352,6 +352,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -435,7 +436,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -508,6 +509,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -720,7 +722,9 @@ X will wait for tasks immediately downstream of the previous instance
 of task X to finish successfully before it runs. This is useful if the
 different instances of a task X alter the same asset, and this asset
 is used by tasks downstream of task X. Note that depends_on_past
-is forced to True wherever wait_for_downstream is used.</p></li>
+is forced to True wherever wait_for_downstream is used. Also note that
+only tasks <em>immediately</em> downstream of the previous task instance are waited
+for; the statuses of any tasks further downstream are ignored.</p></li>
 <li><p><strong>queue</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – which queue to target when running this job. Not
 all executors implement queue management, the CeleryExecutor
 does support targeting specific queues.</p></li>
@@ -1439,7 +1443,7 @@ passwords when using operators or hooks.</p>
 
 <dl class="class">
 <dt id="airflow.models.DAG">
-<em class="property">class </em><code class="sig-prename descclassname">airflow.models.</code><code class="sig-name descname">DAG</code><span class="sig-paren">(</span><em class="sig-param">dag_id</em>, <em class="sig-param">description=''</em>, <em class="sig-param">schedule_interval=timedelta(days=1)</em>, <em class="sig-param">start_date=None</em>, <em class="sig-param">end_date=None</em>, <em class="sig-param">full_filepath=None</em>, <em class="sig-param">template_searchpath=None</em>, <em class="sig-param">template_undefined=jinja2.Undefined</em>, <em class="sig-param">user_defined_macros=None</em>, <em class="sig-param">user_defined_filters=None</em>, <em class="sig-param">default_args=None</em>, <em class="sig-param">concurrency=conf.getint('core'</em>, <em class="sig-param">'dag_concurrency')</em>, <em class="sig-param">max_active_runs=conf.getint('core'</em>, <em class="sig-param">'max_active_runs_per_dag')</em>, <em class="sig-param">dagrun_timeout=None</em>, <em class="sig-param">sla_miss_callback=None</em>, <em class="sig-param">default_view=None</em>, <em class="sig-param">orientation=conf.get('webserver'</em>, <em class="sig-param">'dag_orientation')</em>, <em class="sig-param">catchup=conf.getboolean('scheduler'</em>, <em class="sig-param">'catchup_by_default')</em>, <em class="sig-param">on_success_callback=None</em>, <em class="sig-param">on_failure_callback=None</em>, <em class="sig-param">doc_md=None</em>, <em class="sig-param">params=None</em>, <em class="sig-param">access_control=None</em>, <em class="sig-param">is_paused_upon_creation=None</em>, <em class="sig-param">jinja_environment_kwargs=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/airflow/models/dag.html#DAG"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.models.DAG" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">airflow.models.</code><code class="sig-name descname">DAG</code><span class="sig-paren">(</span><em class="sig-param">dag_id</em>, <em class="sig-param">description=''</em>, <em class="sig-param">schedule_interval=timedelta(days=1)</em>, <em class="sig-param">start_date=None</em>, <em class="sig-param">end_date=None</em>, <em class="sig-param">full_filepath=None</em>, <em class="sig-param">template_searchpath=None</em>, <em class="sig-param">template_undefined=jinja2.Undefined</em>, <em class="sig-param">user_defined_macros=None</em>, <em class="sig-param">user_defined_filters=None</em>, <em class="sig-param">default_args=None</em>, <em class="sig-param">concurrency=conf.getint('core'</em>, <em class="sig-param">'dag_concurrency')</em>, <em class="sig-param">max_active_runs=conf.getint('core'</em>, <em class="sig-param">'max_active_runs_per_dag')</em>, <em class="sig-param">dagrun_timeout=None</em>, <em class="sig-param">sla_miss_callback=None</em>, <em class="sig-param">default_view=None</em>, <em class="sig-param">orientation=conf.get('webserver'</em>, <em class="sig-param">'dag_orientation')</em>, <em class="sig-param">catchup=conf.getboolean('scheduler'</em>, <em class="sig-param">'catchup_by_default')</em>, <em class="sig-param">on_success_callback=None</em>, <em class="sig-param">on_failure_callback=None</em>, <em class="sig-param">doc_md=None</em>, <em class="sig-param">params=None</em>, <em class="sig-param">access_control=None</em>, <em class="sig-param">is_paused_upon_creation=None</em>, <em class="sig-param">jinja_environment_kwargs=None</em>, <em class="sig-param">tags=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/airflow/models/dag.html#DAG"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.models.DAG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.dag.base_dag.BaseDag</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.utils.log.logging_mixin.LoggingMixin</span></code></p>
 <p>A dag (directed acyclic graph) is a collection of tasks with directional
 dependencies. A dag also has a schedule, a start date and an end date
@@ -1524,6 +1528,7 @@ is not specified, the global config setting will be used.</p></li>
 </div>
 <p><strong>See</strong>: <a class="reference external" href="https://jinja.palletsprojects.com/en/master/api/#jinja2.Environment">Jinja Environment documentation</a></p>
 </p></li>
+<li><p><strong>tags</strong> (<em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em>) – List of tags to help filtering DAGS in the UI.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1602,6 +1607,11 @@ is not specified, the global config setting will be used.</p></li>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="airflow.models.DAG.allow_future_exec_dates">
+<code class="sig-name descname">allow_future_exec_dates</code><a class="headerlink" href="#airflow.models.DAG.allow_future_exec_dates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="airflow.models.DAG.concurrency_reached">
@@ -1899,9 +1909,32 @@ upstream dependencies.</p>
 
 <dl class="method">
 <dt id="airflow.models.DAG.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">start_date=None</em>, <em class="sig-param">end_date=None</em>, <em class="sig-param">only_failed=False</em>, <em class="sig-param">only_running=False</em>, <em class="sig-param">confirm_prompt=False</em>, <em class="sig-param">include_subdags=True</em>, <em class="sig-param">include_parentdag=True</em>, <em class="sig-param">reset_dag_runs=True</em>, <em class="sig-param">dry_run=False</em>, <em class="sig-param">session=None</em>, <em class="sig-param">get_tis=False</em><span class="sig-paren">)</span><a class="headerlink" href="#airflow.models.DAG.clear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">start_date=None</em>, <em class="sig-param">end_date=None</em>, <em class="sig-param">only_failed=False</em>, <em class="sig-param">only_running=False</em>, <em class="sig-param">confirm_prompt=False</em>, <em class="sig-param">include_subdags=True</em>, <em class="sig-param">include_parentdag=True</em>, <em class="sig-param">reset_dag_runs=True</em>, <em class="sig-param">dry_run=False</em>, <em class="sig-param">session=None</em>, <em class="sig-param">get_tis=False</em>, <em class="sig-param">recursion_depth=0</em>, <em class="sig-param">max_recursion_depth=None</em>, <em class="sig-param">dag_bag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#airflow.models.DAG.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears a set of task instances associated with the current dag for
 a specified date range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.8)"><em>datetime.datetime</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – The minimum execution_date to clear</p></li>
+<li><p><strong>end_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.8)"><em>datetime.datetime</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – The maximum exeuction_date to clear</p></li>
+<li><p><strong>only_failed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Only clear failed tasks</p></li>
+<li><p><strong>only_running</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Only clear running tasks.</p></li>
+<li><p><strong>confirm_prompt</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Ask for confirmation</p></li>
+<li><p><strong>include_subdags</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Clear tasks in subdags and clear external tasks
+indicated by ExternalTaskMarker</p></li>
+<li><p><strong>include_parentdag</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Clear tasks in the parent dag of the subdag.</p></li>
+<li><p><strong>reset_dag_runs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Set state of dag to RUNNING</p></li>
+<li><p><strong>dry_run</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Find the tasks to clear but don’t clear them.</p></li>
+<li><p><strong>session</strong> (<a class="reference external" href="https://docs.sqlalchemy.org/en/13/orm/session_api.html#sqlalchemy.orm.session.Session" title="(in SQLAlchemy v1.3)"><em>sqlalchemy.orm.session.Session</em></a>) – The sqlalchemy session to use</p></li>
+<li><p><strong>get_tis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Return the sqlachemy query for finding the TaskInstance without clearing the tasks</p></li>
+<li><p><strong>recursion_depth</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The recursion depth of nested calls to DAG.clear().</p></li>
+<li><p><strong>max_recursion_depth</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The maximum recusion depth allowed. This is determined by the
+first encountered ExternalTaskMarker. Default is None indicating no ExternalTaskMarker
+has been encountered.</p></li>
+<li><p><strong>dag_bag</strong> (<a class="reference internal" href="dagbag/index.html#airflow.models.dagbag.DagBag" title="airflow.models.dagbag.DagBag"><em>airflow.models.dagbag.DagBag</em></a>) – The DagBag used to find the dags</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -2044,6 +2077,20 @@ SubDagOperator.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="airflow.models.DAG.get_dagtags">
+<code class="sig-name descname">get_dagtags</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#airflow.models.DAG.get_dagtags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creating a list of DagTags, if one is missing from the DB, will insert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The DagTag list.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2213,6 +2260,11 @@ otherwise raises exception.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="airflow.models.DagModel.tags">
+<code class="sig-name descname">tags</code><a class="headerlink" href="#airflow.models.DagModel.tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="airflow.models.DagModel.__table_args__">
 <code class="sig-name descname">__table_args__</code><a class="headerlink" href="#airflow.models.DagModel.__table_args__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2311,6 +2363,28 @@ Additionally change <code class="docutils literal notranslate"><span class="pre"
 </dd>
 </dl>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="airflow.models.DagTag">
+<em class="property">class </em><code class="sig-prename descclassname">airflow.models.</code><code class="sig-name descname">DagTag</code><a class="reference internal" href="../../../_modules/airflow/models/dag.html#DagTag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.models.DagTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="base/index.html#airflow.models.base.Base" title="airflow.models.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.models.base.Base</span></code></a></p>
+<p>A tag name per dag, to allow quick filtering in the DAG view.</p>
+<dl class="attribute">
+<dt id="airflow.models.DagTag.__tablename__">
+<code class="sig-name descname">__tablename__</code><em class="property"> = dag_tag</em><a class="headerlink" href="#airflow.models.DagTag.__tablename__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="airflow.models.DagTag.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#airflow.models.DagTag.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="airflow.models.DagTag.dag_id">
+<code class="sig-name descname">dag_id</code><a class="headerlink" href="#airflow.models.DagTag.dag_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -2751,73 +2825,6 @@ if one exists. None otherwise.</p>
 <dl class="attribute">
 <dt id="airflow.models.ImportError.stacktrace">
 <code class="sig-name descname">stacktrace</code><a class="headerlink" href="#airflow.models.ImportError.stacktrace" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="airflow.models.KubeWorkerIdentifier">
-<em class="property">class </em><code class="sig-prename descclassname">airflow.models.</code><code class="sig-name descname">KubeWorkerIdentifier</code><a class="reference internal" href="../../../_modules/airflow/models/kubernetes.html#KubeWorkerIdentifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.models.KubeWorkerIdentifier" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="base/index.html#airflow.models.base.Base" title="airflow.models.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.models.base.Base</span></code></a></p>
-<dl class="attribute">
-<dt id="airflow.models.KubeWorkerIdentifier.__tablename__">
-<code class="sig-name descname">__tablename__</code><em class="property"> = kube_worker_uuid</em><a class="headerlink" href="#airflow.models.KubeWorkerIdentifier.__tablename__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="airflow.models.KubeWorkerIdentifier.one_row_id">
-<code class="sig-name descname">one_row_id</code><a class="headerlink" href="#airflow.models.KubeWorkerIdentifier.one_row_id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="airflow.models.KubeWorkerIdentifier.worker_uuid">
-<code class="sig-name descname">worker_uuid</code><a class="headerlink" href="#airflow.models.KubeWorkerIdentifier.worker_uuid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="airflow.models.KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid">
-<em class="property">static </em><code class="sig-name descname">get_or_create_current_kube_worker_uuid</code><span class="sig-paren">(</span><em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#airflow.models.KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="airflow.models.KubeWorkerIdentifier.checkpoint_kube_worker_uuid">
-<em class="property">static </em><code class="sig-name descname">checkpoint_kube_worker_uuid</code><span class="sig-paren">(</span><em class="sig-param">worker_uuid</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#airflow.models.KubeWorkerIdentifier.checkpoint_kube_worker_uuid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="airflow.models.KubeResourceVersion">
-<em class="property">class </em><code class="sig-prename descclassname">airflow.models.</code><code class="sig-name descname">KubeResourceVersion</code><a class="reference internal" href="../../../_modules/airflow/models/kubernetes.html#KubeResourceVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.models.KubeResourceVersion" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="base/index.html#airflow.models.base.Base" title="airflow.models.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.models.base.Base</span></code></a></p>
-<dl class="attribute">
-<dt id="airflow.models.KubeResourceVersion.__tablename__">
-<code class="sig-name descname">__tablename__</code><em class="property"> = kube_resource_version</em><a class="headerlink" href="#airflow.models.KubeResourceVersion.__tablename__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="airflow.models.KubeResourceVersion.one_row_id">
-<code class="sig-name descname">one_row_id</code><a class="headerlink" href="#airflow.models.KubeResourceVersion.one_row_id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="airflow.models.KubeResourceVersion.resource_version">
-<code class="sig-name descname">resource_version</code><a class="headerlink" href="#airflow.models.KubeResourceVersion.resource_version" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="airflow.models.KubeResourceVersion.get_current_resource_version">
-<em class="property">static </em><code class="sig-name descname">get_current_resource_version</code><span class="sig-paren">(</span><em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#airflow.models.KubeResourceVersion.get_current_resource_version" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="airflow.models.KubeResourceVersion.checkpoint_resource_version">
-<em class="property">static </em><code class="sig-name descname">checkpoint_resource_version</code><span class="sig-paren">(</span><em class="sig-param">resource_version</em>, <em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#airflow.models.KubeResourceVersion.checkpoint_resource_version" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="airflow.models.KubeResourceVersion.reset_resource_version">
-<em class="property">static </em><code class="sig-name descname">reset_resource_version</code><span class="sig-paren">(</span><em class="sig-param">session=None</em><span class="sig-paren">)</span><a class="headerlink" href="#airflow.models.KubeResourceVersion.reset_resource_version" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4576,6 +4583,9 @@ TODO: “pickling” has been deprecated and JSON is preferred.
 <li><a class="reference internal" href="#airflow.models.DAG.owner">owner</a></li>
 </ul>
 <ul>
+<li><a class="reference internal" href="#airflow.models.DAG.allow_future_exec_dates">allow_future_exec_dates</a></li>
+</ul>
+<ul>
 <li><a class="reference internal" href="#airflow.models.DAG.concurrency_reached">concurrency_reached</a></li>
 </ul>
 <ul>
@@ -4726,6 +4736,9 @@ TODO: “pickling” has been deprecated and JSON is preferred.
 <li><a class="reference internal" href="#airflow.models.DAG.sync_to_db">sync_to_db</a></li>
 </ul>
 <ul>
+<li><a class="reference internal" href="#airflow.models.DAG.get_dagtags">get_dagtags</a></li>
+</ul>
+<ul>
 <li><a class="reference internal" href="#airflow.models.DAG.deactivate_unknown_dags">deactivate_unknown_dags</a></li>
 </ul>
 <ul>
@@ -4798,6 +4811,9 @@ TODO: “pickling” has been deprecated and JSON is preferred.
 <li><a class="reference internal" href="#airflow.models.DagModel.schedule_interval">schedule_interval</a></li>
 </ul>
 <ul>
+<li><a class="reference internal" href="#airflow.models.DagModel.tags">tags</a></li>
+</ul>
+<ul>
 <li><a class="reference internal" href="#airflow.models.DagModel.__table_args__">__table_args__</a></li>
 </ul>
 <ul>
@@ -4832,6 +4848,18 @@ TODO: “pickling” has been deprecated and JSON is preferred.
 </ul>
 <ul>
 <li><a class="reference internal" href="#airflow.models.DagModel.deactivate_deleted_dags">deactivate_deleted_dags</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a class="reference internal" href="#airflow.models.DagTag">DagTag</a><ul>
+<li><a class="reference internal" href="#airflow.models.DagTag.__tablename__">__tablename__</a></li>
+</ul>
+<ul>
+<li><a class="reference internal" href="#airflow.models.DagTag.name">name</a></li>
+</ul>
+<ul>
+<li><a class="reference internal" href="#airflow.models.DagTag.dag_id">dag_id</a></li>
 </ul>
 </li>
 </ul>
@@ -5015,45 +5043,6 @@ TODO: “pickling” has been deprecated and JSON is preferred.
 </ul>
 <ul>
 <li><a class="reference internal" href="#airflow.models.ImportError.stacktrace">stacktrace</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeWorkerIdentifier">KubeWorkerIdentifier</a><ul>
-<li><a class="reference internal" href="#airflow.models.KubeWorkerIdentifier.__tablename__">__tablename__</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeWorkerIdentifier.one_row_id">one_row_id</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeWorkerIdentifier.worker_uuid">worker_uuid</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeWorkerIdentifier.get_or_create_current_kube_worker_uuid">get_or_create_current_kube_worker_uuid</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeWorkerIdentifier.checkpoint_kube_worker_uuid">checkpoint_kube_worker_uuid</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeResourceVersion">KubeResourceVersion</a><ul>
-<li><a class="reference internal" href="#airflow.models.KubeResourceVersion.__tablename__">__tablename__</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeResourceVersion.one_row_id">one_row_id</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeResourceVersion.resource_version">resource_version</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeResourceVersion.get_current_resource_version">get_current_resource_version</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeResourceVersion.checkpoint_resource_version">checkpoint_resource_version</a></li>
-</ul>
-<ul>
-<li><a class="reference internal" href="#airflow.models.KubeResourceVersion.reset_resource_version">reset_resource_version</a></li>
 </ul>
 </li>
 </ul>

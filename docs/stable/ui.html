@@ -27,7 +27,7 @@ https://www.sphinx-doc.org/en/master/templating.html
             <link rel="index" title="Index" href="genindex.html" />
             <link rel="search" title="Search" href="search.html" />
             <link rel="next" title="Concepts" href="concepts.html" />
-            <link rel="prev" title="Set Up Bash/Zsh Completion" href="howto/cli-completion.html" />
+            <link rel="prev" title="Using the Command Line Interface" href="howto/cli-completion.html" />
    
   <script>
   </script>
@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -362,6 +362,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -445,7 +446,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -528,6 +529,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -641,6 +643,12 @@ can find in the Airflow UI.</p>
 <p>List of the DAGs in your environment, and a set of shortcuts to useful pages.
 You can see exactly how many tasks succeeded, failed, or are currently
 running at a glance.</p>
+<p>In order to filter DAGs (e.g by team), you can add tags in each dag.
+The filter is saved in a cookie and can be reset by the reset button.
+For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dag</span> <span class="o">=</span> <span class="n">DAG</span><span class="p">(</span><span class="s1">&#39;dag&#39;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;team1&#39;</span><span class="p">,</span> <span class="s1">&#39;sql&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <img alt="_images/dags.png" src="_images/dags.png" />
 </div>
@@ -652,10 +660,10 @@ late, you can quickly see where the different steps are and identify
 the blocking ones.</p>
 <hr class="docutils" />
 <img alt="_images/tree.png" src="_images/tree.png" />
-</div>
 <hr class="docutils" />
+</div>
 <div class="section" id="graph-view">
-<h2>Graph View<a class="headerlink" href="#graph-view" title="Permalink to this headline">¶</a></h2>
+<span id="ui-graph-view"></span><h2>Graph View<a class="headerlink" href="#graph-view" title="Permalink to this headline">¶</a></h2>
 <p>The graph view is perhaps the most comprehensive. Visualize your DAG’s
 dependencies and their current status for a specific run.</p>
 <hr class="docutils" />
@@ -711,7 +719,7 @@ that can take you to more detailed metadata, and perform some actions.</p>
 
 
     <div class="pager" role="navigation" aria-label="related navigation">
-            <a rel="prev" title="Set Up Bash/Zsh Completion" href="howto/cli-completion.html" >
+            <a rel="prev" title="Using the Command Line Interface" href="howto/cli-completion.html" >
                 <button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" accesskey="p">Previous</button>
             </a>
             <a rel="next" title="Concepts" href="concepts.html" >

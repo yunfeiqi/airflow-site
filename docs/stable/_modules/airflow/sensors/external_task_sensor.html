@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -631,12 +633,14 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="c1"># specific language governing permissions and limitations</span>
 <span class="c1"># under the License.</span>
 
+<span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="k">import</span> <span class="n">func</span>
 
 <span class="kn">from</span> <span class="nn">airflow.exceptions</span> <span class="k">import</span> <span class="n">AirflowException</span>
-<span class="kn">from</span> <span class="nn">airflow.models</span> <span class="k">import</span> <span class="n">TaskInstance</span><span class="p">,</span> <span class="n">DagBag</span><span class="p">,</span> <span class="n">DagModel</span><span class="p">,</span> <span class="n">DagRun</span>
+<span class="kn">from</span> <span class="nn">airflow.models</span> <span class="k">import</span> <span class="n">DagBag</span><span class="p">,</span> <span class="n">DagModel</span><span class="p">,</span> <span class="n">DagRun</span><span class="p">,</span> <span class="n">TaskInstance</span>
+<span class="kn">from</span> <span class="nn">airflow.operators.dummy_operator</span> <span class="k">import</span> <span class="n">DummyOperator</span>
 <span class="kn">from</span> <span class="nn">airflow.sensors.base_sensor_operator</span> <span class="k">import</span> <span class="n">BaseSensorOperator</span>
 <span class="kn">from</span> <span class="nn">airflow.utils.db</span> <span class="k">import</span> <span class="n">provide_session</span>
 <span class="kn">from</span> <span class="nn">airflow.utils.decorators</span> <span class="k">import</span> <span class="n">apply_defaults</span>
@@ -770,6 +774,50 @@ https://www.sphinx-doc.org/en/master/templating.html
 
         <span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">dttm_filter</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="ExternalTaskMarker"><a class="viewcode-back" href="../../../_api/airflow/sensors/external_task_sensor/index.html#airflow.sensors.external_task_sensor.ExternalTaskMarker">[docs]</a><span class="k">class</span> <span class="nc">ExternalTaskMarker</span><span class="p">(</span><span class="n">DummyOperator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Use this operator to indicate that a task on a different DAG depends on this task.</span>
+<span class="sd">    When this task is cleared with &quot;Recursive&quot; selected, Airflow will clear the task on</span>
+<span class="sd">    the other DAG and its downstream tasks recursively. Transitive dependencies are followed</span>
+<span class="sd">    until the recursion_depth is reached.</span>
+
+<span class="sd">    :param external_dag_id: The dag_id that contains the dependent task that needs to be cleared.</span>
+<span class="sd">    :type external_dag_id: str</span>
+<span class="sd">    :param external_task_id: The task_id of the dependent task that needs to be cleared.</span>
+<span class="sd">    :type external_task_id: str</span>
+<span class="sd">    :param execution_date: The execution_date of the dependent task that needs to be cleared.</span>
+<span class="sd">    :type execution_date: str or datetime.datetime</span>
+<span class="sd">    :param recursion_depth: The maximum level of transitive dependencies allowed. Default is 10.</span>
+<span class="sd">        This is mostly used for preventing cyclic dependencies. It is fine to increase</span>
+<span class="sd">        this number if necessary. However, too many levels of transitive dependencies will make</span>
+<span class="sd">        it slower to clear tasks in the web UI.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="ExternalTaskMarker.template_fields"><a class="viewcode-back" href="../../../_api/airflow/sensors/external_task_sensor/index.html#airflow.sensors.external_task_sensor.ExternalTaskMarker.template_fields">[docs]</a>    <span class="n">template_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;external_dag_id&#39;</span><span class="p">,</span> <span class="s1">&#39;external_task_id&#39;</span><span class="p">,</span> <span class="s1">&#39;execution_date&#39;</span><span class="p">]</span></div>
+<div class="viewcode-block" id="ExternalTaskMarker.ui_color"><a class="viewcode-back" href="../../../_api/airflow/sensors/external_task_sensor/index.html#airflow.sensors.external_task_sensor.ExternalTaskMarker.ui_color">[docs]</a>    <span class="n">ui_color</span> <span class="o">=</span> <span class="s1">&#39;#19647e&#39;</span></div>
+
+    <span class="nd">@apply_defaults</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">external_dag_id</span><span class="p">,</span>
+                 <span class="n">external_task_id</span><span class="p">,</span>
+                 <span class="n">execution_date</span><span class="o">=</span><span class="s2">&quot;{{ execution_date.isoformat() }}&quot;</span><span class="p">,</span>
+                 <span class="n">recursion_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                 <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ExternalTaskMarker</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">external_dag_id</span> <span class="o">=</span> <span class="n">external_dag_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">external_task_id</span> <span class="o">=</span> <span class="n">external_task_id</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">execution_date</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span> <span class="o">=</span> <span class="n">execution_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">execution_date</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span> <span class="o">=</span> <span class="n">execution_date</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Expected str or datetime.datetime type for execution_date. Got </span><span class="si">{}</span><span class="s1">&#39;</span>
+                            <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">execution_date</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">recursion_depth</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;recursion_depth should be a positive integer&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recursion_depth</span> <span class="o">=</span> <span class="n">recursion_depth</span></div>
 </pre></div>
 
     <div class="pager" role="navigation" aria-label="related navigation"><button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" disabled>Previous</button><button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" disabled>Next</button>

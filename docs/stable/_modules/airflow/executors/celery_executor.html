@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -654,6 +656,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 
 <div class="viewcode-block" id="CELERY_SEND_ERR_MSG_HEADER"><a class="viewcode-back" href="../../../_api/airflow/executors/celery_executor/index.html#airflow.executors.celery_executor.CELERY_SEND_ERR_MSG_HEADER">[docs]</a><span class="n">CELERY_SEND_ERR_MSG_HEADER</span> <span class="o">=</span> <span class="s1">&#39;Error sending Celery task&#39;</span></div>
 
+<div class="viewcode-block" id="OPERATION_TIMEOUT"><a class="viewcode-back" href="../../../_api/airflow/executors/celery_executor/index.html#airflow.executors.celery_executor.OPERATION_TIMEOUT">[docs]</a><span class="n">OPERATION_TIMEOUT</span> <span class="o">=</span> <span class="n">conf</span><span class="o">.</span><span class="n">getint</span><span class="p">(</span><span class="s1">&#39;celery&#39;</span><span class="p">,</span> <span class="s1">&#39;operation_timeout&#39;</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div>
+
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">To start the celery worker, run the command:</span>
 <span class="sd">airflow worker</span>
@@ -714,7 +718,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">timeout</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">timeout</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">OPERATION_TIMEOUT</span><span class="p">):</span>
             <span class="c1"># Accessing state property of celery task will make actual network request</span>
             <span class="c1"># to get the current state of the task.</span>
             <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">celery_task</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">celery_task</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
@@ -728,7 +732,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div class="viewcode-block" id="send_task_to_executor"><a class="viewcode-back" href="../../../_api/airflow/executors/celery_executor/index.html#airflow.executors.celery_executor.send_task_to_executor">[docs]</a><span class="k">def</span> <span class="nf">send_task_to_executor</span><span class="p">(</span><span class="n">task_tuple</span><span class="p">):</span>
     <span class="n">key</span><span class="p">,</span> <span class="n">simple_ti</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">task</span> <span class="o">=</span> <span class="n">task_tuple</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">timeout</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">timeout</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">OPERATION_TIMEOUT</span><span class="p">):</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">command</span><span class="p">],</span> <span class="n">queue</span><span class="o">=</span><span class="n">queue</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">exception_traceback</span> <span class="o">=</span> <span class="s2">&quot;Celery Task ID: </span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span>

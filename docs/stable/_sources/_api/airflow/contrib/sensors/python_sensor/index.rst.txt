@@ -39,7 +39,7 @@ Module Contents
    :type templates_dict: dict of str
 
    .. attribute:: template_fields
-      :annotation: = ['templates_dict']
+      :annotation: = ['templates_dict', 'op_args', 'op_kwargs']
 
       
 

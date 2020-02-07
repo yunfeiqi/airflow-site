@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -352,6 +352,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -435,7 +436,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -508,6 +509,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -651,6 +653,12 @@ https://www.sphinx-doc.org/en/master/templating.html
 </dd></dl>
 
 <dl class="method">
+<dt id="airflow.hooks.presto_hook.PrestoHook.get_isolation_level">
+<code class="sig-name descname">get_isolation_level</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/airflow/hooks/presto_hook.html#PrestoHook.get_isolation_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.hooks.presto_hook.PrestoHook.get_isolation_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an isolation level</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="airflow.hooks.presto_hook.PrestoHook._strip_sql">
 <em class="property">static </em><code class="sig-name descname">_strip_sql</code><span class="sig-paren">(</span><em class="sig-param">sql</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/airflow/hooks/presto_hook.html#PrestoHook._strip_sql"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.hooks.presto_hook.PrestoHook._strip_sql" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -688,7 +696,7 @@ returns.</p>
 
 <dl class="method">
 <dt id="airflow.hooks.presto_hook.PrestoHook.insert_rows">
-<code class="sig-name descname">insert_rows</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">table</em>, <em class="sig-param">rows</em>, <em class="sig-param">target_fields=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/airflow/hooks/presto_hook.html#PrestoHook.insert_rows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.hooks.presto_hook.PrestoHook.insert_rows" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">insert_rows</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">table</em>, <em class="sig-param">rows</em>, <em class="sig-param">target_fields=None</em>, <em class="sig-param">commit_every=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/airflow/hooks/presto_hook.html#PrestoHook.insert_rows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.hooks.presto_hook.PrestoHook.insert_rows" title="Permalink to this definition">¶</a></dt>
 <dd><p>A generic way to insert a set of tuples into a table.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -696,6 +704,8 @@ returns.</p>
 <li><p><strong>table</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Name of the target table</p></li>
 <li><p><strong>rows</strong> (<em>iterable of tuples</em>) – The rows to insert into the table</p></li>
 <li><p><strong>target_fields</strong> (<em>iterable of strings</em>) – The names of the columns to fill in the table</p></li>
+<li><p><strong>commit_every</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The maximum number of rows to insert in one
+transaction. Set to 0 to insert all rows in one transaction.</p></li>
 </ul>
 </dd>
 </dl>
@@ -794,6 +804,9 @@ returns.</p>
 </ul>
 <ul>
 <li><a class="reference internal" href="#airflow.hooks.presto_hook.PrestoHook.get_conn">get_conn</a></li>
+</ul>
+<ul>
+<li><a class="reference internal" href="#airflow.hooks.presto_hook.PrestoHook.get_isolation_level">get_isolation_level</a></li>
 </ul>
 <ul>
 <li><a class="reference internal" href="#airflow.hooks.presto_hook.PrestoHook._strip_sql">_strip_sql</a></li>

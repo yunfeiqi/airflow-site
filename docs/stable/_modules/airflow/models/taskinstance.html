@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -1523,6 +1525,8 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">        :param pool: specifies the pool to use to run the task instance</span>
 <span class="sd">        :type pool: str</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">airflow.sensors.base_sensor_operator</span> <span class="k">import</span> <span class="n">BaseSensorOperator</span>
+
         <span class="n">task</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pool</span> <span class="o">=</span> <span class="n">pool</span> <span class="ow">or</span> <span class="n">task</span><span class="o">.</span><span class="n">pool</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">test_mode</span> <span class="o">=</span> <span class="n">test_mode</span>
@@ -1538,6 +1542,15 @@ https://www.sphinx-doc.org/en/master/templating.html
                 <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_template_context</span><span class="p">()</span>
 
                 <span class="n">task_copy</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+
+                <span class="c1"># Sensors in `poke` mode can block execution of DAGs when running</span>
+                <span class="c1"># with single process executor, thus we change the mode to`reschedule`</span>
+                <span class="c1"># to allow parallel task being scheduled and executed</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">task_copy</span><span class="p">,</span> <span class="n">BaseSensorOperator</span><span class="p">)</span> <span class="ow">and</span> \
+                        <span class="n">conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;core&#39;</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;DebugExecutor&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;DebugExecutor changes sensor mode to &#39;reschedule&#39;.&quot;</span><span class="p">)</span>
+                    <span class="n">task_copy</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;reschedule&#39;</span>
+
                 <span class="bp">self</span><span class="o">.</span><span class="n">task</span> <span class="o">=</span> <span class="n">task_copy</span>
 
                 <span class="k">def</span> <span class="nf">signal_handler</span><span class="p">(</span><span class="n">signum</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
@@ -1588,11 +1601,26 @@ https://www.sphinx-doc.org/en/master/templating.html
             <span class="bp">self</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">(</span><span class="n">lock_for_update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">SUCCESS</span>
         <span class="k">except</span> <span class="n">AirflowSkipException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Recording SKIP</span>
             <span class="c1"># log only if exception has any arguments to prevent log flooding</span>
             <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">(</span><span class="n">lock_for_update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">SKIPPED</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s1">&#39;Marking task as SKIPPED.&#39;</span>
+                <span class="s1">&#39;dag_id=</span><span class="si">%s</span><span class="s1">, task_id=</span><span class="si">%s</span><span class="s1">, execution_date=</span><span class="si">%s</span><span class="s1">, start_date=</span><span class="si">%s</span><span class="s1">, end_date=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dag_id</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">task_id</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="p">,</span>
+                    <span class="s1">&#39;execution_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="p">,</span>
+                    <span class="s1">&#39;start_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="p">,</span>
+                    <span class="s1">&#39;end_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">AirflowRescheduleException</span> <span class="k">as</span> <span class="n">reschedule_exception</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_handle_reschedule</span><span class="p">(</span><span class="n">actual_start_date</span><span class="p">,</span> <span class="n">reschedule_exception</span><span class="p">,</span> <span class="n">test_mode</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
@@ -1620,6 +1648,20 @@ https://www.sphinx-doc.org/en/master/templating.html
 
         <span class="c1"># Recording SUCCESS</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s1">&#39;Marking task as SUCCESS.&#39;</span>
+            <span class="s1">&#39;dag_id=</span><span class="si">%s</span><span class="s1">, task_id=</span><span class="si">%s</span><span class="s1">, execution_date=</span><span class="si">%s</span><span class="s1">, start_date=</span><span class="si">%s</span><span class="s1">, end_date=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dag_id</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task_id</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span>
+                <span class="s1">&#39;execution_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span>
+                <span class="s1">&#39;start_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span>
+                <span class="s1">&#39;end_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_duration</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">test_mode</span><span class="p">:</span>
             <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
@@ -1728,9 +1770,35 @@ https://www.sphinx-doc.org/en/master/templating.html
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span>
                 <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">retries</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;All retries failed; marking task as FAILED&#39;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="s1">&#39;All retries failed; marking task as FAILED.&#39;</span>
+                        <span class="s1">&#39;dag_id=</span><span class="si">%s</span><span class="s1">, task_id=</span><span class="si">%s</span><span class="s1">, execution_date=</span><span class="si">%s</span><span class="s1">, start_date=</span><span class="si">%s</span><span class="s1">, end_date=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">dag_id</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">task_id</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="p">,</span>
+                            <span class="s1">&#39;execution_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="p">,</span>
+                            <span class="s1">&#39;start_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="p">,</span>
+                            <span class="s1">&#39;end_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Marking task as FAILED.&#39;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="s1">&#39;Marking task as FAILED.&#39;</span>
+                        <span class="s1">&#39;dag_id=</span><span class="si">%s</span><span class="s1">, task_id=</span><span class="si">%s</span><span class="s1">, execution_date=</span><span class="si">%s</span><span class="s1">, start_date=</span><span class="si">%s</span><span class="s1">, end_date=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">dag_id</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">task_id</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="p">,</span>
+                            <span class="s1">&#39;execution_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">execution_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="p">,</span>
+                            <span class="s1">&#39;start_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">T%H%M%S&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="p">,</span>
+                            <span class="s1">&#39;end_date&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">email_on_failure</span> <span class="ow">and</span> <span class="n">task</span><span class="o">.</span><span class="n">email</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">email_alert</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e2</span><span class="p">:</span>
@@ -1958,6 +2026,15 @@ https://www.sphinx-doc.org/en/master/templating.html
             <span class="s1">&#39;Mark success: &lt;a href=&quot;{{ti.mark_success_url}}&quot;&gt;Link&lt;/a&gt;&lt;br&gt;&#39;</span>
         <span class="p">)</span>
 
+        <span class="n">default_html_content_err</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;Try {{try_number}} out of {{max_tries + 1}}&lt;br&gt;&#39;</span>
+            <span class="s1">&#39;Exception:&lt;br&gt;Failed attempt to attach error logs&lt;br&gt;&#39;</span>
+            <span class="s1">&#39;Log: &lt;a href=&quot;{{ti.log_url}}&quot;&gt;Link&lt;/a&gt;&lt;br&gt;&#39;</span>
+            <span class="s1">&#39;Host: {{ti.hostname}}&lt;br&gt;&#39;</span>
+            <span class="s1">&#39;Log file: {{ti.log_filepath}}&lt;br&gt;&#39;</span>
+            <span class="s1">&#39;Mark success: &lt;a href=&quot;{{ti.mark_success_url}}&quot;&gt;Link&lt;/a&gt;&lt;br&gt;&#39;</span>
+        <span class="p">)</span>
+
         <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">conf</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
                 <span class="n">path</span> <span class="o">=</span> <span class="n">conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
@@ -1968,7 +2045,11 @@ https://www.sphinx-doc.org/en/master/templating.html
 
         <span class="n">subject</span> <span class="o">=</span> <span class="n">render</span><span class="p">(</span><span class="s1">&#39;subject_template&#39;</span><span class="p">,</span> <span class="n">default_subject</span><span class="p">)</span>
         <span class="n">html_content</span> <span class="o">=</span> <span class="n">render</span><span class="p">(</span><span class="s1">&#39;html_content_template&#39;</span><span class="p">,</span> <span class="n">default_html_content</span><span class="p">)</span>
-        <span class="n">send_email</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">html_content</span><span class="p">)</span></div>
+        <span class="n">html_content_err</span> <span class="o">=</span> <span class="n">render</span><span class="p">(</span><span class="s1">&#39;html_content_template&#39;</span><span class="p">,</span> <span class="n">default_html_content_err</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">send_email</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">html_content</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">send_email</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">html_content_err</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="TaskInstance.set_duration"><a class="viewcode-back" href="../../../_api/airflow/models/taskinstance/index.html#airflow.models.TaskInstance.set_duration">[docs]</a>    <span class="k">def</span> <span class="nf">set_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">:</span>

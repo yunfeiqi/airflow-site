@@ -279,7 +279,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -348,7 +348,6 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#why-isn-t-my-task-getting-scheduled">Why isn’t my task getting scheduled?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-trigger-tasks-based-on-another-task-s-failure">How do I trigger tasks based on another task’s failure?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#why-are-connection-passwords-still-not-encrypted-in-the-metadata-db-after-i-installed-airflow-crypto">Why are connection passwords still not encrypted in the metadata db after I installed airflow[crypto]?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-s-the-deal-with-start-date">What’s the deal with <code class="docutils literal notranslate"><span class="pre">start_date</span></code>?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-can-i-create-dags-dynamically">How can I create DAGs dynamically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-are-all-the-airflow-run-commands-in-my-process-list">What are all the <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">run</span></code> commands in my process list?</a></li>
@@ -356,6 +355,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l2"><a class="reference internal" href="#how-can-we-reduce-the-airflow-ui-page-load-time">How can we reduce the airflow UI page load time?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-fix-exception-global-variable-explicit-defaults-for-timestamp-needs-to-be-on-1">How to fix Exception: Global variable explicit_defaults_for_timestamp needs to be on (1)?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-reduce-airflow-dag-scheduling-latency-in-production">How to reduce airflow dag scheduling latency in production?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-next-ds-or-prev-ds-might-not-contain-expected-values">Why next_ds or prev_ds might not contain expected values?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-stop-the-sync-perms-happening-multiple-times-per-webserver">How do I stop the sync perms happening multiple times per webserver?</a></li>
 </ul>
 </li>
@@ -365,6 +365,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -448,7 +449,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -517,7 +518,6 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#why-isn-t-my-task-getting-scheduled">Why isn’t my task getting scheduled?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-trigger-tasks-based-on-another-task-s-failure">How do I trigger tasks based on another task’s failure?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#why-are-connection-passwords-still-not-encrypted-in-the-metadata-db-after-i-installed-airflow-crypto">Why are connection passwords still not encrypted in the metadata db after I installed airflow[crypto]?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-s-the-deal-with-start-date">What’s the deal with <code class="docutils literal notranslate"><span class="pre">start_date</span></code>?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-can-i-create-dags-dynamically">How can I create DAGs dynamically?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-are-all-the-airflow-run-commands-in-my-process-list">What are all the <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">run</span></code> commands in my process list?</a></li>
@@ -525,6 +525,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <li class="toctree-l2"><a class="reference internal" href="#how-can-we-reduce-the-airflow-ui-page-load-time">How can we reduce the airflow UI page load time?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-fix-exception-global-variable-explicit-defaults-for-timestamp-needs-to-be-on-1">How to fix Exception: Global variable explicit_defaults_for_timestamp needs to be on (1)?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-reduce-airflow-dag-scheduling-latency-in-production">How to reduce airflow dag scheduling latency in production?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-next-ds-or-prev-ds-might-not-contain-expected-values">Why next_ds or prev_ds might not contain expected values?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-stop-the-sync-perms-happening-multiple-times-per-webserver">How do I stop the sync perms happening multiple times per webserver?</a></li>
 </ul>
 </li>
@@ -534,6 +535,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -645,7 +647,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 Here are some of the common causes:</p>
 <ul class="simple">
 <li><p>Does your script “compile”, can the Airflow engine parse it and find your
-DAG object. To test this, you can run <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">list_dags</span></code> and
+DAG object? To test this, you can run <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">list_dags</span></code> and
 confirm that your DAG shows up in the list. You can also run
 <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">list_tasks</span> <span class="pre">foo_dag_id</span> <span class="pre">--tree</span></code> and confirm that your task
 shows up in the list as expected. If you use the CeleryExecutor, you
@@ -665,12 +667,13 @@ do not override their parent DAG’s <code class="docutils literal notranslate">
 set your <code class="docutils literal notranslate"><span class="pre">start_date</span></code> to some time say 3 months ago, you won’t be able to see
 it in the main view in the UI, but you should be able to see it in the
 <code class="docutils literal notranslate"><span class="pre">Menu</span> <span class="pre">-&gt;</span> <span class="pre">Browse</span> <span class="pre">-&gt;Task</span> <span class="pre">Instances</span></code>.</p></li>
-<li><p>Are the dependencies for the task met. The task instances directly
+<li><p>Are the dependencies for the task met? The task instances directly
 upstream from the task need to be in a <code class="docutils literal notranslate"><span class="pre">success</span></code> state. Also,
 if you have set <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code>, the previous task instance
 needs to have succeeded (except if it is the first run for that task).
 Also, if <code class="docutils literal notranslate"><span class="pre">wait_for_downstream=True</span></code>, make sure you understand
-what it means.
+what it means - all tasks <em>immediately</em> downstream of the <em>previous</em>
+task instance must have succeeded.
 You can view how these properties are set from the <code class="docutils literal notranslate"><span class="pre">Task</span> <span class="pre">Instance</span> <span class="pre">Details</span></code>
 page for your task.</p></li>
 <li><p>Are the DagRuns you need created and active? A DagRun represents a specific
@@ -692,13 +695,7 @@ sure you fully understand how it proceeds.</p>
 </div>
 <div class="section" id="how-do-i-trigger-tasks-based-on-another-task-s-failure">
 <h2>How do I trigger tasks based on another task’s failure?<a class="headerlink" href="#how-do-i-trigger-tasks-based-on-another-task-s-failure" title="Permalink to this headline">¶</a></h2>
-<p>Check out the <code class="docutils literal notranslate"><span class="pre">Trigger</span> <span class="pre">Rule</span></code> section in the Concepts section of the
-documentation</p>
-</div>
-<div class="section" id="why-are-connection-passwords-still-not-encrypted-in-the-metadata-db-after-i-installed-airflow-crypto">
-<h2>Why are connection passwords still not encrypted in the metadata db after I installed airflow[crypto]?<a class="headerlink" href="#why-are-connection-passwords-still-not-encrypted-in-the-metadata-db-after-i-installed-airflow-crypto" title="Permalink to this headline">¶</a></h2>
-<p>Check out the <code class="docutils literal notranslate"><span class="pre">Connections</span></code> section in the Configuration section of the
-documentation</p>
+<p>Check out the <a class="reference internal" href="concepts.html#concepts-trigger-rule"><span class="std std-ref">Trigger Rules</span></a>.</p>
 </div>
 <div class="section" id="what-s-the-deal-with-start-date">
 <h2>What’s the deal with <code class="docutils literal notranslate"><span class="pre">start_date</span></code>?<a class="headerlink" href="#what-s-the-deal-with-start-date" title="Permalink to this headline">¶</a></h2>
@@ -715,7 +712,7 @@ inactive DagRuns to get the new task onboarded properly.</p>
 <code class="docutils literal notranslate"><span class="pre">datetime.now()</span></code> as it can be quite confusing. The task is triggered
 once the period closes, and in theory an <code class="docutils literal notranslate"><span class="pre">&#64;hourly</span></code> DAG would never get to
 an hour after now as <code class="docutils literal notranslate"><span class="pre">now()</span></code> moves along.</p>
-<p>Previously we also recommended using rounded <code class="docutils literal notranslate"><span class="pre">start_date</span></code> in relation to your
+<p>Previously, we also recommended using rounded <code class="docutils literal notranslate"><span class="pre">start_date</span></code> in relation to your
 <code class="docutils literal notranslate"><span class="pre">schedule_interval</span></code>. This meant an <code class="docutils literal notranslate"><span class="pre">&#64;hourly</span></code> would be at <code class="docutils literal notranslate"><span class="pre">00:00</span></code>
 minutes:seconds, a <code class="docutils literal notranslate"><span class="pre">&#64;daily</span></code> job at midnight, a <code class="docutils literal notranslate"><span class="pre">&#64;monthly</span></code> job on the
 first of the month. This is no longer required. Airflow will now auto align
@@ -726,24 +723,24 @@ the execution of tasks within the schedule interval.
 While <code class="docutils literal notranslate"><span class="pre">schedule_interval</span></code> does allow specifying a <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>
 object, we recommend using the macros or cron expressions instead, as
 it enforces this idea of rounded schedules.</p>
-<p>When using <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code> it’s important to pay special attention
-to <code class="docutils literal notranslate"><span class="pre">start_date</span></code> as the past dependency is not enforced only on the specific
+<p>When using <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code>, it’s important to pay special attention
+to <code class="docutils literal notranslate"><span class="pre">start_date</span></code>, as the past dependency is not enforced only on the specific
 schedule of the <code class="docutils literal notranslate"><span class="pre">start_date</span></code> specified for the task. It’s also
 important to watch DagRun activity status in time when introducing
 new <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code>, unless you are planning on running a backfill
 for the new task(s).</p>
-<p>Also important to note is that the tasks <code class="docutils literal notranslate"><span class="pre">start_date</span></code>, in the context of a
-backfill CLI command, get overridden by the backfill’s command <code class="docutils literal notranslate"><span class="pre">start_date</span></code>.
+<p>It is also important to note that the task’s <code class="docutils literal notranslate"><span class="pre">start_date</span></code>, in the context of a
+backfill CLI command, gets overridden by the backfill’s <code class="docutils literal notranslate"><span class="pre">start_date</span></code> commands.
 This allows for a backfill on tasks that have <code class="docutils literal notranslate"><span class="pre">depends_on_past=True</span></code> to
-actually start, if that wasn’t the case, the backfill just wouldn’t start.</p>
+actually start. If this were not the case, the backfill just would not start.</p>
 </div>
 <div class="section" id="how-can-i-create-dags-dynamically">
 <h2>How can I create DAGs dynamically?<a class="headerlink" href="#how-can-i-create-dags-dynamically" title="Permalink to this headline">¶</a></h2>
 <p>Airflow looks in your <code class="docutils literal notranslate"><span class="pre">DAGS_FOLDER</span></code> for modules that contain <code class="docutils literal notranslate"><span class="pre">DAG</span></code> objects
-in their global namespace, and adds the objects it finds in the
-<code class="docutils literal notranslate"><span class="pre">DagBag</span></code>. Knowing this all we need is a way to dynamically assign
-variable in the global namespace, which is easily done in python using the
-<code class="docutils literal notranslate"><span class="pre">globals()</span></code> function for the standard library which behaves like a
+in their global namespace and adds the objects it finds in the
+<code class="docutils literal notranslate"><span class="pre">DagBag</span></code>. Knowing this all, we need is a way to dynamically assign
+variable in the global namespace. This is easily done in python using the
+<code class="docutils literal notranslate"><span class="pre">globals()</span></code> function for the standard library, which behaves like a
 simple dictionary.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_dag</span><span class="p">(</span><span class="n">dag_id</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -781,7 +778,7 @@ performs the actual work</p></li>
 </div>
 <div class="section" id="how-can-my-airflow-dag-run-faster">
 <h2>How can my airflow dag run faster?<a class="headerlink" href="#how-can-my-airflow-dag-run-faster" title="Permalink to this headline">¶</a></h2>
-<p>There are a few variables we could control to improve airflow dag performance:</p>
+<p>There are a few variables we can control to improve airflow dag performance:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">parallelism</span></code>: This variable controls the number of task instances that runs simultaneously across the whole Airflow cluster. User could increase the <code class="docutils literal notranslate"><span class="pre">parallelism</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">concurrency</span></code>: The Airflow scheduler will run no more than <code class="docutils literal notranslate"><span class="pre">concurrency</span></code> task instances for your DAG at any given time. Concurrency is defined in your Airflow DAG. If you do not set the concurrency on your DAG, the scheduler will use the default value from the <code class="docutils literal notranslate"><span class="pre">dag_concurrency</span></code> entry in your <code class="docutils literal notranslate"><span class="pre">airflow.cfg</span></code>.</p></li>
@@ -805,8 +802,17 @@ performs the actual work</p></li>
 <div class="section" id="how-to-reduce-airflow-dag-scheduling-latency-in-production">
 <h2>How to reduce airflow dag scheduling latency in production?<a class="headerlink" href="#how-to-reduce-airflow-dag-scheduling-latency-in-production" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">max_threads</span></code>: Scheduler will spawn multiple threads in parallel to schedule dags. This is controlled by <code class="docutils literal notranslate"><span class="pre">max_threads</span></code> with default value of 2. User should increase this value to a larger value(e.g numbers of cpus where scheduler runs - 1) in production.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scheduler_heartbeat_sec</span></code>: User should consider to increase <code class="docutils literal notranslate"><span class="pre">scheduler_heartbeat_sec</span></code> config to a higher value(e.g 60 secs) which controls how frequent the airflow scheduler gets the heartbeat and updates the job’s entry in database.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_threads</span></code>: Scheduler will spawn multiple threads in parallel to schedule dags. This is controlled by <code class="docutils literal notranslate"><span class="pre">max_threads</span></code> with default value of 2. User should increase this value to a larger value (e.g numbers of cpus where scheduler runs - 1) in production.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scheduler_heartbeat_sec</span></code>: User should consider to increase <code class="docutils literal notranslate"><span class="pre">scheduler_heartbeat_sec</span></code> config to a higher value (e.g 60 secs) which controls how frequent the airflow scheduler gets the heartbeat and updates the job’s entry in database.</p></li>
+</ul>
+</div>
+<div class="section" id="why-next-ds-or-prev-ds-might-not-contain-expected-values">
+<h2>Why next_ds or prev_ds might not contain expected values?<a class="headerlink" href="#why-next-ds-or-prev-ds-might-not-contain-expected-values" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>When scheduling DAG, the <code class="docutils literal notranslate"><span class="pre">next_ds</span></code> <code class="docutils literal notranslate"><span class="pre">next_ds_nodash</span></code> <code class="docutils literal notranslate"><span class="pre">prev_ds</span></code> <code class="docutils literal notranslate"><span class="pre">prev_ds_nodash</span></code> are calculated using
+<code class="docutils literal notranslate"><span class="pre">execution_date</span></code> and <code class="docutils literal notranslate"><span class="pre">schedule_interval</span></code>. If you set <code class="docutils literal notranslate"><span class="pre">schedule_interval</span></code> as <code class="docutils literal notranslate"><span class="pre">None</span></code> or <code class="docutils literal notranslate"><span class="pre">&#64;once</span></code>,
+the <code class="docutils literal notranslate"><span class="pre">next_ds</span></code>, <code class="docutils literal notranslate"><span class="pre">next_ds_nodash</span></code>, <code class="docutils literal notranslate"><span class="pre">prev_ds</span></code>, <code class="docutils literal notranslate"><span class="pre">prev_ds_nodash</span></code> valueS will be set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>When manually triggering DAG, the schedule will be ignored, and <code class="docutils literal notranslate"><span class="pre">prev_ds</span> <span class="pre">==</span> <span class="pre">next_ds</span> <span class="pre">==</span> <span class="pre">ds</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="how-do-i-stop-the-sync-perms-happening-multiple-times-per-webserver">
@@ -893,7 +899,6 @@ performs the actual work</p></li>
 <li><a class="reference internal" href="#">FAQ</a><ul>
 <li><a class="reference internal" href="#why-isn-t-my-task-getting-scheduled">Why isn’t my task getting scheduled?</a></li>
 <li><a class="reference internal" href="#how-do-i-trigger-tasks-based-on-another-task-s-failure">How do I trigger tasks based on another task’s failure?</a></li>
-<li><a class="reference internal" href="#why-are-connection-passwords-still-not-encrypted-in-the-metadata-db-after-i-installed-airflow-crypto">Why are connection passwords still not encrypted in the metadata db after I installed airflow[crypto]?</a></li>
 <li><a class="reference internal" href="#what-s-the-deal-with-start-date">What’s the deal with <code class="docutils literal notranslate"><span class="pre">start_date</span></code>?</a></li>
 <li><a class="reference internal" href="#how-can-i-create-dags-dynamically">How can I create DAGs dynamically?</a></li>
 <li><a class="reference internal" href="#what-are-all-the-airflow-run-commands-in-my-process-list">What are all the <code class="docutils literal notranslate"><span class="pre">airflow</span> <span class="pre">run</span></code> commands in my process list?</a></li>
@@ -901,6 +906,7 @@ performs the actual work</p></li>
 <li><a class="reference internal" href="#how-can-we-reduce-the-airflow-ui-page-load-time">How can we reduce the airflow UI page load time?</a></li>
 <li><a class="reference internal" href="#how-to-fix-exception-global-variable-explicit-defaults-for-timestamp-needs-to-be-on-1">How to fix Exception: Global variable explicit_defaults_for_timestamp needs to be on (1)?</a></li>
 <li><a class="reference internal" href="#how-to-reduce-airflow-dag-scheduling-latency-in-production">How to reduce airflow dag scheduling latency in production?</a></li>
+<li><a class="reference internal" href="#why-next-ds-or-prev-ds-might-not-contain-expected-values">Why next_ds or prev_ds might not contain expected values?</a></li>
 <li><a class="reference internal" href="#how-do-i-stop-the-sync-perms-happening-multiple-times-per-webserver">How do I stop the sync perms happening multiple times per webserver?</a></li>
 </ul>
 </li>

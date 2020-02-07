@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -633,9 +635,9 @@ https://www.sphinx-doc.org/en/master/templating.html
 
 <span class="kn">from</span> <span class="nn">builtins</span> <span class="k">import</span> <span class="nb">str</span>
 
-<span class="kn">from</span> <span class="nn">pyhive</span> <span class="k">import</span> <span class="n">presto</span>
-<span class="kn">from</span> <span class="nn">pyhive.exc</span> <span class="k">import</span> <span class="n">DatabaseError</span>
-<span class="kn">from</span> <span class="nn">requests.auth</span> <span class="k">import</span> <span class="n">HTTPBasicAuth</span>
+<span class="kn">import</span> <span class="nn">prestodb</span>
+<span class="kn">from</span> <span class="nn">prestodb.exceptions</span> <span class="k">import</span> <span class="n">DatabaseError</span>
+<span class="kn">from</span> <span class="nn">prestodb.transaction</span> <span class="k">import</span> <span class="n">IsolationLevel</span>
 
 <span class="kn">from</span> <span class="nn">airflow.hooks.dbapi_hook</span> <span class="k">import</span> <span class="n">DbApiHook</span>
 
@@ -660,18 +662,25 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div class="viewcode-block" id="PrestoHook.get_conn"><a class="viewcode-back" href="../../../_api/airflow/hooks/presto_hook/index.html#airflow.hooks.presto_hook.PrestoHook.get_conn">[docs]</a>    <span class="k">def</span> <span class="nf">get_conn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a connection object&quot;&quot;&quot;</span>
         <span class="n">db</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">presto_conn_id</span><span class="p">)</span>
-        <span class="n">reqkwargs</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="n">db</span><span class="o">.</span><span class="n">password</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">reqkwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;auth&#39;</span><span class="p">:</span> <span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">password</span><span class="p">)}</span>
-        <span class="k">return</span> <span class="n">presto</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+        <span class="n">auth</span> <span class="o">=</span> <span class="n">prestodb</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">BasicAuthentication</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">password</span><span class="p">)</span> <span class="k">if</span> <span class="n">db</span><span class="o">.</span><span class="n">password</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">prestodb</span><span class="o">.</span><span class="n">dbapi</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
             <span class="n">host</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">host</span><span class="p">,</span>
             <span class="n">port</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">port</span><span class="p">,</span>
-            <span class="n">username</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">login</span><span class="p">,</span>
+            <span class="n">user</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">login</span><span class="p">,</span>
             <span class="n">source</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">extra_dejson</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;airflow&#39;</span><span class="p">),</span>
-            <span class="n">protocol</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">extra_dejson</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;protocol&#39;</span><span class="p">,</span> <span class="s1">&#39;http&#39;</span><span class="p">),</span>
+            <span class="n">http_scheme</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">extra_dejson</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;protocol&#39;</span><span class="p">,</span> <span class="s1">&#39;http&#39;</span><span class="p">),</span>
             <span class="n">catalog</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">extra_dejson</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;catalog&#39;</span><span class="p">,</span> <span class="s1">&#39;hive&#39;</span><span class="p">),</span>
-            <span class="n">requests_kwargs</span><span class="o">=</span><span class="n">reqkwargs</span><span class="p">,</span>
-            <span class="n">schema</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">schema</span><span class="p">)</span></div>
+            <span class="n">schema</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">schema</span><span class="p">,</span>
+            <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span>
+            <span class="n">isolation_level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_isolation_level</span><span class="p">()</span></div>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="PrestoHook.get_isolation_level"><a class="viewcode-back" href="../../../_api/airflow/hooks/presto_hook/index.html#airflow.hooks.presto_hook.PrestoHook.get_isolation_level">[docs]</a>    <span class="k">def</span> <span class="nf">get_isolation_level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns an isolation level&quot;&quot;&quot;</span>
+        <span class="n">db</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">presto_conn_id</span><span class="p">)</span>
+        <span class="n">isolation_level</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">extra_dejson</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isolation_level&#39;</span><span class="p">,</span> <span class="s1">&#39;AUTOCOMMIT&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">IsolationLevel</span><span class="p">,</span> <span class="n">isolation_level</span><span class="p">,</span> <span class="n">IsolationLevel</span><span class="o">.</span><span class="n">AUTOCOMMIT</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
 <div class="viewcode-block" id="PrestoHook._strip_sql"><a class="viewcode-back" href="../../../_api/airflow/hooks/presto_hook/index.html#airflow.hooks.presto_hook.PrestoHook._strip_sql">[docs]</a>    <span class="k">def</span> <span class="nf">_strip_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">):</span>
@@ -737,10 +746,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">PrestoHook</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_strip_sql</span><span class="p">(</span><span class="n">hql</span><span class="p">),</span> <span class="n">parameters</span><span class="p">)</span></div>
 
-    <span class="c1"># TODO Enable commit_every once PyHive supports transaction.</span>
-    <span class="c1"># Unfortunately, PyHive 0.5.1 doesn&#39;t support transaction for now,</span>
-    <span class="c1"># whereas Presto 0.132+ does.</span>
-<div class="viewcode-block" id="PrestoHook.insert_rows"><a class="viewcode-back" href="../../../_api/airflow/hooks/presto_hook/index.html#airflow.hooks.presto_hook.PrestoHook.insert_rows">[docs]</a>    <span class="k">def</span> <span class="nf">insert_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">target_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PrestoHook.insert_rows"><a class="viewcode-back" href="../../../_api/airflow/hooks/presto_hook/index.html#airflow.hooks.presto_hook.PrestoHook.insert_rows">[docs]</a>    <span class="k">def</span> <span class="nf">insert_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">target_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commit_every</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A generic way to insert a set of tuples into a table.</span>
 
@@ -750,8 +756,19 @@ https://www.sphinx-doc.org/en/master/templating.html
 <span class="sd">        :type rows: iterable of tuples</span>
 <span class="sd">        :param target_fields: The names of the columns to fill in the table</span>
 <span class="sd">        :type target_fields: iterable of strings</span>
+<span class="sd">        :param commit_every: The maximum number of rows to insert in one</span>
+<span class="sd">            transaction. Set to 0 to insert all rows in one transaction.</span>
+<span class="sd">        :type commit_every: int</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">PrestoHook</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">insert_rows</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">target_fields</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_isolation_level</span><span class="p">()</span> <span class="o">==</span> <span class="n">IsolationLevel</span><span class="o">.</span><span class="n">AUTOCOMMIT</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s1">&#39;Transactions are not enable in presto connection. &#39;</span>
+                <span class="s1">&#39;Please use the isolation_level property to enable it. &#39;</span>
+                <span class="s1">&#39;Falling back to insert all rows in one transaction.&#39;</span>
+            <span class="p">)</span>
+            <span class="n">commit_every</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">PrestoHook</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">insert_rows</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">target_fields</span><span class="p">,</span> <span class="n">commit_every</span><span class="p">)</span></div></div>
 </pre></div>
 
     <div class="pager" role="navigation" aria-label="related navigation"><button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" disabled>Previous</button><button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" disabled>Next</button>

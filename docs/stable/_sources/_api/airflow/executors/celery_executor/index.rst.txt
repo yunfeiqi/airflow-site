@@ -15,6 +15,11 @@ Module Contents
 .. data:: CELERY_SEND_ERR_MSG_HEADER
    :annotation: = Error sending Celery task
 
+   
+
+.. data:: OPERATION_TIMEOUT
+   
+
    To start the celery worker, run the command:
    airflow worker
 

@@ -277,7 +277,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -350,6 +350,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -433,7 +434,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.7</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">1.10.8</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -506,6 +507,7 @@ https://www.sphinx-doc.org/en/master/templating.html
 <p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../_api/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations-ref.html">Configurations</a></li>
 </ul>
 
 </div>
@@ -667,6 +669,7 @@ https://www.sphinx-doc.org/en/master/templating.html
     <span class="nd">@apply_defaults</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">database</span><span class="p">,</span> <span class="n">output_location</span><span class="p">,</span> <span class="n">aws_conn_id</span><span class="o">=</span><span class="s1">&#39;aws_default&#39;</span><span class="p">,</span> <span class="n">client_request_token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">query_execution_context</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">result_configuration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sleep_time</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">max_tries</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">workgroup</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span>
                  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">AWSAthenaOperator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query</span> <span class="o">=</span> <span class="n">query</span>
@@ -674,6 +677,7 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="bp">self</span><span class="o">.</span><span class="n">output_location</span> <span class="o">=</span> <span class="n">output_location</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">aws_conn_id</span> <span class="o">=</span> <span class="n">aws_conn_id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">client_request_token</span> <span class="o">=</span> <span class="n">client_request_token</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid4</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">workgroup</span> <span class="o">=</span> <span class="n">workgroup</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query_execution_context</span> <span class="o">=</span> <span class="n">query_execution_context</span> <span class="ow">or</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">result_configuration</span> <span class="o">=</span> <span class="n">result_configuration</span> <span class="ow">or</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sleep_time</span> <span class="o">=</span> <span class="n">sleep_time</span>
@@ -693,7 +697,8 @@ https://www.sphinx-doc.org/en/master/templating.html
         <span class="bp">self</span><span class="o">.</span><span class="n">query_execution_context</span><span class="p">[</span><span class="s1">&#39;Database&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">database</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">result_configuration</span><span class="p">[</span><span class="s1">&#39;OutputLocation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_location</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">query_execution_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hook</span><span class="o">.</span><span class="n">run_query</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_execution_context</span><span class="p">,</span>
-                                                      <span class="bp">self</span><span class="o">.</span><span class="n">result_configuration</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">client_request_token</span><span class="p">)</span>
+                                                      <span class="bp">self</span><span class="o">.</span><span class="n">result_configuration</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">client_request_token</span><span class="p">,</span>
+                                                      <span class="bp">self</span><span class="o">.</span><span class="n">workgroup</span><span class="p">)</span>
         <span class="n">query_status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hook</span><span class="o">.</span><span class="n">poll_query_status</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query_execution_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_tries</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">query_status</span> <span class="ow">in</span> <span class="n">AWSAthenaHook</span><span class="o">.</span><span class="n">FAILURE_STATES</span><span class="p">:</span>
