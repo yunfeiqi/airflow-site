@@ -83,6 +83,21 @@
   </url>
   
   <url>
+    <loc>/blog/tags/documentation/</loc>
+    <lastmod>2020-02-08T05:17:09+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/experience-in-google-season-of-docs-2019-with-apache-airflow/</loc>
+    <lastmod>2020-02-08T05:17:09+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-02-08T05:17:09+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/airflow-survey/</loc>
     <lastmod>2019-12-18T17:24:41+01:00</lastmod>
   </url>
@@ -100,11 +115,6 @@
   <url>
     <loc>/blog/tags/survey/</loc>
     <lastmod>2019-12-18T17:24:41+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-12-30T16:35:47+01:00</lastmod>
   </url>
   
   <url>
