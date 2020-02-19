@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apache Airflow – community</title>
+    <title>Apache Airflow – Community</title>
     <link>/blog/tags/community/</link>
-    <description>Recent content in community on Apache Airflow</description>
+    <description>Recent content in Community on Apache Airflow</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 11 Dec 2019 00:00:00 +0000</lastBuildDate>
     
@@ -996,7 +996,7 @@ for you here:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The processed data includes multi-choice options one-hot encoded. If you find any interesting
-insight, please update the article (&lt;a href=&#34;https://github.com/apache/airflow-site/blob/aip-11/CONTRIBUTE.md&#34; target=&#34;_blank&#34;&gt;make PR&lt;/a&gt;
+insight, please update the article (&lt;a href=&#34;https://github.com/apache/airflow-site/blob/master/CONTRIBUTE.md&#34; target=&#34;_blank&#34;&gt;make PR&lt;/a&gt;
 to Airflow site).&lt;/p&gt;
 
       </description>
@@ -1026,10 +1026,10 @@ to be translated into many languages. This is our effort to foster a more inclus
 Apache Airflow, and we look forward to seeing contributions in Spanish, Chinese, Russian, and other languages as well!&lt;/p&gt;
 
 &lt;p&gt;We built our website on Docsy, a platform that is easy to use and contribute to. Follow
-&lt;a href=&#34;https://github.com/apache/airflow-site/blob/aip-11/README.md&#34; target=&#34;_blank&#34;&gt;these steps&lt;/a&gt; to set up your environment and
+&lt;a href=&#34;https://github.com/apache/airflow-site/blob/master/README.md&#34; target=&#34;_blank&#34;&gt;these steps&lt;/a&gt; to set up your environment and
 to create your first pull request. You may also use
 the new website for your own open source project as a template.
-All of our &lt;a href=&#34;https://github.com/apache/airflow-site/tree/aip-11&#34; target=&#34;_blank&#34;&gt;code is open and hosted on Github&lt;/a&gt;.&lt;/p&gt;
+All of our &lt;a href=&#34;https://github.com/apache/airflow-site/tree/master&#34; target=&#34;_blank&#34;&gt;code is open and hosted on Github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Share your questions, comments, and suggestions with us, to help us improve the website.
 We hope that this new design makes finding documentation about Airflow easier,
@@ -1041,11 +1041,11 @@ and that its improved accessibility increases adoption and use of Apache Airflow
     </item>
     
     <item>
-      <title>Blog: ApacheCon Europe 2019 — Thoughts and Insights by Airflow Commiters</title>
-      <link>/blog/apache-con-europe-2019-thoughts-and-insights-by-airflow-commiters/</link>
+      <title>Blog: ApacheCon Europe 2019 — Thoughts and Insights by Airflow Committers</title>
+      <link>/blog/apache-con-europe-2019-thoughts-and-insights-by-airflow-committers/</link>
       <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/apache-con-europe-2019-thoughts-and-insights-by-airflow-commiters/</guid>
+      <guid>/blog/apache-con-europe-2019-thoughts-and-insights-by-airflow-committers/</guid>
       <description>
         
         
