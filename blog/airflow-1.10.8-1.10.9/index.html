@@ -9,7 +9,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="/blog/tags/development/index.xml">
 
 
 <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
@@ -30,22 +29,30 @@
 <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<title>Development | Apache Airflow</title><meta property="og:title" content="Development" />
-<meta property="og:description" content="Platform created by community to programmatically author, schedule and monitor workflows." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/blog/tags/development/" />
+<title>Apache Airflow 1.10.8 &amp; 1.10.9 | Apache Airflow</title><meta property="og:title" content="Apache Airflow 1.10.8 &amp; 1.10.9" />
+<meta property="og:description" content="We are happy to present the new 1.10.8 and 1.10.9 releases of Apache Airflow." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/airflow-1.10.8-1.10.9/" />
 
 <meta property="og:image" content="/images/feature-image.png" />
+<meta property="article:published_time" content="2020-02-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-23T22:34:43+00:00" /><meta property="og:site_name" content="Apache Airflow" />
+<meta itemprop="name" content="Apache Airflow 1.10.8 &amp; 1.10.9">
+<meta itemprop="description" content="We are happy to present the new 1.10.8 and 1.10.9 releases of Apache Airflow.">
 
-<meta property="og:updated_time" content="2019-11-22T00:00:00+00:00" /><meta property="og:site_name" content="Apache Airflow" />
-<meta itemprop="name" content="Development">
-<meta itemprop="description" content="Platform created by community to programmatically author, schedule and monitor workflows.">
 
+<meta itemprop="datePublished" content="2020-02-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-23T22:34:43&#43;00:00" />
+<meta itemprop="wordCount" content="437">
+
+
+
+<meta itemprop="keywords" content="release," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/images/feature-image.png"/>
 
-<meta name="twitter:title" content="Development"/>
-<meta name="twitter:description" content="Platform created by community to programmatically author, schedule and monitor workflows."/>
+<meta name="twitter:title" content="Apache Airflow 1.10.8 &amp; 1.10.9"/>
+<meta name="twitter:description" content="We are happy to present the new 1.10.8 and 1.10.9 releases of Apache Airflow."/>
 
 
 <script type="application/javascript">
@@ -73,7 +80,7 @@ if (!doNotTrack) {
   crossorigin="anonymous"></script>
 
 
-<meta name="description" content="Platform created by community to programmatically author, schedule and monitor workflows." />
+<meta name="description" content="We are happy to present the new 1.10.8 and 1.10.9 releases of Apache Airflow." />
 
 
 
@@ -92,7 +99,7 @@ if (!doNotTrack) {
 
 
 </head>
-<body class="td-taxonomy">
+<body class="td-page">
 <header>
     
 
@@ -198,7 +205,7 @@ if (!doNotTrack) {
                     
                     
                     
-                    <a class="navbar__text-link "
+                    <a class="navbar__text-link active"
                        href="/blog/"
                        >
                         Blog
@@ -329,7 +336,7 @@ if (!doNotTrack) {
                     
                     
                     
-                    <a class="navbar__text-link "
+                    <a class="navbar__text-link active"
                        href="/blog/"
                        >
                         Blog
@@ -364,129 +371,216 @@ if (!doNotTrack) {
     <div class="base-layout">
         <main role="main" class="td-main container">
             
-    
-    <div class="no-width-restriction">
-        <h2 class="page-header">Blog</h2>
-        <form class="search-form" method="get" action="/blog">
-            <input class="search-form__input" placeholder="Search" name="q" type="search" id="search" size="16">
-            <button class="search-form__button" type="submit">
+    <div class="blogpost-content">
+        
+
+<div class="blogpost-content--header-wrapper">
+    <div class="blogpost-content__metadata--container">
+        <div class="tags-container">
+            
                 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-    <g id="Group_1579" data-name="Group 1579" transform="translate(-41.001 -41)">
-        <path id="Path_169" d="M71.415 64.687a7.215 7.215 0 1 0-6.729 6.728 7.222 7.222 0 0 0 6.729-6.728z" fill="none" data-name="Path 169" transform="translate(-14.277 -14.276)"/>
-        <path id="Path_170" d="M60.863 59.8l-6.093-6.09a7.78 7.78 0 1 0-1.06 1.06l6.09 6.093a.468.468 0 0 0 .662 0l.4-.4a.468.468 0 0 0 .001-.663zM42.512 49.183a6.274 6.274 0 1 1 5.851 5.85 6.28 6.28 0 0 1-5.851-5.85z" fill="#51504f" data-name="Path 170"/>
+                    <a class="tag" href="/blog/tags/release/">Release</a>
+                
+            
+        </div>
+        <span class="bodytext__medium--brownish-grey">Sun, Feb 23, 2020</span>
+    </div>
+    <p class="blogpost-content__metadata--title">Apache Airflow 1.10.8 &amp; 1.10.9</p>
+    <div class="blogpost-content__metadata--author">
+        <span class="blogpost-content__metadata--author">
+            Kaxil Naik
+        </span>
+        
+            <a href="https://twitter.com/kaxil/" class="blogpost-content__metadata--social-media-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21">
+    <g id="Group_1746" data-name="Group 1746" transform="translate(.076 -.055)">
+        <ellipse id="Ellipse_19" cx="11" cy="10.5" fill="#51504f" data-name="Ellipse 19" rx="11" ry="10.5"
+                 transform="translate(-.076 .055)"/>
+        <g id="Logo_FIXED" data-name="Logo — FIXED" transform="translate(5.568 5.872)">
+            <path id="Path_643"
+                  d="M-1554.714 1446.466a6.538 6.538 0 0 0 6.581-6.581v-.3a4.711 4.711 0 0 0 1.155-1.2 4.7 4.7 0 0 1-1.331.365 2.328 2.328 0 0 0 1.019-1.281 4.6 4.6 0 0 1-1.47.559 2.309 2.309 0 0 0-1.687-.73 2.316 2.316 0 0 0-2.314 2.314 2.555 2.555 0 0 0 .059.528 6.569 6.569 0 0 1-4.767-2.418 2.311 2.311 0 0 0-.311 1.164 2.319 2.319 0 0 0 1.028 1.926 2.34 2.34 0 0 1-1.047-.289v.031a2.318 2.318 0 0 0 1.854 2.269 2.257 2.257 0 0 1-.609.081 2.281 2.281 0 0 1-.433-.041 2.313 2.313 0 0 0 2.161 1.606 4.639 4.639 0 0 1-2.873.992 4.445 4.445 0 0 1-.55-.031 6.578 6.578 0 0 0 3.541 1.033"
+                  fill="#fff" data-name="Path 643" transform="translate(1558.255 -1437.301)"/>
+        </g>
     </g>
 </svg>
 
-                
-            </button>
-        </form>
-        <div class="all-tags-container">
-            <div class="tags-container mx-auto">
-                <a class="tag" href="/blog/">All</a>
-                
-                    
-                        <a class="tag "
-                           href="/blog/tags/community/">Community</a>
-                    
-                
-                    
-                        <a class="tag active"
-                           href="/blog/tags/development/">Development</a>
-                    
-                
-                    
-                        <a class="tag "
-                           href="/blog/tags/documentation/">Documentation</a>
-                    
-                
-                    
-                        <a class="tag "
-                           href="/blog/tags/release/">Release</a>
-                    
-                
-                    
-                        <a class="tag "
-                           href="/blog/tags/survey/">Survey</a>
-                    
-                
-                    
-                        <a class="tag "
-                           href="/blog/tags/users/">Users</a>
-                    
-                
-            </div>
-        </div>
-        <div class="blog__list-items-wrapper">
-            <div class="new-entry">
-                <a class="new-entry--link" href="https://github.com/apache/airflow-site">ADD YOUR ENTRY</a>
-            </div>
-            <div class="list-items">
-                
-                    <div class="list-item list-item--wide">
-                        
-
-<div class="card">
-    <div class="box-event__blogpost">
-        <div class="box-event__blogpost--metadata">
-            <div class="tags-container">
-                
-                    
-                        <a class="tag" href="/blog/tags/development/">Development</a>
-                    
-                
-            </div>
-            <span class="bodytext__medium--brownish-grey box-event__blogpost--date">Fri, Nov 22, 2019</span>
-        </div>
-        <p class="box-event__blogpost--header">Documenting using local development environment</p>
-        <p class="box-event__blogpost--author">Elena Fedotova</p>
-        <p class="box-event__blogpost--description">The story behind documenting local development environment of Apache Airflow</p>
-        <div class="mt-auto">
-            <a href="/blog/documenting-using-local-development-environments/">
-                
-
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Read more</button>
+            </a>
+        
+        
+            <a href="https://github.com/kaxil/" class="blogpost-content__metadata--social-media-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21.737" height="21.2" viewBox="0 0 21.737 21.2">
+    <path id="Path_1378" d="M33.971 1181.31a10.87 10.87 0 0 0-3.435 21.182c.543.1.742-.236.742-.524 0-.258-.009-.941-.015-1.848-3.023.657-3.661-1.457-3.661-1.457a2.876 2.876 0 0 0-1.207-1.59c-.987-.674.075-.661.075-.661a2.283 2.283 0 0 1 1.665 1.12 2.314 2.314 0 0 0 3.163.9 2.322 2.322 0 0 1 .69-1.453c-2.413-.274-4.951-1.207-4.951-5.371a4.2 4.2 0 0 1 1.119-2.917 3.908 3.908 0 0 1 .107-2.876s.913-.292 2.989 1.114a10.3 10.3 0 0 1 5.442 0c2.075-1.406 2.986-1.114 2.986-1.114a3.9 3.9 0 0 1 .108 2.876 4.2 4.2 0 0 1 1.117 2.917c0 4.175-2.541 5.094-4.962 5.363a2.6 2.6 0 0 1 .738 2.013c0 1.453-.013 2.625-.013 2.982 0 .291.2.629.747.523a10.87 10.87 0 0 0-3.443-21.18z" fill="#51504f" fill-rule="evenodd" data-name="Path 1378" transform="translate(-23.103 -1181.31)"/>
+</svg>
 
             </a>
+        
+        
+            <a href="https://linkedin.com/in/kaxil/" class="blogpost-content__metadata--social-media-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 21">
+    <g id="Group_1745" data-name="Group 1745" transform="translate(.155 -.055)">
+        <ellipse id="Ellipse_20" cx="10" cy="10.5" fill="#51504f" data-name="Ellipse 20" rx="10" ry="10.5" transform="translate(-.155 .055)"/>
+        <g id="Group_698" data-name="Group 698" transform="translate(5.843 5.004)">
+            <path id="Path_644" d="M-1311.072 1423.962a.9.9 0 0 1-.972.9.888.888 0 0 1-.937-.9.9.9 0 0 1 .961-.9.892.892 0 0 1 .948.9zm-1.862 7.413v-5.8h1.8v5.8z" fill="#fff" data-name="Path 644" transform="translate(1312.981 -1423.061)"/>
+            <path id="Path_645" d="M-1284.253 1448.767c0-.723-.024-1.328-.047-1.85h1.565l.083.806h.035a2.084 2.084 0 0 1 1.791-.937c1.186 0 2.076.795 2.076 2.5v3.428h-1.8v-3.214c0-.747-.261-1.257-.914-1.257a.989.989 0 0 0-.925.676 1.29 1.29 0 0 0-.06.451v3.345h-1.8z" fill="#fff" data-name="Path 645" transform="translate(1287.182 -1444.402)"/>
+        </g>
+    </g>
+</svg>
+
+            </a>
+        
+    </div>
+    <p class="blogpost-content__metadata--description">We are happy to present the new 1.10.8 and 1.10.9 releases of Apache Airflow.</p>
+</div>
+<div class="markdown-content">
+    
+
+<p>Airflow 1.10.8 contains 160 commits since 1.10.7 and includes 4 new features, 42 improvements, 36 bug fixes, and several doc changes.</p>
+
+<p>We released 1.10.9 on the same day as one of the Flask dependencies (Werkzeug) released 1.0 which broke Airflow 1.10.8.</p>
+
+<p><strong>Details</strong>:</p>
+
+<ul>
+<li><strong>PyPI</strong>: <a href="https://pypi.org/project/apache-airflow/1.10.9/" target="_blank">https://pypi.org/project/apache-airflow/1.10.9/</a></li>
+<li><strong>Docs</strong>: <a href="https://airflow.apache.org/docs/1.10.9/" target="_blank">https://airflow.apache.org/docs/1.10.9/</a></li>
+<li><strong>Changelog (1.10.8)</strong>: <a href="http://airflow.apache.org/docs/1.10.8/changelog.html#airflow-1-10-8-2020-01-07" target="_blank">http://airflow.apache.org/docs/1.10.8/changelog.html#airflow-1-10-8-2020-01-07</a></li>
+<li><strong>Changelog (1.10.9)</strong>: <a href="http://airflow.apache.org/docs/1.10.9/changelog.html#airflow-1-10-9-2020-02-10" target="_blank">http://airflow.apache.org/docs/1.10.9/changelog.html#airflow-1-10-9-2020-02-10</a></li>
+</ul>
+
+<p>Some of the noteworthy new features (user-facing) are:</p>
+
+<ul>
+<li><a href="https://github.com/apache/airflow/pull/6489" target="_blank">Add tags to DAGs and use it for filtering in the UI (RBAC only)</a></li>
+<li><a href="http://airflow.apache.org/docs/1.10.9/executor/debug.html" target="_blank">New Executor: DebugExecutor for Local debugging from your IDE</a></li>
+<li><a href="https://github.com/apache/airflow/pull/7281" target="_blank">Allow passing conf in &ldquo;Add DAG Run&rdquo; (Triggered Dags) view</a></li>
+<li><a href="https://github.com/apache/airflow/pull/7038" target="_blank">Allow dags to run for future execution dates for manually triggered DAGs (only if <code>schedule_interval=None</code>)</a></li>
+<li><a href="https://airflow.apache.org/docs/1.10.9/configurations-ref.html" target="_blank">Dedicated page in documentation for all configs in airflow.cfg</a></li>
+</ul>
+
+<h3 id="add-tags-to-dags-and-use-it-for-filtering-in-the-ui">Add tags to DAGs and use it for filtering in the UI</h3>
+
+<p>In order to filter DAGs (e.g by team), you can add tags in each dag. The filter is saved in a cookie and can be reset by the reset button.</p>
+
+<p>For example:</p>
+
+<p>In your Dag file, pass a list of tags you want to add to DAG object:</p>
+
+<pre><code class="language-python">dag = DAG(
+    dag_id='example_dag_tag',
+    schedule_interval='0 0 * * *',
+    tags=['example']
+)
+</code></pre>
+
+<p><strong>Screenshot</strong>:
+<img src="airflow-dag-tags.png" alt="Add filter by DAG tags" /></p>
+
+<p><strong>Note</strong>: This feature is only available for the RBAC UI (enabled using <code>rbac=True</code> in <code>[webserver]</code> section in your <code>airflow.cfg</code>).</p>
+
+<h2 id="special-note-deprecations">Special Note / Deprecations</h2>
+
+<h3 id="python-2">Python 2</h3>
+
+<p>Python 2 has reached end of its life on Jan 2020. Airflow Master no longer supports Python 2.
+Airflow 1.10.* would be the last series to support Python 2.</p>
+
+<p>We strongly recommend users to use Python &gt;= 3.6</p>
+
+<h3 id="use-airflow-rbac-ui">Use Airflow RBAC UI</h3>
+
+<p>Airflow 1.10.9 ships with 2 UIs, the default is non-RBAC Flask-admin based UI and Flask-appbuilder based UI.</p>
+
+<p>The Flask-AppBuilder (FAB) based UI is allows Role-based Access Control and has more advanced features compared to
+the legacy Flask-admin based UI. This UI can be enabled by setting <code>rbac=True</code> in <code>[webserver]</code> section in your <code>airflow.cfg</code>.</p>
+
+<p>Flask-admin based UI is deprecated and new features won&rsquo;t be ported to it. This UI will still be the default
+for 1.10.* series but would no longer be available from Airflow 2.0</p>
+
+<h2 id="list-of-contributors">List of Contributors</h2>
+
+<p>According to git shortlog, the following people contributed to the 1.10.8 and 1.10.9 release. Thank you to all contributors!</p>
+
+<p>Anita Fronczak, Ash Berlin-Taylor, BasPH, Bharat Kashyap, Bharath Palaksha, Bhavika Tekwani, Bjorn Olsen, Brian Phillips, Cooper Gillan, Daniel Cohen, Daniel Imberman, Daniel Standish, Gabriel Eckers, Hossein Torabi, Igor Khrol, Jacob, Jarek Potiuk, Jay, Jiajie Zhong, Jithin Sukumar, Kamil Breguła, Kaxil Naik, Kousuke Saruta, Mustafa Gök, Noël Bardelot, Oluwafemi Sule, Pete DeJoy, QP Hou, Qian Yu, Robin Edwards, Ry Walker, Steven van Rossum, Tomek Urbaszek, Xinbin Huang, Yuen-Kuei Hsueh, Yu Qian, Zacharya, ZxMYS, rconroy293, tooptoop4</p>
+
+</div>
+
+        
+
+<div class="mt-5">
+    <p class="bodytext__medium--greyish-brown font-weight-500 mb-2">Share</p>
+    <div class="share-section--icons-wrapper">
+        <div class="share-section--icon"
+             onclick="window.open(`https://twitter.com/intent/tweet?url=${window.location.href}&original_referer=${window.location.origin}`,'targetWindow', `toolbar=no, location=no, status=no, menubar=no, directories=no, scrollbars=no, resizable=no, centerscreen=yes, chrome=yes, width=550, height=400, top=${window.outerHeight / 2 + (window.screenY || window.screenTop || 0) - 200} left=${window.outerWidth / 2 + (window.screenX || window.screenLeft || 0) - 275}`); return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21">
+    <g id="Group_1746" data-name="Group 1746" transform="translate(.076 -.055)">
+        <ellipse id="Ellipse_19" cx="11" cy="10.5" fill="#51504f" data-name="Ellipse 19" rx="11" ry="10.5"
+                 transform="translate(-.076 .055)"/>
+        <g id="Logo_FIXED" data-name="Logo — FIXED" transform="translate(5.568 5.872)">
+            <path id="Path_643"
+                  d="M-1554.714 1446.466a6.538 6.538 0 0 0 6.581-6.581v-.3a4.711 4.711 0 0 0 1.155-1.2 4.7 4.7 0 0 1-1.331.365 2.328 2.328 0 0 0 1.019-1.281 4.6 4.6 0 0 1-1.47.559 2.309 2.309 0 0 0-1.687-.73 2.316 2.316 0 0 0-2.314 2.314 2.555 2.555 0 0 0 .059.528 6.569 6.569 0 0 1-4.767-2.418 2.311 2.311 0 0 0-.311 1.164 2.319 2.319 0 0 0 1.028 1.926 2.34 2.34 0 0 1-1.047-.289v.031a2.318 2.318 0 0 0 1.854 2.269 2.257 2.257 0 0 1-.609.081 2.281 2.281 0 0 1-.433-.041 2.313 2.313 0 0 0 2.161 1.606 4.639 4.639 0 0 1-2.873.992 4.445 4.445 0 0 1-.55-.031 6.578 6.578 0 0 0 3.541 1.033"
+                  fill="#fff" data-name="Path 643" transform="translate(1558.255 -1437.301)"/>
+        </g>
+    </g>
+</svg>
+
+        </div>
+        <div class="share-section--icon"
+             onclick="window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`,'targetWindow', `toolbar=no, location=no, status=no, menubar=no, directories=no, scrollbars=no, resizable=no, centerscreen=yes, chrome=yes, width=750, height=600, top=${window.outerHeight / 2 + (window.screenY || window.screenTop || 0) - 300} left=${window.outerWidth / 2 + (window.screenX || window.screenLeft || 0) - 375}`); return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 21">
+    <g id="Group_1745" data-name="Group 1745" transform="translate(.155 -.055)">
+        <ellipse id="Ellipse_20" cx="10" cy="10.5" fill="#51504f" data-name="Ellipse 20" rx="10" ry="10.5" transform="translate(-.155 .055)"/>
+        <g id="Group_698" data-name="Group 698" transform="translate(5.843 5.004)">
+            <path id="Path_644" d="M-1311.072 1423.962a.9.9 0 0 1-.972.9.888.888 0 0 1-.937-.9.9.9 0 0 1 .961-.9.892.892 0 0 1 .948.9zm-1.862 7.413v-5.8h1.8v5.8z" fill="#fff" data-name="Path 644" transform="translate(1312.981 -1423.061)"/>
+            <path id="Path_645" d="M-1284.253 1448.767c0-.723-.024-1.328-.047-1.85h1.565l.083.806h.035a2.084 2.084 0 0 1 1.791-.937c1.186 0 2.076.795 2.076 2.5v3.428h-1.8v-3.214c0-.747-.261-1.257-.914-1.257a.989.989 0 0 0-.925.676 1.29 1.29 0 0 0-.06.451v3.345h-1.8z" fill="#fff" data-name="Path 645" transform="translate(1287.182 -1444.402)"/>
+        </g>
+    </g>
+</svg>
+
+        </div>
+        <div class="share-section--icon"
+             onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`,'targetWindow', `toolbar=no, location=no, status=no, menubar=no, directories=no, scrollbars=no, resizable=no, centerscreen=yes, chrome=yes, width=550, height=400, top=${window.outerHeight / 2 + (window.screenY || window.screenTop || 0) - 200} left=${window.outerWidth / 2 + (window.screenX || window.screenLeft || 0) - 275}`); return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21.332" height="21.2" viewBox="0 0 21.332 21.2">
+    <g id="Group_1748" data-name="Group 1748" transform="translate(-1654.242 -1377.267)">
+        <path id="Path_1379" d="M1766.91 1472.142v-.022h-2.955v.022z" fill="none" data-name="Path 1379" transform="translate(-97.392 -84.198)"/>
+        <path id="Path_1380" d="M1712.911 1420.842v-2.351c0-2.669 1.582-4.152 4.02-4.152a15.28 15.28 0 0 1 2.362.218v-.009a15.3 15.3 0 0 0-2.373-.22c-2.439 0-4.02 1.483-4.02 4.152v2.351h-2.724v3.076h.011v-3.065z" fill="none" data-name="Path 1380" transform="translate(-49.651 -32.898)"/>
+        <path id="Path_1381" d="M1675.574 1387.933a10.666 10.666 0 1 0-12.325 10.534v-7.448h-2.713v-.011h-.011v-3.076h2.724v-2.351c0-2.669 1.582-4.152 4.02-4.152a15.307 15.307 0 0 1 2.373.22v.009h.011v2.615h-1.34a1.553 1.553 0 0 0-1.747 1.67v1.977h2.955v.022h.014l-.472 3.076h-2.483v7.433a10.635 10.635 0 0 0 8.994-10.518z" fill="#51504f" data-name="Path 1381"/>
+        <path id="Rectangle_882" d="M0 0h2.713v.011H0z" fill="#51504f" data-name="Rectangle 882" transform="translate(1660.536 1391.009)"/>
+        <path id="Path_1382" d="M1765.607 1418.958a1.553 1.553 0 0 0-1.747 1.67v2h.011v-1.977a1.553 1.553 0 0 1 1.747-1.67h1.34v-2.614h-.011v2.594z" fill="#51504f" data-name="Path 1382" transform="translate(-97.305 -34.705)"/>
+        <path id="Path_1383" d="M1766.365 1475.391l.472-3.076h-.014l-.469 3.054h-2.494v7.459h.022v-7.433z" fill="#51504f" data-name="Path 1383" transform="translate(-97.305 -84.371)"/>
+    </g>
+</svg>
+
         </div>
     </div>
 </div>
 
-                    </div>
-                
-                    <div class="list-item list-item--wide">
-                        
+        <div class="no-width-restriction no-desktop">
+            
 
-<div class="card">
-    <div class="box-event__blogpost">
-        <div class="box-event__blogpost--metadata">
-            <div class="tags-container">
-                
-                    
-                        <a class="tag" href="/blog/tags/development/">Development</a>
-                    
-                
-            </div>
-            <span class="bodytext__medium--brownish-grey box-event__blogpost--date">Fri, Nov 22, 2019</span>
-        </div>
-        <p class="box-event__blogpost--header">It&#39;s a &#34;Breeze&#34; to develop Apache Airflow</p>
-        <p class="box-event__blogpost--author">Jarek Potiuk</p>
-        <p class="box-event__blogpost--description">A Principal Software Engineer&#39;s journey to developer productivity. Learn how Jarek and his team speeded up and simplified Airflow development for the community.</p>
-        <div class="mt-auto">
-            <a href="/blog/its-a-breeze-to-develop-apache-airflow/">
-                
+<div class="pager">
+    <a href="/blog/experience-in-google-season-of-docs-2019-with-apache-airflow/">
+        
 
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Read more</button>
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Previous</button>
 
-            </a>
-        </div>
-    </div>
+    </a>
+    <a >
+        
+
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" disabled>Next</button>
+
+    </a>
 </div>
 
-                    </div>
-                
-            </div>
         </div>
+    </div>
+
+    <div class="no-width-restriction desktop-only">
+        
+
+
+
+
     </div>
 
         </main>
@@ -494,7 +588,7 @@ if (!doNotTrack) {
 
 <div class="base-layout--button">
     
-    <a href=https://github.com/apache/airflow-site/edit/master/landing-pages/site/content/en/tags/development>
+    <a href=https://github.com/apache/airflow-site/edit/master/landing-pages/site/content/en/blog/airflow-1.10.8-1.10.9/index.md>
         
 
 

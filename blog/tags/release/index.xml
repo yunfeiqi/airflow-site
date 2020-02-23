@@ -1,0 +1,100 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Airflow – release</title>
+    <link>/blog/tags/release/</link>
+    <description>Recent content in release on Apache Airflow</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/blog/tags/release/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Apache Airflow 1.10.8 &amp; 1.10.9</title>
+      <link>/blog/airflow-1.10.8-1.10.9/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/airflow-1.10.8-1.10.9/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;Airflow 1.10.8 contains 160 commits since 1.10.7 and includes 4 new features, 42 improvements, 36 bug fixes, and several doc changes.&lt;/p&gt;
+
+&lt;p&gt;We released 1.10.9 on the same day as one of the Flask dependencies (Werkzeug) released 1.0 which broke Airflow 1.10.8.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Details&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PyPI&lt;/strong&gt;: &lt;a href=&#34;https://pypi.org/project/apache-airflow/1.10.9/&#34; target=&#34;_blank&#34;&gt;https://pypi.org/project/apache-airflow/1.10.9/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Docs&lt;/strong&gt;: &lt;a href=&#34;https://airflow.apache.org/docs/1.10.9/&#34; target=&#34;_blank&#34;&gt;https://airflow.apache.org/docs/1.10.9/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Changelog (1.10.8)&lt;/strong&gt;: &lt;a href=&#34;http://airflow.apache.org/docs/1.10.8/changelog.html#airflow-1-10-8-2020-01-07&#34; target=&#34;_blank&#34;&gt;http://airflow.apache.org/docs/1.10.8/changelog.html#airflow-1-10-8-2020-01-07&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Changelog (1.10.9)&lt;/strong&gt;: &lt;a href=&#34;http://airflow.apache.org/docs/1.10.9/changelog.html#airflow-1-10-9-2020-02-10&#34; target=&#34;_blank&#34;&gt;http://airflow.apache.org/docs/1.10.9/changelog.html#airflow-1-10-9-2020-02-10&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some of the noteworthy new features (user-facing) are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/6489&#34; target=&#34;_blank&#34;&gt;Add tags to DAGs and use it for filtering in the UI (RBAC only)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://airflow.apache.org/docs/1.10.9/executor/debug.html&#34; target=&#34;_blank&#34;&gt;New Executor: DebugExecutor for Local debugging from your IDE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/7281&#34; target=&#34;_blank&#34;&gt;Allow passing conf in &amp;ldquo;Add DAG Run&amp;rdquo; (Triggered Dags) view&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/7038&#34; target=&#34;_blank&#34;&gt;Allow dags to run for future execution dates for manually triggered DAGs (only if &lt;code&gt;schedule_interval=None&lt;/code&gt;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://airflow.apache.org/docs/1.10.9/configurations-ref.html&#34; target=&#34;_blank&#34;&gt;Dedicated page in documentation for all configs in airflow.cfg&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;add-tags-to-dags-and-use-it-for-filtering-in-the-ui&#34;&gt;Add tags to DAGs and use it for filtering in the UI&lt;/h3&gt;
+
+&lt;p&gt;In order to filter DAGs (e.g by team), you can add tags in each dag. The filter is saved in a cookie and can be reset by the reset button.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;In your Dag file, pass a list of tags you want to add to DAG object:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dag = DAG(
+    dag_id=&#39;example_dag_tag&#39;,
+    schedule_interval=&#39;0 0 * * *&#39;,
+    tags=[&#39;example&#39;]
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Screenshot&lt;/strong&gt;:
+&lt;img src=&#34;airflow-dag-tags.png&#34; alt=&#34;Add filter by DAG tags&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This feature is only available for the RBAC UI (enabled using &lt;code&gt;rbac=True&lt;/code&gt; in &lt;code&gt;[webserver]&lt;/code&gt; section in your &lt;code&gt;airflow.cfg&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;special-note-deprecations&#34;&gt;Special Note / Deprecations&lt;/h2&gt;
+
+&lt;h3 id=&#34;python-2&#34;&gt;Python 2&lt;/h3&gt;
+
+&lt;p&gt;Python 2 has reached end of its life on Jan 2020. Airflow Master no longer supports Python 2.
+Airflow 1.10.* would be the last series to support Python 2.&lt;/p&gt;
+
+&lt;p&gt;We strongly recommend users to use Python &amp;gt;= 3.6&lt;/p&gt;
+
+&lt;h3 id=&#34;use-airflow-rbac-ui&#34;&gt;Use Airflow RBAC UI&lt;/h3&gt;
+
+&lt;p&gt;Airflow 1.10.9 ships with 2 UIs, the default is non-RBAC Flask-admin based UI and Flask-appbuilder based UI.&lt;/p&gt;
+
+&lt;p&gt;The Flask-AppBuilder (FAB) based UI is allows Role-based Access Control and has more advanced features compared to
+the legacy Flask-admin based UI. This UI can be enabled by setting &lt;code&gt;rbac=True&lt;/code&gt; in &lt;code&gt;[webserver]&lt;/code&gt; section in your &lt;code&gt;airflow.cfg&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Flask-admin based UI is deprecated and new features won&amp;rsquo;t be ported to it. This UI will still be the default
+for 1.10.* series but would no longer be available from Airflow 2.0&lt;/p&gt;
+
+&lt;h2 id=&#34;list-of-contributors&#34;&gt;List of Contributors&lt;/h2&gt;
+
+&lt;p&gt;According to git shortlog, the following people contributed to the 1.10.8 and 1.10.9 release. Thank you to all contributors!&lt;/p&gt;
+
+&lt;p&gt;Anita Fronczak, Ash Berlin-Taylor, BasPH, Bharat Kashyap, Bharath Palaksha, Bhavika Tekwani, Bjorn Olsen, Brian Phillips, Cooper Gillan, Daniel Cohen, Daniel Imberman, Daniel Standish, Gabriel Eckers, Hossein Torabi, Igor Khrol, Jacob, Jarek Potiuk, Jay, Jiajie Zhong, Jithin Sukumar, Kamil Breguła, Kaxil Naik, Kousuke Saruta, Mustafa Gök, Noël Bardelot, Oluwafemi Sule, Pete DeJoy, QP Hou, Qian Yu, Robin Edwards, Ry Walker, Steven van Rossum, Tomek Urbaszek, Xinbin Huang, Yuen-Kuei Hsueh, Yu Qian, Zacharya, ZxMYS, rconroy293, tooptoop4&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
