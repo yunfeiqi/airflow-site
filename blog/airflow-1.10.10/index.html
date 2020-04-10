@@ -36,14 +36,14 @@
 
 <meta property="og:image" content="/images/feature-image.png" />
 <meta property="article:published_time" content="2020-04-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-10T16:45:22+01:00" /><meta property="og:site_name" content="Apache Airflow" />
+<meta property="article:modified_time" content="2020-04-10T18:23:27+01:00" /><meta property="og:site_name" content="Apache Airflow" />
 <meta itemprop="name" content="Apache Airflow 1.10.10">
 <meta itemprop="description" content="We are happy to present Apache Airflow 1.10.10">
 
 
 <meta itemprop="datePublished" content="2020-04-09T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-04-10T16:45:22&#43;01:00" />
-<meta itemprop="wordCount" content="883">
+<meta itemprop="dateModified" content="2020-04-10T18:23:27&#43;01:00" />
+<meta itemprop="wordCount" content="1138">
 
 
 
@@ -444,13 +444,15 @@ if (!doNotTrack) {
 <li><strong>Changelog</strong>: <a href="http://airflow.apache.org/docs/1.10.10/changelog.html" target="_blank">http://airflow.apache.org/docs/1.10.10/changelog.html</a></li>
 </ul>
 
-<p>Some of the noteworthy new features (user-facing) are:</p>
+<p>Some of the noteworthy new features &amp; improvements are:</p>
 
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/8046" target="_blank">Allow user to chose timezone to use in the RBAC UI</a></li>
 <li><a href="https://github.com/apache/airflow/pull/7832" target="_blank">Add Production Docker image support</a></li>
 <li><a href="http://airflow.apache.org/docs/1.10.10/howto/use-alternative-secrets-backend.html" target="_blank">Allow Retrieving Airflow Connections &amp; Variables from various Secrets backend</a></li>
 <li><a href="http://airflow.apache.org/docs/1.10.10/dag-serialization.html" target="_blank">Stateless Webserver using DAG Serialization</a></li>
+<li><a href="https://github.com/apache/airflow/pull/7880" target="_blank">Dummy Operators are no longer sent to executor</a></li>
+<li><a href="https://github.com/apache/airflow/pull/6256" target="_blank">Allow passing DagRun conf when triggering dags via UI</a></li>
 </ul>
 
 <h3 id="allow-user-to-chose-timezone-to-use-in-the-rbac-ui">Allow user to chose timezone to use in the RBAC UI</h3>
@@ -515,6 +517,42 @@ backend = airflow.contrib.secrets.hashicorp_vault.VaultBackend
 backend_kwargs = {&quot;url&quot;: &quot;http://127.0.0.1:8200&quot;, &quot;connections_path&quot;: &quot;connections&quot;, &quot;variables_path&quot;: &quot;variables&quot;, &quot;mount_point&quot;: &quot;airflow&quot;}
 </code></pre>
 
+<h3 id="stateless-webserver-using-dag-serialization">Stateless Webserver using DAG Serialization</h3>
+
+<p>The Webserver can now run without access to DAG Files when DAG Serialization is turned on.
+The 2 limitations we had in 1.10.7-1.10.9 (
+<a href="https://airflow.apache.org/docs/1.10.7/dag-serialization.html#limitations)" target="_blank">https://airflow.apache.org/docs/1.10.7/dag-serialization.html#limitations)</a>
+have been resolved.</p>
+
+<p>The main advantage of this would be reduction in Webserver startup time for large number of DAGs.
+Without DAG Serialization all the DAGs are loaded in the DagBag during the
+Webserver startup.</p>
+
+<p>With DAG Serialization, an empty DagBag is created and
+Dags are loaded from DB only when needed (i.e. when a particular DAG is
+clicked on in the home page)</p>
+
+<p>Details: <a href="http://airflow.apache.org/docs/1.10.10/dag-serialization.html" target="_blank">http://airflow.apache.org/docs/1.10.10/dag-serialization.html</a></p>
+
+<h3 id="dummy-operators-are-no-longer-sent-to-executor">Dummy Operators are no longer sent to executor</h3>
+
+<p>The Dummy operators does not actually do any work and are mostly used for organizing/grouping tasks along
+with BranchPythonOperator.</p>
+
+<p>Previously, when using Kubernetes Executor, the executor would spin up a whole worker pod to execute a dummy task.
+With Airflow 1.10.10 tasks using Dummy Operators would be scheduled &amp; evaluated by the Scheduler but not sent to the
+Executor. This should significantly improve execution time and resource usage.</p>
+
+<h3 id="allow-passing-dagrun-conf-when-triggering-dags-via-ui">Allow passing DagRun conf when triggering dags via UI</h3>
+
+<p>When triggering a DAG from the CLI or the REST API, it s possible to pass configuration for the DAG run as a JSON blob.</p>
+
+<p>From Airflow 1.10.10, when a user clicks on Trigger Dag button, a new screen confirming the trigger request, and allowing the user to pass a JSON configuration
+blob would be show.</p>
+
+<p><strong>Screenshot</strong>:
+<img src="trigger-dag-conf.png" alt="Allow passing DagRun conf when triggering dags via UI" /></p>
+
 <h2 id="updating-guide">Updating Guide</h2>
 
 <p>If you are updating Apache Airflow from a previous version to <code>1.10.10</code>, please take a note of the following:</p>
@@ -555,7 +593,7 @@ Airflow 1.10.* would be the last series to support Python 2.</p>
 
 <p>Airflow 1.10.10 ships with 2 UIs, the default is non-RBAC Flask-admin based UI and Flask-appbuilder based UI.</p>
 
-<p>The Flask-AppBuilder (FAB) based UI is allows Role-based Access Control and has more advanced features compared to
+<p>The Flask-AppBuilder (FAB) based UI allows Role-based Access Control and has more advanced features compared to
 the legacy Flask-admin based UI. This UI can be enabled by setting <code>rbac=True</code> in <code>[webserver]</code> section in your <code>airflow.cfg</code>.</p>
 
 <p>Flask-admin based UI is deprecated and new features won&rsquo;t be ported to it. This UI will still be the default
