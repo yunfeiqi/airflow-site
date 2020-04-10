@@ -83,17 +83,22 @@
   </url>
   
   <url>
-    <loc>/blog/airflow-1.10.8-1.10.9/</loc>
-    <lastmod>2020-02-23T22:34:43+00:00</lastmod>
+    <loc>/blog/airflow-1.10.10/</loc>
+    <lastmod>2020-04-10T16:45:22+01:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/tags/release/</loc>
-    <lastmod>2020-02-23T22:34:43+00:00</lastmod>
+    <lastmod>2020-04-10T16:45:22+01:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2020-04-10T16:45:22+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/airflow-1.10.8-1.10.9/</loc>
     <lastmod>2020-02-23T22:34:43+00:00</lastmod>
   </url>
   
