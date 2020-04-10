@@ -36,14 +36,14 @@
 
 <meta property="og:image" content="/images/feature-image.png" />
 <meta property="article:published_time" content="2020-04-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-10T18:23:27+01:00" /><meta property="og:site_name" content="Apache Airflow" />
+<meta property="article:modified_time" content="2020-04-10T18:44:33+01:00" /><meta property="og:site_name" content="Apache Airflow" />
 <meta itemprop="name" content="Apache Airflow 1.10.10">
 <meta itemprop="description" content="We are happy to present Apache Airflow 1.10.10">
 
 
 <meta itemprop="datePublished" content="2020-04-09T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-04-10T18:23:27&#43;01:00" />
-<meta itemprop="wordCount" content="1138">
+<meta itemprop="dateModified" content="2020-04-10T18:44:33&#43;01:00" />
+<meta itemprop="wordCount" content="1143">
 
 
 
@@ -444,15 +444,15 @@ if (!doNotTrack) {
 <li><strong>Changelog</strong>: <a href="http://airflow.apache.org/docs/1.10.10/changelog.html" target="_blank">http://airflow.apache.org/docs/1.10.10/changelog.html</a></li>
 </ul>
 
-<p>Some of the noteworthy new features &amp; improvements are:</p>
+<p>Some of the noteworthy new features (user-facing) are:</p>
 
 <ul>
 <li><a href="https://github.com/apache/airflow/pull/8046" target="_blank">Allow user to chose timezone to use in the RBAC UI</a></li>
 <li><a href="https://github.com/apache/airflow/pull/7832" target="_blank">Add Production Docker image support</a></li>
 <li><a href="http://airflow.apache.org/docs/1.10.10/howto/use-alternative-secrets-backend.html" target="_blank">Allow Retrieving Airflow Connections &amp; Variables from various Secrets backend</a></li>
 <li><a href="http://airflow.apache.org/docs/1.10.10/dag-serialization.html" target="_blank">Stateless Webserver using DAG Serialization</a></li>
-<li><a href="https://github.com/apache/airflow/pull/7880" target="_blank">Dummy Operators are no longer sent to executor</a></li>
-<li><a href="https://github.com/apache/airflow/pull/6256" target="_blank">Allow passing DagRun conf when triggering dags via UI</a></li>
+<li><a href="https://github.com/apache/airflow/pull/7880" target="_blank">Tasks with Dummy Operators are no longer sent to executor</a></li>
+<li><a href="https://github.com/apache/airflow/pull/7312" target="_blank">Allow passing DagRun conf when triggering dags via UI</a></li>
 </ul>
 
 <h3 id="allow-user-to-chose-timezone-to-use-in-the-rbac-ui">Allow user to chose timezone to use in the RBAC UI</h3>
@@ -534,7 +534,7 @@ clicked on in the home page)</p>
 
 <p>Details: <a href="http://airflow.apache.org/docs/1.10.10/dag-serialization.html" target="_blank">http://airflow.apache.org/docs/1.10.10/dag-serialization.html</a></p>
 
-<h3 id="dummy-operators-are-no-longer-sent-to-executor">Dummy Operators are no longer sent to executor</h3>
+<h3 id="tasks-using-dummy-operators-are-no-longer-sent-to-executor">Tasks using Dummy Operators are no longer sent to executor</h3>
 
 <p>The Dummy operators does not actually do any work and are mostly used for organizing/grouping tasks along
 with BranchPythonOperator.</p>
@@ -552,6 +552,8 @@ blob would be show.</p>
 
 <p><strong>Screenshot</strong>:
 <img src="trigger-dag-conf.png" alt="Allow passing DagRun conf when triggering dags via UI" /></p>
+
+<p>Details: <a href="https://github.com/apache/airflow/pull/7312" target="_blank">https://github.com/apache/airflow/pull/7312</a></p>
 
 <h2 id="updating-guide">Updating Guide</h2>
 

@@ -33,15 +33,15 @@
 &lt;li&gt;&lt;strong&gt;Changelog&lt;/strong&gt;: &lt;a href=&#34;http://airflow.apache.org/docs/1.10.10/changelog.html&#34; target=&#34;_blank&#34;&gt;http://airflow.apache.org/docs/1.10.10/changelog.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Some of the noteworthy new features &amp;amp; improvements are:&lt;/p&gt;
+&lt;p&gt;Some of the noteworthy new features (user-facing) are:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/8046&#34; target=&#34;_blank&#34;&gt;Allow user to chose timezone to use in the RBAC UI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/7832&#34; target=&#34;_blank&#34;&gt;Add Production Docker image support&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://airflow.apache.org/docs/1.10.10/howto/use-alternative-secrets-backend.html&#34; target=&#34;_blank&#34;&gt;Allow Retrieving Airflow Connections &amp;amp; Variables from various Secrets backend&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://airflow.apache.org/docs/1.10.10/dag-serialization.html&#34; target=&#34;_blank&#34;&gt;Stateless Webserver using DAG Serialization&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/7880&#34; target=&#34;_blank&#34;&gt;Dummy Operators are no longer sent to executor&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/6256&#34; target=&#34;_blank&#34;&gt;Allow passing DagRun conf when triggering dags via UI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/7880&#34; target=&#34;_blank&#34;&gt;Tasks with Dummy Operators are no longer sent to executor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/apache/airflow/pull/7312&#34; target=&#34;_blank&#34;&gt;Allow passing DagRun conf when triggering dags via UI&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;allow-user-to-chose-timezone-to-use-in-the-rbac-ui&#34;&gt;Allow user to chose timezone to use in the RBAC UI&lt;/h3&gt;
@@ -123,7 +123,7 @@ clicked on in the home page)&lt;/p&gt;
 
 &lt;p&gt;Details: &lt;a href=&#34;http://airflow.apache.org/docs/1.10.10/dag-serialization.html&#34; target=&#34;_blank&#34;&gt;http://airflow.apache.org/docs/1.10.10/dag-serialization.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;dummy-operators-are-no-longer-sent-to-executor&#34;&gt;Dummy Operators are no longer sent to executor&lt;/h3&gt;
+&lt;h3 id=&#34;tasks-using-dummy-operators-are-no-longer-sent-to-executor&#34;&gt;Tasks using Dummy Operators are no longer sent to executor&lt;/h3&gt;
 
 &lt;p&gt;The Dummy operators does not actually do any work and are mostly used for organizing/grouping tasks along
 with BranchPythonOperator.&lt;/p&gt;
@@ -141,6 +141,8 @@ blob would be show.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Screenshot&lt;/strong&gt;:
 &lt;img src=&#34;trigger-dag-conf.png&#34; alt=&#34;Allow passing DagRun conf when triggering dags via UI&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Details: &lt;a href=&#34;https://github.com/apache/airflow/pull/7312&#34; target=&#34;_blank&#34;&gt;https://github.com/apache/airflow/pull/7312&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;updating-guide&#34;&gt;Updating Guide&lt;/h2&gt;
 
