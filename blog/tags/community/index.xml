@@ -78,7 +78,7 @@ The metadata database is where the status of all tasks are recorded. The status 
 necessary for the task to be executed. It should be noted that the scheduler won&amp;rsquo;t trigger your tasks until
 the period it covers has ended. If a task&amp;rsquo;s &lt;code&gt;schedule_interval&lt;/code&gt; is &lt;code&gt;@daily&lt;/code&gt;, the scheduler triggers the task
 at the end of the day and not at the beginning. This is to ensure that the necessary data needed for the tasks
-are ready. It is also possible trigger tasks manually on the UI.&lt;/p&gt;
+are ready. It is also possible to trigger tasks manually on the UI.&lt;/p&gt;
 
 &lt;p&gt;In the &lt;a href=&#34;https://github.com/apache/airflow/blob/master/BREEZE.rst&#34; target=&#34;_blank&#34;&gt;Breeze environment&lt;/a&gt;, the scheduler is started by running the command &lt;code&gt;airflow scheduler&lt;/code&gt;. It uses
 the configured production environment. The configuration can be specified in &lt;code&gt;airflow.cfg&lt;/code&gt;&lt;/p&gt;
@@ -155,13 +155,6 @@ Just like Operators, there are many predefined sensors in Airflow. These include
 &lt;/ul&gt;
 
 &lt;p&gt;A list of most of the available sensors can be found in this &lt;a href=&#34;https://airflow.apache.org/docs/stable/_api/airflow/contrib/sensors/index.html?highlight=sensors#module-airflow.contrib.sensors&#34; target=&#34;_blank&#34;&gt;module&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;breeze-environment-1&#34;&gt;Breeze Environment&lt;/h3&gt;
-
-&lt;p&gt;The breeze environment is the development environment for Airflow where you can run tests, build images,
-build documentations and so many other things. There are excellent
-&lt;a href=&#34;https://github.com/apache/airflow/blob/master/BREEZE.rst&#34; target=&#34;_blank&#34;&gt;documentation and video&lt;/a&gt; on Breeze environment.
-Please check them out.&lt;/p&gt;
 
 &lt;h3 id=&#34;contributing-to-airflow&#34;&gt;Contributing to Airflow&lt;/h3&gt;
 

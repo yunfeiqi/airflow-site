@@ -37,15 +37,15 @@ Authoring Workflow in Apache Airflow. Airflow makes it easy to author workflows 
 
 <meta property="og:image" content="/images/feature-image.png" />
 <meta property="article:published_time" content="2020-08-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-08-17T23:23:00+02:00" /><meta property="og:site_name" content="Apache Airflow" />
+<meta property="article:modified_time" content="2020-08-18T00:10:03+01:00" /><meta property="og:site_name" content="Apache Airflow" />
 <meta itemprop="name" content="Apache Airflow For Newcomers">
 <meta itemprop="description" content="Apache Airflow is a platform to programmatically author, schedule, and monitor workflows. A workflow is a sequence of tasks that processes a set of data. You can think of workflow as the path that describes how tasks go from being undone to done. Scheduling, on the other hand, is the process of planning, controlling, and optimizing when a particular task should be done.
 Authoring Workflow in Apache Airflow. Airflow makes it easy to author workflows using python scripts.">
 
 
 <meta itemprop="datePublished" content="2020-08-17T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-08-17T23:23:00&#43;02:00" />
-<meta itemprop="wordCount" content="1107">
+<meta itemprop="dateModified" content="2020-08-18T00:10:03&#43;01:00" />
+<meta itemprop="wordCount" content="1070">
 
 
 
@@ -505,7 +505,7 @@ The metadata database is where the status of all tasks are recorded. The status 
 necessary for the task to be executed. It should be noted that the scheduler won&rsquo;t trigger your tasks until
 the period it covers has ended. If a task&rsquo;s <code>schedule_interval</code> is <code>@daily</code>, the scheduler triggers the task
 at the end of the day and not at the beginning. This is to ensure that the necessary data needed for the tasks
-are ready. It is also possible trigger tasks manually on the UI.</p>
+are ready. It is also possible to trigger tasks manually on the UI.</p>
 
 <p>In the <a href="https://github.com/apache/airflow/blob/master/BREEZE.rst" target="_blank">Breeze environment</a>, the scheduler is started by running the command <code>airflow scheduler</code>. It uses
 the configured production environment. The configuration can be specified in <code>airflow.cfg</code></p>
@@ -582,13 +582,6 @@ Just like Operators, there are many predefined sensors in Airflow. These include
 </ul>
 
 <p>A list of most of the available sensors can be found in this <a href="https://airflow.apache.org/docs/stable/_api/airflow/contrib/sensors/index.html?highlight=sensors#module-airflow.contrib.sensors" target="_blank">module</a></p>
-
-<h3 id="breeze-environment-1">Breeze Environment</h3>
-
-<p>The breeze environment is the development environment for Airflow where you can run tests, build images,
-build documentations and so many other things. There are excellent
-<a href="https://github.com/apache/airflow/blob/master/BREEZE.rst" target="_blank">documentation and video</a> on Breeze environment.
-Please check them out.</p>
 
 <h3 id="contributing-to-airflow">Contributing to Airflow</h3>
 
