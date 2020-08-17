@@ -29,31 +29,33 @@
 <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<title>Onefootball | Apache Airflow</title><meta property="og:title" content="Onefootball" />
-<meta property="og:description" content="What was the problem? With millions of daily active users, managing the complexity of data engineering at Onefootball is a constant challenge. Lengthy crontabs, multiplication of custom API clients, erosion of confidence in the analytics served, increasing heroism (&ldquo;only one person can solve this issue&rdquo;). Those are the challenges that most teams face unless they consciously invest in their tools and processes.
-On top of that, new data tools appear each month: third party data sources, cloud providers solutions, different storage technologies&hellip; Managing all those integrations is costly and brittle, especially for small data engineering teams that are trying to do more with less." />
+<title>Apache Airflow For Newcomers | Apache Airflow</title><meta property="og:title" content="Apache Airflow For Newcomers" />
+<meta property="og:description" content="Apache Airflow is a platform to programmatically author, schedule, and monitor workflows. A workflow is a sequence of tasks that processes a set of data. You can think of workflow as the path that describes how tasks go from being undone to done. Scheduling, on the other hand, is the process of planning, controlling, and optimizing when a particular task should be done.
+Authoring Workflow in Apache Airflow. Airflow makes it easy to author workflows using python scripts." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/use-cases/onefootball/" />
+<meta property="og:url" content="/blog/apache-airflow-for-new-comers/" />
 
 <meta property="og:image" content="/images/feature-image.png" />
+<meta property="article:published_time" content="2020-08-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-08-17T20:02:22+01:00" /><meta property="og:site_name" content="Apache Airflow" />
-<meta itemprop="name" content="Onefootball">
-<meta itemprop="description" content="What was the problem? With millions of daily active users, managing the complexity of data engineering at Onefootball is a constant challenge. Lengthy crontabs, multiplication of custom API clients, erosion of confidence in the analytics served, increasing heroism (&ldquo;only one person can solve this issue&rdquo;). Those are the challenges that most teams face unless they consciously invest in their tools and processes.
-On top of that, new data tools appear each month: third party data sources, cloud providers solutions, different storage technologies&hellip; Managing all those integrations is costly and brittle, especially for small data engineering teams that are trying to do more with less.">
+<meta itemprop="name" content="Apache Airflow For Newcomers">
+<meta itemprop="description" content="Apache Airflow is a platform to programmatically author, schedule, and monitor workflows. A workflow is a sequence of tasks that processes a set of data. You can think of workflow as the path that describes how tasks go from being undone to done. Scheduling, on the other hand, is the process of planning, controlling, and optimizing when a particular task should be done.
+Authoring Workflow in Apache Airflow. Airflow makes it easy to author workflows using python scripts.">
 
 
+<meta itemprop="datePublished" content="2020-08-17T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-08-17T20:02:22&#43;01:00" />
-<meta itemprop="wordCount" content="294">
+<meta itemprop="wordCount" content="1107">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="Community," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/images/feature-image.png"/>
 
-<meta name="twitter:title" content="Onefootball"/>
-<meta name="twitter:description" content="What was the problem? With millions of daily active users, managing the complexity of data engineering at Onefootball is a constant challenge. Lengthy crontabs, multiplication of custom API clients, erosion of confidence in the analytics served, increasing heroism (&ldquo;only one person can solve this issue&rdquo;). Those are the challenges that most teams face unless they consciously invest in their tools and processes.
-On top of that, new data tools appear each month: third party data sources, cloud providers solutions, different storage technologies&hellip; Managing all those integrations is costly and brittle, especially for small data engineering teams that are trying to do more with less."/>
+<meta name="twitter:title" content="Apache Airflow For Newcomers"/>
+<meta name="twitter:description" content="Apache Airflow is a platform to programmatically author, schedule, and monitor workflows. A workflow is a sequence of tasks that processes a set of data. You can think of workflow as the path that describes how tasks go from being undone to done. Scheduling, on the other hand, is the process of planning, controlling, and optimizing when a particular task should be done.
+Authoring Workflow in Apache Airflow. Airflow makes it easy to author workflows using python scripts."/>
 
 
 <script type="application/javascript">
@@ -192,7 +194,7 @@ if (!doNotTrack) {
                     
                     
                     
-                    <a class="navbar__text-link active"
+                    <a class="navbar__text-link "
                        href="/use-cases/"
                        >
                         Use cases
@@ -220,7 +222,7 @@ if (!doNotTrack) {
                     
                     
                     
-                    <a class="navbar__text-link "
+                    <a class="navbar__text-link active"
                        href="/blog/"
                        >
                         Blog
@@ -337,7 +339,7 @@ if (!doNotTrack) {
                     
                     
                     
-                    <a class="navbar__text-link active"
+                    <a class="navbar__text-link "
                        href="/use-cases/"
                        >
                         Use cases
@@ -365,7 +367,7 @@ if (!doNotTrack) {
                     
                     
                     
-                    <a class="navbar__text-link "
+                    <a class="navbar__text-link active"
                        href="/blog/"
                        >
                         Blog
@@ -400,60 +402,357 @@ if (!doNotTrack) {
     <div class="base-layout">
         <main role="main" class="td-main container">
             
-    <div class="case-study-page no-width-restriction">
+    <div class="blogpost-content">
         
 
-<div class="td-content">
+<div class="blogpost-content--header-wrapper">
+    <div class="blogpost-content__metadata--container">
+        <div class="tags-container">
+            
+                
+                    <a class="tag" href="/blog/tags/community/">Community</a>
+                
+            
+        </div>
+        <span class="bodytext__medium--brownish-grey">Mon, Aug 17, 2020</span>
+    </div>
+    <p class="blogpost-content__metadata--title">Apache Airflow For Newcomers</p>
+    <div class="blogpost-content__metadata--author">
+        <span class="blogpost-content__metadata--author">
+            Ephraim Anierobi
+        </span>
+        
+            <a href="https://twitter.com/ephraimbuddy/" class="blogpost-content__metadata--social-media-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21">
+    <g id="Group_1746" data-name="Group 1746" transform="translate(.076 -.055)">
+        <ellipse id="Ellipse_19" cx="11" cy="10.5" fill="#51504f" data-name="Ellipse 19" rx="11" ry="10.5"
+                 transform="translate(-.076 .055)"/>
+        <g id="Logo_FIXED" data-name="Logo — FIXED" transform="translate(5.568 5.872)">
+            <path id="Path_643"
+                  d="M-1554.714 1446.466a6.538 6.538 0 0 0 6.581-6.581v-.3a4.711 4.711 0 0 0 1.155-1.2 4.7 4.7 0 0 1-1.331.365 2.328 2.328 0 0 0 1.019-1.281 4.6 4.6 0 0 1-1.47.559 2.309 2.309 0 0 0-1.687-.73 2.316 2.316 0 0 0-2.314 2.314 2.555 2.555 0 0 0 .059.528 6.569 6.569 0 0 1-4.767-2.418 2.311 2.311 0 0 0-.311 1.164 2.319 2.319 0 0 0 1.028 1.926 2.34 2.34 0 0 1-1.047-.289v.031a2.318 2.318 0 0 0 1.854 2.269 2.257 2.257 0 0 1-.609.081 2.281 2.281 0 0 1-.433-.041 2.313 2.313 0 0 0 2.161 1.606 4.639 4.639 0 0 1-2.873.992 4.445 4.445 0 0 1-.55-.031 6.578 6.578 0 0 0 3.541 1.033"
+                  fill="#fff" data-name="Path 643" transform="translate(1558.255 -1437.301)"/>
+        </g>
+    </g>
+</svg>
+
+            </a>
+        
+        
+            <a href="https://github.com/ephraimbuddy/" class="blogpost-content__metadata--social-media-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21.737" height="21.2" viewBox="0 0 21.737 21.2">
+    <path id="Path_1378" d="M33.971 1181.31a10.87 10.87 0 0 0-3.435 21.182c.543.1.742-.236.742-.524 0-.258-.009-.941-.015-1.848-3.023.657-3.661-1.457-3.661-1.457a2.876 2.876 0 0 0-1.207-1.59c-.987-.674.075-.661.075-.661a2.283 2.283 0 0 1 1.665 1.12 2.314 2.314 0 0 0 3.163.9 2.322 2.322 0 0 1 .69-1.453c-2.413-.274-4.951-1.207-4.951-5.371a4.2 4.2 0 0 1 1.119-2.917 3.908 3.908 0 0 1 .107-2.876s.913-.292 2.989 1.114a10.3 10.3 0 0 1 5.442 0c2.075-1.406 2.986-1.114 2.986-1.114a3.9 3.9 0 0 1 .108 2.876 4.2 4.2 0 0 1 1.117 2.917c0 4.175-2.541 5.094-4.962 5.363a2.6 2.6 0 0 1 .738 2.013c0 1.453-.013 2.625-.013 2.982 0 .291.2.629.747.523a10.87 10.87 0 0 0-3.443-21.18z" fill="#51504f" fill-rule="evenodd" data-name="Path 1378" transform="translate(-23.103 -1181.31)"/>
+</svg>
+
+            </a>
+        
+        
+    </div>
+    <p class="blogpost-content__metadata--description"></p>
+</div>
+<div class="markdown-content">
     
 
+<p>Apache Airflow is a platform to programmatically author, schedule, and monitor workflows.
+A workflow is a sequence of tasks that processes a set of data. You can think of workflow as the
+path that describes how tasks go from being undone to done. Scheduling, on the other hand, is the
+process of planning, controlling, and optimizing when a particular task should be done.</p>
 
-<div class="quote">
-    <p class="quote--text">Airflow is extensible enough for any business to define the custom operators they need. Airflow can help you in your DataOps journey: viewing analytics as code, monitoring, reusing components, being a catalyst of team interactions.</p>
-    <p class="quote--author">Louis Guitton</p>
-    
-        <img src="/usecase-logos/onefootball-logo.svg" alt="Onefootball logo" class="quote--logo" />
-    
+<h3 id="authoring-workflow-in-apache-airflow">Authoring Workflow in Apache Airflow.</h3>
+
+<p>Airflow makes it easy to author workflows using python scripts. A <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph" target="_blank">Directed Acyclic Graph</a>
+(DAG) represents a workflow in Airflow. It is a collection of tasks in a way that shows each task&rsquo;s
+relationships and dependencies. You can have as many DAGs as you want, and Airflow will execute
+them according to the task&rsquo;s relationships and dependencies. If task B depends on the successful
+execution of another task A, it means Airflow will run task A and only run task B after task A.
+This dependency is very easy to express in Airflow. For example, the above scenario is expressed as</p>
+
+<pre><code class="language-python">task_A &gt;&gt; task_B
+</code></pre>
+
+<p>Also equivalent to</p>
+
+<pre><code class="language-python">task_A.set_downstream(task_B)
+</code></pre>
+
+<p><img src="Simple_dag.png" alt="Simple Dag" /></p>
+
+<p>That helps Airflow to know that it needs to execute task A before task B. Tasks can have far more complex
+relationships to each other than expressed above and Airflow figures out how and when to execute the tasks following
+their relationships and dependencies.
+<img src="semicomplex.png" alt="Complex Dag" /></p>
+
+<p>Before we discuss the architecture of Airflow that makes scheduling, executing, and monitoring of
+workflow an easy thing, let us discuss the <a href="https://github.com/apache/airflow/blob/master/BREEZE.rst" target="_blank">Breeze environment</a>.</p>
+
+<h3 id="breeze-environment">Breeze Environment</h3>
+
+<p>The breeze environment is the development environment for Airflow where you can run tests, build images,
+build documentations and so many other things. There are excellent
+<a href="https://github.com/apache/airflow/blob/master/BREEZE.rst" target="_blank">documentation and video</a> on Breeze environment.
+Please check them out. You enter the Breeze environment by running the <code>./breeze</code> script. You can run all
+the commands mentioned here in the Breeze environment.</p>
+
+<h3 id="scheduler">Scheduler</h3>
+
+<p>The scheduler is the component that monitors DAGs and triggers those tasks whose dependencies have
+been met. It watches over the DAG folder, checking the tasks in each DAG and triggers them once they
+are ready. It accomplishes this by spawning a process that runs periodically(every minute or so)
+reading the metadata database to check the status of each task and decides what needs to be done.
+The metadata database is where the status of all tasks are recorded. The status can be one of running,
+ success, failed, etc.</p>
+
+<p>A task is said to be ready when its dependencies have been met. The dependencies include all the data
+necessary for the task to be executed. It should be noted that the scheduler won&rsquo;t trigger your tasks until
+the period it covers has ended. If a task&rsquo;s <code>schedule_interval</code> is <code>@daily</code>, the scheduler triggers the task
+at the end of the day and not at the beginning. This is to ensure that the necessary data needed for the tasks
+are ready. It is also possible trigger tasks manually on the UI.</p>
+
+<p>In the <a href="https://github.com/apache/airflow/blob/master/BREEZE.rst" target="_blank">Breeze environment</a>, the scheduler is started by running the command <code>airflow scheduler</code>. It uses
+the configured production environment. The configuration can be specified in <code>airflow.cfg</code></p>
+
+<h3 id="executor">Executor</h3>
+
+<p>Executors are responsible for running tasks. They work with the scheduler to get information about
+what resources are needed to run a task as the task is queued.</p>
+
+<p>By default, Airflow uses the <a href="https://airflow.apache.org/docs/stable/executor/sequential.html#sequential-executor" target="_blank">SequentialExecutor</a>.
+ However, this executor is limited and it is the only executor that can be used with SQLite.</p>
+
+<p>There are many other <a href="https://airflow.apache.org/docs/stable/executor/index.html" target="_blank">executors</a>,
+ the difference is on the resources they have and how they choose to use the resources. The available executors
+ are:</p>
+
+<ul>
+<li>Sequential Executor</li>
+<li>Debug Executor</li>
+<li>Local Executor</li>
+<li>Dask Executor</li>
+<li>Celery Executor</li>
+<li>Kubernetes Executor</li>
+<li>Scaling Out with Mesos (community contributed)</li>
+</ul>
+
+<p>CeleryExecutor is a better executor compared to the SequentialExecutor. The CeleryExecutor uses several
+workers to execute a job in a distributed way. If a worker node is ever down, the CeleryExecutor assign its
+task to another worker node. This ensures high availability.</p>
+
+<p>The CeleryExecutor works closely with the scheduler which adds a message to the queue and the Celery broker
+which delivers the message to a Celery worker to execute.
+You can find more information about the CeleryExecutor and how to configure it at the
+<a href="https://airflow.apache.org/docs/stable/executor/celery.html#celery-executor" target="_blank">documentation</a></p>
+
+<h3 id="webserver">Webserver</h3>
+
+<p>The webserver is the web interface (UI) for Airflow. The UI is feature-rich. It makes it easy to
+monitor and troubleshoot DAGs and Tasks.</p>
+
+<p><img src="airflow-ui.png" alt="airflow UI" /></p>
+
+<p>There are many actions you can perform on the UI. You can trigger a task, monitor the execution
+including the duration of the task. The UI makes it possible to view the task&rsquo;s dependencies in a
+tree view and graph view. You can view task logs in the UI.</p>
+
+<p>The web UI is started with the command <code>airflow webserver</code> in the breeze environment.</p>
+
+<h3 id="backend">Backend</h3>
+
+<p>By default, Airflow uses the SQLite backend for storing the configuration information, DAG states,
+and much other useful information. This should not be used in production as SQLite can cause a data
+loss.</p>
+
+<p>You can use PostgreSQL or MySQL as a backend for airflow. It is easy to change to PostgreSQL or MySQL.</p>
+
+<p>The command <code>./breeze --backend mysql</code> selects MySQL as the backend when starting the breeze environment.</p>
+
+<h3 id="operators">Operators</h3>
+
+<p>Operators determine what gets done by a task. Airflow has a lot of builtin Operators. Each operator
+does a specific task. There&rsquo;s a BashOperator that executes a bash command, the PythonOperator which
+calls a python function, AwsBatchOperator which executes a job on AWS Batch and <a href="https://airflow.apache.org/docs/stable/concepts.html#operators" target="_blank">many more</a>.</p>
+
+<h4 id="sensors">Sensors</h4>
+
+<p>Sensors can be described as special operators that are used to monitor a long-running task.
+Just like Operators, there are many predefined sensors in Airflow. These includes</p>
+
+<ul>
+<li>AthenaSensor: Asks for the state of the Query until it reaches a failure state or success state.</li>
+<li>AzureCosmosDocumentSensor: Checks for the existence of a document which matches the given query in CosmosDB</li>
+<li>GoogleCloudStorageObjectSensor:  Checks for the existence of a file in Google Cloud Storage</li>
+</ul>
+
+<p>A list of most of the available sensors can be found in this <a href="https://airflow.apache.org/docs/stable/_api/airflow/contrib/sensors/index.html?highlight=sensors#module-airflow.contrib.sensors" target="_blank">module</a></p>
+
+<h3 id="breeze-environment-1">Breeze Environment</h3>
+
+<p>The breeze environment is the development environment for Airflow where you can run tests, build images,
+build documentations and so many other things. There are excellent
+<a href="https://github.com/apache/airflow/blob/master/BREEZE.rst" target="_blank">documentation and video</a> on Breeze environment.
+Please check them out.</p>
+
+<h3 id="contributing-to-airflow">Contributing to Airflow</h3>
+
+<p>Airflow is an open source project, everyone is welcome to contribute. It is easy to get started thanks
+to the excellent <a href="https://github.com/apache/airflow/blob/master/CONTRIBUTING.rst" target="_blank">documentation on how to get started</a>.</p>
+
+<p>I joined the community about 12 weeks ago through the <a href="https://www.outreachy.org/" target="_blank">Outreachy Program</a> and have
+completed about <a href="https://github.com/apache/airflow/pulls/ephraimbuddy" target="_blank">40 PRs</a>.</p>
+
+<p>It has been an amazing experience! Thanks to my mentors <a href="https://github.com/potiuk" target="_blank">Jarek</a> and
+<a href="https://github.com/kaxil" target="_blank">Kaxil</a>, and the community members especially <a href="https://github.com/mik-laj" target="_blank">Kamil</a>
+and <a href="https://github.com/turbaszek" target="_blank">Tomek</a> for all their support. I&rsquo;m grateful!</p>
+
+<p>Thank you so much, <a href="https://github.com/leahecole" target="_blank">Leah E. Cole</a>, for your wonderful reviews.</p>
+
 </div>
 
-    
-    <div class="markdown-content">
         
 
-<h5 id="what-was-the-problem">What was the problem?</h5>
+<div class="mt-5">
+    <p class="bodytext__medium--greyish-brown font-weight-500 mb-2">Share</p>
+    <div class="share-section--icons-wrapper">
+        <div class="share-section--icon"
+             onclick="window.open(`https://twitter.com/intent/tweet?url=${window.location.href}&original_referer=${window.location.origin}`,'targetWindow', `toolbar=no, location=no, status=no, menubar=no, directories=no, scrollbars=no, resizable=no, centerscreen=yes, chrome=yes, width=550, height=400, top=${window.outerHeight / 2 + (window.screenY || window.screenTop || 0) - 200} left=${window.outerWidth / 2 + (window.screenX || window.screenLeft || 0) - 275}`); return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21">
+    <g id="Group_1746" data-name="Group 1746" transform="translate(.076 -.055)">
+        <ellipse id="Ellipse_19" cx="11" cy="10.5" fill="#51504f" data-name="Ellipse 19" rx="11" ry="10.5"
+                 transform="translate(-.076 .055)"/>
+        <g id="Logo_FIXED" data-name="Logo — FIXED" transform="translate(5.568 5.872)">
+            <path id="Path_643"
+                  d="M-1554.714 1446.466a6.538 6.538 0 0 0 6.581-6.581v-.3a4.711 4.711 0 0 0 1.155-1.2 4.7 4.7 0 0 1-1.331.365 2.328 2.328 0 0 0 1.019-1.281 4.6 4.6 0 0 1-1.47.559 2.309 2.309 0 0 0-1.687-.73 2.316 2.316 0 0 0-2.314 2.314 2.555 2.555 0 0 0 .059.528 6.569 6.569 0 0 1-4.767-2.418 2.311 2.311 0 0 0-.311 1.164 2.319 2.319 0 0 0 1.028 1.926 2.34 2.34 0 0 1-1.047-.289v.031a2.318 2.318 0 0 0 1.854 2.269 2.257 2.257 0 0 1-.609.081 2.281 2.281 0 0 1-.433-.041 2.313 2.313 0 0 0 2.161 1.606 4.639 4.639 0 0 1-2.873.992 4.445 4.445 0 0 1-.55-.031 6.578 6.578 0 0 0 3.541 1.033"
+                  fill="#fff" data-name="Path 643" transform="translate(1558.255 -1437.301)"/>
+        </g>
+    </g>
+</svg>
 
-<p>With millions of daily active users, managing the complexity of data engineering at Onefootball is a constant challenge. Lengthy crontabs, multiplication of custom API clients, erosion of confidence in the analytics served, increasing heroism (&ldquo;only one person can solve this issue&rdquo;). Those are the challenges that most teams face unless they consciously invest in their tools and processes.</p>
+        </div>
+        <div class="share-section--icon"
+             onclick="window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`,'targetWindow', `toolbar=no, location=no, status=no, menubar=no, directories=no, scrollbars=no, resizable=no, centerscreen=yes, chrome=yes, width=750, height=600, top=${window.outerHeight / 2 + (window.screenY || window.screenTop || 0) - 300} left=${window.outerWidth / 2 + (window.screenX || window.screenLeft || 0) - 375}`); return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 21">
+    <g id="Group_1745" data-name="Group 1745" transform="translate(.155 -.055)">
+        <ellipse id="Ellipse_20" cx="10" cy="10.5" fill="#51504f" data-name="Ellipse 20" rx="10" ry="10.5" transform="translate(-.155 .055)"/>
+        <g id="Group_698" data-name="Group 698" transform="translate(5.843 5.004)">
+            <path id="Path_644" d="M-1311.072 1423.962a.9.9 0 0 1-.972.9.888.888 0 0 1-.937-.9.9.9 0 0 1 .961-.9.892.892 0 0 1 .948.9zm-1.862 7.413v-5.8h1.8v5.8z" fill="#fff" data-name="Path 644" transform="translate(1312.981 -1423.061)"/>
+            <path id="Path_645" d="M-1284.253 1448.767c0-.723-.024-1.328-.047-1.85h1.565l.083.806h.035a2.084 2.084 0 0 1 1.791-.937c1.186 0 2.076.795 2.076 2.5v3.428h-1.8v-3.214c0-.747-.261-1.257-.914-1.257a.989.989 0 0 0-.925.676 1.29 1.29 0 0 0-.06.451v3.345h-1.8z" fill="#fff" data-name="Path 645" transform="translate(1287.182 -1444.402)"/>
+        </g>
+    </g>
+</svg>
 
-<p>On top of that, new data tools appear each month: third party data sources, cloud providers solutions, different storage technologies&hellip; Managing all those integrations is costly and brittle, especially for small data engineering teams that are trying to do more with less.</p>
+        </div>
+        <div class="share-section--icon"
+             onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`,'targetWindow', `toolbar=no, location=no, status=no, menubar=no, directories=no, scrollbars=no, resizable=no, centerscreen=yes, chrome=yes, width=550, height=400, top=${window.outerHeight / 2 + (window.screenY || window.screenTop || 0) - 200} left=${window.outerWidth / 2 + (window.screenX || window.screenLeft || 0) - 275}`); return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21.332" height="21.2" viewBox="0 0 21.332 21.2">
+    <g id="Group_1748" data-name="Group 1748" transform="translate(-1654.242 -1377.267)">
+        <path id="Path_1379" d="M1766.91 1472.142v-.022h-2.955v.022z" fill="none" data-name="Path 1379" transform="translate(-97.392 -84.198)"/>
+        <path id="Path_1380" d="M1712.911 1420.842v-2.351c0-2.669 1.582-4.152 4.02-4.152a15.28 15.28 0 0 1 2.362.218v-.009a15.3 15.3 0 0 0-2.373-.22c-2.439 0-4.02 1.483-4.02 4.152v2.351h-2.724v3.076h.011v-3.065z" fill="none" data-name="Path 1380" transform="translate(-49.651 -32.898)"/>
+        <path id="Path_1381" d="M1675.574 1387.933a10.666 10.666 0 1 0-12.325 10.534v-7.448h-2.713v-.011h-.011v-3.076h2.724v-2.351c0-2.669 1.582-4.152 4.02-4.152a15.307 15.307 0 0 1 2.373.22v.009h.011v2.615h-1.34a1.553 1.553 0 0 0-1.747 1.67v1.977h2.955v.022h.014l-.472 3.076h-2.483v7.433a10.635 10.635 0 0 0 8.994-10.518z" fill="#51504f" data-name="Path 1381"/>
+        <path id="Rectangle_882" d="M0 0h2.713v.011H0z" fill="#51504f" data-name="Rectangle 882" transform="translate(1660.536 1391.009)"/>
+        <path id="Path_1382" d="M1765.607 1418.958a1.553 1.553 0 0 0-1.747 1.67v2h.011v-1.977a1.553 1.553 0 0 1 1.747-1.67h1.34v-2.614h-.011v2.594z" fill="#51504f" data-name="Path 1382" transform="translate(-97.305 -34.705)"/>
+        <path id="Path_1383" d="M1766.365 1475.391l.472-3.076h-.014l-.469 3.054h-2.494v7.459h.022v-7.433z" fill="#51504f" data-name="Path 1383" transform="translate(-97.305 -84.371)"/>
+    </g>
+</svg>
 
-<h5 id="how-did-apache-airflow-help-to-solve-this-problem">How did Apache Airflow help to solve this problem?</h5>
-
-<p>Airflow had been on our radar for a while until one day we took the leap. We used the DAG paradigm to migrate the pipelines running on crontabs. We benefited from the community Hooks and Operators to remove parts of our code, or to refactor the API clients specific to our business. We use the alerts, SLAs and the web UI to regain confidence in our analytics. We use our airflow internal PRs as catalysts for team discussion and to challenge our technical designs.</p>
-
-<p>We have DAGs orchestrating SQL transformations in our data warehouse, but also DAGs that are orchestrating functions ran against our Kubernetes cluster both for training Machine Learning models and sending daily analytics emails.</p>
-
-<h5 id="what-are-the-results">What are the results?</h5>
-
-<p>The learning curve was steep but in about 100 days we were able to efficiently use Airflow to manage the complexity of our data engineering. We currently have 17 DAGs (adding on average 1 per week), we have 2 contributions on apache/airflow, we have 7 internal hooks and operators and are planning to add more as our migration efforts continue.</p>
-
+        </div>
     </div>
 </div>
 
-        
+        <div class="no-width-restriction no-desktop">
+            
 
 <div class="pager">
+    <a href="/blog/implementing-stable-api-for-apache-airflow/">
+        
+
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Previous</button>
+
+    </a>
     <a >
         
 
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" disabled>Previous</button>
-
-    </a>
-    <a href="/use-cases/experity/">
-        
-
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Next</button>
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" disabled>Next</button>
 
     </a>
 </div>
+
+        </div>
+    </div>
+
+    <div class="no-width-restriction desktop-only">
+        
+
+
+
+    <div class="blog-pager">
+        <h5 class="header__xsmall--greyish-brown">Read also</h5>
+        <div class="pager">
+            <div class="list-items">
+                
+                    <div class="list-item list-item--wide">
+                        
+
+<div class="card">
+    <div class="box-event__blogpost">
+        <div class="box-event__blogpost--metadata">
+            <div class="tags-container">
+                
+                    
+                        <a class="tag" href="/blog/tags/community/">Community</a>
+                    
+                
+            </div>
+            <span class="bodytext__medium--brownish-grey box-event__blogpost--date">Wed, Dec 11, 2019</span>
+        </div>
+        <p class="box-event__blogpost--header">New Airflow website</p>
+        <p class="box-event__blogpost--author">Aizhamal Nurmamat kyzy</p>
+        <p class="box-event__blogpost--description">We are thrilled about our new website!</p>
+        <div class="mt-auto">
+            <a href="/blog/announcing-new-website/">
+                
+
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Read more</button>
+
+            </a>
+        </div>
+    </div>
+</div>
+
+                    </div>
+                
+                    <div class="list-item list-item--wide">
+                        
+
+<div class="card">
+    <div class="box-event__blogpost">
+        <div class="box-event__blogpost--metadata">
+            <div class="tags-container">
+                
+                    
+                        <a class="tag" href="/blog/tags/community/">Community</a>
+                    
+                
+            </div>
+            <span class="bodytext__medium--brownish-grey box-event__blogpost--date">Fri, Nov 22, 2019</span>
+        </div>
+        <p class="box-event__blogpost--header">ApacheCon Europe 2019 — Thoughts and Insights by Airflow Committers</p>
+        <p class="box-event__blogpost--author">Polidea</p>
+        <p class="box-event__blogpost--description">Here come some thoughts by Airflow committers and contributors from the ApacheCon Europe 2019. Get to know the ASF community!</p>
+        <div class="mt-auto">
+            <a href="/blog/apache-con-europe-2019-thoughts-and-insights-by-airflow-committers/">
+                
+
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Read more</button>
+
+            </a>
+        </div>
+    </div>
+</div>
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
 
     </div>
 
@@ -462,7 +761,7 @@ if (!doNotTrack) {
 
 <div class="base-layout--button">
     
-    <a href=https://github.com/apache/airflow-site/edit/master/landing-pages/site/content/en/use-cases/onefootball.md>
+    <a href=https://github.com/apache/airflow-site/edit/master/landing-pages/site/content/en/blog/apache-airflow-for-new-comers.md>
         
 
 
