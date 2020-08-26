@@ -155,7 +155,7 @@ Airflow 1.10.* would be the last series to support Python 2.&lt;/p&gt;
 
 &lt;h3 id=&#34;use-airflow-rbac-ui&#34;&gt;Use Airflow RBAC UI&lt;/h3&gt;
 
-&lt;p&gt;Airflow 1.10.10 ships with 2 UIs, the default is non-RBAC Flask-admin based UI and Flask-appbuilder based UI.&lt;/p&gt;
+&lt;p&gt;Airflow 1.10.12 ships with 2 UIs, the default is non-RBAC Flask-admin based UI and Flask-appbuilder based UI.&lt;/p&gt;
 
 &lt;p&gt;The Flask-AppBuilder (FAB) based UI allows Role-based Access Control and has more advanced features compared to
 the legacy Flask-admin based UI. This UI can be enabled by setting &lt;code&gt;rbac=True&lt;/code&gt; in &lt;code&gt;[webserver]&lt;/code&gt; section in
@@ -169,11 +169,11 @@ for 1.10.* series but would no longer be available from Airflow 2.0&lt;/p&gt;
 &lt;p&gt;The Airflow Project has moved from &lt;a href=&#34;https://issues.apache.org/jira/projects/AIRFLOW/issues&#34; target=&#34;_blank&#34;&gt;JIRA&lt;/a&gt; to
 &lt;a href=&#34;https://github.com/apache/airflow/issues&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; for tracking issues.&lt;/p&gt;
 
-&lt;p&gt;So if you find any bugs in Airflow 1.10.10 please create a Github Issue for it.&lt;/p&gt;
+&lt;p&gt;So if you find any bugs in Airflow 1.10.12 please create a Github Issue for it.&lt;/p&gt;
 
 &lt;h2 id=&#34;list-of-contributors&#34;&gt;List of Contributors&lt;/h2&gt;
 
-&lt;p&gt;According to git shortlog, the following people contributed to the 1.10.10 release. Thank you to all contributors!&lt;/p&gt;
+&lt;p&gt;According to git shortlog, the following people contributed to the 1.10.12 release. Thank you to all contributors!&lt;/p&gt;
 
 &lt;p&gt;Alexander Sutcliffe, Andy, Aneesh Joseph, Ash Berlin-Taylor, Aviral Agrawal, BaoshanGu, Beni Ben zikry,
 Daniel Imberman, Daniel Standish, Danylo Baibak, Ephraim Anierobi, Felix Uellendall, Greg Neiheisel,
