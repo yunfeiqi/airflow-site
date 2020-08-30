@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apache Airflow – community</title>
+    <title>Apache Airflow – Community</title>
     <link>/blog/tags/community/</link>
-    <description>Recent content in community on Apache Airflow</description>
+    <description>Recent content in Community on Apache Airflow</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 17 Aug 2020 00:00:00 +0000</lastBuildDate>
     
@@ -169,6 +169,72 @@ completed about &lt;a href=&#34;https://github.com/apache/airflow/pulls/ephraimb
 and &lt;a href=&#34;https://github.com/turbaszek&#34; target=&#34;_blank&#34;&gt;Tomek&lt;/a&gt; for all their support. I&amp;rsquo;m grateful!&lt;/p&gt;
 
 &lt;p&gt;Thank you so much, &lt;a href=&#34;https://github.com/leahecole&#34; target=&#34;_blank&#34;&gt;Leah E. Cole&lt;/a&gt;, for your wonderful reviews.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Journey with Airflow as an Outreachy Intern</title>
+      <link>/blog/experience-with-airflow-as-an-outreachy-intern/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/experience-with-airflow-as-an-outreachy-intern/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;&lt;a href=&#34;https://www.outreachy.org/&#34; target=&#34;_blank&#34;&gt;Outreachy&lt;/a&gt; is a program which organises three months paid internships with FOSS
+projects for people who are typically underrepresented in those projects.&lt;/p&gt;
+
+&lt;h3 id=&#34;contribution-period&#34;&gt;Contribution Period&lt;/h3&gt;
+
+&lt;p&gt;The first thing I had to do was choose a project under an organisation. After going through all the projects
+I chose “Extending the REST API of Apache Airflow”, because I had a good idea of what  REST API(s) are, so I
+thought it would be easier to get started with the contributions. The next step was to set up Airflow’s dev
+environment which thanks to &lt;a href=&#34;https://github.com/apache/airflow/blob/master/BREEZE.rst&#34; target=&#34;_blank&#34;&gt;Breeze&lt;/a&gt;, was a breeze.
+Since I had never contributed to FOSS before so this part was overwhelming but there were plenty of issues
+labelled “good first issues” with detailed descriptions and some even had code snippets so luckily that nudged
+me in the right direction. These things about Airflow and the positive vibes from the community were the reasons
+why I chose to stick with Airflow as my Outreachy project.&lt;/p&gt;
+
+&lt;h3 id=&#34;internship-period&#34;&gt;Internship Period&lt;/h3&gt;
+
+&lt;p&gt;My first PR was followed by many new experiences one of them being that I introduced a
+&lt;a href=&#34;https://github.com/apache/airflow/pull/7680#issuecomment-619763051&#34; target=&#34;_blank&#34;&gt;bug&lt;/a&gt; in it;).
+But nonetheless it made me familiar with the feedback loop and the feedback on my subsequent
+&lt;a href=&#34;https://github.com/apache/airflow/pulls?q=is%3Apr+author%3AOmairK+&#34; target=&#34;_blank&#34;&gt;PRs&lt;/a&gt; was the focal point of the overall
+learning experience I went through, which boosted my confidence to contribute more and move out of my comfort zone.
+I wanted to learn more about the things that happen under the Airflow’s hood so I started filtering out recent PRs
+dealing with different components and I would go through the code changes along with discussion that would help me
+get a better understanding of the whole workflow. &lt;a href=&#34;https://lists.apache.org/list.html?dev@airflow.apache.org&#34; target=&#34;_blank&#34;&gt;Airflow’s mailing list&lt;/a&gt;
+was also a great source of knowledge.&lt;/p&gt;
+
+&lt;p&gt;The API related PRs that I worked on helped me with some of the important concepts like:&lt;/p&gt;
+
+&lt;p&gt;1) &lt;a href=&#34;https://github.com/apache/airflow/pull/9329&#34; target=&#34;_blank&#34;&gt;Pool CRUD endpoints&lt;/a&gt; where pools limit the execution parallelism.&lt;/p&gt;
+
+&lt;p&gt;2) &lt;a href=&#34;https://github.com/apache/airflow/pull/9597&#34; target=&#34;_blank&#34;&gt;Tasks&lt;/a&gt; determine the actual work that has to be carried out.&lt;/p&gt;
+
+&lt;p&gt;3) &lt;a href=&#34;https://github.com/apache/airflow/pull/9473&#34; target=&#34;_blank&#34;&gt;DAG&lt;/a&gt; which represents the structure for a collection
+  of tasks. It keeps track of tasks, their dependencies and the sequence in which they have to run.&lt;/p&gt;
+
+&lt;p&gt;4) &lt;a href=&#34;https://github.com/apache/airflow/pull/9473&#34; target=&#34;_blank&#34;&gt;Dag Runs&lt;/a&gt; that are the instantiation of DAG(s) in time.&lt;/p&gt;
+
+&lt;p&gt;Through actively and passively participating in discussions I learnt that even if there is a difference of opinion
+one could always learn from the different approaches, and &lt;a href=&#34;https://github.com/apache/airflow/pull/8721&#34; target=&#34;_blank&#34;&gt;this PR&lt;/a&gt; with
+more than 300+ comments is the proof of it. I also started reviewing small PRs which gave me the amazing opportunity
+to interact with new people. Throughout my internship I learnt a lot about different frameworks and technologies
+but the biggest takeaway for me was that a code is read more often than it&amp;rsquo;s written, and I started writing code with
+that in mind.&lt;/p&gt;
+
+&lt;h3 id=&#34;wrapping-up&#34;&gt;Wrapping Up&lt;/h3&gt;
+
+&lt;p&gt;So with my project of extending Airflow’s REST API as well as the Outreachy internship coming to an end I would like
+to thank my mentors &lt;a href=&#34;https://github.com/potiuk&#34; target=&#34;_blank&#34;&gt;Jarek Potiuk&lt;/a&gt;, &lt;a href=&#34;https://github.com/kaxil&#34; target=&#34;_blank&#34;&gt;Kaxil Naik&lt;/a&gt; and
+&lt;a href=&#34;https://github.com/mik-laj&#34; target=&#34;_blank&#34;&gt;Kamil Breguła&lt;/a&gt; for the patience and the time they invested in mentoring me and
+the Airflow community for making me feel so welcomed. I plan to stick around and contribute to give back to the
+community that has been made my summer, one to remember.&lt;/p&gt;
 
       </description>
     </item>
