@@ -14,6 +14,155 @@
     
     
     <item>
+      <title>Blog: Apache Airflow 2.0 is here!</title>
+      <link>/blog/airflow-two-point-oh-is-here/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/airflow-two-point-oh-is-here/</guid>
+      <description>
+        
+        
+        
+
+&lt;p&gt;I am proud to announce that Apache Airflow 2.0.0 has been released.&lt;/p&gt;
+
+&lt;p&gt;The full changelog is about 3,000 lines long (already excluding everything backported to 1.10), so for now I&amp;rsquo;ll simply share some of the major features in 2.0.0 compared to 1.10.14:&lt;/p&gt;
+
+&lt;h2 id=&#34;a-new-way-of-writing-dags-the-taskflow-api-aip-31&#34;&gt;A new way of writing dags: the TaskFlow API (AIP-31)&lt;/h2&gt;
+
+&lt;p&gt;(Known in 2.0.0alphas as Functional DAGs.)&lt;/p&gt;
+
+&lt;p&gt;DAGs are now much much nicer to author especially when using PythonOperator. Dependencies are handled more clearly and XCom is nicer to use&lt;/p&gt;
+
+&lt;p&gt;Read more here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow/stable/tutorial_taskflow_api.html&#34; target=&#34;_blank&#34;&gt;TaskFlow API Tutorial&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&#34;https://airflow.apache.org/docs/apache-airflow/stable/concepts.html#decorated-flows&#34; target=&#34;_blank&#34;&gt;TaskFlow API Documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A quick teaser of what DAGs can now look like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from airflow.decorators import dag, task
+from airflow.utils.dates import days_ago
+
+@dag(default_args={&#39;owner&#39;: &#39;airflow&#39;}, schedule_interval=None, start_date=days_ago(2))
+def tutorial_taskflow_api_etl():
+   @task
+   def extract():
+       return {&amp;quot;1001&amp;quot;: 301.27, &amp;quot;1002&amp;quot;: 433.21, &amp;quot;1003&amp;quot;: 502.22}
+
+   @task
+   def transform(order_data_dict: dict) -&amp;gt; dict:
+       total_order_value = 0
+
+       for value in order_data_dict.values():
+           total_order_value += value
+
+       return {&amp;quot;total_order_value&amp;quot;: total_order_value}
+
+   @task()
+   def load(total_order_value: float):
+
+       print(&amp;quot;Total order value is: %.2f&amp;quot; % total_order_value)
+
+   order_data = extract()
+   order_summary = transform(order_data)
+   load(order_summary[&amp;quot;total_order_value&amp;quot;])
+
+tutorial_etl_dag = tutorial_taskflow_api_etl()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;fully-specified-rest-api-aip-32&#34;&gt;Fully specified REST API (AIP-32)&lt;/h2&gt;
+
+&lt;p&gt;We now have a fully supported, no-longer-experimental API with a comprehensive OpenAPI specification&lt;/p&gt;
+
+&lt;p&gt;Read more here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html&#34; target=&#34;_blank&#34;&gt;REST API Documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;massive-scheduler-performance-improvements&#34;&gt;Massive Scheduler performance improvements&lt;/h2&gt;
+
+&lt;p&gt;As part of AIP-15 (Scheduler HA+performance) and other work Kamil did, we significantly improved the performance of the Airflow Scheduler. It now starts tasks much, MUCH quicker.&lt;/p&gt;
+
+&lt;p&gt;Over at Astronomer.io we&amp;rsquo;ve &lt;a href=&#34;https://www.astronomer.io/blog/airflow-2-scheduler&#34; target=&#34;_blank&#34;&gt;benchmarked the scheduler—it&amp;rsquo;s fast&lt;/a&gt; (we had to triple check the numbers as we don&amp;rsquo;t quite believe them at first!)&lt;/p&gt;
+
+&lt;h2 id=&#34;scheduler-is-now-ha-compatible-aip-15&#34;&gt;Scheduler is now HA compatible (AIP-15)&lt;/h2&gt;
+
+&lt;p&gt;It&amp;rsquo;s now possible and supported to run more than a single scheduler instance. This is super useful for both resiliency (in case a scheduler goes down) and scheduling performance.&lt;/p&gt;
+
+&lt;p&gt;To fully use this feature you need Postgres 9.6+ or MySQL 8+ (MySQL 5, and MariaDB won&amp;rsquo;t work with more than one scheduler I&amp;rsquo;m afraid).&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s no config or other set up required to run more than one scheduler—just start up a scheduler somewhere else (ensuring it has access to the DAG files) and it will cooperate with your existing schedulers through the database.&lt;/p&gt;
+
+&lt;p&gt;For more information, read the &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow/stable/scheduler.html#running-more-than-one-scheduler&#34; target=&#34;_blank&#34;&gt;Scheduler HA documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;task-groups-aip-34&#34;&gt;Task Groups (AIP-34)&lt;/h2&gt;
+
+&lt;p&gt;SubDAGs were commonly used for grouping tasks in the UI, but they had many drawbacks in their execution behaviour (primarirly that they only executed a single task in parallel!) To improve this experience, we’ve introduced &amp;ldquo;Task Groups&amp;rdquo;: a method for organizing tasks which provides the same grouping behaviour as a subdag without any of the execution-time drawbacks.&lt;/p&gt;
+
+&lt;p&gt;SubDAGs will still work for now, but we think that any previous use of SubDAGs can now be replaced with task groups. If you find an example where this isn&amp;rsquo;t the case, please let us know by opening an issue on GitHub&lt;/p&gt;
+
+&lt;p&gt;For more information, check out the &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow/stable/concepts.html#taskgroup&#34; target=&#34;_blank&#34;&gt;Task Group documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;refreshed-ui&#34;&gt;Refreshed UI&lt;/h2&gt;
+
+&lt;p&gt;We&amp;rsquo;ve given the Airflow UI &lt;a href=&#34;https://github.com/apache/airflow/pull/11195&#34; target=&#34;_blank&#34;&gt;a visual refresh&lt;/a&gt; and updated some of the styling.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;airflow-2.0-ui.gif&#34; alt=&#34;Airflow 2.0&#39;s new UI&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We have also added an option to auto-refresh task states in Graph View so you no longer need to continuously press the refresh button :).&lt;/p&gt;
+
+&lt;p&gt;Check out &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow/stable/ui.html&#34; target=&#34;_blank&#34;&gt;the screenshots in the docs&lt;/a&gt; for more.&lt;/p&gt;
+
+&lt;h2 id=&#34;smart-sensors-for-reduced-load-from-sensors-aip-17&#34;&gt;Smart Sensors for reduced load from sensors (AIP-17)&lt;/h2&gt;
+
+&lt;p&gt;If you make heavy use of sensors in your Airflow cluster, you might find that sensor execution takes up a significant proportion of your cluster even with &amp;ldquo;reschedule&amp;rdquo; mode. To improve this, we&amp;rsquo;ve added a new mode called &amp;ldquo;Smart Sensors&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;This feature is in &amp;ldquo;early-access&amp;rdquo;: it&amp;rsquo;s been well-tested by AirBnB and is &amp;ldquo;stable&amp;rdquo;/usable, but we reserve the right to make backwards incompatible changes to it in a future release (if we have to. We&amp;rsquo;ll try very hard not to!)&lt;/p&gt;
+
+&lt;p&gt;Read more about it in the &lt;a href=&#34;https://airflow.apache.org/docs/apache-airflow/stable/smart-sensor.html&#34; target=&#34;_blank&#34;&gt;Smart Sensors documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;simplified-kubernetesexecutor&#34;&gt;Simplified KubernetesExecutor&lt;/h2&gt;
+
+&lt;p&gt;For Airflow 2.0, we have re-architected the KubernetesExecutor in a fashion that is simultaneously faster, easier to understand, and more flexible for Airflow users. Users will now be able to access the full Kubernetes API to create a .yaml &lt;code&gt;pod_template_file&lt;/code&gt; instead of specifying parameters in their airflow.cfg.&lt;/p&gt;
+
+&lt;p&gt;We have also replaced the &lt;code&gt;executor_config&lt;/code&gt; dictionary with the &lt;code&gt;pod_override&lt;/code&gt; parameter, which takes a Kubernetes V1Pod object for a1:1 setting override. These changes have removed over three thousand lines of code from the KubernetesExecutor, which makes it run faster and creates fewer potential errors.&lt;/p&gt;
+
+&lt;p&gt;Read more here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://airflow.apache.org/docs/apache-airflow/stable/executor/kubernetes.html?highlight=pod_override#pod-template-file&#34; target=&#34;_blank&#34;&gt;Docs on pod_template_file&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&#34;https://airflow.apache.org/docs/apache-airflow/stable/executor/kubernetes.html?highlight=pod_override#pod-override&#34; target=&#34;_blank&#34;&gt;Docs on pod_override&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;airflow-core-and-providers-splitting-airflow-into-60-packages&#34;&gt;Airflow core and providers: Splitting Airflow into 60+ packages:&lt;/h2&gt;
+
+&lt;p&gt;Airflow 2.0 is not a monolithic &amp;ldquo;one to rule them all&amp;rdquo; package. We’ve split Airflow into core and 61 (for now) provider packages. Each provider package is for either a particular external service (Google, Amazon, Microsoft, Snowflake), a database (Postgres, MySQL), or a protocol (HTTP/FTP). Now you can create a custom Airflow installation from &amp;ldquo;building&amp;rdquo; blocks and choose only what you need, plus add whatever other requirements you might have. Some of the common providers are installed automatically (ftp, http, imap, sqlite) as they are commonly used. Other providers are automatically installed when you choose appropriate extras when installing Airflow.&lt;/p&gt;
+
+&lt;p&gt;The provider architecture should make it much easier to get a fully customized, yet consistent runtime with the right set of Python dependencies.&lt;/p&gt;
+
+&lt;p&gt;But that’s not all: you can write your own custom providers and add things like custom connection types, customizations of the Connection Forms, and extra links to your operators in a manageable way. You can build your own provider and install it as a Python package and have your customizations visible right in the Airflow UI.&lt;/p&gt;
+
+&lt;p&gt;Our very own Jarek Potiuk has written about &lt;a href=&#34;https://www.polidea.com/blog/airflow-2-providers/&#34; target=&#34;_blank&#34;&gt;providers in much more detail&lt;/a&gt; on the Polidea blog.&lt;/p&gt;
+
+&lt;p&gt;Docs on the &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow-providers/&#34; target=&#34;_blank&#34;&gt;providers concept and writing custom providers&lt;/a&gt; &lt;br /&gt;
+Docs on the &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow-providers/packages-ref.html&#34; target=&#34;_blank&#34;&gt;all providers packages available&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;security&#34;&gt;Security&lt;/h2&gt;
+
+&lt;p&gt;As part of Airflow 2.0 effort, there has been a conscious focus on Security and reducing areas of exposure. This is represented across different functional areas in different forms. For example, in the new REST API, all operations now require authorization. Similarly, in the configuration settings, the Fernet key is now required to be specified.&lt;/p&gt;
+
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;Configuration in the form of the airflow.cfg file has been rationalized further in distinct sections, specifically around &amp;ldquo;core&amp;rdquo;. Additionally, a significant amount of configuration options have been deprecated or moved to individual component-specific configuration files, such as the pod-template-file for Kubernetes execution-related configuration.&lt;/p&gt;
+
+&lt;h2 id=&#34;thanks-to-all-of-you&#34;&gt;Thanks to all of you&lt;/h2&gt;
+
+&lt;p&gt;We&amp;rsquo;ve tried to make as few breaking changes as possible and to provide deprecation path in the code, especially in the case of anything called in the DAG. That said, please read throughUPDATING.md to check what might affect you. For example: r We re-organized the layout of operators (they now all live under airflow.providers.*) but the old names should continue to work - you&amp;rsquo;ll just notice a lot of DeprecationWarnings that need to be fixed up.&lt;/p&gt;
+
+&lt;p&gt;Thank you so much to all the contributors who got us to this point, in no particular order: Kaxil Naik, Daniel Imberman, Jarek Potiuk, Tomek Urbaszek, Kamil Breguła, Gerard Casas Saez, Xiaodong DENG, Kevin Yang, James Timmins, Yingbo Wang, Qian Yu, Ryan Hamilton and the 100s of others who keep making Airflow better for everyone.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Journey with Airflow as an Outreachy Intern</title>
       <link>/blog/experience-with-airflow-as-an-outreachy-intern/</link>
       <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
