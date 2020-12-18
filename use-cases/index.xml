@@ -108,7 +108,7 @@
 
 &lt;h5 id=&#34;how-did-apache-airflow-help-to-solve-this-problem&#34;&gt;How did Apache Airflow help to solve this problem?&lt;/h5&gt;
 
-&lt;p&gt;Ultimately we decided flexible, multi-node, DAG capable tooling was key and airflow was one of the few tools that fit that bill. Having it based on open source and python were large factors that upheld our core principles. At the time, Airflow was missing a windows hook and operator so we contributed the WinRM hook and operator back to the community. Given its flexibilty we also use DAG generators to have our metadata drive our DAGs and keep maintenance costs down.&lt;/p&gt;
+&lt;p&gt;Ultimately we decided flexible, multi-node, DAG capable tooling was key and airflow was one of the few tools that fit that bill. Having it based on open source and python were large factors that upheld our core principles. At the time, Airflow was missing a windows hook and operator so we contributed the WinRM hook and operator back to the community. Given its flexibility we also use DAG generators to have our metadata drive our DAGs and keep maintenance costs down.&lt;/p&gt;
 
 &lt;h5 id=&#34;what-are-the-results&#34;&gt;What are the results?&lt;/h5&gt;
 
