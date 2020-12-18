@@ -118,7 +118,7 @@ tutorial_etl_dag = tutorial_taskflow_api_etl()
 
 &lt;p&gt;If you make heavy use of sensors in your Airflow cluster, you might find that sensor execution takes up a significant proportion of your cluster even with &amp;ldquo;reschedule&amp;rdquo; mode. To improve this, we&amp;rsquo;ve added a new mode called &amp;ldquo;Smart Sensors&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;This feature is in &amp;ldquo;early-access&amp;rdquo;: it&amp;rsquo;s been well-tested by AirBnB and is &amp;ldquo;stable&amp;rdquo;/usable, but we reserve the right to make backwards incompatible changes to it in a future release (if we have to. We&amp;rsquo;ll try very hard not to!)&lt;/p&gt;
+&lt;p&gt;This feature is in &amp;ldquo;early-access&amp;rdquo;: it&amp;rsquo;s been well-tested by Airbnb and is &amp;ldquo;stable&amp;rdquo;/usable, but we reserve the right to make backwards incompatible changes to it in a future release (if we have to. We&amp;rsquo;ll try very hard not to!)&lt;/p&gt;
 
 &lt;p&gt;Read more about it in the &lt;a href=&#34;https://airflow.apache.org/docs/apache-airflow/stable/smart-sensor.html&#34; target=&#34;_blank&#34;&gt;Smart Sensors documentation&lt;/a&gt;.&lt;/p&gt;
 
