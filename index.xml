@@ -139,7 +139,7 @@ tutorial_etl_dag = tutorial_taskflow_api_etl()
 
 &lt;p&gt;But that’s not all: you can write your own custom providers and add things like custom connection types, customizations of the Connection Forms, and extra links to your operators in a manageable way. You can build your own provider and install it as a Python package and have your customizations visible right in the Airflow UI.&lt;/p&gt;
 
-&lt;p&gt;Our very own Jarek Potiuk has written about &lt;a href=&#34;https://www.polidea.com/blog/airflow-2-providers/&#34; target=&#34;_blank&#34;&gt;providers in much more detail&lt;/a&gt; on the Polidea blog.&lt;/p&gt;
+&lt;p&gt;Our very own Jarek Potiuk has written about &lt;a href=&#34;https://higrys.medium.com/airflow-2-0-providers-1bd21ba3bd93&#34; target=&#34;_blank&#34;&gt;providers in much more detail&lt;/a&gt; on Jarek&amp;rsquo;s blog.&lt;/p&gt;
 
 &lt;p&gt;Docs on the &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow-providers/&#34; target=&#34;_blank&#34;&gt;providers concept and writing custom providers&lt;/a&gt; &lt;br /&gt;
 Docs on the &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow-providers/packages-ref.html&#34; target=&#34;_blank&#34;&gt;all providers packages available&lt;/a&gt;&lt;/p&gt;
@@ -2115,7 +2115,7 @@ and that its improved accessibility increases adoption and use of Apache Airflow
 
 &lt;p&gt;After this year’s ApacheCon, Polidea’s engineers talked with Committers of Apache projects, such as—Aizhamal Nurmamat kyzy, Felix Uellendall, and Fokko Driesprong—about insights to what makes the ASF such an amazing organization.&lt;/p&gt;
 
-&lt;p&gt;You can read the &lt;a href=&#34;https://www.polidea.com/blog/apachecon-europe-2019-thoughts-and-insights-by-airflow-committers/?utm_source=ApacheAirflowBlog&amp;amp;utm_medium=Npaid&amp;amp;utm_campaign=Blog&amp;amp;utm_term=Article&amp;amp;utm_content=AAB_NOP_BLG_ART_APC_001&#34; target=&#34;_blank&#34;&gt;insights on the Polidea blog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can read the &lt;a href=&#34;https://higrys.medium.com/apachecon-europe-2019-thoughts-and-insights-by-airflow-committers-9ff5f6938c99&#34; target=&#34;_blank&#34;&gt;insights after the ApacheCon 2019&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
@@ -2186,7 +2186,7 @@ a team for 3 months.&lt;/p&gt;
 
 &lt;p&gt;That is how the journey to increased productivity in Apache Airflow began. The result? The Airflow Breeze open-source tool. Jarek Potiuk, an Airflow Committer, will tell you all about it.&lt;/p&gt;
 
-&lt;p&gt;You can learn &lt;a href=&#34;https://www.polidea.com/blog/its-a-breeze-to-develop-apache-airflow/?utm_source=ApacheAirflowBlog&amp;amp;utm_medium=Npaid&amp;amp;utm_campaign=Blog&amp;amp;utm_term=Article&amp;amp;utm_content=AAB_NOP_BLG_ART_AB_001&#34; target=&#34;_blank&#34;&gt;how and why it’s a &amp;ldquo;Breeze&amp;rdquo; to Develop Apache Airflow on Polidea blog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can learn &lt;a href=&#34;https://higrys.medium.com/its-a-breeze-to-develop-apache-airflow-bf306d3e3505&#34; target=&#34;_blank&#34;&gt;how and why it’s a &amp;ldquo;Breeze&amp;rdquo; to Develop Apache Airflow&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
