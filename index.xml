@@ -13,6 +13,1605 @@
     
     
     <item>
+      <title>Blog: Airflow Survey 2020</title>
+      <link>/blog/airflow-survey-2020/</link>
+      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/airflow-survey-2020/</guid>
+      <description>
+        
+        
+        
+
+&lt;h1 id=&#34;apache-airflow-survey-2020&#34;&gt;Apache Airflow Survey 2020&lt;/h1&gt;
+
+&lt;p&gt;World of data processing tools is growing steadily. Apache Airflow seems to be already considered as
+crucial component of this complex ecosystem. We observe steady growth in number of users as well as in
+an amount of active contributors. So listening and understanding our community is of high importance.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s worth to note that the 2020 survey was still mostly about 1.10.X version of Apache Airflow and
+possibly many drawbacks were addressed in the 2.0 version that was released in December 2020. But if this
+is true, we will learn next year!&lt;/p&gt;
+
+&lt;h2 id=&#34;overview-of-the-user&#34;&gt;Overview of the user&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;What_best_describes_your_current_occupation.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What best describes your current occupation? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Data Engineer&lt;/td&gt;
+&lt;td&gt;115&lt;/td&gt;
+&lt;td&gt;56.65&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Developer&lt;/td&gt;
+&lt;td&gt;28&lt;/td&gt;
+&lt;td&gt;13.79&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DevOps&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;8.37&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Solutions Architect&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;6.9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Data Scientist&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;5.91&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;4.93&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Data Analyst&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1.97&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Support Engineer&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1.48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Those results are not a surprise as Airflow is a tool dedicated to data-related tasks. The majority of
+our users are data engineers, scientists or analysts. The 2020 results are similar to &lt;a href=&#34;https://airflow.apache.org/blog/airflow-survey/&#34; target=&#34;_blank&#34;&gt;those from 2019&lt;/a&gt; with
+visible slight increase in ML use cases.&lt;/p&gt;
+
+&lt;p&gt;Additionally, 79% of users uses Airflow on daily basis and 16% interacts with it at least once a week.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How many people work in your company? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;200+&lt;/td&gt;
+&lt;td&gt;107&lt;/td&gt;
+&lt;td&gt;52.71&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;51-200&lt;/td&gt;
+&lt;td&gt;44&lt;/td&gt;
+&lt;td&gt;21.67&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;11-50&lt;/td&gt;
+&lt;td&gt;37&lt;/td&gt;
+&lt;td&gt;18.23&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1-10&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;7.39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;How many people in your company use Airflow? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1-5&lt;/td&gt;
+&lt;td&gt;84&lt;/td&gt;
+&lt;td&gt;41.38&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;6-20&lt;/td&gt;
+&lt;td&gt;75&lt;/td&gt;
+&lt;td&gt;36.95&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;21-50&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;11.33&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;50+&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;10.34&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Airflow is a software that is used and trusted by big companies. We can also see that Airflow can work
+fine for teams of different sizes. However, in some cases users may use multiple Airflow instances.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Are you considering moving to other workflow engines? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;No, we are happy with Airflow&lt;/td&gt;
+&lt;td&gt;174&lt;/td&gt;
+&lt;td&gt;85.71&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;14.29&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Nearly 1 out of 7 users is considering migrating to other workflow engines. Their decision is usually
+justified by need of &lt;strong&gt;easier workflow writing experience&lt;/strong&gt; (12.32%), &lt;strong&gt;better UI/UX&lt;/strong&gt; and &lt;strong&gt;faster scheduler&lt;/strong&gt;
+(8.37% both).&lt;/p&gt;
+
+&lt;p&gt;While the first point may be addressed by &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow/stable/concepts.html#taskflow-api&#34; target=&#34;_blank&#34;&gt;TaskFlow API&lt;/a&gt; in Airflow 2.0 the other two are definitely addressed
+in the new major version. And the early feedback from 2.0 users seems to be confirming it.&lt;/p&gt;
+
+&lt;p&gt;The alternative engines considered by users are mainly Prefect and Argo. Some participants also mentioned
+Luigi, Kubeflow or custom solutions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Are you or your team actively participating in Airflow development - contributing? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;I wish we could&lt;/td&gt;
+&lt;td&gt;99&lt;/td&gt;
+&lt;td&gt;48.77&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;59&lt;/td&gt;
+&lt;td&gt;29.06&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;45&lt;/td&gt;
+&lt;td&gt;22.17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This is really heart-warming result. It means that 1 out of 5 users contributes actively to our project!
+But it would be good to learn if there&amp;rsquo;s something else than time that is stopping people who wish to contribute
+from doing it. If there are some other obstacles we definitely would like to learn about them so we can improve.
+That said - if you know something we can improve please reach out via Slack, dev list or Github
+discussions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How likely are you to recommend Apache Airflow? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;2020 %&lt;/th&gt;
+&lt;th&gt;2019 %&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Very Likely&lt;/td&gt;
+&lt;td&gt;125&lt;/td&gt;
+&lt;td&gt;61.58&lt;/td&gt;
+&lt;td&gt;45.45%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Likely&lt;/td&gt;
+&lt;td&gt;62&lt;/td&gt;
+&lt;td&gt;30.54&lt;/td&gt;
+&lt;td&gt;40.26%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Neutral&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;5.42&lt;/td&gt;
+&lt;td&gt;10.71%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Unlikely&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1.48&lt;/td&gt;
+&lt;td&gt;2.60%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Very unlikely&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0.99&lt;/td&gt;
+&lt;td&gt;0.97%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Here is good news! It seems that people are more willing to recommend Apache Airflow than year before.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What is your source of information about Airflow? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Documentation&lt;/td&gt;
+&lt;td&gt;154&lt;/td&gt;
+&lt;td&gt;75.86&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Airflow website&lt;/td&gt;
+&lt;td&gt;139&lt;/td&gt;
+&lt;td&gt;68.47&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Slack&lt;/td&gt;
+&lt;td&gt;128&lt;/td&gt;
+&lt;td&gt;63.05&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Github&lt;/td&gt;
+&lt;td&gt;127&lt;/td&gt;
+&lt;td&gt;62.56&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Stack Overflow&lt;/td&gt;
+&lt;td&gt;72&lt;/td&gt;
+&lt;td&gt;35.47&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Airflow Summit Videos&lt;/td&gt;
+&lt;td&gt;44&lt;/td&gt;
+&lt;td&gt;21.67&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;The dev mailing list&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;16.26&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Awesome Apache Airflow repository&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;10.34&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;7.39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Here we see that Airflow documentation is the crucial source of information. What&amp;rsquo;s interesting is that more
+than 60% of users are getting information from Github and Slack channels.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;Where_are_you_based.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;airflow-uses-cases&#34;&gt;Airflow uses cases&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Do you have any customisation of Airflow? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;No, we use vanilla Airflow&lt;/td&gt;
+&lt;td&gt;154&lt;/td&gt;
+&lt;td&gt;75.86&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, we have small patches (no fork)&lt;/td&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;16.75&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, we have separate fork&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;7.39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;When onboarding new members to airflow, what is the biggest problem? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;No guide on best practises on developing DAGs&lt;/td&gt;
+&lt;td&gt;102&lt;/td&gt;
+&lt;td&gt;50.25&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;There is no easy option to launch Airflow&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;31.53&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Small number of tutorials on different aspects of using Airflow&lt;/td&gt;
+&lt;td&gt;57&lt;/td&gt;
+&lt;td&gt;28.08&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Documentation is not clear enough&lt;/td&gt;
+&lt;td&gt;53&lt;/td&gt;
+&lt;td&gt;26.11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;There is no easy option to deploy DAGs to an Airflow instance&lt;/td&gt;
+&lt;td&gt;52&lt;/td&gt;
+&lt;td&gt;25.62&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;No problems&lt;/td&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;16.75&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Small number of blogs regarding Airflow&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;14.78&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Which interface(s) of Airflow do you use as part of your current role? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Original Airflow Graphical User Interface&lt;/td&gt;
+&lt;td&gt;199&lt;/td&gt;
+&lt;td&gt;98.03&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CLI&lt;/td&gt;
+&lt;td&gt;88&lt;/td&gt;
+&lt;td&gt;43.35&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;API&lt;/td&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;23.65&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Custom (own created) Airflow Graphical User Interface&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;5.91&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1.48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Do you combine multiple DAGs? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Yes, by triggering another DAG&lt;/td&gt;
+&lt;td&gt;87&lt;/td&gt;
+&lt;td&gt;42.86&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;No, I don&amp;rsquo;t combine multiple DAGs&lt;/td&gt;
+&lt;td&gt;79&lt;/td&gt;
+&lt;td&gt;38.92&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, through SubDAG&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;19.7&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;8.87&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;How do you integrate with external services? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Using existing dedicated operators / hooks&lt;/td&gt;
+&lt;td&gt;147&lt;/td&gt;
+&lt;td&gt;72.41&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Using Bash / Python operator&lt;/td&gt;
+&lt;td&gt;140&lt;/td&gt;
+&lt;td&gt;68.97&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Using own custom operators / hooks&lt;/td&gt;
+&lt;td&gt;138&lt;/td&gt;
+&lt;td&gt;67.98&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;5.91&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;What external services do you use in your Airflow DAGs? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Amazon Web Services&lt;/td&gt;
+&lt;td&gt;121&lt;/td&gt;
+&lt;td&gt;59.61&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Internal company systems&lt;/td&gt;
+&lt;td&gt;113&lt;/td&gt;
+&lt;td&gt;55.67&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Google Cloud Platform / Google APIs&lt;/td&gt;
+&lt;td&gt;97&lt;/td&gt;
+&lt;td&gt;47.78&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Hadoop / Spark / Flink / Other Apache software&lt;/td&gt;
+&lt;td&gt;72&lt;/td&gt;
+&lt;td&gt;35.47&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Microsoft Azure&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;10.34&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;9.36&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I do not use external services in my Airflow DAGs&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;2.46&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&#34;What_external_services_do_you_use_in_your_Airflow_DAGs.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Do you use Airflow Plugins? If yes, what do you use them for? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Adding new operators/sensors and hooks&lt;/td&gt;
+&lt;td&gt;119&lt;/td&gt;
+&lt;td&gt;58.62&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I don&amp;rsquo;t use Airflow plugins&lt;/td&gt;
+&lt;td&gt;69&lt;/td&gt;
+&lt;td&gt;33.99&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Adding AppBuilder views &amp;amp; menu items&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Adding new executors&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;8.37&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Adding OperatorExtraLinks&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;6.4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Do you use Airflow&amp;rsquo;s data lineage feature? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;No, I will use such feature if fully supported in Airflow&lt;/td&gt;
+&lt;td&gt;105&lt;/td&gt;
+&lt;td&gt;51.72&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;No, data lineage isn’t a concern for my usage.&lt;/td&gt;
+&lt;td&gt;68&lt;/td&gt;
+&lt;td&gt;33.5&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, I use another data lineage product&lt;/td&gt;
+&lt;td&gt;24&lt;/td&gt;
+&lt;td&gt;11.82&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, I use custom implementation&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;2.46&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, I use Airflow&amp;rsquo;s experimental data lineage feature&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.49&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;When asked what lineage product users use, the answers were varying from custom tools
+to known product like Amundsen, Atlas or dbt.&lt;/p&gt;
+
+&lt;h2 id=&#34;deployment&#34;&gt;Deployment&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;How many active DAGs do you have in your largest Airflow instance? (open question)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Number of DAGs&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt; 20&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;21-40&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;41-60&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;61-100&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;101-200&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;201-300&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;301-999&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1000+&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;What is the maximum number of tasks that you have used in one DAG? (open question)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Number of DAGs&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt; 10&lt;/td&gt;
+&lt;td&gt;42&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;11-20&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;21-30&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;31-40&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;41-50&lt;/td&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;51-100&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;101-200&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;201-500&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;501+&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Which version of Airflow do you use currently? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1.10.14&lt;/td&gt;
+&lt;td&gt;55&lt;/td&gt;
+&lt;td&gt;27.09&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2.0.0+&lt;/td&gt;
+&lt;td&gt;45&lt;/td&gt;
+&lt;td&gt;22.17&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.12&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.10&lt;/td&gt;
+&lt;td&gt;26&lt;/td&gt;
+&lt;td&gt;12.81&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.11&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;6.9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.5 or older&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;4.93&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.9&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;3.94&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.13&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;3.45&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.6&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1.97&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.7&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1.97&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.10.8&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1.48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This was probably one of the most important questions in the survey. While it&amp;rsquo;s good to see
+that more than 60% of users use one of three latest Airflow versions, it&amp;rsquo;s worrying that the rest
+are using versions that are old or have known security vulnerabilities.&lt;/p&gt;
+
+&lt;p&gt;Additionally, more than 20% of users are already using 2.0.0+ versions which is reasonably good information.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What meta-database do you use? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Postgres 12&lt;/td&gt;
+&lt;td&gt;36&lt;/td&gt;
+&lt;td&gt;17.73&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Postgres 9.6&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;16.26&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Postgres 11&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;15.27&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MySQL 5.7&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MySQL 8.0&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;9.85&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Postgres 10&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;9.85&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;9.36&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Postgres 13&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;8.87&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This means that more about 69% of users decide to use Postgres as their meta-database.
+MySQL is the choice of nearly 24% users. The other responses included some MySQL versions
+like MariaDB or cloud hosted database like Cloud SQL (used by Google Composer) or AWS Aurora.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s good to know that users rather avoid using SQLite in production deployments!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What executor type do you use? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;What_executor_type_do_you_use.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Celery&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;49.26%&lt;/td&gt;
+&lt;td&gt;44.81%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Kubernetes&lt;/td&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;23.65%&lt;/td&gt;
+&lt;td&gt;16.88%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Local&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;19.7%&lt;/td&gt;
+&lt;td&gt;27.60%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Sequential&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;4.93%&lt;/td&gt;
+&lt;td&gt;7.14%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;2.46%&lt;/td&gt;
+&lt;td&gt;3.57&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In comparison to previous year it seems that more users use currently Celery and
+Kubernetes executors and LocalExecutor usage dropped by nearly 8 points. This may
+suggest that users&amp;rsquo; deployments are growing, and they need more scalable solutions.&lt;/p&gt;
+
+&lt;p&gt;Among CeleryExecutor users 78% use Redis as a broker, 19% use RabbitMQ and the rest
+is using other brokers or is not sure what is used in their deployments.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What metrics do you use to monitor Airflow? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;I do not use monitoring&lt;/td&gt;
+&lt;td&gt;65&lt;/td&gt;
+&lt;td&gt;32.02&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;External monitoring service&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;td&gt;29.56&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Information from metadatabase&lt;/td&gt;
+&lt;td&gt;51&lt;/td&gt;
+&lt;td&gt;25.12&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Statsd&lt;/td&gt;
+&lt;td&gt;49&lt;/td&gt;
+&lt;td&gt;24.14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;15.27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The other responses included mostly information about tools used by users
+including DataDog and Prometheus exporter.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How do you deploy Airflow? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;On virtual machines (for example using AWS EC2)&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;31.53&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Using a managed service like Astronomer, Google Composer or AWS MWAA&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;td&gt;17.24&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;On Kubernetes (using custom deployments)&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;14.29&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;On premises&lt;/td&gt;
+&lt;td&gt;28&lt;/td&gt;
+&lt;td&gt;13.79&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;On Kubernetes (using another helm chart)&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;9.85&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;On Kubernetes (using Apache Airflow&amp;rsquo;s helm chart)&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;8.37&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;5.91&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Nearly 33% of users deploys Airflow using some kind of Kubernetes deployment. This is about
+10 percent more than in 2019. There&amp;rsquo;s slightly increase in usage of Airflow via
+managed services (14.61% in 2019).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Do you use containerisation for deployment? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Yes, using helm chart / kubernetes&lt;/td&gt;
+&lt;td&gt;58&lt;/td&gt;
+&lt;td&gt;28.57&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;No, I don’t use containerisation&lt;/td&gt;
+&lt;td&gt;57&lt;/td&gt;
+&lt;td&gt;28.08&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, single docker image&lt;/td&gt;
+&lt;td&gt;49&lt;/td&gt;
+&lt;td&gt;24.14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, using docker compose&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;td&gt;19.21&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Among users who do not use Kubernetes based deployments 58% of them use containerisation. About
+42% of those users use docker-compose for deployments.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How do you distribute your DAGs? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Using a synchronizing process (Git sync, GCS fuse, etc)&lt;/td&gt;
+&lt;td&gt;79&lt;/td&gt;
+&lt;td&gt;38.92&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bake them into the docker image&lt;/td&gt;
+&lt;td&gt;56&lt;/td&gt;
+&lt;td&gt;27.59&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Shared files system&lt;/td&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;16.75&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;9.85&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I don’t know&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;6.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The most popular way of distributing DAGs seems to be using a synchronizing process. About
+40% of users use this process together with Kubernetes deployments.&lt;/p&gt;
+
+&lt;h2 id=&#34;future-of-airflow&#34;&gt;Future of Airflow&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;In your opinion, what could be improved in Airflow? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Web UI&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;49.26&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Examples, how-to, onboarding documentation&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;td&gt;44.33&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Logging, monitoring and alerting&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;td&gt;44.33&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Technical documentation&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;td&gt;44.33&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Scheduler performance&lt;/td&gt;
+&lt;td&gt;83&lt;/td&gt;
+&lt;td&gt;40.89&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DAG authoring&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;31.53&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Authentication and authorization&lt;/td&gt;
+&lt;td&gt;58&lt;/td&gt;
+&lt;td&gt;28.57&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;REST API&lt;/td&gt;
+&lt;td&gt;51&lt;/td&gt;
+&lt;td&gt;25.12&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;44&lt;/td&gt;
+&lt;td&gt;21.67&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Reliability&lt;/td&gt;
+&lt;td&gt;41&lt;/td&gt;
+&lt;td&gt;20.2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;External integration e.g. AWS, GCP, Apache products&lt;/td&gt;
+&lt;td&gt;36&lt;/td&gt;
+&lt;td&gt;17.73&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Security&lt;/td&gt;
+&lt;td&gt;28&lt;/td&gt;
+&lt;td&gt;13.79&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CLI&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;9.85&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Everything work fine for me&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;6.9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I don’t know&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1.97&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Which features would most interest you? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;DAG versioning&lt;/td&gt;
+&lt;td&gt;109&lt;/td&gt;
+&lt;td&gt;53.69&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Builtin statistics&lt;/td&gt;
+&lt;td&gt;71&lt;/td&gt;
+&lt;td&gt;34.98&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Improved data lineage&lt;/td&gt;
+&lt;td&gt;65&lt;/td&gt;
+&lt;td&gt;32.02&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Scheduling at the start of the interval&lt;/td&gt;
+&lt;td&gt;63&lt;/td&gt;
+&lt;td&gt;31.03&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Stateless workers&lt;/td&gt;
+&lt;td&gt;59&lt;/td&gt;
+&lt;td&gt;29.06&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;More option to configure schedules (time units, increments)&lt;/td&gt;
+&lt;td&gt;57&lt;/td&gt;
+&lt;td&gt;28.08&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Multi-tenant deployment&lt;/td&gt;
+&lt;td&gt;49&lt;/td&gt;
+&lt;td&gt;24.14&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DAG fetcher (AIP-5)&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;td&gt;19.21&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Generic transfer operator&lt;/td&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;16.75&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;16.26&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I have everything I need&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;5.42&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Nothing&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;5.42&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Will you consider migrating to Airflow 2.0? (single choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Yes, as soon as possible&lt;/td&gt;
+&lt;td&gt;81&lt;/td&gt;
+&lt;td&gt;39.9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Yes, once it’s mature (for example after 2.1)&lt;/td&gt;
+&lt;td&gt;72&lt;/td&gt;
+&lt;td&gt;35.47&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I am already using Airflow 2.0+&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;td&gt;19.21&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I don&amp;rsquo;t know yet&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;3.94&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;No, I do not plan to migrate&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1.48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the features of Airflow 2.0 you are most excited about? (multiple choice)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;No.&lt;/th&gt;
+&lt;th&gt;%&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;General performance improvements&lt;/td&gt;
+&lt;td&gt;133&lt;/td&gt;
+&lt;td&gt;65.52&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Refreshed WebUI&lt;/td&gt;
+&lt;td&gt;102&lt;/td&gt;
+&lt;td&gt;50.25&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Scheduler HA&lt;/td&gt;
+&lt;td&gt;99&lt;/td&gt;
+&lt;td&gt;48.77&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Official docker image&lt;/td&gt;
+&lt;td&gt;84&lt;/td&gt;
+&lt;td&gt;41.38&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;@task decorator&lt;/td&gt;
+&lt;td&gt;56&lt;/td&gt;
+&lt;td&gt;27.59&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Official helm chart&lt;/td&gt;
+&lt;td&gt;51&lt;/td&gt;
+&lt;td&gt;25.12&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Providers packages&lt;/td&gt;
+&lt;td&gt;41&lt;/td&gt;
+&lt;td&gt;20.2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Configurable XCom backends&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;16.26&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CeleryKubernetesExecutor&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;15.27&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;5.91&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;From an open-source point of view, it is good to see that many people would love to contribute to Apache Airflow.
+This means that there are resources that if unleashed may make our community even stronger. From a product perspective, it is important to know that users are usually using the latest versions of our software and
+are willing to upgrade to new ones.&lt;/p&gt;
+
+&lt;p&gt;Finally, there are still some things to improve - documentation, onboarding guides and plug-and-play airflow
+deployments. However, we hope that with the increase of adoption there will be an increase in people willing
+to share their experience and tools.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Apache Airflow 2.0 is here!</title>
       <link>/blog/airflow-two-point-oh-is-here/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
