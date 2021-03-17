@@ -459,11 +459,12 @@
   },
   {
     "package-name": "apache-airflow-providers-elasticsearch",
-    "stable-version": "1.0.2",
+    "stable-version": "1.0.3",
     "all-versions": [
       "1.0.0",
       "1.0.1",
-      "1.0.2"
+      "1.0.2",
+      "1.0.3"
     ]
   },
   {
