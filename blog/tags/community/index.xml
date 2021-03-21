@@ -4,7 +4,7 @@
     <link>/blog/tags/community/</link>
     <description>Recent content in Community on Apache Airflow</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="/blog/tags/community/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +13,34 @@
         
       
     
+    
+    <item>
+      <title>Blog: Airflow Summit 2021</title>
+      <link>/blog/airflow_summit_2021/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/airflow_summit_2021/</guid>
+      <description>
+        
+        
+        
+
+&lt;h2 id=&#34;airflow-summit-2021-is-here&#34;&gt;Airflow Summit 2021 is here!&lt;/h2&gt;
+
+&lt;p&gt;The summit will be held online, July 8-16, 2021. Join us from all over the world to find
+out how Airflow is being used by leading companies, what is its roadmap and how you can
+participate in its development.&lt;/p&gt;
+
+&lt;h2 id=&#34;useful-information&#34;&gt;Useful information:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The official website: &lt;a href=&#34;https://airflowsummit.org&#34; target=&#34;_blank&#34;&gt;https://airflowsummit.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Call for proposals is open until &lt;strong&gt;12 April 2021&lt;/strong&gt;. To submit your talk go to &lt;a href=&#34;https://sessionize.com/airflow-summit-2021/&#34; target=&#34;_blank&#34;&gt;https://sessionize.com/airflow-summit-2021/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In case of any questions reach out to us via info@airflowsummit.org&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Blog: Airflow Survey 2020</title>
