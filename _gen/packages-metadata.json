@@ -1,11 +1,12 @@
 [
   {
     "package-name": "apache-airflow-providers-sftp",
-    "stable-version": "1.1.1",
+    "stable-version": "1.2.0",
     "all-versions": [
       "1.0.0",
       "1.1.0",
-      "1.1.1"
+      "1.1.1",
+      "1.2.0"
     ]
   },
   {
@@ -19,11 +20,12 @@
   },
   {
     "package-name": "apache-airflow-providers-microsoft-winrm",
-    "stable-version": "1.1.0",
+    "stable-version": "1.2.0",
     "all-versions": [
       "1.0.0",
       "1.0.1",
-      "1.1.0"
+      "1.1.0",
+      "1.2.0"
     ]
   },
   {
@@ -38,10 +40,11 @@
   },
   {
     "package-name": "apache-airflow-providers-microsoft-mssql",
-    "stable-version": "1.0.1",
+    "stable-version": "1.1.0",
     "all-versions": [
       "1.0.0",
-      "1.0.1"
+      "1.0.1",
+      "1.1.0"
     ]
   },
   {
@@ -110,12 +113,13 @@
   },
   {
     "package-name": "apache-airflow-providers-microsoft-azure",
-    "stable-version": "1.3.0",
+    "stable-version": "2.0.0",
     "all-versions": [
       "1.0.0",
       "1.1.0",
       "1.2.0",
-      "1.3.0"
+      "1.3.0",
+      "2.0.0"
     ]
   },
   {
@@ -153,30 +157,33 @@
   },
   {
     "package-name": "apache-airflow-providers-amazon",
+    "stable-version": "1.4.0",
+    "all-versions": [
+      "1.0.0",
+      "1.1.0",
+      "1.2.0",
+      "1.3.0",
+      "1.4.0"
+    ]
+  },
+  {
+    "package-name": "apache-airflow-providers-snowflake",
     "stable-version": "1.3.0",
     "all-versions": [
       "1.0.0",
       "1.1.0",
+      "1.1.1",
       "1.2.0",
       "1.3.0"
     ]
   },
   {
-    "package-name": "apache-airflow-providers-snowflake",
-    "stable-version": "1.2.0",
-    "all-versions": [
-      "1.0.0",
-      "1.1.0",
-      "1.1.1",
-      "1.2.0"
-    ]
-  },
-  {
     "package-name": "apache-airflow-providers-ftp",
-    "stable-version": "1.0.1",
+    "stable-version": "1.1.0",
     "all-versions": [
       "1.0.0",
-      "1.0.1"
+      "1.0.1",
+      "1.1.0"
     ]
   },
   {
@@ -197,10 +204,11 @@
   },
   {
     "package-name": "apache-airflow-providers-jira",
-    "stable-version": "1.0.1",
+    "stable-version": "1.0.2",
     "all-versions": [
       "1.0.0",
-      "1.0.1"
+      "1.0.1",
+      "1.0.2"
     ]
   },
   {
@@ -214,12 +222,13 @@
   },
   {
     "package-name": "apache-airflow-providers-elasticsearch",
-    "stable-version": "1.0.3",
+    "stable-version": "1.0.4",
     "all-versions": [
       "1.0.0",
       "1.0.1",
       "1.0.2",
-      "1.0.3"
+      "1.0.3",
+      "1.0.4"
     ]
   },
   {
@@ -292,11 +301,12 @@
   },
   {
     "package-name": "apache-airflow-providers-apache-spark",
-    "stable-version": "1.0.2",
+    "stable-version": "1.0.3",
     "all-versions": [
       "1.0.0",
       "1.0.1",
-      "1.0.2"
+      "1.0.2",
+      "1.0.3"
     ]
   },
   {
@@ -316,12 +326,13 @@
   },
   {
     "package-name": "apache-airflow-providers-docker",
-    "stable-version": "1.1.0",
+    "stable-version": "1.2.0",
     "all-versions": [
       "1.0.0",
       "1.0.1",
       "1.0.2",
-      "1.1.0"
+      "1.1.0",
+      "1.2.0"
     ]
   },
   {
@@ -378,14 +389,15 @@
   },
   {
     "package-name": "apache-airflow-providers-google",
-    "stable-version": "2.2.0",
+    "stable-version": "3.0.0",
     "all-versions": [
       "0.0.1",
       "0.0.2",
       "1.0.0",
       "2.0.0",
       "2.1.0",
-      "2.2.0"
+      "2.2.0",
+      "3.0.0"
     ]
   },
   {
@@ -408,10 +420,11 @@
   },
   {
     "package-name": "apache-airflow-providers-apache-beam",
-    "stable-version": "1.0.1",
+    "stable-version": "2.0.0",
     "all-versions": [
       "1.0.0",
-      "1.0.1"
+      "1.0.1",
+      "2.0.0"
     ]
   },
   {
@@ -459,20 +472,22 @@
   },
   {
     "package-name": "apache-airflow-providers-cncf-kubernetes",
-    "stable-version": "1.1.0",
+    "stable-version": "1.2.0",
     "all-versions": [
       "1.0.0",
       "1.0.1",
       "1.0.2",
-      "1.1.0"
+      "1.1.0",
+      "1.2.0"
     ]
   },
   {
     "package-name": "apache-airflow-providers-postgres",
-    "stable-version": "1.0.1",
+    "stable-version": "1.0.2",
     "all-versions": [
       "1.0.0",
-      "1.0.1"
+      "1.0.1",
+      "1.0.2"
     ]
   },
   {
