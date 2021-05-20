@@ -45,6 +45,13 @@
     ]
   },
   {
+    "package-name": "helm-chart",
+    "stable-version": "1.0.0",
+    "all-versions": [
+      "1.0.0"
+    ]
+  },
+  {
     "package-name": "apache-airflow-providers-tableau",
     "stable-version": "1.0.0",
     "all-versions": [
