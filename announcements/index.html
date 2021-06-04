@@ -430,6 +430,34 @@ if (!doNotTrack) {
 
 <p><strong>Note:</strong> Follow <a href="https://twitter.com/ApacheAirflow" target="_blank">@ApacheAirflow</a> on Twitter for the latest news and announcements!</p>
 
+<h1 id="may-21-2021">May 21, 2021</h1>
+
+<p>I&rsquo;m happy to announce that Apache <strong>Airflow 2.1.0</strong> was just released. This one includes a raft of fixes and other small improvements, but some notable additions include:</p>
+
+<ul>
+<li><p>A Create a DAG Calendar View to show the status of your DAG run across time more easily</p></li>
+
+<li><p>The cross-dag-dependencies view (which used to be an external plugin) is now part of core</p></li>
+
+<li><p>Mask passwords and sensitive info in task logs and UI (finally!)</p></li>
+
+<li><p>Improvmenets to webserver start up time (mostly around time spent syncing DAG permissions)</p></li>
+</ul>
+
+<p>Please note that <em>this</em> release no long includes the <code>HTTP</code> extra provider by default, as we discovered that it pulls in an LGPL dependency (via the <code>requests</code> module of all places) so it is now optional.</p>
+
+<p>📦 PyPI: <a href="https://pypi.org/project/apache-airflow/2.1.0" target="_blank">https://pypi.org/project/apache-airflow/2.1.0</a> <br />
+📚 Docs: <a href="https://airflow.apache.org/docs/apache-airflow/2.1.0/" target="_blank">https://airflow.apache.org/docs/apache-airflow/2.1.0/</a> <br />
+🛠️ Changelog: <a href="https://airflow.apache.org/docs/apache-airflow/2.1.0/changelog.html" target="_blank">https://airflow.apache.org/docs/apache-airflow/2.1.0/changelog.html</a></p>
+
+<h1 id="may-20-2021">May 20, 2021</h1>
+
+<p>The first release of our official helm chart for Apache Airflow is here!</p>
+
+<p>📦 ArtifactHub: <a href="https://artifacthub.io/packages/helm/apache-airflow/airflow" target="_blank">https://artifacthub.io/packages/helm/apache-airflow/airflow</a>
+📚 Docs: ⁨<a href="https://airflow.apache.org/docs/helm-chart/1.0" target="_blank">https://airflow.apache.org/docs/helm-chart/1.0</a>.
+🚀 Quick Start Installation Guide: <a href="https://airflow.apache.org/docs/helm-chart/1.0.0/quick-start.html" target="_blank">https://airflow.apache.org/docs/helm-chart/1.0.0/quick-start.html</a></p>
+
 <h1 id="april-6-2021">April 6, 2021</h1>
 
 <p>Airflow PMC welcomes 2 new committers:</p>
