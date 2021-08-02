@@ -21,25 +21,56 @@ Module Contents
 
    
 
-.. py:class:: SalesforceHook(conn_id: str)
+.. py:class:: SalesforceHook(salesforce_conn_id: str = default_conn_name)
 
    Bases: :class:`airflow.hooks.base.BaseHook`
 
-   Create new connection to Salesforce and allows you to pull data out of SFDC and save it to a file.
+   Creates new connection to Salesforce and allows you to pull data out of SFDC and save it to a file.
 
    You can then use that file with other Airflow operators to move the data into another data source.
 
-   :param conn_id: the name of the connection that has the parameters we need to connect to Salesforce.
-       The connection should be type `http` and include a user's security token in the `Extras` field.
+   :param conn_id: The name of the connection that has the parameters needed to connect to Salesforce.
+       The connection should be of type `Salesforce`.
    :type conn_id: str
 
    .. note::
-       For the HTTP connection type, you can include a
-       JSON structure in the `Extras` field.
-       We need a user's security token to connect to Salesforce.
-       So we define it in the `Extras` field as `{"security_token":"YOUR_SECURITY_TOKEN"}`
+       To connect to Salesforce make sure the connection includes a Username, Password, and Security Token.
+       If in sandbox, enter a Domain value of 'test'.  Login methods such as IP filtering and JWT are not
+       supported currently.
 
-       For sandbox mode, add `{"domain":"test"}` in the `Extras` field
+   .. attribute:: conn_name_attr
+      :annotation: = salesforce_conn_id
+
+      
+
+   .. attribute:: default_conn_name
+      :annotation: = salesforce_default
+
+      
+
+   .. attribute:: conn_type
+      :annotation: = salesforce
+
+      
+
+   .. attribute:: hook_name
+      :annotation: = Salesforce
+
+      
+
+   
+   .. staticmethod:: get_connection_form_widgets()
+
+      Returns connection widgets to add to connection form
+
+
+
+   
+   .. staticmethod:: get_ui_field_behaviour()
+
+      Returns custom field behaviour
+
+
 
    
    .. method:: get_conn(self)
@@ -105,18 +136,6 @@ Module Contents
       :type fields: iterable
       :return: all instances of the object from Salesforce.
       :rtype: dict
-
-
-
-   
-   .. classmethod:: _to_timestamp(cls, column: pd.Series)
-
-      Convert a column of a dataframe to UNIX timestamps if applicable
-
-      :param column: A Series object representing a column of a dataframe.
-      :type column: pandas.Series
-      :return: a new series that maintains the same index as the original
-      :rtype: pandas.Series
 
 
 
