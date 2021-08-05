@@ -9,7 +9,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="/use-cases/index.xml">
 
 
 <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
@@ -30,21 +29,31 @@
 <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<title>Use cases | Apache Airflow</title><meta property="og:title" content="Use cases" />
-<meta property="og:description" content="Platform created by the community to programmatically author, schedule and monitor workflows." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/use-cases/" />
+<title>Seniorlink | Apache Airflow</title><meta property="og:title" content="Seniorlink" />
+<meta property="og:description" content="What was the problem? Here at Seniorlink, we provide services, support, and technology that engages family caregivers. One of our focuses is using data to bolster our knowledge and improve the experience of our users. Like many looking to build an effective data stack, we adopted a Python, Spark, Redshift, and Tableau core toolset.
+We had built a robust stack of batch processes to deliver value to the business, deploying these data services in AWS using a mixture of EMR, ECS, Lambda, and EC2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/use-cases/seniorlink/" />
 
 <meta property="og:image" content="/images/feature-image.png" />
-<meta property="og:site_name" content="Apache Airflow" />
-<meta itemprop="name" content="Use cases">
-<meta itemprop="description" content="Platform created by the community to programmatically author, schedule and monitor workflows.">
+<meta property="article:modified_time" content="2021-08-05T05:22:51-04:00" /><meta property="og:site_name" content="Apache Airflow" />
+<meta itemprop="name" content="Seniorlink">
+<meta itemprop="description" content="What was the problem? Here at Seniorlink, we provide services, support, and technology that engages family caregivers. One of our focuses is using data to bolster our knowledge and improve the experience of our users. Like many looking to build an effective data stack, we adopted a Python, Spark, Redshift, and Tableau core toolset.
+We had built a robust stack of batch processes to deliver value to the business, deploying these data services in AWS using a mixture of EMR, ECS, Lambda, and EC2.">
 
+
+<meta itemprop="dateModified" content="2021-08-05T05:22:51-04:00" />
+<meta itemprop="wordCount" content="400">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/images/feature-image.png"/>
 
-<meta name="twitter:title" content="Use cases"/>
-<meta name="twitter:description" content="Platform created by the community to programmatically author, schedule and monitor workflows."/>
+<meta name="twitter:title" content="Seniorlink"/>
+<meta name="twitter:description" content="What was the problem? Here at Seniorlink, we provide services, support, and technology that engages family caregivers. One of our focuses is using data to bolster our knowledge and improve the experience of our users. Like many looking to build an effective data stack, we adopted a Python, Spark, Redshift, and Tableau core toolset.
+We had built a robust stack of batch processes to deliver value to the business, deploying these data services in AWS using a mixture of EMR, ECS, Lambda, and EC2."/>
 
 
 <script type="application/javascript">
@@ -91,7 +100,7 @@ if (!doNotTrack) {
 
 
 </head>
-<body class="td-section">
+<body class="td-page">
 <header>
     
 
@@ -420,196 +429,61 @@ if (!doNotTrack) {
     <div class="base-layout">
         <main role="main" class="td-main container">
             
-    <div>
-        <h2 class="page-header">Use cases</h2>
-        <h5 class="page-subtitle">
-            Find out how Apache Airflow helped businesses reach their goals
-        </h5>
-        <div id="case-studies-container" class="list-items">
-            
-                <a href="/use-cases/adobe/" class="list-item">
-                    
-
-
-<div class="card">
-    <div class="box-event box-event__case-study hoverable-icon">
-        <div class="box-event__case-study--logo">
-            
-                <img src="/usecase-logos/adobe-logo.svg" alt="Adobe logo" />
-            
-        </div>
-        <p class="box-event__case-study--quote"
-           >Apache Airflow is highly extensible and its plugin interface can be used to meet a variety of use cases. It supports …</p>
+    <div class="case-study-page no-width-restriction">
         
 
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Learn more</button>
+<div class="td-content">
+    
+
+
+<div class="quote">
+    <p class="quote--text">Airflow helped us increase the visibility of our batch processes, decouple our batch jobs, and improve our development cycle, all while building confidence in our ability to scale and grow.</p>
+    <p class="quote--author">Christopher Petrino</p>
+    
+        <img src="/usecase-logos/seniorlink-logo.svg" alt="Seniorlink logo" class="quote--logo" />
+    
+</div>
+
+    
+    <div class="markdown-content">
+        
+
+<h5 id="what-was-the-problem">What was the problem?</h5>
+
+<p>Here at Seniorlink, we provide services, support, and technology that engages family caregivers. One of our focuses is using data to bolster our knowledge and improve the experience of our users. Like many looking to build an effective data stack, we adopted a Python, Spark, Redshift, and Tableau core toolset.</p>
+
+<p>We had built a robust stack of batch processes to deliver value to the business, deploying these data services in AWS using a mixture of EMR, ECS, Lambda, and EC2. Moving fast, as many new endeavors do, we ultimately ended up with one monolithic batch process with many smaller satellite jobs. Given the scale and quantity of jobs, we began to lose transparency as to what was happening. Additionally, many jobs were launched in a single EMR cluster and so tightly coupled that a failure in one job required the recompute of all the jobs run on that cluster. These behaviors are highly inefficient, difficult to debug and result in long iteration periods given the duration of these batch jobs.</p>
+
+<p>We were beginning to lose precious time manually managing the schedules via AWS Datapiplines, AWS Lambdas, and ECS Tasks. Much of our development effort was spent waiting for the monolith to complete running to examine a smaller job within. Our best chance at keeping system transparency was active documentation in our internal wiki.</p>
+
+<h5 id="how-did-apache-airflow-help-to-solve-this-problem">How did Apache Airflow help to solve this problem?</h5>
+
+<p>Airflow gave us a way to orchestrate our disparate tools into a single place. Instead of dealing with multiple schedules, we have a straightforward UI to consider. We gained a great deal of transparency, being able to monitor the status of tasks, re-run or restart tasks from any given point in a workflow, and manage the dependencies between jobs using DAGs. We were able to decouple our monolith and schedule the resulting smaller tasks confidently.</p>
+
+<h5 id="what-are-the-results">What are the results?</h5>
+
+<p>Airflow increased the visibility of our batch processes through the use of the DAGs and the UI. Our end-to-end run time decreased by 20%, given our ability to decouple our monolithic batch jobs into several smaller ones. Our development and debugging time reduced with our ability to manage and isolate all our tasks. We were able to merge our diverse toolset into a more central location. Lastly, with its broad adoption, we were able to quickly push this new framework up to our production environment.</p>
 
     </div>
 </div>
 
-                </a>
-            
-                <a href="/use-cases/big-fish-games/" class="list-item">
-                    
-
-
-<div class="card">
-    <div class="box-event box-event__case-study hoverable-icon">
-        <div class="box-event__case-study--logo">
-            
-                <img src="/usecase-logos/big-fish-games-logo.svg" alt="Big Fish Games logo" />
-            
-        </div>
-        <p class="box-event__case-study--quote"
-           >Apache Airflow is a great open-source workflow orchestration tool supported by an active community. It provides all the …</p>
         
 
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Learn more</button>
-
-    </div>
-</div>
-
-                </a>
-            
-                <a href="/use-cases/dish/" class="list-item">
-                    
-
-
-<div class="card">
-    <div class="box-event box-event__case-study hoverable-icon">
-        <div class="box-event__case-study--logo">
-            
-                <img src="/usecase-logos/dish-logo.svg" alt="Dish logo" />
-            
-        </div>
-        <p class="box-event__case-study--quote"
-           >Airflow is Batteries-Included. A great ecosystem and community that comes together to address about any (batch) data …</p>
+<div class="pager">
+    <a href="/use-cases/sift/">
         
 
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Learn more</button>
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Previous</button>
 
-    </div>
-</div>
-
-                </a>
-            
-                <a href="/use-cases/experity/" class="list-item">
-                    
-
-
-<div class="card">
-    <div class="box-event box-event__case-study hoverable-icon">
-        <div class="box-event__case-study--logo">
-            
-                <img src="/usecase-logos/experity-logo.jpg" alt="Experity logo" />
-            
-        </div>
-        <p class="box-event__case-study--quote"
-           >Airflow can be an enterprise scheduling tool if used properly. Its ability to run &#34;any command, on any node&#34; is amazing. …</p>
+    </a>
+    <a href="/use-cases/plarium-krasnodar/">
         
 
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Learn more</button>
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Next</button>
 
-    </div>
+    </a>
 </div>
 
-                </a>
-            
-                <a href="/use-cases/onefootball/" class="list-item">
-                    
-
-
-<div class="card">
-    <div class="box-event box-event__case-study hoverable-icon">
-        <div class="box-event__case-study--logo">
-            
-                <img src="/usecase-logos/onefootball-logo.svg" alt="Onefootball logo" />
-            
-        </div>
-        <p class="box-event__case-study--quote"
-           >Airflow is extensible enough for any business to define the custom operators they need. Airflow can help you in your …</p>
-        
-
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Learn more</button>
-
-    </div>
-</div>
-
-                </a>
-            
-                <a href="/use-cases/plarium-krasnodar/" class="list-item">
-                    
-
-
-<div class="card">
-    <div class="box-event box-event__case-study hoverable-icon">
-        <div class="box-event__case-study--logo">
-            
-                <img src="/usecase-logos/plarium-krasnodar-logo.svg" alt="Plarium Krasnodar logo" />
-            
-        </div>
-        <p class="box-event__case-study--quote"
-           >Apache Airflow helps us efficiently tackle crucial game dev tasks, such as working with churn or sorting bank offers.</p>
-        
-
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Learn more</button>
-
-    </div>
-</div>
-
-                </a>
-            
-                <a href="/use-cases/seniorlink/" class="list-item">
-                    
-
-
-<div class="card">
-    <div class="box-event box-event__case-study hoverable-icon">
-        <div class="box-event__case-study--logo">
-            
-                <img src="/usecase-logos/seniorlink-logo.svg" alt="Seniorlink logo" />
-            
-        </div>
-        <p class="box-event__case-study--quote"
-           >Airflow helped us increase the visibility of our batch processes, decouple our batch jobs, and improve our development …</p>
-        
-
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Learn more</button>
-
-    </div>
-</div>
-
-                </a>
-            
-                <a href="/use-cases/sift/" class="list-item">
-                    
-
-
-<div class="card">
-    <div class="box-event box-event__case-study hoverable-icon">
-        <div class="box-event__case-study--logo">
-            
-                <img src="/usecase-logos/sift_logo.png" alt="Sift logo" />
-            
-        </div>
-        <p class="box-event__case-study--quote"
-           >Airflow helped us to define and organize our ML pipeline dependencies, and empowered us to introduce new, diverse batch …</p>
-        
-
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Learn more</button>
-
-    </div>
-</div>
-
-                </a>
-            
-        </div>
-        <div class="show-more-button">
-            
-
-<button id="show-more-case-studies" class="btn-filled bodytext__medium--white ">Show more</button>
-
-        </div>
     </div>
 
         </main>
@@ -617,7 +491,7 @@ if (!doNotTrack) {
 
 <div class="base-layout--button">
     
-    <a href=https://github.com/apache/airflow-site/edit/main/landing-pages/site/content/en/use-cases/_index.html>
+    <a href=https://github.com/apache/airflow-site/edit/main/landing-pages/site/content/en/use-cases/seniorlink.md>
         
 
 
