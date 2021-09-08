@@ -244,11 +244,12 @@
   },
   {
     "package-name": "apache-airflow-providers-celery",
-    "stable-version": "2.0.0",
+    "stable-version": "2.1.0",
     "all-versions": [
       "1.0.0",
       "1.0.1",
-      "2.0.0"
+      "2.0.0",
+      "2.1.0"
     ]
   },
   {
@@ -718,9 +719,10 @@
   },
   {
     "package-name": "apache-airflow-providers-microsoft-psrp",
-    "stable-version": "1.0.0",
+    "stable-version": "1.0.1",
     "all-versions": [
-      "1.0.0"
+      "1.0.0",
+      "1.0.1"
     ]
   },
   {
