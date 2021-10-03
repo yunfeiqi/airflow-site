@@ -29,19 +29,19 @@
 <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<title>Dish | Apache Airflow</title><meta property="og:title" content="Dish" />
-<meta property="og:description" content="What was the problem? We faced increasing complexity managing lengthy crontabs with scheduling being an issue, this required carefully planning timing due to resource constraints, usage patterns, and especially custom code needed for retry logic. In the last case, having to verify success of previous jobs and/or steps prior to running the next. Furthermore, time to results is important, but we were increasingly relying on buffers for processing, where things were effectively sitting idle and not processing, waiting for the next stage, in an effort to not rely as much on custom code/logic." />
+<title>Adyen | Apache Airflow</title><meta property="og:title" content="Adyen" />
+<meta property="og:description" content="What was the problem? Many years ago we started out with our own orchestration framework. Due to all the required custom functionality it made sense at the time. However, quickly we realized creating an orchestration tool is not to be underestimated. With the quickly increasing number of users and teams, time spent on fixing issues increased, severely limiting development speed. Furthermore, due to it not being open source, we constantly had to make the effort ourselves to stay up to date with the industry standards and tools." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/use-cases/dish/" />
+<meta property="og:url" content="/use-cases/adyen/" />
 
 <meta property="og:image" content="/images/feature-image.png" />
 <meta property="article:modified_time" content="2021-10-04T00:42:00+02:00" /><meta property="og:site_name" content="Apache Airflow" />
-<meta itemprop="name" content="Dish">
-<meta itemprop="description" content="What was the problem? We faced increasing complexity managing lengthy crontabs with scheduling being an issue, this required carefully planning timing due to resource constraints, usage patterns, and especially custom code needed for retry logic. In the last case, having to verify success of previous jobs and/or steps prior to running the next. Furthermore, time to results is important, but we were increasingly relying on buffers for processing, where things were effectively sitting idle and not processing, waiting for the next stage, in an effort to not rely as much on custom code/logic.">
+<meta itemprop="name" content="Adyen">
+<meta itemprop="description" content="What was the problem? Many years ago we started out with our own orchestration framework. Due to all the required custom functionality it made sense at the time. However, quickly we realized creating an orchestration tool is not to be underestimated. With the quickly increasing number of users and teams, time spent on fixing issues increased, severely limiting development speed. Furthermore, due to it not being open source, we constantly had to make the effort ourselves to stay up to date with the industry standards and tools.">
 
 
 <meta itemprop="dateModified" content="2021-10-04T00:42:00&#43;02:00" />
-<meta itemprop="wordCount" content="249">
+<meta itemprop="wordCount" content="405">
 
 
 
@@ -49,8 +49,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/images/feature-image.png"/>
 
-<meta name="twitter:title" content="Dish"/>
-<meta name="twitter:description" content="What was the problem? We faced increasing complexity managing lengthy crontabs with scheduling being an issue, this required carefully planning timing due to resource constraints, usage patterns, and especially custom code needed for retry logic. In the last case, having to verify success of previous jobs and/or steps prior to running the next. Furthermore, time to results is important, but we were increasingly relying on buffers for processing, where things were effectively sitting idle and not processing, waiting for the next stage, in an effort to not rely as much on custom code/logic."/>
+<meta name="twitter:title" content="Adyen"/>
+<meta name="twitter:description" content="What was the problem? Many years ago we started out with our own orchestration framework. Due to all the required custom functionality it made sense at the time. However, quickly we realized creating an orchestration tool is not to be underestimated. With the quickly increasing number of users and teams, time spent on fixing issues increased, severely limiting development speed. Furthermore, due to it not being open source, we constantly had to make the effort ourselves to stay up to date with the industry standards and tools."/>
 
 
 <script type="application/javascript">
@@ -433,10 +433,10 @@ if (!doNotTrack) {
 
 
 <div class="quote">
-    <p class="quote--text">Airflow is Batteries-Included. A great ecosystem and community that comes together to address about any (batch) data pipeline needs.</p>
-    <p class="quote--author">Austin Benett</p>
+    <p class="quote--text">Apache Airflow is highly extensible and its plugin interface can be used to meet a variety of use cases. It supports variety of deployment models and has a very active community to scale innovation.</p>
+    <p class="quote--author">Jorrick Sleijster</p>
     
-        <img src="/usecase-logos/dish-logo.svg" alt="Dish logo" class="quote--logo" />
+        <img src="/usecase-logos/adyen-logo.svg" alt="Adyen logo" class="quote--logo" />
     
 </div>
 
@@ -446,15 +446,17 @@ if (!doNotTrack) {
 
 <h5 id="what-was-the-problem">What was the problem?</h5>
 
-<p>We faced increasing complexity managing lengthy crontabs with scheduling being an issue, this required carefully planning timing due to resource constraints, usage patterns, and especially custom code needed for retry logic.  In the last case, having to verify success of previous jobs and/or steps prior to running the next.  Furthermore, time to results is important, but we were increasingly relying on buffers for processing, where things were effectively sitting idle and not processing, waiting for the next stage, in an effort to not rely as much on custom code/logic.</p>
+<p>Many years ago we started out with our own orchestration framework. Due to all the required custom functionality it made sense at the time. However, quickly we realized creating an orchestration tool is not to be underestimated.  With the quickly increasing number of users and teams, time spent on fixing issues increased, severely limiting development speed. Furthermore, due to it not being open source, we constantly had to make the effort ourselves to stay up to date with the industry standards and tools. We needed a tool for our Big Data Platform to schedule and execute many ETL jobs while at the same time, giving our users the possibility to redo or undo their tasks.</p>
 
 <h5 id="how-did-apache-airflow-help-to-solve-this-problem">How did Apache Airflow help to solve this problem?</h5>
 
-<p>Relying on community built and existing hooks and operators to the majority of cloud services we use has allowed us to focus on business outcomes rather than operations.</p>
+<p>Apache Airflow enabled us to extend upon the already existing operators and sensors to make writing ETL DAGs as easy as possible.  Within a couple minutes of training, data scientists are able to write their own DAGs containing an Apache Spark job and its corresponding dependencies. The Web UI allows our data scientists to closely monitor the status and logs of the jobs so that they can quickly interfere if something is not going as planned. We created our own access groups such that teams have full privileges on their own DAGs while only read privileges on other teams DAGs.</p>
+
+<p>One powerful functionality of Apache Airflow is the ability to backfill. This is helpful when new tasks are introduced or old jobs need to be rerun. By creating our own plugin for Apache Airflow, we built a simple tool to streamline back-filling. Besides clearing the runs, it also clears the underlying data that was generated by the Spark Job. Coming from Apache Airflow 1.10, this plugin only required minor changes to support Apache Airflow 2.0.</p>
 
 <h5 id="what-are-the-results">What are the results?</h5>
 
-<p>Airflow helps us manage many of our pain-points, letting us benefit from the overall ecosystem and community.  We are able to reduce time-to-end delivery of data products by being event-driven in our processing flows (in our first usage, for example, we were able to take out over 2 hours - on average - of various waiting between stages).  Furthermore, we are able to arrive at and iterate on products quicker as a result of not needing as much custom or roll-our-own solutions.  For Our code base is smaller and simpler, it is easier to follow, and to a large extent our DAGs serve as sufficient documentation for new contributors to understand what is going on.</p>
+<p>We started out with having a full team just working on our orchestration tool. With the help of Apache Airflow we managed to give the responsibility of maintaining DAGs back to the data scientist teams. This allowed us to grow quicker than ever to 20 teams that own in total approximately 200 DAGs and over 5000 tasks. In the meantime, our team has been able to extend Apache Airflow further while also focussing on getting other new exciting technologies on-board. With airflow, we now spend our time making progress instead of getting stuck fixing all sorts of issues.</p>
 
     </div>
 </div>
@@ -462,13 +464,13 @@ if (!doNotTrack) {
         
 
 <div class="pager">
-    <a href="/use-cases/experity/">
+    <a href="/use-cases/big-fish-games/">
         
 
 <button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Previous</button>
 
     </a>
-    <a href="/use-cases/big-fish-games/">
+    <a href="/use-cases/adobe/">
         
 
 <button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Next</button>
@@ -483,7 +485,7 @@ if (!doNotTrack) {
 
 <div class="base-layout--button">
     
-    <a href=https://github.com/apache/airflow-site/edit/main/landing-pages/site/content/en/use-cases/dish.md>
+    <a href=https://github.com/apache/airflow-site/edit/main/landing-pages/site/content/en/use-cases/adyen.md>
         
 
 
