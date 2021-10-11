@@ -271,7 +271,7 @@
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">2.2.0</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">2.3.0</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -327,6 +327,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/apache/airflow/tree/main/airflow/providers/amazon/aws/example_dags">Example DAGs</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/apache-airflow-providers-amazon/">PyPI Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../installing-providers-from-sources.html">Installing from sources</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Commits</span></p>
 <ul>
@@ -414,7 +415,7 @@
 <div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
     <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
        aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">2.2.0</span>
+        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">2.3.0</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -470,6 +471,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/apache/airflow/tree/main/airflow/providers/amazon/aws/example_dags">Example DAGs</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/apache-airflow-providers-amazon/">PyPI Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../installing-providers-from-sources.html">Installing from sources</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Commits</span></p>
 <ul>
@@ -587,16 +589,16 @@
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="airflow.providers.amazon.aws.operators.ec2_stop_instance.EC2StopInstanceOperator">
-<em class="property">class </em><code class="sig-prename descclassname">airflow.providers.amazon.aws.operators.ec2_stop_instance.</code><code class="sig-name descname">EC2StopInstanceOperator</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">instance_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span></em>, <em class="sig-param"><span class="n">aws_conn_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span> <span class="o">=</span> <span class="default_value">'aws_default'</span></em>, <em class="sig-param"><span class="n">region_name</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check_interval</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></span> <span class="o">=</span> <span class="default_value">15</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../../../_modules/airflow/providers/amazon/aws/operators/ec2_stop_instance.html#EC2StopInstanceOperator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.providers.amazon.aws.operators.ec2_stop_instance.EC2StopInstanceOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">airflow.providers.amazon.aws.operators.ec2_stop_instance.</code><code class="sig-name descname">EC2StopInstanceOperator</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">instance_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></span></em>, <em class="sig-param"><span class="n">aws_conn_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></span> <span class="o">=</span> <span class="default_value">'aws_default'</span></em>, <em class="sig-param"><span class="n">region_name</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check_interval</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></span> <span class="o">=</span> <span class="default_value">15</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../../../_modules/airflow/providers/amazon/aws/operators/ec2_stop_instance.html#EC2StopInstanceOperator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#airflow.providers.amazon.aws.operators.ec2_stop_instance.EC2StopInstanceOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="/docs/apache-airflow/stable/_api/airflow/models/index.html#airflow.models.BaseOperator" title="(in apache-airflow v2.2.0.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">airflow.models.BaseOperator</span></code></a></p>
 <p>Stop AWS EC2 instance using boto3.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>instance_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) -- id of the AWS EC2 instance</p></li>
-<li><p><strong>aws_conn_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) -- aws connection to use</p></li>
-<li><p><strong>region_name</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) -- (optional) aws region name associated with the client</p></li>
-<li><p><strong>check_interval</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) -- time in seconds that the job should wait in
+<li><p><strong>instance_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – id of the AWS EC2 instance</p></li>
+<li><p><strong>aws_conn_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – aws connection to use</p></li>
+<li><p><strong>region_name</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>]</em>) – (optional) aws region name associated with the client</p></li>
+<li><p><strong>check_interval</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – time in seconds that the job should wait in
 between each instance state checks until operation is completed</p></li>
 </ul>
 </dd>
