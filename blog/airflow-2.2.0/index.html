@@ -29,30 +29,30 @@
 <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<title>Apache Airflow 1.10.12 | Apache Airflow</title><meta property="og:title" content="Apache Airflow 1.10.12" />
-<meta property="og:description" content="We are happy to present Apache Airflow 1.10.12" />
+<title>What&#39;s new in Apache Airflow 2.2.0 | Apache Airflow</title><meta property="og:title" content="What&#39;s new in Apache Airflow 2.2.0" />
+<meta property="og:description" content="We&#39;re proud to announce that Apache Airflow 2.2.0 has been released." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/airflow-1.10.12/" />
+<meta property="og:url" content="/blog/airflow-2.2.0/" />
 
 <meta property="og:image" content="/images/feature-image.png" />
-<meta property="article:published_time" content="2020-08-25T00:00:00+00:00" />
+<meta property="article:published_time" content="2021-10-11T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-10-11T13:57:15-06:00" /><meta property="og:site_name" content="Apache Airflow" />
-<meta itemprop="name" content="Apache Airflow 1.10.12">
-<meta itemprop="description" content="We are happy to present Apache Airflow 1.10.12">
+<meta itemprop="name" content="What&#39;s new in Apache Airflow 2.2.0">
+<meta itemprop="description" content="We&#39;re proud to announce that Apache Airflow 2.2.0 has been released.">
 
 
-<meta itemprop="datePublished" content="2020-08-25T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2021-10-11T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-10-11T13:57:15-06:00" />
-<meta itemprop="wordCount" content="911">
+<meta itemprop="wordCount" content="658">
 
 
 
-<meta itemprop="keywords" content="release," />
+<meta itemprop="keywords" content="Release," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/images/feature-image.png"/>
 
-<meta name="twitter:title" content="Apache Airflow 1.10.12"/>
-<meta name="twitter:description" content="We are happy to present Apache Airflow 1.10.12"/>
+<meta name="twitter:title" content="What&#39;s new in Apache Airflow 2.2.0"/>
+<meta name="twitter:description" content="We&#39;re proud to announce that Apache Airflow 2.2.0 has been released."/>
 
 
 <script type="application/javascript">
@@ -80,7 +80,7 @@ if (!doNotTrack) {
   crossorigin="anonymous"></script>
 
 
-<meta name="description" content="We are happy to present Apache Airflow 1.10.12" />
+<meta name="description" content="We&#39;re proud to announce that Apache Airflow 2.2.0 has been released." />
 
 
 
@@ -439,31 +439,16 @@ if (!doNotTrack) {
                 
             
         </div>
-        <span class="bodytext__medium--brownish-grey">Tue, Aug 25, 2020</span>
+        <span class="bodytext__medium--brownish-grey">Mon, Oct 11, 2021</span>
     </div>
-    <p class="blogpost-content__metadata--title">Apache Airflow 1.10.12</p>
+    <p class="blogpost-content__metadata--title">What&#39;s new in Apache Airflow 2.2.0</p>
     <div class="blogpost-content__metadata--author">
         <span class="blogpost-content__metadata--author">
-            Kaxil Naik
+            Jed Cunningham
         </span>
         
-            <a href="https://twitter.com/kaxil/" class="blogpost-content__metadata--social-media-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21">
-    <g id="Group_1746" data-name="Group 1746" transform="translate(.076 -.055)">
-        <ellipse id="Ellipse_19" cx="11" cy="10.5" fill="#51504f" data-name="Ellipse 19" rx="11" ry="10.5"
-                 transform="translate(-.076 .055)"/>
-        <g id="Logo_FIXED" data-name="Logo — FIXED" transform="translate(5.568 5.872)">
-            <path id="Path_643"
-                  d="M-1554.714 1446.466a6.538 6.538 0 0 0 6.581-6.581v-.3a4.711 4.711 0 0 0 1.155-1.2 4.7 4.7 0 0 1-1.331.365 2.328 2.328 0 0 0 1.019-1.281 4.6 4.6 0 0 1-1.47.559 2.309 2.309 0 0 0-1.687-.73 2.316 2.316 0 0 0-2.314 2.314 2.555 2.555 0 0 0 .059.528 6.569 6.569 0 0 1-4.767-2.418 2.311 2.311 0 0 0-.311 1.164 2.319 2.319 0 0 0 1.028 1.926 2.34 2.34 0 0 1-1.047-.289v.031a2.318 2.318 0 0 0 1.854 2.269 2.257 2.257 0 0 1-.609.081 2.281 2.281 0 0 1-.433-.041 2.313 2.313 0 0 0 2.161 1.606 4.639 4.639 0 0 1-2.873.992 4.445 4.445 0 0 1-.55-.031 6.578 6.578 0 0 0 3.541 1.033"
-                  fill="#fff" data-name="Path 643" transform="translate(1558.255 -1437.301)"/>
-        </g>
-    </g>
-</svg>
-
-            </a>
         
-        
-            <a href="https://github.com/kaxil/" class="blogpost-content__metadata--social-media-icon">
+            <a href="https://github.com/jedcunningham/" class="blogpost-content__metadata--social-media-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21.737" height="21.2" viewBox="0 0 21.737 21.2">
     <path id="Path_1378" d="M33.971 1181.31a10.87 10.87 0 0 0-3.435 21.182c.543.1.742-.236.742-.524 0-.258-.009-.941-.015-1.848-3.023.657-3.661-1.457-3.661-1.457a2.876 2.876 0 0 0-1.207-1.59c-.987-.674.075-.661.075-.661a2.283 2.283 0 0 1 1.665 1.12 2.314 2.314 0 0 0 3.163.9 2.322 2.322 0 0 1 .69-1.453c-2.413-.274-4.951-1.207-4.951-5.371a4.2 4.2 0 0 1 1.119-2.917 3.908 3.908 0 0 1 .107-2.876s.913-.292 2.989 1.114a10.3 10.3 0 0 1 5.442 0c2.075-1.406 2.986-1.114 2.986-1.114a3.9 3.9 0 0 1 .108 2.876 4.2 4.2 0 0 1 1.117 2.917c0 4.175-2.541 5.094-4.962 5.363a2.6 2.6 0 0 1 .738 2.013c0 1.453-.013 2.625-.013 2.982 0 .291.2.629.747.523a10.87 10.87 0 0 0-3.443-21.18z" fill="#51504f" fill-rule="evenodd" data-name="Path 1378" transform="translate(-23.103 -1181.31)"/>
 </svg>
@@ -471,7 +456,7 @@ if (!doNotTrack) {
             </a>
         
         
-            <a href="https://linkedin.com/in/kaxil/" class="blogpost-content__metadata--social-media-icon">
+            <a href="https://linkedin.com/in/jedidiah-cunningham/" class="blogpost-content__metadata--social-media-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 21">
     <g id="Group_1745" data-name="Group 1745" transform="translate(.155 -.055)">
         <ellipse id="Ellipse_20" cx="10" cy="10.5" fill="#51504f" data-name="Ellipse 20" rx="10" ry="10.5" transform="translate(-.155 .055)"/>
@@ -485,166 +470,83 @@ if (!doNotTrack) {
             </a>
         
     </div>
-    <p class="blogpost-content__metadata--description">We are happy to present Apache Airflow 1.10.12</p>
+    <p class="blogpost-content__metadata--description">We&#39;re proud to announce that Apache Airflow 2.2.0 has been released.</p>
 </div>
 <div class="markdown-content">
     
 
-<p>Airflow 1.10.12 contains 113 commits since 1.10.11 and includes 5 new features, 23 improvements, 23 bug fixes,
-and several doc changes.</p>
+<p>I’m proud to announce that Apache Airflow 2.2.0 has been released. It contains over 600 commits since 2.1.4 and includes 30 new features, 84 improvements, 85 bug fixes, and many internal and doc changes.</p>
 
 <p><strong>Details</strong>:</p>
 
-<ul>
-<li><strong>PyPI</strong>: <a href="https://pypi.org/project/apache-airflow/1.10.12/" target="_blank">https://pypi.org/project/apache-airflow/1.10.12/</a></li>
-<li><strong>Docs</strong>: <a href="https://airflow.apache.org/docs/1.10.12/" target="_blank">https://airflow.apache.org/docs/1.10.12/</a></li>
-<li><strong>Changelog</strong>: <a href="http://airflow.apache.org/docs/1.10.12/changelog.html" target="_blank">http://airflow.apache.org/docs/1.10.12/changelog.html</a></li>
-</ul>
+<p>📦 PyPI: <a href="https://pypi.org/project/apache-airflow/2.2.0/" target="_blank">https://pypi.org/project/apache-airflow/2.2.0/</a> <br />
+📚 Docs: <a href="https://airflow.apache.org/docs/apache-airflow/2.2.0/" target="_blank">https://airflow.apache.org/docs/apache-airflow/2.2.0/</a> <br />
+🛠️ Changelog: <a href="https://airflow.apache.org/docs/apache-airflow/2.2.0/changelog.html" target="_blank">https://airflow.apache.org/docs/apache-airflow/2.2.0/changelog.html</a> <br />
+🐳 Docker Image: docker pull apache/airflow:2.2.0 <br />
+🚏 Constraints: <a href="https://github.com/apache/airflow/tree/constraints-2.2.0" target="_blank">https://github.com/apache/airflow/tree/constraints-2.2.0</a></p>
 
-<p><strong>Airflow 1.10.11 has breaking changes with respect to
-KubernetesExecutor &amp; KubernetesPodOperator so I recommend users to directly upgrade to Airflow 1.10.12 instead</strong>.</p>
+<p>As the changelog is quite large, the following are some notable new features that shipped in this release.</p>
 
-<p>Some of the noteworthy new features (user-facing) are:</p>
+<h2 id="custom-timetables-aip-39">Custom Timetables (AIP-39)</h2>
 
-<ul>
-<li><a href="https://github.com/apache/airflow/pull/8560" target="_blank">Allow defining custom XCom class</a></li>
-<li><a href="https://github.com/apache/airflow/pull/9645" target="_blank">Get Airflow configs with sensitive data from Secret Backends</a></li>
-<li><a href="https://github.com/apache/airflow/pull/10282" target="_blank">Add AirflowClusterPolicyViolation support to Airflow local settings</a></li>
-</ul>
+<p>Airflow has historically used cron expressions and timedeltas to represent when a DAG should run. This worked for a lot of use cases, but not all. For example, running daily on Monday-Friday, but not on weekends wasn’t possible.</p>
 
-<h3 id="allow-defining-custom-xcom-class">Allow defining Custom XCom class</h3>
+<p>To provide more scheduling flexibility, determining when a DAG should run is now done with Timetables. Of course, backwards compatibility has been maintained - cron expressions and timedeltas are still fully supported, however, timetables are pluggable so you can add your own custom timetable to fit your needs! For example, you could write a timetable to schedule a DagRun</p>
 
-<p>Until Airflow 1.10.11, the XCom data was only stored in Airflow Metadatabase. From Airflow 1.10.12, users
-would be able to define custom XCom classes. This will allow users to transfer larger data between tasks.
-An example here would be to store XCom in S3 or GCS Bucket if the size of data that needs to be stored is larger
-than <code>XCom.MAX_XCOM_SIZE</code> (48 KB).</p>
+<p><code>execution_date</code> has long been confusing to new Airflowers, so as part of this change a new concept has been added to Airflow to replace it named <code>data_interval</code>, which is the period of data that a task should operate on. The following are now available:</p>
 
-<p><strong>PR</strong>: <a href="https://github.com/apache/airflow/pull/8560" target="_blank">https://github.com/apache/airflow/pull/8560</a></p>
+<p><code>logical_date</code> (aka <code>execution_date</code>)
+<code>data_interval_start</code> (same value as <code>execution_date</code> for cron)
+<code>data_interval_end</code> (aka <code>next_execution_date</code>)</p>
 
-<h3 id="get-airflow-configs-with-sensitive-data-from-secret-backends">Get Airflow configs with sensitive data from Secret Backends</h3>
+<p>If you write your own timetables, keep in mind they should be idempotent and fast as they are used in the scheduler to create DagRuns.</p>
 
-<p>Users would be able to get the following Airflow configs from Secrets Backend like Hashicorp Vault:</p>
+<p>More information can be found at: <a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/timetable.html" target="_blank">Customizing DAG Scheduling with Timetables</a></p>
 
-<ul>
-<li><code>sql_alchemy_conn</code> in [core] section</li>
-<li><code>fernet_key</code> in [core] section</li>
-<li><code>broker_url</code> in [celery] section</li>
-<li><code>flower_basic_auth</code> in [celery] section</li>
-<li><code>result_backend</code> in [celery] section</li>
-<li><code>password</code> in [atlas] section</li>
-<li><code>smtp_password</code> in [smtp] section</li>
-<li><code>bind_password</code> in [ldap] section</li>
-<li><code>git_password</code> in [kubernetes] section</li>
-</ul>
+<h2 id="deferrable-tasks-aip-40">Deferrable Tasks (AIP-40)</h2>
 
-<p>Further improving Airflow&rsquo;s Secret Management story, from Airflow 1.10.12, users don&rsquo;t need to hardcode
-the <strong>sensitive</strong> config value in airflow.cfg nor then need to use an Environment variable to set this config.</p>
+<p>Deferrable tasks allows operators or sensors to defer themselves until a light-weight async check passes, at which point they can resume executing. Most importantly, this results in the worker slot, and most notably any resources used by it, to be returned to Airflow. This allows simple things like monitoring a job in an external system or watching for an event to be much cheaper.</p>
 
-<p>For example, the metadata database connection string can either be set in airflow.cfg like this:</p>
+<p>To support this feature, a new component has been added to Airflow, the triggerer, which is the daemon process that runs the asyncio event loop.</p>
 
-<pre><code class="language-ini">[core]
-sql_alchemy_conn_secret = sql_alchemy_conn
-</code></pre>
+<p>Airflow 2.2.0 ships with 2 deferrable sensors, <code>DateTimeSensorAsync</code> and <code>TimeDeltaSensorAsync</code>, both of which are drop-in replacements for the existing corresponding sensor.</p>
 
-<p>This will retrieve config option from the set Secret Backends.</p>
+<p>More information can be found at:</p>
 
-<p>As you can see you just need to add a <code>_secret</code> suffix at the end of the actual config option
-and the value needs to be the <strong>key</strong> which the Secrets backend will look for.</p>
+<p><a href="https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html" target="_blank">Deferrable Operators &amp; Triggers</a></p>
 
-<p>Similarly, <code>_secret</code> config options can also be set using a corresponding environment variable. For example:</p>
+<h2 id="custom-task-decorators-and-task-docker">Custom <code>@task</code> decorators and <code>@task.docker</code></h2>
 
-<pre><code>export AIRFLOW__CORE__SQL_ALCHEMY_CONN_SECRET=sql_alchemy_conn
-</code></pre>
+<p>Airflow 2.2.0 allows providers to create custom <code>@task</code> decorators in the TaskFlow interface.</p>
 
-<p>More details: <a href="http://airflow.apache.org/docs/1.10.12/howto/set-config.html" target="_blank">http://airflow.apache.org/docs/1.10.12/howto/set-config.html</a></p>
+<p>The <code>@task.docker</code> decorator is one such decorator that allows you to run a function in a docker container. Airflow handles getting the code into the container and returning xcom - you just worry about your function. This is particularly useful when you have conflicting dependencies between Airflow itself and tasks you need to run.</p>
 
-<h3 id="add-airflowclusterpolicyviolation-support-to-airflow-local-settings-py">Add AirflowClusterPolicyViolation support to airflow_local_settings.py</h3>
+<p>More information on creating custom <code>@task</code> decorators can be found at: <a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/create-custom-decorator.html" target="_blank">Creating Custom @task Decorators</a></p>
 
-<p>Users can use Cluster Policies to apply cluster-wide checks on Airflow
-tasks. You can raise <a href="http://airflow.apache.org/docs/1.10.12/_api/airflow/exceptions/index.html#airflow.exceptions.AirflowClusterPolicyViolation" target="_blank">AirflowClusterPolicyViolation</a>
-in a policy or task mutation hook to prevent a DAG from being
-imported or prevent a task from being executed if the task is not compliant with
-your check.</p>
+<p>More information on the <code>@task.docker</code> decorator can be found at: <a href="https://airflow.apache.org/docs/apache-airflow/stable/tutorial_taskflow_api.html#using-the-taskflow-api-with-docker-or-virtual-environments" target="_blank">Using the Taskflow API with Docker or Virtual Environments</a></p>
 
-<p>These checks are intended to help teams using Airflow to protect against common
-beginner errors that may get past a code reviewer, rather than as technical
-security controls.</p>
+<h2 id="validation-of-dag-params">Validation of DAG params</h2>
 
-<p>For example, don&rsquo;t run tasks without <code>airflow</code> owners:</p>
+<p>You can now apply validation on DAG params by passing a <code>Param</code> object for each param. The <code>Param</code> object supports the full <a href="https://json-schema.org/draft/2020-12/json-schema-validation.html" target="_blank">json-schema validation specifications</a>.</p>
 
-<pre><code class="language-python">def task_must_have_owners(task):
-    if not task.owner or task.owner.lower() == conf.get('operators', 'default_owner'):
-        raise AirflowClusterPolicyViolation(
-            'Task must have non-None non-default owner. Current value: {}'.format(task.owner))
-</code></pre>
+<p>Currently this only functions with manually triggered DAGs, but it does set the stage for future params related functionality.</p>
 
-<p>More details: <a href="http://airflow.apache.org/docs/1.10.12/concepts.html#cluster-policies-for-custom-task-checks" target="_blank">http://airflow.apache.org/docs/1.10.12/concepts.html#cluster-policies-for-custom-task-checks</a></p>
+<p>More information can be found at: <a href="https://airflow.apache.org/docs/apache-airflow/stable/concepts/params.html" target="_blank">Params</a></p>
 
-<h3 id="launch-pods-via-yaml-files-when-using-kubernetesexecutor-and-kubernetespodoperator">Launch Pods via YAML files when using KubernetesExecutor and KubernetesPodOperator</h3>
+<h2 id="other-small-features">Other small features</h2>
 
-<p>As of 1.10.12, users can launch pods via YAML files instead of passing various configurations.</p>
-
-<p>To allow greater flexibility we have deprecated Airflow&rsquo;s Pod class and instead now use classes and
-objects from the official Kubernetes API. The POD class will still work but raise a deprecation
-warning. This feature involved a pretty extensive rewrite of all of our pod creation code.</p>
-
-<p>Initially, we were going to hold off on these features until Airflow 2.0. However, we soon
-realized that exposing these features in 1.10.x is crucial in preparing users for the 2.0 release to come.</p>
-
-<p>Details: <a href="https://github.com/apache/airflow/pull/6230" target="_blank">https://github.com/apache/airflow/pull/6230</a> (<a href="https://github.com/apache/airflow/commit/7aa0f472b57985a952a3e3d0a38f1b2535d93413" target="_blank">Backport commit</a>)</p>
-
-<h2 id="updating-guide">Updating Guide</h2>
-
-<p>If you are updating Apache Airflow from a previous version to <code>1.10.12</code>, please take a note of the following:</p>
+<p>This isn’t a comprehensive list, but some noteworthy or interesting small features include:</p>
 
 <ul>
-<li><p>Run <code>airflow upgradedb</code> after <code>pip install -U apache-airflow==1.10.12</code> as <code>1.10.12</code> contains 1 database migration.</p></li>
-
-<li><p>As of airflow 1.10.12, using the <code>airflow.contrib.kubernetes.Pod</code> class in the <code>pod_mutation_hook</code> is now
-deprecated. Instead we recommend that users treat the pod parameter as a <code>kubernetes.client.models.V1Pod</code> object.
-This means that users now have access to the full Kubernetes API when modifying airflow pods for mutating POD.</p></li>
-
-<li><p>Previously, when tasks skipped by SkipMixin (such as <code>BranchPythonOperator</code>, <code>BaseBranchOperator</code> and
-<code>ShortCircuitOperator</code>) are cleared, they execute. Since 1.10.12, when such skipped tasks are cleared,
-they will be skipped again by the newly introduced <code>NotPreviouslySkippedDep</code>.</p></li>
+<li>Testing Connections from the UI - test the credentials for your Connection actually work</li>
+<li>Duplication Connections from the UI</li>
+<li>DAGs “Next run” info is shown in the UI, including when the run will actually start</li>
+<li><code>airflow standalone</code> command runs all of the Airflow components directly without docker - great for local development</li>
 </ul>
 
-<h2 id="special-note">Special Note</h2>
+<h2 id="contributors">Contributors</h2>
 
-<h3 id="python-2">Python 2</h3>
-
-<p>Python 2 has reached end of its life on Jan 2020. Airflow Master no longer supports Python 2.
-Airflow 1.10.* would be the last series to support Python 2.</p>
-
-<p>We strongly recommend users to use Python &gt;= 3.6</p>
-
-<h3 id="use-airflow-rbac-ui">Use Airflow RBAC UI</h3>
-
-<p>Airflow 1.10.12 ships with 2 UIs, the default is non-RBAC Flask-admin based UI and Flask-appbuilder based UI.</p>
-
-<p>The Flask-AppBuilder (FAB) based UI allows Role-based Access Control and has more advanced features compared to
-the legacy Flask-admin based UI. This UI can be enabled by setting <code>rbac=True</code> in <code>[webserver]</code> section in
-your <code>airflow.cfg</code>.</p>
-
-<p>Flask-admin based UI is deprecated and new features won&rsquo;t be ported to it. This UI will still be the default
-for 1.10.* series but would no longer be available from Airflow 2.0</p>
-
-<h3 id="we-have-moved-to-github-issues">We have moved to GitHub Issues</h3>
-
-<p>The Airflow Project has moved from <a href="https://issues.apache.org/jira/projects/AIRFLOW/issues" target="_blank">JIRA</a> to
-<a href="https://github.com/apache/airflow/issues" target="_blank">GitHub</a> for tracking issues.</p>
-
-<p>So if you find any bugs in Airflow 1.10.12 please create a GitHub Issue for it.</p>
-
-<h2 id="list-of-contributors">List of Contributors</h2>
-
-<p>According to git shortlog, the following people contributed to the 1.10.12 release. Thank you to all contributors!</p>
-
-<p>Alexander Sutcliffe, Andy, Aneesh Joseph, Ash Berlin-Taylor, Aviral Agrawal, BaoshanGu, Beni Ben zikry,
-Daniel Imberman, Daniel Standish, Danylo Baibak, Ephraim Anierobi, Felix Uellendall, Greg Neiheisel,
-Hartorn, Jacob Ferriero, Jannik F, Jarek Potiuk, Jinhui Zhang, Kamil Breguła, Kaxil Naik, Kurganov,
-Luis Magana, Max Arrich, Pete DeJoy, Sumit Maheshwari, Tomek Urbaszek, Vicken Simonian, Vinnie Guimaraes,
-William Tran, Xiaodong Deng, YI FU, Zikun Zhu, dewaldabrie, pulsar314, retornam, yuqian90</p>
+<p>Thanks to everyone who contributed to this release: Andrew Godwin, Ash Berlin-Taylor, Brent Bovenzi, Elad Kalif, Ephraim Anierobi, James Timmins, Jarek Potiuk, Jed Cunningham, Josh Fell, Kamil Breguła, Kaxil Naik, Malthe Borch, Sam Wheating, Sumit Maheshwari, Tzu-ping Chung and many others</p>
 
 </div>
 
@@ -702,16 +604,16 @@ William Tran, Xiaodong Deng, YI FU, Zikun Zhu, dewaldabrie, pulsar314, retornam,
             
 
 <div class="pager">
-    <a href="/blog/apache-airflow-for-newcomers/">
+    <a href="/blog/airflow_summit_2021/">
         
 
 <button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Previous</button>
 
     </a>
-    <a href="/blog/experience-with-airflow-as-an-outreachy-intern/">
+    <a >
         
 
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Next</button>
+<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" disabled>Next</button>
 
     </a>
 </div>
@@ -742,52 +644,17 @@ William Tran, Xiaodong Deng, YI FU, Zikun Zhu, dewaldabrie, pulsar314, retornam,
                     
                 
             </div>
-            <span class="bodytext__medium--brownish-grey box-event__blogpost--date">Thu, Apr 9, 2020</span>
+            <span class="bodytext__medium--brownish-grey box-event__blogpost--date">Thu, Dec 17, 2020</span>
         </div>
         <p class="box-event__blogpost--header">
-            <a href="/blog/airflow-1.10.10/">
-                Apache Airflow 1.10.10
+            <a href="/blog/airflow-two-point-oh-is-here/">
+                Apache Airflow 2.0 is here!
             </a>
         </p>
-        <p class="box-event__blogpost--author">Kaxil Naik</p>
-        <p class="box-event__blogpost--description">We are happy to present Apache Airflow 1.10.10</p>
+        <p class="box-event__blogpost--author">Ash Berlin-Taylor</p>
+        <p class="box-event__blogpost--description">We&#39;re proud to announce that Apache Airflow 2.0.0 has been released.</p>
         <div class="mt-auto">
-            <a href="/blog/airflow-1.10.10/">
-                
-
-<button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Read more</button>
-
-            </a>
-        </div>
-    </div>
-</div>
-
-                    </div>
-                
-                    <div class="list-item list-item--wide">
-                        
-
-<div class="card">
-    <div class="box-event__blogpost">
-        <div class="box-event__blogpost--metadata">
-            <div class="tags-container">
-                
-                    
-                        <a class="tag" href="/blog/tags/release/">Release</a>
-                    
-                
-            </div>
-            <span class="bodytext__medium--brownish-grey box-event__blogpost--date">Sun, Feb 23, 2020</span>
-        </div>
-        <p class="box-event__blogpost--header">
-            <a href="/blog/airflow-1.10.8-1.10.9/">
-                Apache Airflow 1.10.8 &amp; 1.10.9
-            </a>
-        </p>
-        <p class="box-event__blogpost--author">Kaxil Naik</p>
-        <p class="box-event__blogpost--description">We are happy to present the new 1.10.8 and 1.10.9 releases of Apache Airflow.</p>
-        <div class="mt-auto">
-            <a href="/blog/airflow-1.10.8-1.10.9/">
+            <a href="/blog/airflow-two-point-oh-is-here/">
                 
 
 <button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" >Read more</button>
@@ -811,7 +678,7 @@ William Tran, Xiaodong Deng, YI FU, Zikun Zhu, dewaldabrie, pulsar314, retornam,
 
 <div class="base-layout--button">
     
-    <a href=https://github.com/apache/airflow-site/edit/main/landing-pages/site/content/en/blog/airflow-1.10.12/index.md>
+    <a href=https://github.com/apache/airflow-site/edit/main/landing-pages/site/content/en/blog/airflow-2.2.0/index.md>
         
 
 
