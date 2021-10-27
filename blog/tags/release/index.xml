@@ -45,9 +45,11 @@
 
 &lt;p&gt;&lt;code&gt;execution_date&lt;/code&gt; has long been confusing to new Airflowers, so as part of this change a new concept has been added to Airflow to replace it named &lt;code&gt;data_interval&lt;/code&gt;, which is the period of data that a task should operate on. The following are now available:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;logical_date&lt;/code&gt; (aka &lt;code&gt;execution_date&lt;/code&gt;)
-&lt;code&gt;data_interval_start&lt;/code&gt; (same value as &lt;code&gt;execution_date&lt;/code&gt; for cron)
-&lt;code&gt;data_interval_end&lt;/code&gt; (aka &lt;code&gt;next_execution_date&lt;/code&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;logical_date&lt;/code&gt; (aka &lt;code&gt;execution_date&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;data_interval_start&lt;/code&gt; (same value as &lt;code&gt;execution_date&lt;/code&gt; for cron)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;data_interval_end&lt;/code&gt; (aka &lt;code&gt;next_execution_date&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;If you write your own timetables, keep in mind they should be idempotent and fast as they are used in the scheduler to create DagRuns.&lt;/p&gt;
 
