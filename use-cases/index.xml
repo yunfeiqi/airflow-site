@@ -114,7 +114,7 @@
 
 &lt;h5 id=&#34;what-are-the-results&#34;&gt;What are the results?&lt;/h5&gt;
 
-&lt;p&gt;Airflow helps us manage many of our pain-points, letting us benefit from the overall ecosystem and community.  We are able to reduce time-to-end delivery of data products by being event-driven in our processing flows (in our first usage, for example, we were able to take out over 2 hours - on average - of various waiting between stages).  Furthermore, we are able to arrive at and iterate on products quicker as a result of not needing as much custom or roll-our-own solutions.  For Our code base is smaller and simpler, it is easier to follow, and to a large extent our DAGs serve as sufficient documentation for new contributors to understand what is going on.&lt;/p&gt;
+&lt;p&gt;Airflow helps us manage many of our pain-points, letting us benefit from the overall ecosystem and community.  We are able to reduce time-to-end delivery of data products by being event-driven in our processing flows (in our first usage, for example, we were able to take out over 2 hours - on average - of various waiting between stages).  Furthermore, we are able to arrive at and iterate on products quicker as a result of not needing as much custom or roll-our-own solutions.  Our code base is smaller and simpler, it is easier to follow, and to a large extent our DAGs serve as sufficient documentation for new contributors to understand what is going on.&lt;/p&gt;
 
       </description>
     </item>
