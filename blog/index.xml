@@ -1859,7 +1859,7 @@ tutorial_etl_dag = tutorial_taskflow_api_etl()
 &lt;p&gt;Our very own Jarek Potiuk has written about &lt;a href=&#34;https://higrys.medium.com/airflow-2-0-providers-1bd21ba3bd93&#34; target=&#34;_blank&#34;&gt;providers in much more detail&lt;/a&gt; on Jarek&amp;rsquo;s blog.&lt;/p&gt;
 
 &lt;p&gt;Docs on the &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow-providers/&#34; target=&#34;_blank&#34;&gt;providers concept and writing custom providers&lt;/a&gt; &lt;br /&gt;
-Docs on the &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow-providers/packages-ref.html&#34; target=&#34;_blank&#34;&gt;all providers packages available&lt;/a&gt;&lt;/p&gt;
+Docs on &lt;a href=&#34;http://airflow.apache.org/docs/apache-airflow-providers/packages-ref.html&#34; target=&#34;_blank&#34;&gt;all providers packages available&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;security&#34;&gt;Security&lt;/h2&gt;
 
