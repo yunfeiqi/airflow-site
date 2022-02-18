@@ -37,14 +37,15 @@
   },
   {
     "package-name": "apache-airflow-providers-oracle",
-    "stable-version": "2.1.0",
+    "stable-version": "2.2.0",
     "all-versions": [
       "1.0.0",
       "1.0.1",
       "1.1.0",
       "2.0.0",
       "2.0.1",
-      "2.1.0"
+      "2.1.0",
+      "2.2.0"
     ]
   },
   {
@@ -97,7 +98,7 @@
   },
   {
     "package-name": "apache-airflow-providers-google",
-    "stable-version": "6.3.0",
+    "stable-version": "6.4.0",
     "all-versions": [
       "0.0.1",
       "0.0.2",
@@ -112,7 +113,8 @@
       "6.0.0",
       "6.1.0",
       "6.2.0",
-      "6.3.0"
+      "6.3.0",
+      "6.4.0"
     ]
   },
   {
@@ -658,7 +660,7 @@
   },
   {
     "package-name": "apache-airflow-providers-elasticsearch",
-    "stable-version": "2.1.0",
+    "stable-version": "2.2.0",
     "all-versions": [
       "1.0.0",
       "1.0.1",
@@ -668,7 +670,8 @@
       "2.0.1",
       "2.0.2",
       "2.0.3",
-      "2.1.0"
+      "2.1.0",
+      "2.2.0"
     ]
   },
   {
